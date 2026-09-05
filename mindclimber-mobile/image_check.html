@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindClimber — Έλεγχος Εικόνων</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f7f9;
+    color: #1b2b3a;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+    border-bottom: 1px solid #dfe6ea;
+    padding: 14px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+  h1 { font-size: 1.2rem; margin: 0; flex: 1 1 auto; min-width: 200px; }
+  .stat {
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+  .stat.total { background: #e3f2fd; color: #1565c0; }
+  .stat.ok { background: #c8e6c9; color: #2e7d32; }
+  .stat.bad { background: #ffcdd2; color: #c62828; }
+  .stat.pending { background: #fff3cd; color: #8a6d00; }
+  .controls { display: flex; gap: 8px; align-items: center; }
+  select, button {
+    padding: 7px 12px;
+    border-radius: 8px;
+    border: 1px solid #cfd8dc;
+    font-size: 0.9rem;
+    background: #fff;
+    cursor: pointer;
+  }
+  button.primary { background: #1565c0; color: #fff; border: none; font-weight: 700; }
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    padding: 18px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+  }
+  .card.status-ok { border-color: #4CAF50; }
+  .card.status-bad { border-color: #e53935; }
+  .card.status-pending { border-color: #ffc107; }
+  .thumb {
+    height: 140px;
+    background: #eef2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .thumb .placeholder { font-size: 0.8rem; color: #90a4ae; text-align: center; padding: 8px; }
+  .badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 20px;
+    color: #fff;
+  }
+  .badge.ok { background: #4CAF50; }
+  .badge.bad { background: #e53935; }
+  .badge.pending { background: #ffb300; }
+  .info { padding: 10px 12px 12px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .info .answer { font-weight: 700; font-size: 0.92rem; }
+  .info .meta { font-size: 0.72rem; color: #607d8b; }
+  .info .url {
+    font-size: 0.68rem;
+    color: #90a4ae;
+    word-break: break-all;
+    font-family: monospace;
+    max-height: 3.2em;
+    overflow: hidden;
+  }
+  .info .copy-btn {
+    align-self: flex-start;
+    font-size: 0.68rem;
+    padding: 3px 8px;
+    margin-top: 2px;
+    border-radius: 6px;
+    border: 1px solid #cfd8dc;
+    background: #f4f7f9;
+    cursor: pointer;
+  }
+  #emptyMsg { padding: 40px; text-align: center; color: #607d8b; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🖼️ Έλεγχος Εικόνων — Αναγνώριση Εικόνας</h1>
+  <div class="stat total" id="statTotal">Σύνολο: —</div>
+  <div class="stat ok" id="statOk">✅ Φορτώνουν: —</div>
+  <div class="stat bad" id="statBad">❌ Σπασμένες: —</div>
+  <div class="stat pending" id="statPending">⏳ Ελέγχονται: —</div>
+  <div class="controls">
+    <select id="filterSelect">
+      <option value="all">Όλες</option>
+      <option value="bad">Μόνο σπασμένες</option>
+      <option value="ok">Μόνο OK</option>
+    </select>
+    <button class="primary" id="recheckBtn">🔄 Επανέλεγχος</button>
+  </div>
+</header>
+
+<div id="grid"></div>
+<div id="emptyMsg" style="display:none;"></div>
+
+<script src="questions_data.js"></script>
+<script>
+const CATEGORY = "Αναγνώριση Εικόνας";
+const grid = document.getElementById("grid");
+const emptyMsg = document.getElementById("emptyMsg");
+
+function collectImageItems() {
+  const bank = window.QUESTION_BANK && window.QUESTION_BANK[CATEGORY];
+  if (!bank) return [];
+  const items = [];
+  ["easy", "medium", "hard"].forEach((diff) => {
+    (bank[diff] || []).forEach((q, i) => {
+      if (q.img) items.push({ ...q, difficulty: diff, index: i });
+    });
+  });
+  return items;
+}
+
+function difficultyLabel(d) {
+  return d === "easy" ? "Εύκολο" : d === "medium" ? "Μέτριο" : "Δύσκολο";
+}
+
+function updateStats(items) {
+  const total = items.length;
+  const ok = items.filter((it) => it._status === "ok").length;
+  const bad = items.filter((it) => it._status === "bad").length;
+  const pending = items.filter((it) => !it._status || it._status === "pending").length;
+  document.getElementById("statTotal").textContent = `Σύνολο: ${total}`;
+  document.getElementById("statOk").textContent = `✅ Φορτώνουν: ${ok}`;
+  document.getElementById("statBad").textContent = `❌ Σπασμένες: ${bad}`;
+  document.getElementById("statPending").textContent = `⏳ Ελέγχονται: ${pending}`;
+}
+
+function render(items) {
+  const filter = document.getElementById("filterSelect").value;
+  grid.innerHTML = "";
+  const visible = items.filter((it) => filter === "all" || it._status === filter);
+
+  if (visible.length === 0) {
+    emptyMsg.style.display = "block";
+    emptyMsg.textContent = "Καμία εικόνα να δείξω με αυτό το φίλτρο.";
+    return;
+  }
+  emptyMsg.style.display = "none";
+
+  visible.forEach((it) => {
+    const card = document.createElement("div");
+    card.className = `card status-${it._status || "pending"}`;
+
+    const thumb = document.createElement("div");
+    thumb.className = "thumb";
+
+    const badge = document.createElement("div");
+    badge.className = `badge ${it._status || "pending"}`;
+    badge.textContent = it._status === "ok" ? "OK" : it._status === "bad" ? "ΣΠΑΣΜΕΝΗ" : "...";
+    thumb.appendChild(badge);
+
+    if (it._status === "bad") {
+      const ph = document.createElement("div");
+      ph.className = "placeholder";
+      ph.textContent = "⚠️ Δεν φόρτωσε";
+      thumb.appendChild(ph);
+    } else {
+      const img = document.createElement("img");
+      img.src = it.img;
+      img.alt = it.o[0];
+      thumb.appendChild(img);
+    }
+
+    const info = document.createElement("div");
+    info.className = "info";
+    info.innerHTML = `
+      <div class="answer">${it.o[0]}</div>
+      <div class="meta">${difficultyLabel(it.difficulty)} · #${it.index + 1}</div>
+      <div class="url">${it.img}</div>
+    `;
+    const copyBtn = document.createElement("button");
+    copyBtn.className = "copy-btn";
+    copyBtn.textContent = "📋 Αντιγραφή URL";
+    copyBtn.onclick = () => navigator.clipboard.writeText(it.img);
+    info.appendChild(copyBtn);
+
+    card.appendChild(thumb);
+    card.appendChild(info);
+    grid.appendChild(card);
+  });
+}
+
+function checkAll() {
+  const items = collectImageItems();
+  items.forEach((it) => (it._status = "pending"));
+  updateStats(items);
+  render(items);
+
+  let remaining = items.length;
+  items.forEach((it) => {
+    const tester = new Image();
+    tester.onload = () => {
+      it._status = "ok";
+      remaining--;
+      updateStats(items);
+      render(items);
+    };
+    tester.onerror = () => {
+      it._status = "bad";
+      remaining--;
+      updateStats(items);
+      render(items);
+    };
+    tester.src = it.img;
+  });
+}
+
+document.getElementById("filterSelect").addEventListener("change", () => {
+  render(window._lastItems || collectImageItems());
+});
+document.getElementById("recheckBtn").addEventListener("click", checkAll);
+
+// Keep a reference so the filter handler can re-render without re-testing
+const originalRender = render;
+render = function (items) {
+  window._lastItems = items;
+  originalRender(items);
+};
+
+if (!window.QUESTION_BANK) {
+  emptyMsg.style.display = "block";
+  emptyMsg.textContent = "Δεν βρέθηκε το questions_data.js — βάλε αυτό το αρχείο στον ίδιο φάκελο με το questions_data.js και άνοιξέ το ξανά.";
+} else {
+  checkAll();
+}
+</script>
+
+</body>
+</html>
