@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>G2000</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+        }
+        .pattern {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .shape {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 16px);
+            grid-template-rows: repeat(3, 16px);
+            gap: 1px;
+            background: black;
+        }
+        .cell {
+            width: 16px;
+            height: 16px;
+            background: white;
+        }
+        .blue {
+            background: blue;
+        }
+        #options {
+            display: none; /* Will be styled by game.html */
+        }
+        #question h2 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="question">
+        <h2 style="display:none;">Choose the missing figure.</h2>
+        <div class="pattern" style="display:none;">
+            <!-- Hidden pattern elements -->
+            <div class="shape">
+                <div class="grid">
+                    <div class="cell blue"></div><div class="cell"></div><div class="cell"></div>
+                    <div class="cell blue"></div><div class="cell"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                </div>
+            </div>
+            <div class="shape">
+                <div class="grid">
+                    <div class="cell"></div><div class="cell blue"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell blue"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                </div>
+            </div>
+            <div class="shape">
+                <div class="grid">
+                    <div class="cell"></div><div class="cell"></div><div class="cell blue"></div>
+                    <div class="cell"></div><div class="cell"></div><div class="cell blue"></div>
+                    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                </div>
+            </div>
+        </div>
+        <div class="pattern" style="display:none;">
+            <!-- Hidden pattern elements -->
+            <div class="shape">
+                <div class="grid">
+                    <div class="cell blue"></div><div class="cell"></div><div class="cell"></div>
+                    <div class="cell blue"></div><div class="cell"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                </div>
+            </div>
+            <div class="shape">
+                <div class="grid">
+                    <div class="cell"></div><div class="cell blue"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell blue"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                </div>
+            </div>
+            <div class="shape">?</div>
+        </div>
+    </div>
+    
+    <div id="options">
+        <div data-correct="false" data-value="A">
+            <div class="shape">
+                <div class="grid">
+                    <div class="cell blue"></div><div class="cell"></div><div class="cell"></div>
+                    <div class="cell blue"></div><div class="cell"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                </div>
+            </div>
+            <p>Option A</p>
+        </div>
+        <div data-correct="false" data-value="B">
+            <div class="shape">
+                <div class="grid">
+                    <div class="cell"></div><div class="cell blue"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell blue"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                </div>
+            </div>
+            <p>Option B</p>
+        </div>
+        <div data-correct="true" data-value="C">
+            <div class="shape">
+                <div class="grid">
+                    <div class="cell"></div><div class="cell"></div><div class="cell blue"></div>
+                    <div class="cell"></div><div class="cell"></div><div class="cell blue"></div>
+                    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                </div>
+            </div>
+            <p>Option C</p>
+        </div>
+    </div>
+</body>
+</html>

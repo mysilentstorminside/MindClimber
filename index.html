@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>MindClimber Online</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="game.css?v=mp1">
+
+<!-- Firebase (Realtime Database) - needed so players on different phones see the same game state -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+</head>
+<body>
+
+<!-- Screen shown if opened on a non-mobile / too-wide screen -->
+<div id="desktopBlock" class="screen">
+  <div class="card">
+    <img class="logoSmall" src="assets/Pics/mindclimber_logo.png" alt="MindClimber">
+    <h2>Μόνο για κινητά 📱</h2>
+    <p>Το MindClimber Online παίζεται αποκλειστικά σε κινητό τηλέφωνο. Άνοιξε αυτή τη σελίδα από το κινητό σου για να συνεχίσεις.</p>
+  </div>
+</div>
+
+<!-- Screen 1: Home -->
+<div id="homeScreen" class="screen">
+  <div class="card">
+    <img class="logoBig" src="assets/Pics/mindclimber_logo.png" alt="MindClimber">
+    <p class="tagline">Το Παιχνίδι Γνώσεων</p>
+    <p class="subtitle">Ανέβα τα 20 σκαλιά του βουνού απαντώντας σωστά, μαζί με φίλους — online, μέχρι 5 παίκτες.</p>
+    <button id="createRoomBtn" class="bigBtn primaryBtn">Δημιουργία Δωματίου</button>
+    <button id="showJoinBtn" class="bigBtn secondaryBtn">Είσοδος με Κωδικό</button>
+    <div id="joinRow" class="hidden">
+      <input id="joinCodeInput" maxlength="5" placeholder="π.χ. A7K2Q" autocapitalize="characters">
+      <button id="joinRoomBtn" class="bigBtn primaryBtn">Είσοδος</button>
+    </div>
+    <p id="homeError" class="errorText"></p>
+  </div>
+</div>
+
+<!-- Screen 2: Player setup (name + avatar) -->
+<div id="setupScreen" class="screen">
+  <div class="card">
+    <h2>Ο Παίκτης σου</h2>
+    <div id="roomCodeBadge" class="codeBadge"></div>
+    <label for="playerNameInput">Όνομα</label>
+    <div class="nameInputWrap">
+      <span class="nameInputIcon">🙂</span>
+      <input id="playerNameInput" maxlength="14" placeholder="Το όνομά σου">
+    </div>
+    <label class="avatarLabel">Επίλεξε Avatar <span id="avatarPickedTag" class="avatarPickedTag hidden">επιλέχθηκε</span></label>
+    <div id="avatarGrid" class="avatarGrid"></div>
+    <button id="confirmSetupBtn" class="bigBtn primaryBtn">Συνέχεια</button>
+    <p id="setupError" class="errorText"></p>
+  </div>
+</div>
+
+<!-- Screen 3: Waiting room -->
+<div id="lobbyScreen" class="screen">
+  <div class="card">
+    <h2>Δωμάτιο</h2>
+    <div id="lobbyCodeBadge" class="codeBadge big"></div>
+    <p class="subtitle">Στείλε αυτόν τον κωδικό στους φίλους σου για να μπουν στο ίδιο παιχνίδι.</p>
+    <div id="lobbyPlayerList" class="lobbyPlayerList"></div>
+    <p id="lobbyHint" class="hintText"></p>
+    <button id="startGameBtn" class="bigBtn primaryBtn hidden">Έναρξη Παιχνιδιού</button>
+    <button id="leaveLobbyBtn" class="bigBtn ghostBtn">Έξοδος</button>
+  </div>
+</div>
+
+<!-- Screen 4: Game -->
+<div id="gameScreen" class="screen">
+  <div id="mountainTimer">⏱ 4:30</div>
+  <div id="stepInfo"></div>
+
+  <div id="climbZone">
+    <div id="peakMarker"><span id="peakFlags">🚩</span><span id="peakStepLabel">20</span></div>
+    <div id="stairLines"></div>
+    <div id="playerTokens"></div>
+    <div id="groundMarker">ΕΚΚΙΝΗΣΗ</div>
+  </div>
+
+  <div id="turnBanner">
+    <span id="turnAvatarMini"></span>
+    <span id="turnText">Σειρά: --</span>
+  </div>
+
+  <div id="gamePanel">
+    <div id="qTimerWrap">
+      <div id="qTimerBar"><div id="qTimerFill"></div></div>
+      <div id="qTimerNum">15</div>
+    </div>
+
+    <div id="categoryChoiceRow" class="hidden"></div>
+
+    <div id="selectedCategoryLabel" class="hidden"></div>
+
+    <div id="colorChoiceRow" class="hidden">
+      <button id="greenButton" class="colorBtn">
+        <span class="colorTitle">+1 / -1</span>
+        <span class="colorSub">Εύκολο</span>
+      </button>
+      <button id="blueButton" class="colorBtn">
+        <span class="colorTitle">+2 / -2</span>
+        <span class="colorSub">Μέτριο</span>
+      </button>
+      <button id="orangeButton" class="colorBtn">
+        <span class="colorTitle">+3 / -3</span>
+        <span class="colorSub">Δύσκολο</span>
+      </button>
+    </div>
+
+    <div id="waitingNote" class="hidden">Περιμένεις τη σειρά σου…</div>
+
+    <img id="questionImage" class="hidden" alt="">
+    <div id="questionRectangle" class="hidden"></div>
+    <div id="answerRectangle" class="hidden">
+      <div class="answerOption" data-option="A">A</div>
+      <div class="answerOption" data-option="B">B</div>
+      <div class="answerOption" data-option="C">C</div>
+    </div>
+    <div id="allAnswersStatus" class="hidden"></div>
+  </div>
+</div>
+
+<!-- Screen 5: Results -->
+<div id="resultsScreen" class="screen">
+  <div class="card">
+    <h2 id="resultsTitle">Τέλος Παιχνιδιού!</h2>
+    <img id="winnerAvatarImg" class="winnerAvatar" src="" alt="">
+    <div id="rankingList" class="rankingList"></div>
+    <button id="playAgainBtn" class="bigBtn primaryBtn hidden">Παίξτε ξανά</button>
+    <button id="backHomeBtn" class="bigBtn ghostBtn">Αρχική</button>
+  </div>
+</div>
+
+<script src="questions_data.js?v=mp1"></script>
+<script src="game.js?v=mp1"></script>
+</body>
+</html>

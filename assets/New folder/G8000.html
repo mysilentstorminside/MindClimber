@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>N8/37 (8000)</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        #startButton {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #startButton:hover {
+            background-color: #45a049;
+        }
+        @font-face {
+            font-family: 'WoodenStyle';
+            src: url('https://fonts.cdnfonts.com/s/17307/Wooden Nickel NF.woff') format('woff');
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="1000" height="800"></canvas>
+    <button id="startButton">Start Game</button>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        let currentStep = -1;
+        let answerSubmitted = false;
+        let timeLeft = 11; // Updated to 11 seconds
+        let timerInterval;
+        let gameStarted = false;
+        let optionStartX, bottomRowY, optionShapeSize;
+
+        // Load sound files with absolute paths as specified
+        const winSound = new Audio('C:/Users/lefteri/Desktop/Game/win.wav');
+        const loseSound = new Audio('C:/Users/lefteri/Desktop/Game/loose.wav');
+
+        // Set wooden gradient background
+        const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        gradient.addColorStop(0, '#D2B48C');
+        gradient.addColorStop(1, '#F5E8C7');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Helper function: Draw rectangle with 3D shadow
+        function drawRectangleWithShadow(x, y, width, height, bgColor) {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+            ctx.fillRect(x - 15, y + 15, width, height);
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(x, y, width, height);
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 4;
+            ctx.strokeRect(x, y, width, height);
+        }
+
+        // Helper function: Draw shapes (circle, triangle, square) with specified fill status
+        function drawShapes(x, y, size, shapes, fillStatus) {
+            const shapeSize = size / 3;
+            const padding = 5;
+
+            // Circle (left)
+            const circleX = x + shapeSize / 2;
+            const circleY = y + size / 2;
+            ctx.beginPath();
+            ctx.arc(circleX, circleY, shapeSize / 2 - padding, 0, Math.PI * 2);
+            ctx.fillStyle = fillStatus[0] ? 'purple' : 'white';
+            ctx.fill();
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Triangle (middle)
+            const triangleX = x + shapeSize + shapeSize / 2;
+            const triangleY = y + size / 2;
+            ctx.beginPath();
+            ctx.moveTo(triangleX, triangleY - (shapeSize / 2 - padding));
+            ctx.lineTo(triangleX - (shapeSize / 2 - padding), triangleY + (shapeSize / 2 - padding));
+            ctx.lineTo(triangleX + (shapeSize / 2 - padding), triangleY + (shapeSize / 2 - padding));
+            ctx.closePath();
+            ctx.fillStyle = fillStatus[1] ? 'purple' : 'white';
+            ctx.fill();
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Square (right)
+            const squareX = x + 2 * shapeSize;
+            const squareY = y + (size - shapeSize) / 2;
+            ctx.beginPath();
+            ctx.rect(squareX, squareY, shapeSize - 2 * padding, shapeSize - 2 * padding);
+            ctx.fillStyle = fillStatus[2] ? 'purple' : 'white';
+            ctx.fill();
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Draw outer border
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(x, y, size, size);
+        }
+
+        // Helper function: Draw mountain with text
+        function drawMountainWithText(x, y, baseWidth, height, text) {
+            ctx.beginPath();
+            ctx.moveTo(x - baseWidth / 2, y);
+            ctx.lineTo(x, y - height);
+            ctx.lineTo(x + baseWidth / 2, y);
+            ctx.closePath();
+            ctx.fillStyle = '#8B4513';
+            ctx.fill();
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.font = 'bold 30px WoodenStyle, Arial';
+            ctx.fillStyle = 'white';
+            ctx.textAlign = 'center';
+            ctx.fillText(text, x, y - height / 2 + 10);
+        }
+
+        // Helper function: Draw feedback sign
+        function drawFeedback(x, y, isCorrect) {
+            ctx.font = 'bold 60px Arial';
+            ctx.fillStyle = isCorrect ? 'green' : 'red';
+            ctx.textAlign = 'center';
+            ctx.fillText(isCorrect ? '✓' : '✗', x, y - 40);
+        }
+
+        // Draw mountain header
+        const mountainBaseWidth = 300;
+        const mountainHeight = 90;
+        drawMountainWithText(canvas.width / 2, 100, mountainBaseWidth, mountainHeight, 'N8/37');
+
+        // Draw question and answer rectangles (empty initially)
+        const questionRect = { x: 150, y: 80, width: 700, height: 300 };
+        drawRectangleWithShadow(questionRect.x, questionRect.y, questionRect.width, questionRect.height, '#F5E8C7');
+
+        const answerRect = { x: 150, y: 420, width: 700, height: 300 };
+        drawRectangleWithShadow(answerRect.x, answerRect.y, answerRect.width, answerRect.height, '#F5E8C7');
+
+        // Function to draw game content
+        function drawGameContent() {
+            // No writing in the question rectangle
+            
+            // Draw question grid (2x3) with shapes
+            const gridSize = 90; // Size of each cell
+            const spacing = 20;
+            const rows = 2;
+            const cols = 3;
+            const gridStartX = questionRect.x + (questionRect.width - (cols * gridSize + (cols - 1) * spacing)) / 2;
+            const gridStartY = questionRect.y + (questionRect.height - (rows * gridSize + (rows - 1) * spacing)) / 2 + 20; // Shifted down
+
+            // Row 1
+            drawShapes(gridStartX, gridStartY, gridSize, ['circle', 'triangle', 'square'], [true, false, false]); // Circle purple
+            drawShapes(gridStartX + gridSize + spacing, gridStartY, gridSize, ['circle', 'triangle', 'square'], [false, true, false]); // Triangle purple
+            drawShapes(gridStartX + 2 * (gridSize + spacing), gridStartY, gridSize, ['circle', 'triangle', 'square'], [false, false, true]); // Square purple
+
+            // Row 2 (with reverse and toggle transformation)
+            drawShapes(gridStartX, gridStartY + gridSize + spacing, gridSize, ['square', 'triangle', 'circle'], [true, false, false]); // Square purple (reversed)
+            drawShapes(gridStartX + gridSize + spacing, gridStartY + gridSize + spacing, gridSize, ['square', 'triangle', 'circle'], [false, false, true]); // Circle purple (reversed, toggled)
+            // Bottom-right cell has a question mark
+            ctx.font = 'bold 40px Arial';
+            ctx.fillStyle = 'black';
+            ctx.textAlign = 'center';
+            ctx.fillText('?', gridStartX + 2 * (gridSize + spacing) + gridSize / 2, gridStartY + gridSize + spacing + gridSize / 2 + 10);
+
+            // Draw answer shapes and store coordinates (3 options: A, B, C)
+            optionShapeSize = 90;
+            bottomRowY = answerRect.y + (answerRect.height - optionShapeSize) / 2;
+            optionStartX = answerRect.x + (answerRect.width - (3 * optionShapeSize + 2 * 50)) / 2;
+
+            drawShapes(optionStartX, bottomRowY, optionShapeSize, ['square', 'triangle', 'circle'], [false, true, false]); // Option A (correct: Triangle purple)
+            drawShapes(optionStartX + optionShapeSize + 50, bottomRowY, optionShapeSize, ['circle', 'triangle', 'square'], [false, false, true]); // Option B (incorrect: Square purple, wrong order)
+            drawShapes(optionStartX + 2 * (optionShapeSize + 50), bottomRowY, optionShapeSize, ['square', 'triangle', 'circle'], [true, false, false]); // Option C (incorrect: Square purple)
+
+            ctx.font = 'bold 30px Arial';
+            ctx.fillStyle = 'black';
+            ctx.textAlign = 'center';
+            ctx.fillText('A', optionStartX + optionShapeSize / 2, bottomRowY + optionShapeSize + 40);
+            ctx.fillText('B', optionStartX + optionShapeSize + 50 + optionShapeSize / 2, bottomRowY + optionShapeSize + 40);
+            ctx.fillText('C', optionStartX + 2 * (optionShapeSize + 50) + optionShapeSize / 2, bottomRowY + optionShapeSize + 40);
+        }
+
+        // Timer function with progress bar on the right
+        function startTimer() {
+            const timerBarWidth = 20;
+            const timerBarHeight = 300;
+            const timerBarX = canvas.width - 50;
+            const timerBarY = (canvas.height - timerBarHeight) / 2;
+
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                ctx.clearRect(timerBarX - 10, timerBarY - 10, timerBarWidth + 20, timerBarHeight + 20);
+
+                ctx.fillStyle = '#e0e0e0';
+                ctx.fillRect(timerBarX, timerBarY, timerBarWidth, timerBarHeight);
+
+                const progressHeight = (timeLeft / 11) * timerBarHeight; // Updated to 11 seconds
+                ctx.fillStyle = '#4CAF50';
+                ctx.fillRect(timerBarX, timerBarY + (timerBarHeight - progressHeight), timerBarWidth, progressHeight);
+
+                ctx.strokeStyle = '#000';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(timerBarX, timerBarY, timerBarWidth, timerBarHeight);
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    ctx.clearRect(timerBarX - 10, timerBarY - 10, timerBarWidth + 20, timerBarHeight + 20);
+                    ctx.font = 'bold 60px Arial';
+                    ctx.fillStyle = 'red';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('X', timerBarX + timerBarWidth / 2, timerBarY + timerBarHeight / 2);
+                    answerSubmitted = true;
+                    canvas.removeEventListener('click', handleClick);
+                    loseSound.play().catch(error => console.error('Error playing lose sound on timeout:', error));
+                }
+            }, 1000);
+        }
+
+        // Start game with button click
+        const startButton = document.getElementById('startButton');
+        startButton.addEventListener('click', () => {
+            if (!gameStarted) {
+                gameStarted = true;
+                startButton.style.display = 'none';
+                setTimeout(() => {
+                    drawGameContent();
+                    setTimeout(startTimer, 500);
+                    canvas.addEventListener('click', handleClick);
+                }, 500);
+            }
+        });
+
+        // Click detection
+        function handleClick(e) {
+            if (answerSubmitted || !gameStarted) return;
+
+            const rect = canvas.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const clickY = e.clientY - rect.top;
+
+            const optionA = { x: optionStartX, y: bottomRowY, width: optionShapeSize, height: optionShapeSize };
+            const optionB = { x: optionStartX + optionShapeSize + 50, y: bottomRowY, width: optionShapeSize, height: optionShapeSize };
+            const optionC = { x: optionStartX + 2 * (optionShapeSize + 50), y: bottomRowY, width: optionShapeSize, height: optionShapeSize };
+
+            if (clickX >= optionA.x && clickX <= optionA.x + optionA.width && clickY >= optionA.y && clickY <= optionA.y + optionA.height) {
+                clearInterval(timerInterval);
+                ctx.clearRect(optionA.x, optionA.y - 100, optionA.width, 100);
+                drawShapes(optionA.x, optionA.y, optionShapeSize, ['square', 'triangle', 'circle'], [false, true, false]);
+                currentStep = 0; // Move to next step (N9/37)
+                drawFeedback(optionA.x + optionA.width / 2, optionA.y, true);
+                winSound.play().catch(error => console.error('Error playing win sound for A:', error));
+                answerSubmitted = true;
+            } else if (clickX >= optionB.x && clickX <= optionB.x + optionB.width && clickY >= optionB.y && clickY <= optionB.y + optionB.height) {
+                clearInterval(timerInterval);
+                ctx.clearRect(optionB.x, optionB.y - 100, optionB.width, 100);
+                drawShapes(optionB.x, optionB.y, optionShapeSize, ['circle', 'triangle', 'square'], [false, false, true]);
+                drawFeedback(optionB.x + optionB.width / 2, optionB.y, false);
+                loseSound.play().catch(error => console.error('Error playing lose sound for B:', error));
+                answerSubmitted = true;
+            } else if (clickX >= optionC.x && clickX <= optionC.x + optionC.width && clickY >= optionC.y && clickY <= optionC.y + optionC.height) {
+                clearInterval(timerInterval);
+                ctx.clearRect(optionC.x, optionC.y - 100, optionC.width, 100);
+                drawShapes(optionC.x, optionC.y, optionShapeSize, ['square', 'triangle', 'circle'], [true, false, false]);
+                drawFeedback(optionC.x + optionC.width / 2, optionC.y, false);
+                loseSound.play().catch(error => console.error('Error playing lose sound for C:', error));
+                answerSubmitted = true;
+            }
+
+            if (answerSubmitted) {
+                ctx.clearRect(0, 0, canvas.width, 120);
+                let mountainText = 'N8/37';
+                if (currentStep === 0) mountainText = 'N9/37';
+                else if (currentStep < -1) mountainText = 'N8/37';
+                if (currentStep > 36) mountainText = 'N37/37';
+                drawMountainWithText(canvas.width / 2, 100, mountainBaseWidth, mountainHeight, mountainText);
+                canvas.removeEventListener('click', handleClick);
+            }
+        }
+    </script>
+</body>
+</html>
