@@ -17,7 +17,7 @@ const FIREBASE_CONFIG = {
   appId: "1:676358113604:web:2558c13c798ce6ffaaef11",
 };
 
-const MAX_STEPS = 20;
+const MAX_STEPS = 30;
 const MAX_PLAYERS = 5;
 const QUESTION_SECONDS = 15;
 const QUESTION_SECONDS_EXTRA_DEFAULT = 3; // +3s for every category
@@ -25,8 +25,9 @@ const QUESTION_SECONDS_EXTRA_PUZZLES = 6; // +6s for Σπαζοκεφαλιές 
 function questionSecondsFor(category) {
   return QUESTION_SECONDS + (category === "Σπαζοκεφαλιές" ? QUESTION_SECONDS_EXTRA_PUZZLES : QUESTION_SECONDS_EXTRA_DEFAULT);
 }
-const PLAYER_SECONDS = 200; // each player's own personal time bank for the whole game
-const CHOICE_SECONDS = 5;   // seconds allowed to pick a category, and separately to pick a difficulty
+const PLAYER_SECONDS = 260; // each player's own personal time bank for the whole game
+const CATEGORY_CHOICE_SECONDS = 8;   // seconds allowed to pick a category
+const DIFFICULTY_CHOICE_SECONDS = 6; // seconds allowed to pick a difficulty
 const AVATAR_COUNT = 11;
 const COLOR_DELTA = { green: 1, blue: 2, orange: 3 };
 const RESULT_PAUSE_MS = 2200;
@@ -367,7 +368,7 @@ $("startGameBtn").addEventListener("click", async () => {
       colorPickerId: turnOrder[0],
       phase: "category",
       key: uid(),
-      phaseDeadline: Date.now() + CHOICE_SECONDS * 1000,
+      phaseDeadline: Date.now() + CATEGORY_CHOICE_SECONDS * 1000,
     },
   });
 });
@@ -485,7 +486,8 @@ function computeLiveTimeLeft(pid, p, room) {
     return Math.max(0, stored - elapsed);
   }
   if ((turn.phase === "category" || turn.phase === "difficulty") && turn.colorPickerId === pid && turn.phaseDeadline) {
-    const elapsed = Math.min(CHOICE_SECONDS, Math.max(0, (Date.now() - ((turn.phaseDeadline || Date.now()) - CHOICE_SECONDS * 1000)) / 1000));
+    const windowSeconds = turn.phase === "category" ? CATEGORY_CHOICE_SECONDS : DIFFICULTY_CHOICE_SECONDS;
+    const elapsed = Math.min(windowSeconds, Math.max(0, (Date.now() - ((turn.phaseDeadline || Date.now()) - windowSeconds * 1000)) / 1000));
     return Math.max(0, stored - elapsed);
   }
   return stored;
@@ -791,14 +793,14 @@ async function chooseCategory(category, isTimeout) {
   stopLocalChoiceTimer();
   const turn = latestRoom.turn;
   const elapsedSeconds = isTimeout
-    ? CHOICE_SECONDS
-    : Math.min(CHOICE_SECONDS, Math.max(0, (Date.now() - ((turn.phaseDeadline || Date.now()) - CHOICE_SECONDS * 1000)) / 1000));
+    ? CATEGORY_CHOICE_SECONDS
+    : Math.min(CATEGORY_CHOICE_SECONDS, Math.max(0, (Date.now() - ((turn.phaseDeadline || Date.now()) - CATEGORY_CHOICE_SECONDS * 1000)) / 1000));
   const me = (latestRoom.players || {})[myPlayerId] || {};
 
   const updates = {
     "turn/phase": "difficulty",
     "turn/category": category,
-    "turn/phaseDeadline": Date.now() + CHOICE_SECONDS * 1000,
+    "turn/phaseDeadline": Date.now() + DIFFICULTY_CHOICE_SECONDS * 1000,
   };
   applyTimeDeduction(updates, myPlayerId, me.timeLeft, me.eliminated, elapsedSeconds);
   await db.ref(`rooms/${currentRoomCode}`).update(updates);
@@ -811,8 +813,8 @@ async function chooseColor(color, isTimeout) {
   const turn = latestRoom.turn;
   const category = turn.category;
   const elapsedSeconds = isTimeout
-    ? CHOICE_SECONDS
-    : Math.min(CHOICE_SECONDS, Math.max(0, (Date.now() - ((turn.phaseDeadline || Date.now()) - CHOICE_SECONDS * 1000)) / 1000));
+    ? DIFFICULTY_CHOICE_SECONDS
+    : Math.min(DIFFICULTY_CHOICE_SECONDS, Math.max(0, (Date.now() - ((turn.phaseDeadline || Date.now()) - DIFFICULTY_CHOICE_SECONDS * 1000)) / 1000));
   const me = (latestRoom.players || {})[myPlayerId] || {};
 
   // Always read the freshest queue state right before picking, so we never
@@ -854,12 +856,13 @@ function stopLocalChoiceTimer() {
 function startLocalChoiceTimer(turn, kind) {
   stopLocalChoiceTimer();
   $("choiceTimerWrap").classList.remove("hidden");
-  const deadline = turn.phaseDeadline || Date.now() + CHOICE_SECONDS * 1000;
+  const windowSeconds = kind === "category" ? CATEGORY_CHOICE_SECONDS : DIFFICULTY_CHOICE_SECONDS;
+  const deadline = turn.phaseDeadline || Date.now() + windowSeconds * 1000;
   function tick() {
     const remainMs = deadline - Date.now();
     const remainSec = Math.max(0, Math.ceil(remainMs / 1000));
     $("choiceTimerNum").textContent = remainSec;
-    $("choiceTimerFill").style.width = `${Math.max(0, (remainMs / (CHOICE_SECONDS * 1000)) * 100)}%`;
+    $("choiceTimerFill").style.width = `${Math.max(0, (remainMs / (windowSeconds * 1000)) * 100)}%`;
     if (remainMs <= 0) {
       clearInterval(localChoiceTimerHandle);
       localChoiceTimerHandle = null;
@@ -894,13 +897,14 @@ async function forceRandomPickForStalledPicker(turn) {
   const pid = room.turn.colorPickerId;
   const me = (room.players || {})[pid] || {};
   const updates = {};
-  applyTimeDeduction(updates, pid, me.timeLeft, me.eliminated, CHOICE_SECONDS);
+  const stalledWindowSeconds = turn.phase === "category" ? CATEGORY_CHOICE_SECONDS : DIFFICULTY_CHOICE_SECONDS;
+  applyTimeDeduction(updates, pid, me.timeLeft, me.eliminated, stalledWindowSeconds);
 
   if (turn.phase === "category") {
     const cats = window.QUESTION_CATEGORIES || [];
     updates["turn/phase"] = "difficulty";
     updates["turn/category"] = cats[Math.floor(Math.random() * cats.length)];
-    updates["turn/phaseDeadline"] = Date.now() + CHOICE_SECONDS * 1000;
+    updates["turn/phaseDeadline"] = Date.now() + DIFFICULTY_CHOICE_SECONDS * 1000;
     await db.ref(`rooms/${currentRoomCode}`).update(updates);
   } else {
     const colors = ["green", "blue", "orange"];
@@ -1069,7 +1073,7 @@ async function advanceTurnIfNeeded(turnKey) {
       colorPickerId: order[nextIndex],
       phase: "category",
       key: uid(),
-      phaseDeadline: Date.now() + CHOICE_SECONDS * 1000,
+      phaseDeadline: Date.now() + CATEGORY_CHOICE_SECONDS * 1000,
     },
   });
 }
