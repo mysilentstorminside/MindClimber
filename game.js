@@ -122,6 +122,7 @@ function avatarSrc(n, pose) {
 // ---------------------------------------------------------------------------
 let currentRoomCode = null;
 let isHost = false;
+let isSolo = false;
 let roomRef = null;
 let roomListenerAttached = false;
 let latestRoom = null;
@@ -162,6 +163,7 @@ $("createRoomBtn").addEventListener("click", async () => {
   $("homeError").textContent = "";
   const code = await createUniqueRoomCode();
   isHost = true;
+  isSolo = false;
   beginSetup(code);
 });
 
@@ -193,6 +195,16 @@ $("joinRoomBtn").addEventListener("click", async () => {
     return;
   }
   isHost = false;
+  isSolo = false;
+  beginSetup(code);
+});
+
+$("soloPlayBtn").addEventListener("click", async () => {
+  if (!firebaseReady) return;
+  $("homeError").textContent = "";
+  const code = await createUniqueRoomCode();
+  isHost = true;
+  isSolo = true;
   beginSetup(code);
 });
 
@@ -274,6 +286,7 @@ $("confirmSetupBtn").addEventListener("click", async () => {
       hostId: myPlayerId,
       status: "lobby",
       maxSteps: MAX_STEPS,
+      solo: isSolo,
       players: {
         [myPlayerId]: { name, avatar: selectedAvatar, step: 0, order: 0, timeLeft: PLAYER_SECONDS, eliminated: false, joinedAt: firebase.database.ServerValue.TIMESTAMP },
       },
@@ -298,8 +311,32 @@ $("confirmSetupBtn").addEventListener("click", async () => {
   }
 
   if (takenAvatarsRef) { takenAvatarsRef.off(); takenAvatarsRef = null; }
-  enterLobby();
+
+  if (isSolo) {
+    await startSoloGame();
+  } else {
+    enterLobby();
+  }
 });
+
+// Solo games skip the lobby (nobody to wait for) and skip category/
+// difficulty picking entirely — the very first question is built and
+// dropped straight into "question" phase.
+async function startSoloGame() {
+  const updates = await buildSoloTurn(myPlayerId, 0, 0);
+  await db.ref(`rooms/${currentRoomCode}`).update({
+    status: "playing",
+    startedAt: firebase.database.ServerValue.TIMESTAMP,
+    turnOrder: [myPlayerId],
+    turnIndex: 0,
+    soloCatIdx: 0,
+    [`players/${myPlayerId}/timeLeft`]: PLAYER_SECONDS,
+    [`players/${myPlayerId}/eliminated`]: false,
+    ...updates,
+  });
+  showScreen("gameScreen");
+  attachRoomListener();
+}
 
 // ===========================================================================
 // Lobby / waiting room
@@ -432,7 +469,9 @@ function buildStaircase() {
   if (peakLabel) peakLabel.textContent = MAX_STEPS;
   const wrap = $("stairLines");
   wrap.innerHTML = "";
-  const labelSteps = new Set([1, 5, 10, 15, 20]);
+  const labelSteps = new Set([1]);
+  for (let s = 5; s <= MAX_STEPS; s += 5) labelSteps.add(s);
+  if (!labelSteps.has(MAX_STEPS)) labelSteps.add(MAX_STEPS);
   for (let step = 1; step <= MAX_STEPS; step++) {
     const pos = stepPosition(step, 2); // centered reference line
     const line = document.createElement("div");
@@ -743,6 +782,49 @@ function fisherYatesShuffle(arr) {
   return a;
 }
 
+// ---------------------------------------------------------------------------
+// Solo mode: no category/difficulty picking at all. Difficulty is tied to
+// how high up the mountain the player currently is (steps 1-10 easy,
+// 11-20 medium, 21-30 hard) — so if a wrong answer knocks them back down,
+// the next questions naturally get easier again. Category just cycles
+// through every category in a fixed rotation, one per question, for
+// variety, independent of the difficulty tier.
+// ---------------------------------------------------------------------------
+function soloColorForStep(step) {
+  if (step < 10) return "green";
+  if (step < 20) return "blue";
+  return "orange";
+}
+
+async function buildQuestionTurnUpdates(category, color) {
+  // Always read the freshest queue state right before picking, so we never
+  // draw against a stale position even if the local cache lagged behind.
+  const snap = await db.ref(`rooms/${currentRoomCode}/shuffledQueues/${category}/${color}`).once("value");
+  const queueState = snap.val();
+  const { item: q, newQueueState } = pickFromShuffledQueue(category, color, queueState);
+  return {
+    [`shuffledQueues/${category}/${color}`]: newQueueState,
+    "turn/phase": "question",
+    "turn/category": category,
+    "turn/color": color,
+    "turn/question": { text: q.text, options: q.options, correct: q.correct, img: q.img || null },
+    "turn/deadline": Date.now() + questionSecondsFor(category) * 1000,
+    "turn/answers": {},
+  };
+}
+
+async function buildSoloTurn(pid, step, catIdx) {
+  const cats = window.QUESTION_CATEGORIES || [];
+  const category = cats[catIdx % cats.length];
+  const color = soloColorForStep(step);
+  const updates = await buildQuestionTurnUpdates(category, color);
+  updates["soloCatIdx"] = (catIdx + 1) % cats.length;
+  updates["turn/colorPickerId"] = pid;
+  updates["turn/phase"] = "question";
+  updates["turn/key"] = uid();
+  return updates;
+}
+
 // Draws the next question from a per-(category,color) shuffled queue. The
 // queue is a full random permutation of every index in that pool; we walk
 // through it in order, so every question is served exactly once before the
@@ -817,20 +899,7 @@ async function chooseColor(color, isTimeout) {
     : Math.min(DIFFICULTY_CHOICE_SECONDS, Math.max(0, (Date.now() - ((turn.phaseDeadline || Date.now()) - DIFFICULTY_CHOICE_SECONDS * 1000)) / 1000));
   const me = (latestRoom.players || {})[myPlayerId] || {};
 
-  // Always read the freshest queue state right before picking, so we never
-  // draw against a stale position even if the local cache lagged behind.
-  const snap = await db.ref(`rooms/${currentRoomCode}/shuffledQueues/${category}/${color}`).once("value");
-  const queueState = snap.val();
-  const { item: q, newQueueState } = pickFromShuffledQueue(category, color, queueState);
-
-  const updates = {
-    [`shuffledQueues/${category}/${color}`]: newQueueState,
-    "turn/phase": "question",
-    "turn/color": color,
-    "turn/question": { text: q.text, options: q.options, correct: q.correct, img: q.img || null },
-    "turn/deadline": Date.now() + questionSecondsFor(category) * 1000,
-    "turn/answers": {},
-  };
+  const updates = await buildQuestionTurnUpdates(category, color);
   applyTimeDeduction(updates, myPlayerId, me.timeLeft, me.eliminated, elapsedSeconds);
   await db.ref(`rooms/${currentRoomCode}`).update(updates);
 }
@@ -1067,6 +1136,16 @@ async function advanceTurnIfNeeded(turnKey) {
       break;
     }
   }
+
+  if (room.solo) {
+    const pid = order[nextIndex];
+    const step = (players[pid] || {}).step || 0;
+    const catIdx = room.soloCatIdx || 0;
+    const updates = await buildSoloTurn(pid, step, catIdx);
+    await db.ref(`rooms/${currentRoomCode}`).update({ turnIndex: nextIndex, ...updates });
+    return;
+  }
+
   await db.ref(`rooms/${currentRoomCode}`).update({
     turnIndex: nextIndex,
     turn: {
@@ -1155,6 +1234,25 @@ $("playAgainBtn").addEventListener("click", async () => {
   Object.entries(players).forEach(([pid, p]) => {
     resetPlayers[pid] = { ...p, step: 0, finishedAt: null };
   });
+  resultScheduledForKey = null;
+  advancedForKey = null;
+
+  if (latestRoom.solo) {
+    const pid = Object.keys(players)[0];
+    resetPlayers[pid] = { ...resetPlayers[pid], timeLeft: PLAYER_SECONDS, eliminated: false };
+    const soloUpdates = await buildSoloTurn(pid, 0, 0);
+    await db.ref(`rooms/${currentRoomCode}`).update({
+      status: "playing",
+      startedAt: firebase.database.ServerValue.TIMESTAMP,
+      players: resetPlayers,
+      turnOrder: [pid],
+      turnIndex: 0,
+      winnerId: null,
+      ...soloUpdates,
+    });
+    return;
+  }
+
   await db.ref(`rooms/${currentRoomCode}`).update({
     status: "lobby",
     players: resetPlayers,
@@ -1164,8 +1262,6 @@ $("playAgainBtn").addEventListener("click", async () => {
     startedAt: null,
     winnerId: null,
   });
-  resultScheduledForKey = null;
-  advancedForKey = null;
 });
 
 $("backHomeBtn").addEventListener("click", async () => {
