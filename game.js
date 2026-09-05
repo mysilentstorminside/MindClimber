@@ -25,7 +25,8 @@ const QUESTION_SECONDS_EXTRA_PUZZLES = 6; // +6s for Σπαζοκεφαλιές 
 function questionSecondsFor(category) {
   return QUESTION_SECONDS + (category === "Σπαζοκεφαλιές" ? QUESTION_SECONDS_EXTRA_PUZZLES : QUESTION_SECONDS_EXTRA_DEFAULT);
 }
-const MOUNTAIN_SECONDS = 270;
+const PLAYER_SECONDS = 200; // each player's own personal time bank for the whole game
+const CHOICE_SECONDS = 5;   // seconds allowed to pick a category, and separately to pick a difficulty
 const AVATAR_COUNT = 11;
 const COLOR_DELTA = { green: 1, blue: 2, orange: 3 };
 const RESULT_PAUSE_MS = 2200;
@@ -273,7 +274,7 @@ $("confirmSetupBtn").addEventListener("click", async () => {
       status: "lobby",
       maxSteps: MAX_STEPS,
       players: {
-        [myPlayerId]: { name, avatar: selectedAvatar, step: 0, order: 0, joinedAt: firebase.database.ServerValue.TIMESTAMP },
+        [myPlayerId]: { name, avatar: selectedAvatar, step: 0, order: 0, timeLeft: PLAYER_SECONDS, eliminated: false, joinedAt: firebase.database.ServerValue.TIMESTAMP },
       },
     });
   } else {
@@ -289,6 +290,8 @@ $("confirmSetupBtn").addEventListener("click", async () => {
       avatar: selectedAvatar,
       step: 0,
       order,
+      timeLeft: PLAYER_SECONDS,
+      eliminated: false,
       joinedAt: firebase.database.ServerValue.TIMESTAMP,
     });
   }
@@ -345,16 +348,26 @@ $("startGameBtn").addEventListener("click", async () => {
   // brand new room gets fresh (empty) queues, built lazily on first pick.
   const shuffledQueues = latestRoom.shuffledQueues || {};
 
+  // Every game (including rematches) starts each player fresh with their
+  // own full personal time bank — nobody carries over a depleted clock
+  // from a previous match.
+  const resetPlayers = {};
+  Object.entries(players).forEach(([pid, p]) => {
+    resetPlayers[pid] = { ...p, timeLeft: PLAYER_SECONDS, eliminated: false };
+  });
+
   await db.ref(`rooms/${currentRoomCode}`).update({
     status: "playing",
     startedAt: firebase.database.ServerValue.TIMESTAMP,
     turnOrder,
     turnIndex: 0,
     shuffledQueues,
+    players: resetPlayers,
     turn: {
       colorPickerId: turnOrder[0],
       phase: "category",
       key: uid(),
+      phaseDeadline: Date.now() + CHOICE_SECONDS * 1000,
     },
   });
 });
@@ -448,18 +461,65 @@ function stepPosition(step, orderIndex) {
   return { bottom, left, size };
 }
 
+function formatTimeLeft(seconds) {
+  const t = Math.max(0, Math.round(seconds ?? PLAYER_SECONDS));
+  const mm = Math.floor(t / 60);
+  const ss = String(t % 60).padStart(2, "0");
+  return `⏱ ${mm}:${ss}`;
+}
+
+// Estimates a player's remaining personal time RIGHT NOW, between Firebase
+// writes: their stored timeLeft only updates at the end of each action
+// (picking a category/difficulty, or answering), so while that action is
+// still in progress we subtract the time elapsed so far locally, purely
+// for a smooth-looking live countdown. The database is always the source
+// of truth once the action actually completes.
+function computeLiveTimeLeft(pid, p, room) {
+  if (!p || p.eliminated) return 0;
+  const stored = p.timeLeft ?? PLAYER_SECONDS;
+  const turn = room.turn || {};
+  if (turn.phase === "question" && turn.colorPickerId != null && turn.deadline && !(turn.answers && turn.answers[pid])) {
+    const totalSeconds = questionSecondsFor(turn.category);
+    const questionStart = turn.deadline - totalSeconds * 1000;
+    const elapsed = Math.min(totalSeconds, Math.max(0, (Date.now() - questionStart) / 1000));
+    return Math.max(0, stored - elapsed);
+  }
+  if ((turn.phase === "category" || turn.phase === "difficulty") && turn.colorPickerId === pid && turn.phaseDeadline) {
+    const elapsed = Math.min(CHOICE_SECONDS, Math.max(0, (Date.now() - ((turn.phaseDeadline || Date.now()) - CHOICE_SECONDS * 1000)) / 1000));
+    return Math.max(0, stored - elapsed);
+  }
+  return stored;
+}
+
+function renderPlayerTimers(room) {
+  const players = room.players || {};
+  Object.keys(players).forEach((pid) => {
+    const badge = document.querySelector(`.playerToken[data-pid="${pid}"] .tokenTimer`);
+    if (!badge) return;
+    badge.textContent = formatTimeLeft(computeLiveTimeLeft(pid, players[pid], room));
+  });
+}
+
 function renderGame(room) {
   buildStaircase();
   $("stepInfo").textContent = "";
   const players = room.players || {};
   const order = Object.entries(players).sort((a, b) => a[1].order - b[1].order);
 
-  // Single flag at the peak.
-  $("peakFlags").textContent = "🚩";
+  // One flag per player, each positioned directly above that player's own
+  // horizontal lane (same left offset stepPosition gives their token) so
+  // every player sees their own finish flag right where they'll stand.
+  const peakWrap = $("peakFlags");
+  peakWrap.innerHTML = "";
+  order.forEach((_, idx) => {
+    const pos = stepPosition(MAX_STEPS, idx);
+    const flag = document.createElement("span");
+    flag.className = "peakFlag";
+    flag.style.left = pos.left + "%";
+    flag.textContent = "🚩";
+    peakWrap.appendChild(flag);
+  });
   $("peakMarker").style.bottom = `${STEP_TOP_BOTTOM + PEAK_BOTTOM_OFFSET}%`;
-
-  // Mountain timer
-  renderMountainTimer(room);
 
   // Player tokens
   const tokenWrap = $("playerTokens");
@@ -470,12 +530,14 @@ function renderGame(room) {
     const pose = "front";
     const el = document.createElement("div");
     const step = p.step || 0;
-    el.className = "playerToken" + (turn.colorPickerId === pid ? " active-turn" : "") + (step <= 2 ? " lowStep" : "");
+    const eliminated = !!p.eliminated;
+    el.className = "playerToken" + (turn.colorPickerId === pid ? " active-turn" : "") + (step <= 2 ? " lowStep" : "") + (eliminated ? " eliminated" : "");
+    el.dataset.pid = pid;
     el.style.bottom = pos.bottom + "%";
     el.style.left = pos.left + "%";
     el.style.width = pos.size + "px";
     el.style.height = pos.size + "px";
-    el.innerHTML = `<div class="tokenAvatarWrap"><img src="${avatarSrc(p.avatar, pose)}" alt=""></div><span class="tokenName">${escapeHtml(p.name)}</span><span class="tokenStep">${step}/${MAX_STEPS}</span>`;
+    el.innerHTML = `<span class="tokenTimer">${formatTimeLeft(p.timeLeft)}</span><div class="tokenAvatarWrap"><img src="${avatarSrc(p.avatar, pose)}" alt=""></div><span class="tokenName">${escapeHtml(p.name)}</span><span class="tokenStep">${step}/${MAX_STEPS}</span>`;
     tokenWrap.appendChild(el);
   });
 
@@ -502,6 +564,7 @@ function renderGame(room) {
     $("qTimerWrap").classList.add("hidden");
     $("allAnswersStatus").classList.add("hidden");
     $("waitingNote").classList.toggle("hidden", isColorPicker);
+    if (isColorPicker) startLocalChoiceTimer(turn, "category"); else stopLocalChoiceTimer();
   } else if (turn.phase === "difficulty") {
     stopLocalQuestionTimer();
     $("categoryChoiceRow").classList.add("hidden");
@@ -515,7 +578,9 @@ function renderGame(room) {
     $("allAnswersStatus").classList.add("hidden");
     $("waitingNote").classList.toggle("hidden", isColorPicker);
     ["greenButton", "blueButton", "orangeButton"].forEach((id) => ($(id).disabled = !isColorPicker));
+    if (isColorPicker) startLocalChoiceTimer(turn, "difficulty"); else stopLocalChoiceTimer();
   } else if (turn.phase === "question" || turn.phase === "result") {
+    stopLocalChoiceTimer();
     $("categoryChoiceRow").classList.add("hidden");
     const diffLabel = { green: "Εύκολο", blue: "Μέτριο", orange: "Δύσκολο" }[turn.color] || "";
     $("selectedCategoryLabel").textContent = `${turn.category || ""} · ${diffLabel}`;
@@ -528,8 +593,11 @@ function renderGame(room) {
     renderQuestion(room, turn);
   }
 
-  // Only the player who picked the color drives turn progression / timeouts.
-  if (isColorPicker) checkTurnProgress(room);
+  // Turn progression / timeouts: the active color-picker drives normal
+  // advancement, but the stalled-picker safety net inside checkTurnProgress
+  // needs to run on everyone's client, since it exists precisely for the
+  // case where the picker's own device is the one that's unresponsive.
+  checkTurnProgress(room);
 }
 
 function buildCategoryButtons(enabled) {
@@ -550,23 +618,14 @@ function buildCategoryButtons(enabled) {
   });
 }
 
-function renderMountainTimer(room) {
-  if (!room.startedAt) return;
-  const now = Date.now();
-  const elapsed = Math.floor((now - room.startedAt) / 1000);
-  const remaining = Math.max(0, MOUNTAIN_SECONDS - elapsed);
-  const mm = Math.floor(remaining / 60);
-  const ss = String(remaining % 60).padStart(2, "0");
-  $("mountainTimer").textContent = `⏱ ${mm}:${ss}`;
 
-  if (isHost && remaining <= 0 && room.status === "playing") {
-    finishGame(room, null);
-  }
-}
 setInterval(() => {
   if (latestRoom && latestRoom.status === "playing") {
-    renderMountainTimer(latestRoom);
-    if (latestRoom.turn && latestRoom.turn.colorPickerId === myPlayerId) checkTurnProgress(latestRoom);
+    renderPlayerTimers(latestRoom);
+    checkTurnProgress(latestRoom);
+    if (latestRoom.turn && latestRoom.turn.phase === "result") {
+      advanceTurnIfNeeded(latestRoom.turn.key);
+    }
   }
 }, 1000);
 
@@ -624,7 +683,10 @@ function renderAnswersStatus(room, turn) {
     const chip = document.createElement("div");
     let stateClass = "waiting";
     let icon = "…";
-    if (turn.phase === "result" && ans) {
+    if (p.eliminated) {
+      stateClass = "eliminated-chip";
+      icon = "⏱ εκτός";
+    } else if (turn.phase === "result" && ans) {
       stateClass = ans.correct ? "correct" : "wrong";
       icon = ans.correct ? "✓" : "✗";
     } else if (ans) {
@@ -712,19 +774,46 @@ function pickFromShuffledQueue(category, color, queueState) {
   };
 }
 
-async function chooseCategory(category) {
-  if (!latestRoom || !latestRoom.turn || latestRoom.turn.colorPickerId !== myPlayerId) return;
-  if (latestRoom.turn.phase !== "category") return;
-  await db.ref(`rooms/${currentRoomCode}/turn`).update({
-    phase: "difficulty",
-    category,
-  });
+// Deducts elapsed seconds from a player's own personal time bank and
+// returns whether that push crossed them into elimination. `elapsedSeconds`
+// is already clamped by the caller to the relevant window (5s for a
+// category/difficulty pick, or the question's own time budget).
+function applyTimeDeduction(updates, pid, currentTimeLeft, alreadyEliminated, elapsedSeconds) {
+  const newTimeLeft = Math.max(0, (currentTimeLeft ?? PLAYER_SECONDS) - elapsedSeconds);
+  updates[`players/${pid}/timeLeft`] = newTimeLeft;
+  if (newTimeLeft <= 0 && !alreadyEliminated) updates[`players/${pid}/eliminated`] = true;
+  return newTimeLeft;
 }
 
-async function chooseColor(color) {
+async function chooseCategory(category, isTimeout) {
+  if (!latestRoom || !latestRoom.turn || latestRoom.turn.colorPickerId !== myPlayerId) return;
+  if (latestRoom.turn.phase !== "category") return;
+  stopLocalChoiceTimer();
+  const turn = latestRoom.turn;
+  const elapsedSeconds = isTimeout
+    ? CHOICE_SECONDS
+    : Math.min(CHOICE_SECONDS, Math.max(0, (Date.now() - ((turn.phaseDeadline || Date.now()) - CHOICE_SECONDS * 1000)) / 1000));
+  const me = (latestRoom.players || {})[myPlayerId] || {};
+
+  const updates = {
+    "turn/phase": "difficulty",
+    "turn/category": category,
+    "turn/phaseDeadline": Date.now() + CHOICE_SECONDS * 1000,
+  };
+  applyTimeDeduction(updates, myPlayerId, me.timeLeft, me.eliminated, elapsedSeconds);
+  await db.ref(`rooms/${currentRoomCode}`).update(updates);
+}
+
+async function chooseColor(color, isTimeout) {
   if (!latestRoom || !latestRoom.turn || latestRoom.turn.colorPickerId !== myPlayerId) return;
   if (latestRoom.turn.phase !== "difficulty") return;
-  const category = latestRoom.turn.category;
+  stopLocalChoiceTimer();
+  const turn = latestRoom.turn;
+  const category = turn.category;
+  const elapsedSeconds = isTimeout
+    ? CHOICE_SECONDS
+    : Math.min(CHOICE_SECONDS, Math.max(0, (Date.now() - ((turn.phaseDeadline || Date.now()) - CHOICE_SECONDS * 1000)) / 1000));
+  const me = (latestRoom.players || {})[myPlayerId] || {};
 
   // Always read the freshest queue state right before picking, so we never
   // draw against a stale position even if the local cache lagged behind.
@@ -732,18 +821,102 @@ async function chooseColor(color) {
   const queueState = snap.val();
   const { item: q, newQueueState } = pickFromShuffledQueue(category, color, queueState);
 
-  await db.ref(`rooms/${currentRoomCode}`).update({
+  const updates = {
     [`shuffledQueues/${category}/${color}`]: newQueueState,
     "turn/phase": "question",
     "turn/color": color,
     "turn/question": { text: q.text, options: q.options, correct: q.correct, img: q.img || null },
     "turn/deadline": Date.now() + questionSecondsFor(category) * 1000,
     "turn/answers": {},
-  });
+  };
+  applyTimeDeduction(updates, myPlayerId, me.timeLeft, me.eliminated, elapsedSeconds);
+  await db.ref(`rooms/${currentRoomCode}`).update(updates);
 }
 $("greenButton").addEventListener("click", () => chooseColor("green"));
 $("blueButton").addEventListener("click", () => chooseColor("blue"));
 $("orangeButton").addEventListener("click", () => chooseColor("orange"));
+
+// ---------------------------------------------------------------------------
+// Local 5-second countdown for picking a category, and separately for
+// picking a difficulty. Only the active color-picker's own client runs
+// this — if it expires with no choice made, that same client auto-picks
+// randomly on the picker's behalf (and the full 5s is charged to their
+// personal time bank, same as if they'd used the whole window deciding).
+// ---------------------------------------------------------------------------
+let localChoiceTimerHandle = null;
+function stopLocalChoiceTimer() {
+  if (localChoiceTimerHandle) {
+    clearInterval(localChoiceTimerHandle);
+    localChoiceTimerHandle = null;
+  }
+  $("choiceTimerWrap").classList.add("hidden");
+}
+function startLocalChoiceTimer(turn, kind) {
+  stopLocalChoiceTimer();
+  $("choiceTimerWrap").classList.remove("hidden");
+  const deadline = turn.phaseDeadline || Date.now() + CHOICE_SECONDS * 1000;
+  function tick() {
+    const remainMs = deadline - Date.now();
+    const remainSec = Math.max(0, Math.ceil(remainMs / 1000));
+    $("choiceTimerNum").textContent = remainSec;
+    $("choiceTimerFill").style.width = `${Math.max(0, (remainMs / (CHOICE_SECONDS * 1000)) * 100)}%`;
+    if (remainMs <= 0) {
+      clearInterval(localChoiceTimerHandle);
+      localChoiceTimerHandle = null;
+      if (kind === "category") {
+        const cats = window.QUESTION_CATEGORIES || [];
+        chooseCategory(cats[Math.floor(Math.random() * cats.length)], true);
+      } else {
+        const colors = ["green", "blue", "orange"];
+        chooseColor(colors[Math.floor(Math.random() * colors.length)], true);
+      }
+      return;
+    }
+  }
+  tick();
+  localChoiceTimerHandle = setInterval(tick, 200);
+}
+
+// Safety net: if the active picker's own device stalled (tab closed,
+// connection dropped) and never fired its own local auto-pick, the host's
+// client force-picks randomly on their behalf once the deadline has
+// clearly passed — mirroring the same pattern used for a stalled question
+// answer. Harmless no-op if the normal path already handled it.
+let forcedPickForKey = null;
+async function forceRandomPickForStalledPicker(turn) {
+  const marker = turn.key + ":" + turn.phase;
+  if (forcedPickForKey === marker) return;
+  forcedPickForKey = marker;
+  const snap = await db.ref(`rooms/${currentRoomCode}`).once("value");
+  const room = snap.val();
+  if (!room || !room.turn || room.turn.key !== turn.key || room.turn.phase !== turn.phase) return;
+
+  const pid = room.turn.colorPickerId;
+  const me = (room.players || {})[pid] || {};
+  const updates = {};
+  applyTimeDeduction(updates, pid, me.timeLeft, me.eliminated, CHOICE_SECONDS);
+
+  if (turn.phase === "category") {
+    const cats = window.QUESTION_CATEGORIES || [];
+    updates["turn/phase"] = "difficulty";
+    updates["turn/category"] = cats[Math.floor(Math.random() * cats.length)];
+    updates["turn/phaseDeadline"] = Date.now() + CHOICE_SECONDS * 1000;
+    await db.ref(`rooms/${currentRoomCode}`).update(updates);
+  } else {
+    const colors = ["green", "blue", "orange"];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const category = room.turn.category;
+    const qSnap = await db.ref(`rooms/${currentRoomCode}/shuffledQueues/${category}/${color}`).once("value");
+    const { item: q, newQueueState } = pickFromShuffledQueue(category, color, qSnap.val());
+    updates[`shuffledQueues/${category}/${color}`] = newQueueState;
+    updates["turn/phase"] = "question";
+    updates["turn/color"] = color;
+    updates["turn/question"] = { text: q.text, options: q.options, correct: q.correct, img: q.img || null };
+    updates["turn/deadline"] = Date.now() + questionSecondsFor(category) * 1000;
+    updates["turn/answers"] = {};
+    await db.ref(`rooms/${currentRoomCode}`).update(updates);
+  }
+}
 
 $("answerRectangle").addEventListener("click", (e) => {
   const opt = e.target.closest(".answerOption");
@@ -776,6 +949,16 @@ async function submitAnswer(pickedOption) {
     [`players/${myPlayerId}/step`]: newStep,
     [`turn/answers/${myPlayerId}`]: { option: pickedOption, correct },
   };
+
+  // Only the time THIS player actually took to answer comes off their own
+  // personal bank — not the full shared round length, so answering quickly
+  // always preserves more of your own time regardless of how long anyone
+  // else in the room takes.
+  const totalSeconds = questionSecondsFor(turn.category);
+  const questionStart = turn.deadline - totalSeconds * 1000;
+  const elapsedSeconds = Math.min(totalSeconds, Math.max(0, (Date.now() - questionStart) / 1000));
+  applyTimeDeduction(updates, myPlayerId, me.timeLeft, me.eliminated, elapsedSeconds);
+
   // Record exactly when this player reached the summit (server clock, so
   // it's fair/comparable across everyone's devices) — this is what lets
   // rankPlayers() correctly decide "who got there first" if more than one
@@ -806,28 +989,42 @@ async function checkTurnProgress(room) {
 
   if (turn.phase === "question") {
     const players = room.players || {};
-    const totalPlayers = Object.keys(players).length;
+    // Eliminated players are done for the rest of the game — the round
+    // never waits on them, and they don't get penalized further.
+    const activePids = Object.keys(players).filter((pid) => !players[pid].eliminated);
     const answers = turn.answers || {};
-    const answeredCount = Object.keys(answers).length;
+    const answeredCount = activePids.filter((pid) => answers[pid]).length;
     const timedOut = Date.now() >= turn.deadline + 1200;
 
-    if (answeredCount >= totalPlayers || timedOut) {
-      // Fill in anyone who never answered (e.g. a stalled tab) as a timeout/wrong.
+    if (answeredCount >= activePids.length || timedOut) {
+      // Fill in anyone still-active who never answered (e.g. a stalled
+      // tab) as a timeout/wrong, and charge them the full question time
+      // since they used the whole window without responding.
       const updates = {};
-      Object.keys(players).forEach((pid) => {
+      const totalSeconds = questionSecondsFor(turn.category);
+      activePids.forEach((pid) => {
         if (!answers[pid]) {
           const delta = -COLOR_DELTA[turn.color];
           const newStep = Math.max(0, Math.min(MAX_STEPS, (players[pid].step || 0) + delta));
           updates[`players/${pid}/step`] = newStep;
           updates[`turn/answers/${pid}`] = { option: null, correct: false };
+          applyTimeDeduction(updates, pid, players[pid].timeLeft, players[pid].eliminated, totalSeconds);
         }
       });
       updates["turn/phase"] = "result";
+      updates["turn/resultAt"] = Date.now();
       if (Object.keys(updates).length) await db.ref(`rooms/${currentRoomCode}`).update(updates);
     }
   } else if (turn.phase === "result" && resultScheduledForKey !== turn.key) {
     resultScheduledForKey = turn.key;
     setTimeout(() => advanceTurnIfNeeded(turn.key), RESULT_PAUSE_MS);
+  }
+
+  // Safety net for a stalled category/difficulty picker — runs on every
+  // client (not just the picker's own), since if the picker's device is
+  // the one that stalled, their own client obviously can't self-correct.
+  if ((turn.phase === "category" || turn.phase === "difficulty") && turn.phaseDeadline && Date.now() >= turn.phaseDeadline + 2000) {
+    forceRandomPickForStalledPicker(turn);
   }
 }
 
@@ -836,18 +1033,43 @@ async function advanceTurnIfNeeded(turnKey) {
   const snap = await db.ref(`rooms/${currentRoomCode}`).once("value");
   const room = snap.val();
   if (!room || room.status !== "playing") return;
-  if (!room.turn || room.turn.key !== turnKey || room.turn.colorPickerId !== myPlayerId) return;
+  if (!room.turn || room.turn.key !== turnKey) return;
+  // Normally only the picker whose turn this was advances it (avoids
+  // duplicate writes). But if that specific player became eliminated and
+  // then left, nobody else would ever satisfy that check — so after a
+  // generous extra delay, let the host's client take over as a fallback.
+  const isOwner = room.turn.colorPickerId === myPlayerId;
+  const isFallbackHost = isHost && Date.now() >= (room.turn.resultAt || 0) + RESULT_PAUSE_MS * 3;
+  if (!isOwner && !isFallbackHost) return;
   advancedForKey = turnKey;
 
+  const players = room.players || {};
   const order = room.turnOrder || [];
+
+  // If every player has run out of personal time, the game is over even
+  // though nobody reached the summit.
+  const anyActive = order.some((pid) => !(players[pid] || {}).eliminated);
+  if (!anyActive) {
+    await finishGame(room, null);
+    return;
+  }
+
   const currentIdx = order.indexOf(room.turn.colorPickerId);
-  const nextIndex = (currentIdx + 1) % order.length;
+  let nextIndex = currentIdx;
+  for (let i = 1; i <= order.length; i++) {
+    const cand = (currentIdx + i) % order.length;
+    if (!(players[order[cand]] || {}).eliminated) {
+      nextIndex = cand;
+      break;
+    }
+  }
   await db.ref(`rooms/${currentRoomCode}`).update({
     turnIndex: nextIndex,
     turn: {
       colorPickerId: order[nextIndex],
       phase: "category",
       key: uid(),
+      phaseDeadline: Date.now() + CHOICE_SECONDS * 1000,
     },
   });
 }

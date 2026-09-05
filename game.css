@@ -271,30 +271,34 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 #peakMarker {
   position: absolute;
   bottom: 92%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  width: 100%;
   text-align: center;
   z-index: 2;
-  max-width: 92%;
   transition: bottom 0.4s ease;
 }
 #peakFlags {
-  display: block;
+  position: relative;
+  width: 100%;
+  height: 26px;
+  margin-top: 2px;
+}
+.peakFlag {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
   font-size: 1.3rem;
   line-height: 1;
-  letter-spacing: -2px;
   filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
-  white-space: nowrap;
 }
 #peakStepLabel {
-  display: block;
+  display: inline-block;
   font-size: 0.55rem;
   font-weight: 800;
   color: #37474f;
   background: rgba(255,255,255,0.8);
   border-radius: 6px;
   padding: 0 4px;
-  margin-top: 1px;
 }
 
 #groundMarker {
@@ -309,19 +313,6 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
   border-radius: 8px;
   padding: 2px 10px;
   z-index: 2;
-}
-
-#mountainTimer {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  background: rgba(0,0,0,0.55);
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  z-index: 5;
 }
 
 #stepInfo {
@@ -360,8 +351,20 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  order: 1;
 }
 .playerToken img { max-width: 100%; max-height: 100%; width: auto; height: 100%; object-fit: contain; }
+.playerToken .tokenTimer {
+  background: rgba(0,0,0,0.7);
+  color: #ffe082;
+  font-size: 0.55rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  order: 0;
+}
 .playerToken .tokenName {
   background: rgba(0,0,0,0.65);
   color: #fff;
@@ -371,6 +374,7 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
   border-radius: 5px;
   margin-top: 2px;
   white-space: nowrap;
+  order: 2;
 }
 .playerToken .tokenStep {
   background: #ffd54f;
@@ -383,9 +387,17 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
   white-space: nowrap;
   box-shadow: 0 2px 4px rgba(0,0,0,0.35);
   border: 1px solid rgba(0,0,0,0.15);
+  order: 3;
 }
 .playerToken.active-turn .tokenAvatarWrap { border-color: #ffd54f; box-shadow: 0 0 0 2px rgba(255,213,79,0.6), 0 2px 4px rgba(0,0,0,0.3); }
-.playerToken.lowStep { flex-direction: column-reverse; }
+/* Low steps: keep the timer on top, but also lift the step badge above the
+   avatar (instead of below it) so neither badge gets hidden behind the
+   bottom question panel near the start of the climb. */
+.playerToken.lowStep .tokenStep { order: 1; margin-top: 0; margin-bottom: 2px; }
+.playerToken.lowStep .tokenAvatarWrap { order: 2; }
+.playerToken.lowStep .tokenName { order: 3; }
+.playerToken.eliminated { opacity: 0.42; filter: grayscale(0.75); }
+.playerToken.eliminated .tokenTimer { background: rgba(120,20,20,0.75); color: #fff; }
 
 #turnBanner {
   position: absolute;
@@ -422,6 +434,11 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 #qTimerBar { flex: 1; height: 10px; background: #e0e0e0; border-radius: 6px; overflow: hidden; }
 #qTimerFill { height: 100%; width: 100%; background: linear-gradient(90deg,#4CAF50,#FFC107,#F44336); transition: width 1s linear; }
 #qTimerNum { font-weight: 800; width: 26px; text-align: center; font-size: 0.95rem; }
+
+#choiceTimerWrap { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+#choiceTimerBar { flex: 1; height: 8px; background: #e0e0e0; border-radius: 6px; overflow: hidden; }
+#choiceTimerFill { height: 100%; width: 100%; background: linear-gradient(90deg,#42A5F5,#FFC107,#F44336); transition: width 0.2s linear; }
+#choiceTimerNum { font-weight: 800; width: 22px; text-align: center; font-size: 0.85rem; }
 
 #colorChoiceRow { display: flex; gap: 8px; margin-bottom: 10px; }
 #categoryChoiceRow {
@@ -534,6 +551,7 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 .answerStatusChip.waiting { color: #90a4ae; }
 .answerStatusChip.correct { background: #c8e6c9; color: #2e7d32; }
 .answerStatusChip.wrong { background: #ffcdd2; color: #c62828; }
+.answerStatusChip.eliminated-chip { background: #eceff1; color: #78909c; opacity: 0.7; }
 
 /* ===================== RESULTS ===================== */
 .winnerAvatar { width: 90px; height: 90px; border-radius: 50%; margin: 6px auto 10px; display: block; background: #f4f7f9; object-fit: cover; object-position: top center; }

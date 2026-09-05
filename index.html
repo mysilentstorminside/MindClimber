@@ -72,11 +72,13 @@
 
 <!-- Screen 4: Game -->
 <div id="gameScreen" class="screen">
-  <div id="mountainTimer">⏱ 4:30</div>
   <div id="stepInfo"></div>
 
   <div id="climbZone">
-    <div id="peakMarker"><span id="peakFlags">🚩</span><span id="peakStepLabel">20</span></div>
+    <div id="peakMarker">
+      <span id="peakStepLabel">20</span>
+      <div id="peakFlags"></div>
+    </div>
     <div id="stairLines"></div>
     <div id="playerTokens"></div>
     <div id="groundMarker">ΕΚΚΙΝΗΣΗ</div>
@@ -91,6 +93,11 @@
     <div id="qTimerWrap">
       <div id="qTimerBar"><div id="qTimerFill"></div></div>
       <div id="qTimerNum">15</div>
+    </div>
+
+    <div id="choiceTimerWrap" class="hidden">
+      <div id="choiceTimerBar"><div id="choiceTimerFill"></div></div>
+      <div id="choiceTimerNum">5</div>
     </div>
 
     <div id="categoryChoiceRow" class="hidden"></div>
