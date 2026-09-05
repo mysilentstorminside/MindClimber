@@ -7,7 +7,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="game.css?v=mp1">
+<script>
+  // Always-fresh cache-busting: every page load uses the current timestamp
+  // as the version, so the browser never serves a stale cached copy of
+  // game.css / questions_data.js / game.js again — no need to remember to
+  // bump a version number by hand on future updates.
+  window.__mcv = Date.now();
+  document.write('<link rel="stylesheet" href="game.css?v=' + window.__mcv + '">');
+</script>
 
 <!-- Firebase (Realtime Database) - needed so players on different phones see the same game state -->
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
@@ -144,7 +151,9 @@
   </div>
 </div>
 
-<script src="questions_data.js?v=mp1"></script>
-<script src="game.js?v=mp1"></script>
+<script>
+  document.write('<script src="questions_data.js?v=' + window.__mcv + '"><\/script>');
+  document.write('<script src="game.js?v=' + window.__mcv + '"><\/script>');
+</script>
 </body>
 </html>
