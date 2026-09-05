@@ -1055,6 +1055,7 @@ async function submitAnswer(pickedOption) {
 // ---------------------------------------------------------------------------
 let resultScheduledForKey = null;
 let advancedForKey = null;
+let advanceInFlightForKey = null;
 
 async function checkTurnProgress(room) {
   const turn = room.turn;
@@ -1103,58 +1104,75 @@ async function checkTurnProgress(room) {
 
 async function advanceTurnIfNeeded(turnKey) {
   if (advancedForKey === turnKey) return;
-  const snap = await db.ref(`rooms/${currentRoomCode}`).once("value");
-  const room = snap.val();
-  if (!room || room.status !== "playing") return;
-  if (!room.turn || room.turn.key !== turnKey) return;
-  // Normally only the picker whose turn this was advances it (avoids
-  // duplicate writes). But if that specific player became eliminated and
-  // then left, nobody else would ever satisfy that check — so after a
-  // generous extra delay, let the host's client take over as a fallback.
-  const isOwner = room.turn.colorPickerId === myPlayerId;
-  const isFallbackHost = isHost && Date.now() >= (room.turn.resultAt || 0) + RESULT_PAUSE_MS * 3;
-  if (!isOwner && !isFallbackHost) return;
-  advancedForKey = turnKey;
+  // Guard against this same client calling this function again for the
+  // same turn while a previous call is still mid-flight (solo mode calls
+  // this very frequently in quick succession — once right after answering,
+  // and again every second from the periodic safety-net check). Without
+  // this, two overlapping calls could both read the same shuffled-queue
+  // position before either write commits: one write wins, and the other
+  // question gets silently consumed without ever being shown — which is
+  // exactly what caused questions to repeat sooner than they should.
+  if (advanceInFlightForKey === turnKey) return;
+  advanceInFlightForKey = turnKey;
+  try {
+    const snap = await db.ref(`rooms/${currentRoomCode}`).once("value");
+    const room = snap.val();
+    if (!room || room.status !== "playing") return;
+    if (!room.turn || room.turn.key !== turnKey) return;
+    // Normally only the picker whose turn this was advances it (avoids
+    // duplicate writes). But if that specific player became eliminated and
+    // then left, nobody else would ever satisfy that check — so after a
+    // generous extra delay, let the host's client take over as a fallback.
+    const isOwner = room.turn.colorPickerId === myPlayerId;
+    const isFallbackHost = isHost && Date.now() >= (room.turn.resultAt || 0) + RESULT_PAUSE_MS * 3;
+    if (!isOwner && !isFallbackHost) return;
 
-  const players = room.players || {};
-  const order = room.turnOrder || [];
+    // From here on we're committed to actually performing the advancement,
+    // so it's now safe to mark this turn as permanently done for this client.
+    advancedForKey = turnKey;
 
-  // If every player has run out of personal time, the game is over even
-  // though nobody reached the summit.
-  const anyActive = order.some((pid) => !(players[pid] || {}).eliminated);
-  if (!anyActive) {
-    await finishGame(room, null);
-    return;
-  }
+    const players = room.players || {};
+    const order = room.turnOrder || [];
 
-  const currentIdx = order.indexOf(room.turn.colorPickerId);
-  let nextIndex = currentIdx;
-  for (let i = 1; i <= order.length; i++) {
-    const cand = (currentIdx + i) % order.length;
-    if (!(players[order[cand]] || {}).eliminated) {
-      nextIndex = cand;
-      break;
+    // If every player has run out of personal time, the game is over even
+    // though nobody reached the summit.
+    const anyActive = order.some((pid) => !(players[pid] || {}).eliminated);
+    if (!anyActive) {
+      await finishGame(room, null);
+      return;
     }
-  }
 
-  if (room.solo) {
-    const pid = order[nextIndex];
-    const step = (players[pid] || {}).step || 0;
-    const catIdx = room.soloCatIdx || 0;
-    const updates = await buildSoloTurn(pid, step, catIdx);
-    await db.ref(`rooms/${currentRoomCode}`).update({ turnIndex: nextIndex, ...updates });
-    return;
-  }
+    const currentIdx = order.indexOf(room.turn.colorPickerId);
+    let nextIndex = currentIdx;
+    for (let i = 1; i <= order.length; i++) {
+      const cand = (currentIdx + i) % order.length;
+      if (!(players[order[cand]] || {}).eliminated) {
+        nextIndex = cand;
+        break;
+      }
+    }
 
-  await db.ref(`rooms/${currentRoomCode}`).update({
-    turnIndex: nextIndex,
-    turn: {
-      colorPickerId: order[nextIndex],
-      phase: "category",
-      key: uid(),
-      phaseDeadline: Date.now() + CATEGORY_CHOICE_SECONDS * 1000,
-    },
-  });
+    if (room.solo) {
+      const pid = order[nextIndex];
+      const step = (players[pid] || {}).step || 0;
+      const catIdx = room.soloCatIdx || 0;
+      const updates = await buildSoloTurn(pid, step, catIdx);
+      await db.ref(`rooms/${currentRoomCode}`).update({ turnIndex: nextIndex, ...updates });
+      return;
+    }
+
+    await db.ref(`rooms/${currentRoomCode}`).update({
+      turnIndex: nextIndex,
+      turn: {
+        colorPickerId: order[nextIndex],
+        phase: "category",
+        key: uid(),
+        phaseDeadline: Date.now() + CATEGORY_CHOICE_SECONDS * 1000,
+      },
+    });
+  } finally {
+    advanceInFlightForKey = null;
+  }
 }
 
 // ---------------------------------------------------------------------------
