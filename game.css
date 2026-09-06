@@ -30,7 +30,7 @@ html, body {
 
 .card {
   width: 100%;
-  max-width: 420px;
+  max-width: 460px;
   background: #ffffff;
   border-radius: 22px;
   padding: 22px 20px 26px;
@@ -157,15 +157,15 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 .avatarGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 7px;
   margin-bottom: 6px;
 }
 .avatarOption {
   position: relative;
-  border-radius: 14px;
+  border-radius: 12px;
   border: 2.5px solid #e4eaee;
   overflow: hidden;
-  padding: 6px 4px 4px;
+  padding: 2px 1px 1px;
   background: linear-gradient(180deg, #f8fafb, #eef2f5);
   cursor: pointer;
   transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
@@ -221,7 +221,7 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 #climbZone {
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 46vh;
+  height: 20vh;
   overflow: hidden;
   z-index: 1;
 }
@@ -263,9 +263,13 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
   position: absolute;
   left: 1%;
   transform: translateY(-50%);
-  font-size: 0.6rem;
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 800;
   color: #567;
+  background: rgba(255,255,255,0.55);
+  border-radius: 5px;
+  padding: 0 4px;
+  z-index: 2;
 }
 
 #peakMarker {
@@ -355,12 +359,12 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 }
 .playerToken img { max-width: 100%; max-height: 100%; width: auto; height: 100%; object-fit: contain; }
 .playerToken .tokenTimer {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);
   color: #ffe082;
-  font-size: 0.55rem;
+  font-size: 0.8rem;
   font-weight: 800;
-  padding: 1px 5px;
-  border-radius: 5px;
+  padding: 2px 7px;
+  border-radius: 6px;
   margin-bottom: 2px;
   white-space: nowrap;
   order: 0;
@@ -390,6 +394,12 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
   order: 3;
 }
 .playerToken.active-turn .tokenAvatarWrap { border-color: #ffd54f; box-shadow: 0 0 0 2px rgba(255,213,79,0.6), 0 2px 4px rgba(0,0,0,0.3); }
+.playerToken.is-me .tokenAvatarWrap {
+  border-color: #00e5ff;
+  border-width: 3px;
+  box-shadow: 0 0 0 3px rgba(0,229,255,0.55), 0 0 14px rgba(0,229,255,0.65), 0 2px 4px rgba(0,0,0,0.3);
+}
+.playerToken.is-me .tokenName { background: #00838f; color: #fff; }
 /* Low steps: keep the timer on top, but also lift the step badge above the
    avatar (instead of below it) so neither badge gets hidden behind the
    bottom question panel near the start of the climb. */
@@ -401,7 +411,7 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 
 #turnBanner {
   position: absolute;
-  top: calc(46vh + 6px);
+  top: calc(20vh + 6px);
   left: 50%;
   transform: translateX(-50%);
   background: rgba(255,255,255,0.92);
@@ -588,4 +598,325 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
   border-radius: 12px;
   margin-bottom: 10px;
   image-rendering: -webkit-optimize-contrast;
+}
+
+/* ========== MindClimber IQ polish ========== */
+body { background: linear-gradient(165deg, #0f172a 0%, #1e293b 40%, #0f172a 100%); color: #e2e8f0; }
+.screen { background: transparent; }
+.card {
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  border: 1px solid rgba(148,163,184,0.15);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+  color: #e2e8f0;
+}
+.tagline { color: #38bdf8; letter-spacing: 0.04em; }
+.homeTitle {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1.55rem;
+  margin: 2px 0 8px;
+  color: #f8fafc;
+}
+.subtitle { color: #94a3b8; }
+.hintText { color: #64748b; }
+h1, h2 { color: #f1f5f9; }
+label { color: #94a3b8; }
+
+.logoFallback {
+  display: none;
+  font-size: 3rem;
+  text-align: center;
+  margin: 8px auto;
+}
+.logoFallback.big {
+  display: none;
+  width: 88px; height: 88px;
+  margin: 0 auto 8px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  box-shadow: 0 8px 24px rgba(14,165,233,0.35);
+}
+
+.homeFeatures {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 0 16px;
+}
+.homeFeatures span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  background: rgba(148,163,184,0.12);
+  border: 1px solid rgba(148,163,184,0.18);
+  border-radius: 999px;
+  padding: 5px 10px;
+}
+
+.primaryBtn { background: linear-gradient(135deg, #0ea5e9, #0284c7); }
+.secondaryBtn { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+.ghostBtn { background: rgba(148,163,184,0.12); color: #e2e8f0; border: 1px solid rgba(148,163,184,0.2); }
+
+#joinCodeInput, #playerNameInput {
+  background: #0f172a;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+#joinCodeInput:focus, #playerNameInput:focus {
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14,165,233,0.2);
+}
+
+.codeBadge {
+  background: #020617;
+  color: #38bdf8;
+  border: 1px solid #1e293b;
+}
+.avatarOption {
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  border-color: #334155;
+}
+.avatarOption.selected {
+  border-color: #0ea5e9;
+  background: linear-gradient(180deg, #0c4a6e, #0f172a);
+  box-shadow: 0 4px 14px rgba(14,165,233,0.3);
+}
+.avatarOption.selected::after { background: #0ea5e9; }
+.lobbyPlayerRow { background: rgba(148,163,184,0.08); }
+.lobbyPlayerRow .pname { color: #f1f5f9; }
+
+/* Game screen – darker climb */
+#gameScreen.active {
+  background: linear-gradient(180deg, #0b1220 0%, #132033 50%, #0b1220 100%);
+}
+#turnBanner {
+  background: rgba(15,23,42,0.92);
+  color: #e2e8f0;
+  border: 1px solid rgba(148,163,184,0.15);
+}
+#gamePanel {
+  background: rgba(15,23,42,0.97);
+  border-top: 1px solid rgba(148,163,184,0.12);
+  max-height: 80vh;
+}
+#waitingNote { color: #94a3b8; }
+
+#qTimerBar, #choiceTimerBar { background: #1e293b; }
+#qTimerNum, #choiceTimerNum { color: #e2e8f0; }
+
+.colorBtn .colorSub { opacity: 0.9; }
+#greenButton { background: linear-gradient(135deg, #22c55e, #16a34a); }
+#blueButton { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+#orangeButton { background: linear-gradient(135deg, #f59e0b, #d97706); }
+
+/* IQ puzzle area */
+#iqPuzzleWrap {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 8px 6px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  max-height: 26vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-overflow-scrolling: touch;
+}
+#iqPuzzle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#iqPuzzle svg,
+#iqPuzzle .grid,
+#iqPuzzle .puzzle-grid,
+#iqPuzzle .puzzle-container,
+#iqPuzzle > div {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Answer options as visual cards */
+#answerRectangle {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+.answerOption.iqOption {
+  position: relative;
+  padding: 6px 6px 6px 34px;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #020617;
+  border: 2px solid #334155;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.answerOption.iqOption .optLetter {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #1e293b;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.answerOption.iqOption .iqOptInner {
+  width: 100%;
+  max-height: 76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.answerOption.iqOption .iqOptInner > * {
+  max-width: 100%;
+  max-height: 72px;
+  height: auto;
+}
+.answerOption.iqOption.picked {
+  border-color: #38bdf8;
+  background: #0c4a6e;
+}
+.answerOption.iqOption.correct {
+  border-color: #22c55e;
+  background: #14532d;
+}
+.answerOption.iqOption.wrong {
+  border-color: #ef4444;
+  background: #7f1d1d;
+}
+
+.answerStatusChip { background: rgba(148,163,184,0.1); color: #cbd5e1; }
+.answerStatusChip.correct { background: #14532d; color: #86efac; }
+.answerStatusChip.wrong { background: #7f1d1d; color: #fca5a5; }
+
+.rankRow { background: rgba(148,163,184,0.08); color: #e2e8f0; }
+.rankRow.winner { background: rgba(245,158,11,0.15); border-color: #f59e0b; }
+.rankRow .rname { color: #f1f5f9; }
+
+/* Hide knowledge-game leftovers */
+#categoryChoiceRow,
+#selectedCategoryLabel,
+#questionRectangle,
+#questionImage { display: none !important; }
+
+/* Tokens on dark bg */
+.playerToken .tokenName,
+.playerToken .tokenTimer {
+  background: rgba(0,0,0,0.75);
+}
+#groundMarker {
+  background: rgba(15,23,42,0.85);
+  color: #94a3b8;
+  border: 1px solid #334155;
+}
+#peakStepLabel {
+  background: rgba(15,23,42,0.85);
+  color: #e2e8f0;
+}
+.stepRungLabel { color: #e2e8f0; background: rgba(15,23,42,0.7); }
+
+/* ========== Leaderboard ========== */
+.lbTabs {
+  display: flex;
+  gap: 6px;
+  margin: 8px 0 12px;
+}
+.lbTab {
+  flex: 1;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #94a3b8;
+  border-radius: 10px;
+  padding: 8px 6px;
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.lbTab.active {
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  color: #fff;
+  border-color: transparent;
+}
+.leaderboardList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 6px 0 14px;
+  max-height: 48vh;
+  overflow-y: auto;
+  text-align: left;
+}
+.lbRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(148,163,184,0.08);
+  border-radius: 12px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+}
+.lbRow img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #0f172a;
+}
+.lbPos {
+  width: 28px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #94a3b8;
+}
+.lbName {
+  flex: 1;
+  font-weight: 700;
+  color: #f1f5f9;
+  font-size: 0.9rem;
+}
+.lbVal {
+  font-weight: 800;
+  color: #38bdf8;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+.lbVal small {
+  font-weight: 600;
+  color: #64748b;
+  font-size: 0.65rem;
+}
+.lbRow.top1 {
+  background: linear-gradient(90deg, rgba(245,158,11,0.18), rgba(148,163,184,0.06));
+  border-color: rgba(245,158,11,0.35);
+}
+.lbRow.top2 {
+  background: linear-gradient(90deg, rgba(148,163,184,0.16), rgba(148,163,184,0.05));
+  border-color: rgba(148,163,184,0.25);
+}
+.lbRow.top3 {
+  background: linear-gradient(90deg, rgba(180,120,60,0.16), rgba(148,163,184,0.05));
+  border-color: rgba(180,120,60,0.28);
+}
+#lbPersonalNote {
+  margin: 4px 0 12px;
+  color: #7dd3fc;
+  font-weight: 600;
 }
