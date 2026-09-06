@@ -154,6 +154,49 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 }
 .codeBadge.big { font-size: 1.6rem; padding: 12px 18px; }
 
+.codeBadgeRow { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.copyCodeBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 2px solid #90caf9;
+  background: #e3f2fd;
+  color: #1565c0;
+  font-size: 1.15rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.copyCodeBtn:active { transform: scale(0.92); }
+.copyCodeBtn.copied { background: #e8f5e9; border-color: #81c784; }
+
+/* Winner confetti burst */
+.confettiWrap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 500;
+}
+.confettiPiece {
+  position: absolute;
+  top: -12px;
+  width: 9px;
+  height: 14px;
+  border-radius: 2px;
+  opacity: 0.95;
+  animation-name: confettiFall;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation-fill-mode: forwards;
+}
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(115vh) rotate(var(--rot)); opacity: 0; }
+}
+
 .avatarGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -944,6 +987,30 @@ label { color: #94a3b8; }
 }
 .infoBtn:active { transform: scale(0.94); background: #bbdefb; }
 
+.muteBtn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #90caf9;
+  background: #e3f2fd;
+  color: #1565c0;
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(21,101,192,0.2);
+  padding: 0;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.muteBtn:active { transform: scale(0.94); background: #bbdefb; }
+.muteBtn.isMuted { background: #eceff1; border-color: #b0bec5; color: #607d8b; }
+
 #homeScreen { position: fixed; inset: 0; }
 
 .infoModal {
@@ -1106,6 +1173,16 @@ label { color: #94a3b8; }
   border-color: #a5d6a7 !important;
   background: #e8f5e9 !important;
   color: #2e7d32 !important;
+}
+.muteBtn {
+  border-color: #a5d6a7 !important;
+  background: #e8f5e9 !important;
+  color: #2e7d32 !important;
+}
+.muteBtn.isMuted {
+  border-color: #b0bec5 !important;
+  background: #eceff1 !important;
+  color: #607d8b !important;
 }
 
 /* Keep game panel fully on-screen */

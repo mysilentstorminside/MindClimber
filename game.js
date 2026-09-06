@@ -24,10 +24,22 @@ function questionSecondsFor(category) {
 const PLAYER_SECONDS = 260;
 const CATEGORY_CHOICE_SECONDS = 8;
 const DIFFICULTY_CHOICE_SECONDS = 6;
-const AVATAR_COUNT = 11;
+const AVATAR_COUNT = 12;
 const COLOR_DELTA = { green: 1, blue: 2, orange: 3 };
 const COLOR_TO_DIFF = { green: "easy", blue: "medium", orange: "hard" };
 const RESULT_PAUSE_MS = 2200;
+
+let isMuted = localStorage.getItem("mc_muted") === "1";
+function setMuted(val) {
+  isMuted = val;
+  localStorage.setItem("mc_muted", val ? "1" : "0");
+  const btn = $("muteToggleBtn");
+  if (btn) { btn.textContent = isMuted ? "🔇" : "🔊"; btn.classList.toggle("isMuted", isMuted); }
+}
+function vibrate(pattern) {
+  if (isMuted) return;
+  try { if (navigator.vibrate) navigator.vibrate(pattern); } catch (e) {}
+}
 
 let audioCtx = null;
 function getAudioCtx() {
@@ -37,6 +49,7 @@ function getAudioCtx() {
   return audioCtx;
 }
 function playTone(freqStart, freqEnd, durationMs, type) {
+  if (isMuted) return;
   const ctx = getAudioCtx();
   if (!ctx) return;
   if (ctx.state === "suspended") ctx.resume();
@@ -105,6 +118,8 @@ let latestRoom = null;
 let selectedAvatar = null;
 let localQuestionTimerHandle = null;
 let localChoiceTimerHandle = null;
+let myPlayerRef = null;
+let playingDisconnectRegistered = false;
 
 function isMobileViewport() {
   return window.innerWidth <= 620 || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
@@ -122,6 +137,7 @@ window.addEventListener("resize", () => {
 
 function initHome() {
   if (!checkMobile()) return;
+  setMuted(isMuted);
   if (!firebaseReady) {
     $("homeError").textContent = "Το online multiplayer χρειάζεται σύνδεση Firebase.";
   } else if (!window.QUESTION_BANK) {
@@ -244,9 +260,23 @@ $("confirmSetupBtn").addEventListener("click", async () => {
     });
   }
   if (takenAvatarsRef) { takenAvatarsRef.off(); takenAvatarsRef = null; }
+  myPlayerRef = db.ref(`rooms/${currentRoomCode}/players/${myPlayerId}`);
+  playingDisconnectRegistered = false;
+  try { await myPlayerRef.onDisconnect().remove(); } catch (e) {}
   if (isSolo) await startSoloGame();
   else enterLobby();
 });
+
+// If a player's connection drops mid-game, mark them eliminated instead of
+// leaving a ghost turn that stalls the whole room every rotation.
+async function registerPlayingDisconnect() {
+  if (playingDisconnectRegistered || !myPlayerRef) return;
+  playingDisconnectRegistered = true;
+  try {
+    await myPlayerRef.onDisconnect().cancel();
+    await myPlayerRef.onDisconnect().update({ eliminated: true, disconnected: true, timeLeft: 0 });
+  } catch (e) {}
+}
 
 async function startSoloGame() {
   const updates = await buildSoloTurn(myPlayerId, 0, 0);
@@ -270,7 +300,36 @@ function enterLobby() {
   attachRoomListener();
 }
 
+const copyCodeBtn = $("copyCodeBtn");
+if (copyCodeBtn) {
+  copyCodeBtn.addEventListener("click", async () => {
+    if (!currentRoomCode) return;
+    try {
+      await navigator.clipboard.writeText(currentRoomCode);
+    } catch (e) {
+      // Clipboard API unavailable — fall back silently, code is already on screen.
+    }
+    const original = copyCodeBtn.textContent;
+    copyCodeBtn.textContent = "✅";
+    copyCodeBtn.classList.add("copied");
+    setTimeout(() => { copyCodeBtn.textContent = original; copyCodeBtn.classList.remove("copied"); }, 1200);
+  });
+}
+
+function maybeReassignHost(room) {
+  const players = room.players || {};
+  if (!room.hostId || players[room.hostId]) return; // host still present
+  const remaining = Object.entries(players).sort((a, b) => a[1].order - b[1].order);
+  if (!remaining.length) return;
+  const candidateId = remaining[0][0];
+  if (candidateId !== myPlayerId) return; // only the new host-to-be acts
+  const staleHostId = room.hostId;
+  db.ref(`rooms/${currentRoomCode}/hostId`).transaction((cur) => (cur === staleHostId ? candidateId : undefined));
+}
+
 function renderLobby(room) {
+  isHost = room.hostId === myPlayerId;
+  maybeReassignHost(room);
   const players = room.players || {};
   const list = Object.entries(players).sort((a, b) => a[1].order - b[1].order);
   const container = $("lobbyPlayerList");
@@ -304,9 +363,11 @@ $("startGameBtn").addEventListener("click", async () => {
 });
 
 $("leaveLobbyBtn").addEventListener("click", async () => {
+  try { if (myPlayerRef) await myPlayerRef.onDisconnect().cancel(); } catch (e) {}
   try { await db.ref(`rooms/${currentRoomCode}/players/${myPlayerId}`).remove(); } catch (e) {}
   detachRoomListener();
   currentRoomCode = null;
+  myPlayerRef = null;
   showScreen("homeScreen");
 });
 
@@ -318,7 +379,7 @@ function attachRoomListener() {
     if (!room) return;
     latestRoom = room;
     if (room.status === "lobby") { renderLobby(room); showScreen("lobbyScreen"); }
-    else if (room.status === "playing") { showScreen("gameScreen"); renderGame(room); }
+    else if (room.status === "playing") { registerPlayingDisconnect(); showScreen("gameScreen"); renderGame(room); }
     else if (room.status === "finished") { showScreen("resultsScreen"); renderResults(room); }
   });
   roomListenerAttached = true;
@@ -746,7 +807,7 @@ async function submitAnswer(pickedOption) {
   stopLocalQuestionTimer();
   const turn = latestRoom.turn;
   const correct = pickedOption === turn.question.correct;
-  if (correct) playSuccessSound(); else playFailureSound();
+  if (correct) { playSuccessSound(); vibrate(30); } else { playFailureSound(); vibrate([40, 60, 40]); }
   const delta = COLOR_DELTA[turn.color] * (correct ? 1 : -1);
   const me = (latestRoom.players || {})[myPlayerId] || { step: 0 };
   const newStep = Math.max(0, Math.min(MAX_STEPS, (me.step || 0) + delta));
@@ -863,11 +924,35 @@ async function finishGame(room, forcedWinnerId) {
   await db.ref(`rooms/${currentRoomCode}`).update({ status: "finished", winnerId });
 }
 
+let confettiShownForRoom = null;
+function launchConfetti() {
+  const colors = ["#ffd54f", "#4CAF50", "#0ea5e9", "#ef4444", "#a855f7", "#f97316"];
+  const wrap = document.createElement("div");
+  wrap.className = "confettiWrap";
+  for (let i = 0; i < 36; i++) {
+    const piece = document.createElement("span");
+    piece.className = "confettiPiece";
+    piece.style.left = Math.random() * 100 + "%";
+    piece.style.background = colors[i % colors.length];
+    piece.style.animationDelay = (Math.random() * 0.4) + "s";
+    piece.style.animationDuration = (2.2 + Math.random() * 1.2) + "s";
+    piece.style.setProperty("--rot", (Math.random() * 360) + "deg");
+    wrap.appendChild(piece);
+  }
+  document.body.appendChild(wrap);
+  setTimeout(() => wrap.remove(), 3800);
+}
+
 function renderResults(room) {
+  isHost = room.hostId === myPlayerId;
   const players = room.players || {};
   const ranked = rankPlayers(players);
   const winnerEntry = room.winnerId && players[room.winnerId] ? [room.winnerId, players[room.winnerId]] : ranked[0];
   const winner = winnerEntry ? winnerEntry[1] : null;
+  if (winner && confettiShownForRoom !== currentRoomCode + (room.startedAt || "")) {
+    confettiShownForRoom = currentRoomCode + (room.startedAt || "");
+    launchConfetti();
+  }
   $("resultsTitle").textContent = winner ? `Νικητής: ${winner.name}! 🎉` : "Τέλος Παιχνιδιού!";
   if (winner) $("winnerAvatarImg").src = avatarSrc(winner.avatar, "front");
   const list = $("rankingList");
@@ -904,15 +989,23 @@ $("playAgainBtn").addEventListener("click", async () => {
 });
 
 $("backHomeBtn").addEventListener("click", async () => {
+  try { if (myPlayerRef) await myPlayerRef.onDisconnect().cancel(); } catch (e) {}
   try { await db.ref(`rooms/${currentRoomCode}/players/${myPlayerId}`).remove(); } catch (e) {}
   detachRoomListener();
   currentRoomCode = null;
+  myPlayerRef = null;
   showScreen("homeScreen");
 });
 
 setInterval(() => {
   if (latestRoom && latestRoom.status === "playing") renderPlayerTimers(latestRoom);
 }, 1000);
+
+// Sound toggle
+const muteToggleBtn = $("muteToggleBtn");
+if (muteToggleBtn) {
+  muteToggleBtn.addEventListener("click", () => setMuted(!isMuted));
+}
 
 // Info modal
 const showInfoBtn = $("showInfoBtn");

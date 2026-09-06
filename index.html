@@ -27,6 +27,7 @@
 <div id="homeScreen" class="screen">
   <div class="card homeCard">
     <button id="showInfoBtn" class="infoBtn" type="button" aria-label="Πληροφορίες">i</button>
+    <button id="muteToggleBtn" class="muteBtn" type="button" aria-label="Ήχος">🔊</button>
     <div class="homeHero">
       <img class="logoBig" src="assets/Pics/mindclimber_logo.png" alt="MindClimber" onerror="this.style.display='none'">
       <h1 class="homeTitle">MindClimber</h1>
@@ -84,7 +85,10 @@
 <div id="lobbyScreen" class="screen">
   <div class="card">
     <h2>Δωμάτιο</h2>
-    <div id="lobbyCodeBadge" class="codeBadge big"></div>
+    <div class="codeBadgeRow">
+      <div id="lobbyCodeBadge" class="codeBadge big"></div>
+      <button id="copyCodeBtn" class="copyCodeBtn" type="button" aria-label="Αντιγραφή κωδικού">📋</button>
+    </div>
     <p class="subtitle">Στείλε αυτόν τον κωδικό στους φίλους σου για να μπουν στο ίδιο παιχνίδι.</p>
     <div id="lobbyPlayerList" class="lobbyPlayerList"></div>
     <p id="lobbyHint" class="hintText"></p>
