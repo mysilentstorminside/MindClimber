@@ -408,26 +408,7 @@ function renderPlayerTimers(room) {
 }
 
 
-function renderPlayerStrip(room, order) {
-  const strip = $("playerStrip");
-  if (!strip) return;
-  const turn = room.turn || {};
-  const activeId = turn.colorPickerId;
-  strip.innerHTML = "";
-  order.forEach(([pid, p]) => {
-    const cell = document.createElement("div");
-    const isActive = pid === activeId;
-    cell.className = "stripPlayer"
-      + (isActive ? " stripActive" : "")
-      + (pid === myPlayerId ? " stripMe" : "")
-      + (p.eliminated ? " stripOut" : "");
-    cell.innerHTML = `
-      <div class="stripAvatar"><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3"></div>
-      <div class="stripName">${escapeHtml(p.name)}</div>
-      <div class="stripStep">${p.step || 0}</div>`;
-    strip.appendChild(cell);
-  });
-}
+
 
 function renderGame(room) {
   buildStaircase();
@@ -464,7 +445,7 @@ function renderGame(room) {
     tok.style.bottom = pos.bottom + "%";
     tok.style.width = pos.size + "px";
     tok.style.height = pos.size + "px";
-    // Compact token: no turn text (turn is shown in bottom playerStrip)
+    // Compact token: no turn text (turn is shown in the answer-status row)
     tok.innerHTML = `
       <div class="tokenTimer">${formatTimeLeft(computeLiveTimeLeft(pid, p, room))}</div>
       <div class="tokenAvatarWrap"><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3"></div>
@@ -473,13 +454,13 @@ function renderGame(room) {
     tokenWrap.appendChild(tok);
   });
 
-  // Bottom strip: all players — active one in gold circle
-  renderPlayerStrip(room, order);
+  // Top player strip removed (reclaimed vertical space) — the turn
+  // indicator now lives in the answer-status row below the question instead.
 
   const turn = room.turn || {};
 
   // hide all phase panels
-  ["categoryChoiceRow","selectedCategoryLabel","colorChoiceRow","waitingNote","questionRectangle","questionImage","answerRectangle","allAnswersStatus","qTimerWrap","choiceTimerWrap"].forEach((id) => {
+  ["categoryChoiceRow","selectedCategoryLabel","colorChoiceRow","waitingNote","questionRectangle","questionImage","answerRectangle","qTimerWrap","choiceTimerWrap"].forEach((id) => {
     const el = $(id); if (el) el.classList.add("hidden");
   });
   stopLocalChoiceTimer();
@@ -510,10 +491,14 @@ function renderGame(room) {
     $("selectedCategoryLabel").classList.remove("hidden");
     renderQuestion(turn, turn.phase === "result");
     $("answerRectangle").classList.remove("hidden");
-    $("allAnswersStatus").classList.remove("hidden");
     if (turn.phase === "question") startLocalQuestionTimer(turn);
-    renderAnswerStatuses(room);
   }
+
+  // Answer-status row stays visible in every phase now — it doubles as the
+  // "whose turn" indicator (gold ring) while nobody has categoryChoiceRow /
+  // colorChoiceRow, since the top playerStrip was removed to save space.
+  $("allAnswersStatus").classList.remove("hidden");
+  renderAnswerStatuses(room);
 
   renderPlayerTimers(room);
   checkTurnProgress(room);
@@ -563,15 +548,22 @@ function renderQuestion(turn, showResult) {
 function renderAnswerStatuses(room) {
   const wrap = $("allAnswersStatus");
   wrap.innerHTML = "";
-  const answers = (room.turn && room.turn.answers) || {};
+  const turn = room.turn || {};
+  const answers = turn.answers || {};
+  const inAnswerPhase = turn.phase === "question" || turn.phase === "result";
+  const activeId = turn.colorPickerId;
   Object.entries(room.players || {}).forEach(([pid, p]) => {
     const chip = document.createElement("div");
-    let cls = "answerStatusChip", mark = "…";
-    if (p.eliminated) { cls += " eliminated-chip"; mark = "—"; }
-    else if (answers[pid]) { cls += answers[pid].correct ? " correct" : " wrong"; mark = answers[pid].correct ? "✓" : "✗"; }
-    else cls += " waiting";
+    let cls = "answerStatusChip", mark = "";
+    if (p.eliminated) {
+      cls += " eliminated-chip"; mark = "—";
+    } else if (inAnswerPhase) {
+      if (answers[pid]) { cls += answers[pid].correct ? " correct" : " wrong"; mark = answers[pid].correct ? "✓" : "✗"; }
+      else { cls += " waiting"; mark = "…"; }
+    }
+    if (pid === activeId) cls += " chipActive";
     chip.className = cls;
-    chip.innerHTML = `<img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.display='none'"><span>${escapeHtml(p.name)} ${mark}</span>`;
+    chip.innerHTML = `<img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.display='none'"><span>${escapeHtml(p.name)}${mark ? " " + mark : ""}</span>`;
     wrap.appendChild(chip);
   });
 }
