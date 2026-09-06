@@ -221,7 +221,7 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 #climbZone {
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 20vh;
+  height: 42vh;
   overflow: hidden;
   z-index: 1;
 }
@@ -411,7 +411,7 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 
 #turnBanner {
   position: absolute;
-  top: calc(20vh + 6px);
+  top: calc(42vh + 6px);
   left: 50%;
   transform: translateX(-50%);
   background: rgba(255,255,255,0.92);
@@ -601,13 +601,14 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 }
 
 /* ========== MindClimber IQ polish ========== */
-body { background: linear-gradient(165deg, #0f172a 0%, #1e293b 40%, #0f172a 100%); color: #e2e8f0; }
+/* Knowledge theme keeps light cards; optional dark only if data-theme=iq */
+body { background: #dff3ff; color: #1b2b3a; }
 .screen { background: transparent; }
 .card {
-  background: linear-gradient(180deg, #1e293b, #0f172a);
-  border: 1px solid rgba(148,163,184,0.15);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
-  color: #e2e8f0;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  color: #1b2b3a;
 }
 .tagline { color: #38bdf8; letter-spacing: 0.04em; }
 .homeTitle {
@@ -698,9 +699,9 @@ label { color: #94a3b8; }
   border: 1px solid rgba(148,163,184,0.15);
 }
 #gamePanel {
-  background: rgba(15,23,42,0.97);
-  border-top: 1px solid rgba(148,163,184,0.12);
-  max-height: 80vh;
+  background: rgba(255,255,255,0.96);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  max-height: 55vh;
 }
 #waitingNote { color: #94a3b8; }
 
@@ -809,11 +810,7 @@ label { color: #94a3b8; }
 .rankRow.winner { background: rgba(245,158,11,0.15); border-color: #f59e0b; }
 .rankRow .rname { color: #f1f5f9; }
 
-/* Hide knowledge-game leftovers */
-#categoryChoiceRow,
-#selectedCategoryLabel,
-#questionRectangle,
-#questionImage { display: none !important; }
+/* Knowledge game: keep category + question UI visible */
 
 /* Tokens on dark bg */
 .playerToken .tokenName,
@@ -829,7 +826,7 @@ label { color: #94a3b8; }
   background: rgba(15,23,42,0.85);
   color: #e2e8f0;
 }
-.stepRungLabel { color: #e2e8f0; background: rgba(15,23,42,0.7); }
+.stepRungLabel { color: #37474f; background: rgba(255,255,255,0.7); }
 
 /* ========== Leaderboard ========== */
 .lbTabs {
