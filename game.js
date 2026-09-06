@@ -448,8 +448,17 @@ function renderGame(room) {
 
   const turn = room.turn || {};
   const picker = players[turn.colorPickerId];
-  $("turnText").textContent = picker ? (turn.colorPickerId === myPlayerId ? "Σειρά σου!" : "Σειρά: " + picker.name) : "—";
-  $("turnAvatarMini").innerHTML = picker ? `<img src="${avatarSrc(picker.avatar, "front")}" alt="">` : "";
+  const turnEl = $("turnBanner");
+  if (turnEl) {
+    const isMine = turn.colorPickerId === myPlayerId;
+    turnEl.classList.toggle("myTurn", !!isMine);
+    $("turnText").textContent = picker
+      ? (isMine ? "👉 Σειρά σου!" : "Σειρά: " + picker.name)
+      : "—";
+    $("turnAvatarMini").innerHTML = picker
+      ? `<img src="${avatarSrc(picker.avatar, "front")}" alt="" onerror="this.style.display='none'">`
+      : "";
+  }
 
   // hide all phase panels
   ["categoryChoiceRow","selectedCategoryLabel","colorChoiceRow","waitingNote","questionRectangle","questionImage","answerRectangle","allAnswersStatus","qTimerWrap","choiceTimerWrap"].forEach((id) => {
