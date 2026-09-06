@@ -407,6 +407,28 @@ function renderPlayerTimers(room) {
   });
 }
 
+
+function renderPlayerStrip(room, order) {
+  const strip = $("playerStrip");
+  if (!strip) return;
+  const turn = room.turn || {};
+  const activeId = turn.colorPickerId;
+  strip.innerHTML = "";
+  order.forEach(([pid, p]) => {
+    const cell = document.createElement("div");
+    const isActive = pid === activeId;
+    cell.className = "stripPlayer"
+      + (isActive ? " stripActive" : "")
+      + (pid === myPlayerId ? " stripMe" : "")
+      + (p.eliminated ? " stripOut" : "");
+    cell.innerHTML = `
+      <div class="stripAvatar"><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3"></div>
+      <div class="stripName">${escapeHtml(p.name)}</div>
+      <div class="stripStep">${p.step || 0}</div>`;
+    strip.appendChild(cell);
+  });
+}
+
 function renderGame(room) {
   buildStaircase();
   const players = room.players || {};
@@ -431,19 +453,19 @@ function renderGame(room) {
     const step = p.step || 0;
     const pos = stepPosition(step, idx);
     const tok = document.createElement("div");
-    tok.className = "playerToken" + (p.eliminated ? " eliminated" : "") + (step < 3 ? " lowStep" : "") + (pid === myPlayerId ? " is-me" : "");
+    const isActive = room.turn && room.turn.colorPickerId === pid;
+    tok.className = "playerToken"
+      + (p.eliminated ? " eliminated" : "")
+      + (step < 3 ? " lowStep" : "")
+      + (pid === myPlayerId ? " is-me" : "")
+      + (isActive ? " active-turn" : "");
     tok.dataset.pid = pid;
     tok.style.left = pos.left + "%";
     tok.style.bottom = pos.bottom + "%";
     tok.style.width = pos.size + "px";
     tok.style.height = pos.size + "px";
-    const isActive = room.turn && room.turn.colorPickerId === pid;
-    if (isActive) tok.classList.add("active-turn");
-    const turnMark = isActive
-      ? `<div class="tokenTurnMark">${pid === myPlayerId ? "ΣΕΙΡΑ ΣΟΥ" : "ΣΕΙΡΑ"}</div>`
-      : "";
+    // Compact token: no turn text (turn is shown in bottom playerStrip)
     tok.innerHTML = `
-      ${turnMark}
       <div class="tokenTimer">${formatTimeLeft(computeLiveTimeLeft(pid, p, room))}</div>
       <div class="tokenAvatarWrap"><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3"></div>
       <div class="tokenName">${escapeHtml(p.name)}</div>
@@ -451,10 +473,10 @@ function renderGame(room) {
     tokenWrap.appendChild(tok);
   });
 
+  // Bottom strip: all players — active one in gold circle
+  renderPlayerStrip(room, order);
+
   const turn = room.turn || {};
-  // Hide legacy top/panel turn banner — turn is shown on player tokens
-  const turnEl = $("turnBanner");
-  if (turnEl) turnEl.classList.add("hidden");
 
   // hide all phase panels
   ["categoryChoiceRow","selectedCategoryLabel","colorChoiceRow","waitingNote","questionRectangle","questionImage","answerRectangle","allAnswersStatus","qTimerWrap","choiceTimerWrap"].forEach((id) => {
