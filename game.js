@@ -335,8 +335,11 @@ function escapeHtml(str) {
 }
 
 let staircaseBuilt = false;
-const STEP_TOP_BOTTOM = 82;
-const PEAK_BOTTOM_OFFSET = 10;
+// Climb mapping: leave room at bottom so avatar at step 0 is fully visible
+// above the question panel. Compress rungs toward the upper band.
+const STEP_BASE_BOTTOM = 18;   // % — player start sits clearly above panel
+const STEP_TOP_BOTTOM = 88;    // % — step 30 near top of climbZone
+const PEAK_BOTTOM_OFFSET = 0;  // flag sits on step 30
 
 function buildStaircase() {
   if (staircaseBuilt) return;
@@ -345,9 +348,8 @@ function buildStaircase() {
   if (peakLabel) peakLabel.textContent = MAX_STEPS;
   const wrap = $("stairLines");
   wrap.innerHTML = "";
-  const labelSteps = new Set([1]);
-  for (let s = 5; s <= MAX_STEPS; s += 5) labelSteps.add(s);
-  labelSteps.add(MAX_STEPS);
+  // Only label 10, 20, 30 (0 is the ground marker)
+  const labelSteps = new Set([10, 20, 30]);
   for (let step = 1; step <= MAX_STEPS; step++) {
     const pos = stepPosition(step, 2);
     const line = document.createElement("div");
@@ -365,13 +367,12 @@ function buildStaircase() {
 }
 
 function stepPosition(step, orderIndex) {
-  // step 0 sits slightly above ground; step MAX_STEPS near peak
-  const baseBottom = 6;
-  const topBottom = STEP_TOP_BOTTOM;
-  const bottom = baseBottom + (Math.max(0, step) / MAX_STEPS) * (topBottom - baseBottom);
-  const jitter = (orderIndex - 2) * 14;
-  const left = Math.min(88, Math.max(12, 50 + jitter));
-  return { bottom, left, size: 36 };
+  const s = Math.max(0, Math.min(MAX_STEPS, step));
+  const bottom = STEP_BASE_BOTTOM + (s / MAX_STEPS) * (STEP_TOP_BOTTOM - STEP_BASE_BOTTOM);
+  const jitter = (orderIndex - 2) * 12;
+  const left = Math.min(86, Math.max(14, 50 + jitter));
+  // Slightly smaller tokens so they fit better in the band
+  return { bottom, left, size: 34 };
 }
 
 function formatTimeLeft(seconds) {
@@ -421,7 +422,8 @@ function renderGame(room) {
     flag.textContent = "🚩";
     peakWrap.appendChild(flag);
   });
-  $("peakMarker").style.bottom = (STEP_TOP_BOTTOM + PEAK_BOTTOM_OFFSET) + "%";
+  // Flag sits exactly on the same vertical as step 30
+  $("peakMarker").style.bottom = STEP_TOP_BOTTOM + "%";
 
   const tokenWrap = $("playerTokens");
   tokenWrap.innerHTML = "";
@@ -892,5 +894,17 @@ $("backHomeBtn").addEventListener("click", async () => {
 setInterval(() => {
   if (latestRoom && latestRoom.status === "playing") renderPlayerTimers(latestRoom);
 }, 1000);
+
+// Info modal
+const showInfoBtn = $("showInfoBtn");
+const infoModal = $("infoModal");
+const closeInfoBtn = $("closeInfoBtn");
+if (showInfoBtn && infoModal) {
+  showInfoBtn.addEventListener("click", () => infoModal.classList.remove("hidden"));
+  if (closeInfoBtn) closeInfoBtn.addEventListener("click", () => infoModal.classList.add("hidden"));
+  infoModal.addEventListener("click", (e) => {
+    if (e.target === infoModal) infoModal.classList.add("hidden");
+  });
+}
 
 initHome();
