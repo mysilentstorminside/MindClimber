@@ -437,8 +437,13 @@ function renderGame(room) {
     tok.style.bottom = pos.bottom + "%";
     tok.style.width = pos.size + "px";
     tok.style.height = pos.size + "px";
-    if (room.turn && room.turn.colorPickerId === pid) tok.classList.add("active-turn");
+    const isActive = room.turn && room.turn.colorPickerId === pid;
+    if (isActive) tok.classList.add("active-turn");
+    const turnMark = isActive
+      ? `<div class="tokenTurnMark">${pid === myPlayerId ? "ΣΕΙΡΑ ΣΟΥ" : "ΣΕΙΡΑ"}</div>`
+      : "";
     tok.innerHTML = `
+      ${turnMark}
       <div class="tokenTimer">${formatTimeLeft(computeLiveTimeLeft(pid, p, room))}</div>
       <div class="tokenAvatarWrap"><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3"></div>
       <div class="tokenName">${escapeHtml(p.name)}</div>
@@ -447,18 +452,9 @@ function renderGame(room) {
   });
 
   const turn = room.turn || {};
-  const picker = players[turn.colorPickerId];
+  // Hide legacy top/panel turn banner — turn is shown on player tokens
   const turnEl = $("turnBanner");
-  if (turnEl) {
-    const isMine = turn.colorPickerId === myPlayerId;
-    turnEl.classList.toggle("myTurn", !!isMine);
-    $("turnText").textContent = picker
-      ? (isMine ? "👉 Σειρά σου!" : "Σειρά: " + picker.name)
-      : "—";
-    $("turnAvatarMini").innerHTML = picker
-      ? `<img src="${avatarSrc(picker.avatar, "front")}" alt="" onerror="this.style.display='none'">`
-      : "";
-  }
+  if (turnEl) turnEl.classList.add("hidden");
 
   // hide all phase panels
   ["categoryChoiceRow","selectedCategoryLabel","colorChoiceRow","waitingNote","questionRectangle","questionImage","answerRectangle","allAnswersStatus","qTimerWrap","choiceTimerWrap"].forEach((id) => {

@@ -998,3 +998,96 @@ label { color: #94a3b8; }
 
 /* Keep tokens fully visible at start */
 .playerToken.lowStep .tokenTimer { font-size: 0.72rem; }
+
+#turnBanner { display: none !important; }
+
+/* Active turn mark on player token (bottom of climb) */
+.tokenTurnMark {
+  order: -1;
+  background: linear-gradient(135deg, #ffd54f, #ffb300);
+  color: #3e2723;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(255,179,0,0.55);
+  animation: turnPulse 1.2s ease-in-out infinite;
+}
+@keyframes turnPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+.playerToken.active-turn .tokenAvatarWrap {
+  border-color: #ffd54f !important;
+  border-width: 3px !important;
+  box-shadow: 0 0 0 3px rgba(255,213,79,0.55), 0 0 12px rgba(255,213,79,0.45), 0 2px 4px rgba(0,0,0,0.3) !important;
+}
+.playerToken.active-turn .tokenName {
+  background: #ff8f00 !important;
+  color: #fff !important;
+}
+
+/* Home page polish */
+.homeCard {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%) !important;
+  border: 1px solid rgba(255,255,255,0.2);
+  overflow: visible;
+}
+.homeHero {
+  margin-bottom: 8px;
+}
+.homeTitle {
+  font-family: 'Baloo 2', 'Poppins', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 4px 0 2px;
+  color: #1b5e20;
+  letter-spacing: 0.02em;
+}
+.homeCard .tagline {
+  color: #2e7d32;
+  font-size: 1rem;
+  margin: 0 0 6px;
+}
+.homeCard .subtitle {
+  color: #546e7a;
+  font-size: 0.88rem;
+  margin: 0 0 12px;
+}
+.homeFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin: 0 0 16px;
+}
+.homeFeatures span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #37474f;
+  background: #e8f5e9;
+  border: 1px solid #c8e6c9;
+  border-radius: 999px;
+  padding: 5px 10px;
+}
+.homeCard .primaryBtn {
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  box-shadow: 0 6px 16px rgba(46,125,50,0.35);
+}
+.homeCard .secondaryBtn {
+  background: linear-gradient(135deg, #42a5f5, #1565c0);
+  box-shadow: 0 4px 12px rgba(21,101,192,0.28);
+}
+.homeSolo {
+  margin-top: 6px;
+  background: #f5f7fa !important;
+  color: #455a64 !important;
+  border: 1px solid #cfd8dc !important;
+}
+.homeCard .logoBig {
+  max-width: 200px;
+  margin-bottom: 0;
+}
