@@ -399,9 +399,26 @@ let staircaseBuilt = false;
 let lastStaircasePlayerCount = 0;
 // Climb mapping: leave room at bottom so avatar at step 0 is fully visible
 // above the question panel. Compress rungs toward the upper band.
-const STEP_BASE_BOTTOM = 18;   // % — player start sits clearly above panel
-const STEP_TOP_BOTTOM = 88;    // % — step 30 near top of climbZone
+const STEP_BASE_BOTTOM = 14;   // % — above grass strip, ΕΚΚΙΝΗΣΗ sits to the left
+const STEP_TOP_BOTTOM = 86;    // % — step 30 near top of climbZone
 const PEAK_BOTTOM_OFFSET = 0;  // flag sits on step 30
+
+/** Mountain silhouette widths (% of climb zone) by player count.
+ *  1 player → sharp triangle; 5 players → wide trapezoid. */
+const MOUNTAIN_SHAPE = {
+  1: { base: 58, top: 10 },
+  2: { base: 68, top: 14 },
+  3: { base: 78, top: 18 },
+  4: { base: 88, top: 22 },
+  5: { base: 96, top: 26 },
+};
+
+function mountainWidthAt(step, playerCount) {
+  const shape = MOUNTAIN_SHAPE[playerCount] || MOUNTAIN_SHAPE[1];
+  // step 0 = base (wide), step MAX = top (narrow)
+  const t = Math.max(0, Math.min(1, step / MAX_STEPS));
+  return shape.base - t * (shape.base - shape.top);
+}
 
 function buildStaircase(playerCount) {
   const count = Math.max(1, Math.min(5, playerCount || 1));
@@ -412,27 +429,65 @@ function buildStaircase(playerCount) {
 
   const climbZone = $("climbZone");
   if (climbZone) {
-    // reset player-count classes then apply the current one
     climbZone.classList.remove("players-1", "players-2", "players-3", "players-4", "players-5");
     climbZone.classList.add("players-" + count);
+    const shape = MOUNTAIN_SHAPE[count] || MOUNTAIN_SHAPE[1];
+    climbZone.style.setProperty("--mtn-base", shape.base + "%");
+    // top half-width for clip-path (as % of the mountain body width)
+    climbZone.style.setProperty("--mtn-top", (shape.top / shape.base * 50) + "%");
   }
 
   const peakLabel = $("peakStepLabel");
   if (peakLabel) peakLabel.textContent = MAX_STEPS;
+
   const wrap = $("stairLines");
   wrap.innerHTML = "";
-  // Only label 10, 20, 30 (0 is the ground marker)
-  const labelSteps = new Set([10, 20, 30]);
+
+  // Mountain body silhouette
+  const body = document.createElement("div");
+  body.className = "mountainBody";
+  wrap.appendChild(body);
+
+  // Grass + flowers + bird (decorations live inside stairLines so they rebuild cleanly)
+  const grass = document.createElement("div");
+  grass.className = "grassStrip";
+  wrap.appendChild(grass);
+
+  const flowerEmojis = ["🌼", "🌸", "🌺", "🌷", "🌻"];
+  const flowerPositions = [8, 18, 30, 55, 68, 80, 90];
+  flowerPositions.forEach((left, i) => {
+    const f = document.createElement("div");
+    f.className = "flower";
+    f.style.left = left + "%";
+    f.style.animationDelay = (i * 0.4) + "s";
+    f.textContent = flowerEmojis[i % flowerEmojis.length];
+    wrap.appendChild(f);
+  });
+
+  const bird = document.createElement("div");
+  bird.className = "skyBird";
+  bird.textContent = "🐦";
+  bird.style.animationDelay = "2s";
+  wrap.appendChild(bird);
+
+  // Side labels only — 10, 20 (30 is on the peak badge)
+  const labelSteps = new Set([10, 20]);
   for (let step = 1; step <= MAX_STEPS; step++) {
-    const pos = stepPosition(step, 0, count);
+    const bottom = STEP_BASE_BOTTOM + (step / MAX_STEPS) * (STEP_TOP_BOTTOM - STEP_BASE_BOTTOM);
+    const width = mountainWidthAt(step, count);
+    const left = (100 - width) / 2;
+
     const line = document.createElement("div");
-    line.className = "stepRung" + (labelSteps.has(step) ? " major" : "");
-    line.style.bottom = pos.bottom + "%";
+    line.className = "stepRung" + (labelSteps.has(step) || step === MAX_STEPS ? " major" : "");
+    line.style.bottom = bottom + "%";
+    line.style.left = left + "%";
+    line.style.width = width + "%";
     wrap.appendChild(line);
+
     if (labelSteps.has(step)) {
       const label = document.createElement("div");
       label.className = "stepRungLabel";
-      label.style.bottom = pos.bottom + "%";
+      label.style.bottom = bottom + "%";
       label.textContent = step;
       wrap.appendChild(label);
     }
@@ -441,28 +496,29 @@ function buildStaircase(playerCount) {
 
 /**
  * Position a player token on the mountain.
- * @param {number} step - current step 0..MAX_STEPS
- * @param {number} orderIndex - 0-based index among active players
- * @param {number} playerCount - total players in the room (1-5)
+ * Lanes stay inside the mountain width at that step.
  */
 function stepPosition(step, orderIndex, playerCount) {
   const count = Math.max(1, Math.min(5, playerCount || 1));
   const s = Math.max(0, Math.min(MAX_STEPS, step));
   const bottom = STEP_BASE_BOTTOM + (s / MAX_STEPS) * (STEP_TOP_BOTTOM - STEP_BASE_BOTTOM);
 
-  // Horizontal lanes: evenly spaced and centered
-  const laneMap = {
-    1: [50],
-    2: [35, 65],
-    3: [28, 50, 72],
-    4: [22, 38, 62, 78],
-    5: [16, 33, 50, 67, 84],
-  };
-  const lanes = laneMap[count] || laneMap[1];
-  const left = lanes[Math.min(orderIndex, lanes.length - 1)];
+  // Available width of the mountain at this height
+  const mtnW = mountainWidthAt(s, count);
+  const mtnLeft = (100 - mtnW) / 2;
 
-  // Token size shrinks slightly with more players so they fit
-  const sizeMap = { 1: 42, 2: 38, 3: 34, 4: 30, 5: 28 };
+  // Distribute players evenly across the mountain width at this step
+  let left;
+  if (count === 1) {
+    left = 50;
+  } else {
+    const pad = mtnW * 0.12; // keep tokens slightly inset from edges
+    const usable = mtnW - pad * 2;
+    const spacing = usable / (count - 1);
+    left = mtnLeft + pad + orderIndex * spacing;
+  }
+
+  const sizeMap = { 1: 44, 2: 38, 3: 34, 4: 30, 5: 27 };
   const size = sizeMap[count] || 34;
 
   return { bottom, left, size };

@@ -259,137 +259,241 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 #gameScreen { padding: 0; display: none; background: linear-gradient(180deg, #bfe4ff 0%, #eaf6ff 55%, #f5fbff 100%); }
 #gameScreen.active { display: block; }
 
-/* Climb zone — Cartoon Adventure mountain stairs */
+/* Climb zone — Cartoon Adventure mountain */
 #climbZone {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 40vh;
   overflow: hidden;
   z-index: 1;
+  /* Sky → distant hills → grass */
+  background:
+    linear-gradient(180deg,
+      #7dd3fc 0%,
+      #bae6fd 28%,
+      #e0f2fe 52%,
+      #bbf7d0 78%,
+      #86efac 92%,
+      #4ade80 100%);
 }
 
-#stairLines { position: absolute; inset: 0; z-index: 1; }
+#stairLines { position: absolute; inset: 0; z-index: 2; }
 
-/* Base step: warm wood/stone cartoon style */
+/* Soft mountain body behind the rungs (triangle/trapezoid silhouette) */
+.mountainBody {
+  position: absolute;
+  left: 50%;
+  bottom: 6%;
+  transform: translateX(-50%);
+  width: var(--mtn-base, 70%);
+  height: 86%;
+  background:
+    linear-gradient(180deg,
+      #a8d5a2 0%,
+      #7cb87a 18%,
+      #6b9b6e 40%,
+      #8b7355 62%,
+      #a08060 82%,
+      #6d5538 100%);
+  clip-path: polygon(
+    calc(50% - var(--mtn-top, 12%)) 0%,
+    calc(50% + var(--mtn-top, 12%)) 0%,
+    100% 100%,
+    0% 100%
+  );
+  z-index: 1;
+  box-shadow: 0 0 40px rgba(0,0,0,0.12);
+  opacity: 0.92;
+}
+
+/* Snow cap near the peak */
+.mountainBody::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55%;
+  height: 14%;
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 70%, transparent 100%);
+  clip-path: polygon(20% 100%, 50% 0%, 80% 100%);
+  opacity: 0.9;
+}
+
+/* Base step — warm cartoon stone/wood */
 .stepRung {
   position: absolute;
-  left: 8%;
-  width: 84%;
-  height: 8px;
+  height: 7px;
+  border-radius: 5px;
+  background:
+    linear-gradient(180deg,
+      #f5d9a8 0%,
+      #e0b87a 25%,
+      #c99655 55%,
+      #a06e42 100%);
+  box-shadow:
+    0 2px 0 #6d4c2f,
+    0 4px 6px rgba(40, 25, 10, 0.28),
+    0 1px 0 rgba(255, 240, 200, 0.5) inset;
+  z-index: 2;
+}
+
+.stepRung.major {
+  height: 10px;
   border-radius: 6px;
   background:
     linear-gradient(180deg,
-      #e8c48a 0%,
-      #d4a574 18%,
-      #c08a5a 45%,
-      #a06e42 78%,
-      #8b5e3c 100%);
+      #ffe4b0 0%,
+      #f0c878 22%,
+      #d4a05a 55%,
+      #b07a40 100%);
   box-shadow:
-    0 3px 0 #6d4c2f,
+    0 3px 0 #5c3f22,
     0 5px 8px rgba(40, 25, 10, 0.35),
-    0 1px 0 rgba(255, 230, 180, 0.55) inset;
-  transition: left 0.35s ease, width 0.35s ease;
+    0 1px 0 rgba(255, 250, 220, 0.6) inset;
 }
 
-/* Major steps (10, 20, 30) — thicker + brighter */
-.stepRung.major {
-  height: 11px;
-  border-radius: 7px;
-  background:
-    linear-gradient(180deg,
-      #f0d4a0 0%,
-      #e0b87a 20%,
-      #c99655 50%,
-      #b07a40 82%,
-      #9a6535 100%);
-  box-shadow:
-    0 4px 0 #5c3f22,
-    0 6px 10px rgba(40, 25, 10, 0.4),
-    0 1px 0 rgba(255, 240, 200, 0.65) inset;
-}
-
-/* Adaptive width by player count */
-#climbZone.players-1 .stepRung { left: 18%; width: 64%; }
-#climbZone.players-2 .stepRung { left: 12%; width: 76%; }
-#climbZone.players-3 .stepRung { left: 8%;  width: 84%; }
-#climbZone.players-4 .stepRung { left: 5%;  width: 90%; }
-#climbZone.players-5 .stepRung { left: 3%;  width: 94%; }
-
+/* Side labels (10, 20, 30) — left of the mountain */
 .stepRungLabel {
   position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 2%;
+  transform: translateY(-50%);
   font-family: 'Baloo 2', 'Poppins', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   font-weight: 800;
-  color: #5d4037;
-  background: linear-gradient(180deg, #fff8e7, #ffe0b2);
-  border: 1.5px solid #c9a06a;
+  color: #3e2723;
+  background: linear-gradient(180deg, #fffde7, #ffe082);
+  border: 1.5px solid #f9a825;
   border-radius: 8px;
-  padding: 1px 8px;
-  z-index: 2;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  padding: 1px 7px;
+  z-index: 5;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.18);
   pointer-events: none;
 }
 
 #peakMarker {
   position: absolute;
-  bottom: 88%;
+  bottom: 90%;
   left: 0;
   width: 100%;
   text-align: center;
-  z-index: 4;
+  z-index: 6;
   transition: bottom 0.4s ease;
   pointer-events: none;
+  display: flex;
+  flex-direction: column-reverse; /* flags on top, number badge below */
+  align-items: center;
 }
 #peakFlags {
   position: relative;
   width: 100%;
-  height: 28px;
-  margin-top: 2px;
+  height: 30px;
+  margin-bottom: 2px;
 }
 .peakFlag {
   position: absolute;
   top: 0;
   transform: translateX(-50%);
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   line-height: 1;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35));
   animation: flagWave 2.8s ease-in-out infinite;
 }
 @keyframes flagWave {
-  0%, 100% { transform: translateX(-50%) rotate(-4deg); }
-  50% { transform: translateX(-50%) rotate(5deg); }
+  0%, 100% { transform: translateX(-50%) rotate(-5deg); }
+  50% { transform: translateX(-50%) rotate(6deg); }
 }
+/* Peak number sits BELOW the flags so it is not covered */
 #peakStepLabel {
   display: inline-block;
+  margin-top: 2px;
   font-family: 'Baloo 2', sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 800;
   color: #fff8e1;
   background: linear-gradient(135deg, #f59e0b, #d97706);
   border-radius: 8px;
   padding: 2px 8px;
   box-shadow: 0 2px 6px rgba(217, 119, 6, 0.45);
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.3);
 }
 
+/* ΕΚΚΙΝΗΣΗ — shifted left so the player in the center does not cover it */
 #groundMarker {
   position: absolute;
-  bottom: 3%;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 1.5%;
+  left: 4%;
+  transform: none;
   font-family: 'Baloo 2', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 800;
-  color: #fff8e1;
-  background: linear-gradient(135deg, #5d4037, #3e2723);
+  color: #1b4332;
+  background: linear-gradient(135deg, #d8f3dc, #95d5b2);
   border-radius: 10px;
-  padding: 4px 14px;
-  z-index: 2;
-  border: 1.5px solid #a1887f;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
-  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  z-index: 5;
+  border: 1.5px solid #52b788;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  letter-spacing: 0.03em;
+}
+
+/* Grass strip at the very bottom */
+.grassStrip {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 9%;
+  background:
+    linear-gradient(180deg, transparent 0%, #4ade80 30%, #22c55e 70%, #16a34a 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+.grassStrip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 7px,
+    rgba(21, 128, 61, 0.35) 7px,
+    rgba(21, 128, 61, 0.35) 9px
+  );
+  opacity: 0.6;
+}
+
+/* Little flowers */
+.flower {
+  position: absolute;
+  bottom: 3%;
+  font-size: 0.7rem;
+  z-index: 4;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));
+  animation: flowerSway 3s ease-in-out infinite;
+}
+@keyframes flowerSway {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+
+/* Occasional bird flying across the sky */
+.skyBird {
+  position: absolute;
+  top: 12%;
+  left: -10%;
+  font-size: 1.1rem;
+  z-index: 7;
+  pointer-events: none;
+  opacity: 0;
+  animation: birdFly 14s linear infinite;
+}
+@keyframes birdFly {
+  0%   { left: -12%; opacity: 0; transform: translateY(0) scaleX(1); }
+  5%   { opacity: 1; }
+  45%  { transform: translateY(-8px) scaleX(1); }
+  55%  { transform: translateY(6px) scaleX(1); }
+  90%  { opacity: 1; }
+  100% { left: 112%; opacity: 0; transform: translateY(-4px) scaleX(1); }
 }
 
 #stepInfo {
@@ -821,9 +925,9 @@ label { color: #94a3b8; }
 .lobbyPlayerRow { background: #f4f7f9; }
 .lobbyPlayerRow .pname { color: #1b2b3a; }
 
-/* Game screen – darker climb */
+/* Game screen — panel area can stay dark; climb zone has its own sky/grass */
 #gameScreen.active {
-  background: linear-gradient(180deg, #0b1220 0%, #132033 50%, #0b1220 100%);
+  background: linear-gradient(180deg, #7dd3fc 0%, #0b1220 42%, #0b1220 100%);
 }
 #gamePanel {
   background: rgba(255,255,255,0.96);
@@ -944,18 +1048,18 @@ label { color: #94a3b8; }
   background: rgba(0,0,0,0.75);
 }
 #groundMarker {
-  background: linear-gradient(135deg, #5d4037, #3e2723);
-  color: #fff8e1;
-  border: 1.5px solid #a1887f;
+  background: linear-gradient(135deg, #d8f3dc, #95d5b2);
+  color: #1b4332;
+  border: 1.5px solid #52b788;
 }
 #peakStepLabel {
   background: linear-gradient(135deg, #f59e0b, #d97706);
   color: #fff8e1;
 }
 .stepRungLabel {
-  color: #5d4037;
-  background: linear-gradient(180deg, #fff8e7, #ffe0b2);
-  border-color: #c9a06a;
+  color: #3e2723;
+  background: linear-gradient(180deg, #fffde7, #ffe082);
+  border-color: #f9a825;
 }
 
 /* ========== Leaderboard ========== */
