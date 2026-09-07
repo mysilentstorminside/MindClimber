@@ -399,30 +399,50 @@ let staircaseBuilt = false;
 let lastStaircasePlayerCount = 0;
 // Climb mapping: leave room at bottom so avatar at step 0 is fully visible
 // above the question panel. Compress rungs toward the upper band.
-const STEP_BASE_BOTTOM = 14;   // % — above grass strip, ΕΚΚΙΝΗΣΗ sits to the left
-const STEP_TOP_BOTTOM = 86;    // % — step 30 near top of climbZone
-const PEAK_BOTTOM_OFFSET = 0;  // flag sits on step 30
+const STEP_BASE_BOTTOM = 12;   // % — above grass
+const STEP_TOP_BOTTOM = 78;    // % — leaves room for flag above step 30
+const PEAK_BOTTOM_OFFSET = 0;
 
-/** Mountain silhouette widths (% of climb zone) by player count.
- *  1 player → sharp triangle; 5 players → wide trapezoid. */
+/** Mountain silhouette widths (% of climb zone) by player count. */
 const MOUNTAIN_SHAPE = {
-  1: { base: 58, top: 10 },
-  2: { base: 68, top: 14 },
-  3: { base: 78, top: 18 },
-  4: { base: 88, top: 22 },
-  5: { base: 96, top: 26 },
+  1: { base: 52, top: 12 },
+  2: { base: 64, top: 16 },
+  3: { base: 76, top: 20 },
+  4: { base: 86, top: 24 },
+  5: { base: 94, top: 28 },
+};
+
+/** Width of one stair tread (under a single player), in % of climb zone */
+const TREAD_WIDTH = {
+  1: 22,
+  2: 16,
+  3: 13,
+  4: 11,
+  5: 9,
 };
 
 function mountainWidthAt(step, playerCount) {
   const shape = MOUNTAIN_SHAPE[playerCount] || MOUNTAIN_SHAPE[1];
-  // step 0 = base (wide), step MAX = top (narrow)
   const t = Math.max(0, Math.min(1, step / MAX_STEPS));
   return shape.base - t * (shape.base - shape.top);
 }
 
+/** Horizontal center of each player lane at a given step */
+function laneCenters(step, playerCount) {
+  const count = Math.max(1, Math.min(5, playerCount || 1));
+  const mtnW = mountainWidthAt(step, count);
+  const mtnLeft = (100 - mtnW) / 2;
+  if (count === 1) return [50];
+  const pad = mtnW * 0.14;
+  const usable = mtnW - pad * 2;
+  const spacing = usable / (count - 1);
+  const centers = [];
+  for (let i = 0; i < count; i++) centers.push(mtnLeft + pad + i * spacing);
+  return centers;
+}
+
 function buildStaircase(playerCount) {
   const count = Math.max(1, Math.min(5, playerCount || 1));
-  // Rebuild only when player count changes (or first time)
   if (staircaseBuilt && lastStaircasePlayerCount === count) return;
   staircaseBuilt = true;
   lastStaircasePlayerCount = count;
@@ -433,28 +453,31 @@ function buildStaircase(playerCount) {
     climbZone.classList.add("players-" + count);
     const shape = MOUNTAIN_SHAPE[count] || MOUNTAIN_SHAPE[1];
     climbZone.style.setProperty("--mtn-base", shape.base + "%");
-    // top half-width for clip-path (as % of the mountain body width)
     climbZone.style.setProperty("--mtn-top", (shape.top / shape.base * 50) + "%");
   }
 
   const peakLabel = $("peakStepLabel");
   if (peakLabel) peakLabel.textContent = MAX_STEPS;
 
+  // Hide ground marker if present
+  const ground = $("groundMarker");
+  if (ground) ground.style.display = "none";
+
   const wrap = $("stairLines");
   wrap.innerHTML = "";
 
-  // Mountain body silhouette
+  // Mountain body
   const body = document.createElement("div");
   body.className = "mountainBody";
   wrap.appendChild(body);
 
-  // Grass + flowers + bird (decorations live inside stairLines so they rebuild cleanly)
+  // Grass + flowers (no bird)
   const grass = document.createElement("div");
   grass.className = "grassStrip";
   wrap.appendChild(grass);
 
   const flowerEmojis = ["🌼", "🌸", "🌺", "🌷", "🌻"];
-  const flowerPositions = [8, 18, 30, 55, 68, 80, 90];
+  const flowerPositions = [6, 16, 28, 58, 72, 84, 93];
   flowerPositions.forEach((left, i) => {
     const f = document.createElement("div");
     f.className = "flower";
@@ -464,30 +487,31 @@ function buildStaircase(playerCount) {
     wrap.appendChild(f);
   });
 
-  const bird = document.createElement("div");
-  bird.className = "skyBird";
-  bird.textContent = "🐦";
-  bird.style.animationDelay = "2s";
-  wrap.appendChild(bird);
-
-  // Side labels only — 10, 20 (30 is on the peak badge)
+  const treadW = TREAD_WIDTH[count] || 12;
   const labelSteps = new Set([10, 20]);
+
   for (let step = 1; step <= MAX_STEPS; step++) {
     const bottom = STEP_BASE_BOTTOM + (step / MAX_STEPS) * (STEP_TOP_BOTTOM - STEP_BASE_BOTTOM);
-    const width = mountainWidthAt(step, count);
-    const left = (100 - width) / 2;
+    const centers = laneCenters(step, count);
+    const isMajor = labelSteps.has(step) || step === MAX_STEPS;
 
-    const line = document.createElement("div");
-    line.className = "stepRung" + (labelSteps.has(step) || step === MAX_STEPS ? " major" : "");
-    line.style.bottom = bottom + "%";
-    line.style.left = left + "%";
-    line.style.width = width + "%";
-    wrap.appendChild(line);
+    // One short tread under each player lane — not the full mountain width
+    centers.forEach((cx) => {
+      const line = document.createElement("div");
+      line.className = "stepRung" + (isMajor ? " major" : "");
+      line.style.bottom = bottom + "%";
+      line.style.left = (cx - treadW / 2) + "%";
+      line.style.width = treadW + "%";
+      wrap.appendChild(line);
+    });
 
+    // Labels 10 & 20 glued to the left of the leftmost tread
     if (labelSteps.has(step)) {
+      const leftmost = centers[0] - treadW / 2;
       const label = document.createElement("div");
       label.className = "stepRungLabel";
       label.style.bottom = bottom + "%";
+      label.style.left = leftmost + "%"; // CSS translate(-100%) pulls it just left of the tread
       label.textContent = step;
       wrap.appendChild(label);
     }
@@ -495,28 +519,14 @@ function buildStaircase(playerCount) {
 }
 
 /**
- * Position a player token on the mountain.
- * Lanes stay inside the mountain width at that step.
+ * Position a player token on its lane.
  */
 function stepPosition(step, orderIndex, playerCount) {
   const count = Math.max(1, Math.min(5, playerCount || 1));
   const s = Math.max(0, Math.min(MAX_STEPS, step));
   const bottom = STEP_BASE_BOTTOM + (s / MAX_STEPS) * (STEP_TOP_BOTTOM - STEP_BASE_BOTTOM);
-
-  // Available width of the mountain at this height
-  const mtnW = mountainWidthAt(s, count);
-  const mtnLeft = (100 - mtnW) / 2;
-
-  // Distribute players evenly across the mountain width at this step
-  let left;
-  if (count === 1) {
-    left = 50;
-  } else {
-    const pad = mtnW * 0.12; // keep tokens slightly inset from edges
-    const usable = mtnW - pad * 2;
-    const spacing = usable / (count - 1);
-    left = mtnLeft + pad + orderIndex * spacing;
-  }
+  const centers = laneCenters(s, count);
+  const left = centers[Math.min(orderIndex, centers.length - 1)];
 
   const sizeMap = { 1: 44, 2: 38, 3: 34, 4: 30, 5: 27 };
   const size = sizeMap[count] || 34;
@@ -576,8 +586,8 @@ function renderGame(room) {
     flag.textContent = "🚩";
     peakWrap.appendChild(flag);
   });
-  // Flag sits exactly on the same vertical as step 30
-  $("peakMarker").style.bottom = STEP_TOP_BOTTOM + "%";
+  // Flags sit just above step 30 so they stay visible
+  $("peakMarker").style.bottom = (STEP_TOP_BOTTOM + 6) + "%";
 
   const tokenWrap = $("playerTokens");
   tokenWrap.innerHTML = "";
@@ -963,7 +973,14 @@ function startLocalQuestionTimer(turn) {
     const remainMs = deadline - Date.now();
     $("qTimerNum").textContent = Math.max(0, Math.ceil(remainMs / 1000));
     $("qTimerFill").style.width = Math.max(0, (remainMs / (total * 1000)) * 100) + "%";
-    if (remainMs <= 0) { clearInterval(localQuestionTimerHandle); localQuestionTimerHandle = null; }
+    if (remainMs <= 0) {
+      clearInterval(localQuestionTimerHandle);
+      localQuestionTimerHandle = null;
+      // Timer expired → force timeout handling so unanswered players fall
+      if (latestRoom) {
+        try { checkTurnProgress(latestRoom); } catch (e) {}
+      }
+    }
   }
   tick();
   localQuestionTimerHandle = setInterval(tick, 200);
@@ -1052,14 +1069,17 @@ async function checkTurnProgress(room) {
     const active = Object.keys(players).filter((pid) => !players[pid].eliminated);
     const answers = turn.answers || {};
     const answered = active.filter((pid) => answers[pid]).length;
-    const timedOut = Date.now() >= turn.deadline + 1200;
+    // Allow a short grace, but still process as soon as the local timer ends
+    const timedOut = Date.now() >= (turn.deadline || 0) + 400;
     if (answered >= active.length || timedOut) {
       const updates = {};
       const totalSeconds = questionSecondsFor(turn.category);
+      const colorDelta = COLOR_DELTA[turn.color] || 1;
       active.forEach((pid) => {
         if (!answers[pid]) {
-          const delta = -COLOR_DELTA[turn.color];
-          updates[`players/${pid}/step`] = Math.max(0, Math.min(MAX_STEPS, (players[pid].step || 0) + delta));
+          const delta = -colorDelta;
+          const cur = players[pid].step || 0;
+          updates[`players/${pid}/step`] = Math.max(0, Math.min(MAX_STEPS, cur + delta));
           updates[`turn/answers/${pid}`] = { option: null, correct: false };
           applyTimeDeduction(updates, pid, players[pid].timeLeft, players[pid].eliminated, totalSeconds);
         }
@@ -1208,7 +1228,11 @@ $("backHomeBtn").addEventListener("click", async () => {
 });
 
 setInterval(() => {
-  if (latestRoom && latestRoom.status === "playing") renderPlayerTimers(latestRoom);
+  if (latestRoom && latestRoom.status === "playing") {
+    renderPlayerTimers(latestRoom);
+    // Keep timeout / turn advancement alive even if no Firebase write happens
+    try { checkTurnProgress(latestRoom); } catch (e) {}
+  }
 }, 1000);
 
 // Sound toggle
@@ -1240,6 +1264,10 @@ initHome();
    --------------------------------------------------------------- */
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "visible" && latestRoom) {
-    try { renderRoom(latestRoom); } catch (e) {}
+    try {
+      if (latestRoom.status === "playing") renderGame(latestRoom);
+      else if (latestRoom.status === "lobby") renderLobby(latestRoom);
+      else if (latestRoom.status === "finished") renderResults(latestRoom);
+    } catch (e) {}
   }
 });
