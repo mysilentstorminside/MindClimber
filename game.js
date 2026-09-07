@@ -148,6 +148,62 @@ function initHome() {
   showScreen("homeScreen");
 }
 
+// Add decorative elements to climb zone
+function addDecorativeElements() {
+  const climbZone = $("climbZone");
+  if (!climbZone) return;
+  
+  // Add floating clouds
+  const clouds = [
+    { className: 'cloud cloud-1' },
+    { className: 'cloud cloud-2' },
+    { className: 'cloud cloud-3' }
+  ];
+  clouds.forEach(c => {
+    if (!climbZone.querySelector(`.${c.className.split(' ')[1]}`)) {
+      const div = document.createElement('div');
+      div.className = c.className;
+      climbZone.appendChild(div);
+    }
+  });
+  
+  // Add sun glow
+  if (!climbZone.querySelector('.sunGlow')) {
+    const sun = document.createElement('div');
+    sun.className = 'sunGlow';
+    climbZone.appendChild(sun);
+  }
+  
+  // Add birds
+  const birds = ['🐦', '🐦', '🐦'];
+  birds.forEach((b, i) => {
+    if (!climbZone.querySelector(`.skyBird:nth-child(${i + 1})`)) {
+      const bird = document.createElement('div');
+      bird.className = 'skyBird';
+      bird.textContent = b;
+      if (i > 0) bird.style.animationDelay = `-${6 + i * 5}s`;
+      climbZone.appendChild(bird);
+    }
+  });
+  
+  // Add small bushes on the mountain sides
+  const bushPositions = [
+    { left: 8, bottom: 18 },
+    { left: 14, bottom: 28 },
+    { left: 86, bottom: 22 },
+    { left: 92, bottom: 32 }
+  ];
+  bushPositions.forEach(pos => {
+    if (!climbZone.querySelector(`.bush[style*="left: ${pos.left}%"`)) {
+      const bush = document.createElement('div');
+      bush.className = 'bush';
+      bush.style.left = pos.left + '%';
+      bush.style.bottom = pos.bottom + '%';
+      climbZone.appendChild(bush);
+    }
+  });
+}
+
 $("createRoomBtn").addEventListener("click", async () => {
   if (!firebaseReady) return;
   $("homeError").textContent = "";
@@ -441,7 +497,6 @@ function laneCenters(step, playerCount) {
   return centers;
 }
 
-
 /* ── Mountain relief ────────────────────────────────────────────────────────
    Drawn in the same 0-100 percentage space the treads use, so the rock always
    lines up with the lanes no matter how many players there are. A seeded
@@ -451,7 +506,7 @@ function buildMountainSvg(count) {
   const shape = MOUNTAIN_SHAPE[count] || MOUNTAIN_SHAPE[1];
   const baseHalf = shape.base / 2;
   const topHalf  = Math.max(4, shape.top / 2);
-  const peakY = 100 - (STEP_TOP_BOTTOM + 9);   // a little headroom for the flag
+  const peakY = 100 - (STEP_TOP_BOTTOM + 9);
   const baseY = 100 - 4;
 
   let seed = 1337 + count * 97;
@@ -474,7 +529,6 @@ function buildMountainSvg(count) {
     for (let i = 0; i <= N; i++) {
       const t = i / N;
       const y = lerp(peakY, baseY, t);
-      // t = 0 is the summit, so the matching step counts down from MAX_STEPS
       const step = Math.round((1 - t) * MAX_STEPS);
       const half = Math.max(lerp(topHalf, baseHalf, Math.pow(t, 0.86)), neededHalf(step));
       const wobble = (rnd() - 0.5) * jag * (0.35 + t);
@@ -530,34 +584,51 @@ function buildMountainSvg(count) {
   return `<svg class="mountainSvg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
   <defs>
     <linearGradient id="mcLit" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"  stop-color="#9fb6a4"/>
-      <stop offset="22%" stop-color="#87a189"/>
-      <stop offset="48%" stop-color="#9d8a6b"/>
-      <stop offset="76%" stop-color="#8a7454"/>
+      <stop offset="0%"  stop-color="#a8c4b0"/>
+      <stop offset="20%" stop-color="#8fb89a"/>
+      <stop offset="45%" stop-color="#a89878"/>
+      <stop offset="72%" stop-color="#8f7a5a"/>
       <stop offset="100%" stop-color="#6b5940"/>
     </linearGradient>
     <linearGradient id="mcShade" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#2f3b39" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="#222c2b" stop-opacity="0.52"/>
+      <stop offset="0%"   stop-color="#2f3b39" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#1a2422" stop-opacity="0.55"/>
     </linearGradient>
     <linearGradient id="mcSnow" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%"   stop-color="#ffffff"/>
-      <stop offset="70%"  stop-color="#e6eff6"/>
-      <stop offset="100%" stop-color="#cfe0ec"/>
+      <stop offset="60%"  stop-color="#e8f0f8"/>
+      <stop offset="100%" stop-color="#d0e0ec"/>
     </linearGradient>
+    <linearGradient id="mcRock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#8a7a68"/>
+      <stop offset="50%"  stop-color="#6b5a48"/>
+      <stop offset="100%" stop-color="#4a3a2a"/>
+    </linearGradient>
+    <filter id="mountainShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
   </defs>
-  <polygon points="${range(46, 9, 9)}"  fill="#a9c8dc" opacity="0.55"/>
-  <polygon points="${range(56, 7, 7)}"  fill="#8fb3cb" opacity="0.6"/>
-  <polygon points="${massif}" fill="url(#mcLit)"/>
-  <polygon points="${shaded}" fill="url(#mcShade)"/>
-  <polygon points="${snow}"   fill="url(#mcSnow)"/>
-  <g stroke="#4a4133" stroke-opacity="0.28" fill="none" stroke-linecap="round">
-    <path d="M${(50 - topHalf * 0.7).toFixed(1)},${(peakY + 6).toFixed(1)}
-             L${(50 - baseHalf * 0.42).toFixed(1)},${lerp(peakY, baseY, 0.55).toFixed(1)}
-             L${(50 - baseHalf * 0.58).toFixed(1)},${(baseY - 4).toFixed(1)}" stroke-width="0.7"/>
-    <path d="M${(50 + topHalf * 0.6).toFixed(1)},${(peakY + 8).toFixed(1)}
-             L${(50 + baseHalf * 0.40).toFixed(1)},${lerp(peakY, baseY, 0.6).toFixed(1)}
-             L${(50 + baseHalf * 0.55).toFixed(1)},${(baseY - 3).toFixed(1)}" stroke-width="0.55"/>
+  <g filter="url(#mountainShadow)">
+    <polygon points="${range(46, 9, 9)}"  fill="#b0d0e0" opacity="0.4"/>
+    <polygon points="${range(56, 7, 7)}"  fill="#98b8d0" opacity="0.5"/>
+    <polygon points="${massif}" fill="url(#mcLit)"/>
+    <polygon points="${shaded}" fill="url(#mcShade)"/>
+    <polygon points="${snow}"   fill="url(#mcSnow)"/>
+    <!-- Rock texture lines -->
+    <g stroke="#5a4a38" stroke-opacity="0.2" fill="none" stroke-linecap="round">
+      <path d="M${(50 - topHalf * 0.7).toFixed(1)},${(peakY + 6).toFixed(1)}
+               L${(50 - baseHalf * 0.42).toFixed(1)},${lerp(peakY, baseY, 0.55).toFixed(1)}
+               L${(50 - baseHalf * 0.58).toFixed(1)},${(baseY - 4).toFixed(1)}" stroke-width="0.8"/>
+      <path d="M${(50 + topHalf * 0.6).toFixed(1)},${(peakY + 8).toFixed(1)}
+               L${(50 + baseHalf * 0.40).toFixed(1)},${lerp(peakY, baseY, 0.6).toFixed(1)}
+               L${(50 + baseHalf * 0.55).toFixed(1)},${(baseY - 3).toFixed(1)}" stroke-width="0.6"/>
+      <path d="M${(50 - topHalf * 0.35).toFixed(1)},${(peakY + 12).toFixed(1)}
+               L${(50 - baseHalf * 0.25).toFixed(1)},${lerp(peakY, baseY, 0.7).toFixed(1)}" stroke-width="0.5"/>
+    </g>
+    <!-- Light reflection on the right side -->
+    <path d="M${(50 + topHalf * 0.2).toFixed(1)},${(peakY + 10).toFixed(1)}
+             L${(50 + baseHalf * 0.15).toFixed(1)},${lerp(peakY, baseY, 0.7).toFixed(1)}" 
+          stroke="rgba(255,255,255,0.15)" stroke-width="1.5" fill="none"/>
   </g>
 </svg>`;
 }
@@ -587,21 +658,24 @@ function buildStaircase(playerCount) {
   const wrap = $("stairLines");
   wrap.innerHTML = "";
 
+  // Add decorative elements
+  addDecorativeElements();
+
   // Mountain relief (SVG — see buildMountainSvg)
   wrap.insertAdjacentHTML("beforeend", buildMountainSvg(count));
 
-  // Grass + flowers (no bird)
+  // Grass + flowers
   const grass = document.createElement("div");
   grass.className = "grassStrip";
   wrap.appendChild(grass);
 
-  const flowerEmojis = ["🌼", "🌸", "🌺", "🌷", "🌻"];
-  const flowerPositions = [6, 16, 28, 58, 72, 84, 93];
+  const flowerEmojis = ["🌼", "🌸", "🌺", "🌷", "🌻", "🌹", "🌿"];
+  const flowerPositions = [4, 12, 22, 34, 48, 62, 76, 88, 96];
   flowerPositions.forEach((left, i) => {
     const f = document.createElement("div");
     f.className = "flower";
     f.style.left = left + "%";
-    f.style.animationDelay = (i * 0.4) + "s";
+    f.style.animationDelay = (i * 0.35) + "s";
     f.textContent = flowerEmojis[i % flowerEmojis.length];
     wrap.appendChild(f);
   });
@@ -615,12 +689,16 @@ function buildStaircase(playerCount) {
     const isMajor = labelSteps.has(step) || step === MAX_STEPS;
 
     // One short tread under each player lane — not the full mountain width
-    centers.forEach((cx) => {
+    centers.forEach((cx, idx) => {
       const line = document.createElement("div");
       line.className = "stepRung" + (isMajor ? " major" : "");
       line.style.bottom = bottom + "%";
       line.style.left = (cx - treadW / 2) + "%";
       line.style.width = treadW + "%";
+      // Add glow effect to steps near the player's current position
+      if (idx === 0 && step % 5 === 0) {
+        line.classList.add("glow");
+      }
       wrap.appendChild(line);
     });
 
@@ -630,7 +708,7 @@ function buildStaircase(playerCount) {
       const label = document.createElement("div");
       label.className = "stepRungLabel";
       label.style.bottom = bottom + "%";
-      label.style.left = leftmost + "%"; // CSS translate(-100%) pulls it just left of the tread
+      label.style.left = leftmost + "%";
       label.textContent = step;
       wrap.appendChild(label);
     }
@@ -685,9 +763,6 @@ function renderPlayerTimers(room) {
   });
 }
 
-
-
-
 function renderGame(room) {
   const players = room.players || {};
   const order = Object.entries(players).sort((a, b) => a[1].order - b[1].order);
@@ -705,7 +780,6 @@ function renderGame(room) {
     flag.textContent = "🚩";
     peakWrap.appendChild(flag);
   });
-  // Flags sit just above step 30 so they stay visible
   $("peakMarker").style.bottom = (STEP_TOP_BOTTOM + 6) + "%";
 
   const tokenWrap = $("playerTokens");
@@ -715,17 +789,18 @@ function renderGame(room) {
     const pos = stepPosition(step, idx, playerCount);
     const tok = document.createElement("div");
     const isActive = room.turn && room.turn.colorPickerId === pid;
+    const isMoving = false; // Could track movement state
     tok.className = "playerToken"
       + (p.eliminated ? " eliminated" : "")
       + (step < 3 ? " lowStep" : "")
       + (pid === myPlayerId ? " is-me" : "")
-      + (isActive ? " active-turn" : "");
+      + (isActive ? " active-turn" : "")
+      + (isMoving ? " moving" : "");
     tok.dataset.pid = pid;
     tok.style.left = pos.left + "%";
     tok.style.bottom = pos.bottom + "%";
     tok.style.width = pos.size + "px";
     tok.style.height = pos.size + "px";
-    // Compact token: no turn text (turn is shown in the answer-status row)
     tok.innerHTML = `
       <div class="tokenTimer">${formatTimeLeft(computeLiveTimeLeft(pid, p, room))}</div>
       <div class="tokenAvatarWrap"><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3"></div>
@@ -733,9 +808,6 @@ function renderGame(room) {
       <div class="tokenStep">${step}</div>`;
     tokenWrap.appendChild(tok);
   });
-
-  // Top player strip removed (reclaimed vertical space) — the turn
-  // indicator now lives in the answer-status row below the question instead.
 
   const turn = room.turn || {};
 
@@ -775,9 +847,6 @@ function renderGame(room) {
     if (turn.phase === "question") startLocalQuestionTimer(turn);
   }
 
-  // Answer-status row stays visible in every phase now — it doubles as the
-  // "whose turn" indicator (gold ring) while nobody has categoryChoiceRow /
-  // colorChoiceRow, since the top playerStrip was removed to save space.
   $("allAnswersStatus").classList.remove("hidden");
   renderAnswerStatuses(room);
 
@@ -806,10 +875,6 @@ function renderQuestion(turn, showResult) {
   const img = $("questionImage");
   const rect = $("questionRectangle");
 
-  // The question text is now ALWAYS shown, even for image questions. Before,
-  // an image question hid the prompt entirely, so "Ποιον ήρωα του 1821
-  // απεικονίζει αυτή η προσωπογραφία;" arrived as a bare picture — and if the
-  // image failed to load the player got a blank box with three options.
   const text = q.text || "";
   if (lastRenderedQText !== text) {
     rect.textContent = text;
@@ -819,8 +884,6 @@ function renderQuestion(turn, showResult) {
   rect.classList.toggle("withImage", !!q.img);
 
   if (q.img) {
-    // Only touch .src when it actually changes, otherwise every Firebase
-    // update re-decodes (and sometimes re-downloads) the same picture.
     if (lastRenderedImgSrc !== q.img) {
       lastRenderedImgSrc = q.img;
       img.classList.remove("imgFailed");
@@ -828,9 +891,6 @@ function renderQuestion(turn, showResult) {
       img.alt = text;
       img.decoding = "async";
       img.referrerPolicy = "no-referrer";
-      // Try the local copy in assets/questions_pics first. If it is missing
-      // (e.g. download_images.sh has not been run yet) fall back once to the
-      // original online address, and only then give up and show text alone.
       let triedFallback = false;
       img.onerror = () => {
         if (!triedFallback && q.imgFallback) {
@@ -874,9 +934,6 @@ function renderQuestion(turn, showResult) {
   });
 }
 
-// Reconcile in place. The old version wiped innerHTML on every single room
-// update, which rebuilt each <img> from scratch — causing avatar flicker and
-// repeated image work several times per second during a question.
 function renderAnswerStatuses(room) {
   const wrap = $("allAnswersStatus");
   const turn = room.turn || {};
@@ -920,8 +977,6 @@ function renderAnswerStatuses(room) {
 }
 
 // Deterministic PRNG so a whole question order can be rebuilt from one integer.
-// Previously the full index array (up to ~300 numbers) was written to Firebase
-// on EVERY question and re-downloaded by every client. Now we store {seed,pos}.
 function mulberry32(seed) {
   let t = seed >>> 0;
   return function () {
@@ -951,8 +1006,6 @@ function pickFromShuffledQueue(category, color, queueState) {
   let seed = queueState && queueState.seed;
   let pos = queueState && queueState.pos;
   const len = queueState && queueState.len;
-  // Reshuffle when the queue is new, exhausted, or the pool size changed
-  // (i.e. the question bank was updated since the room was created).
   if (typeof seed !== "number" || typeof pos !== "number" || len !== pool.length || pos >= pool.length) {
     seed = (Math.random() * 4294967295) >>> 0;
     pos = 0;
@@ -972,10 +1025,6 @@ function applyTimeDeduction(updates, pid, currentTimeLeft, alreadyEliminated, el
   return newTimeLeft;
 }
 
-// The answer used to be sent to every client as a plain "A"/"B"/"C", visible to
-// anyone who opened the network tab. It is now offset by a per-question key.
-// This is obfuscation, not security — a determined player can still decode it —
-// but it stops trivial cheating. Real protection needs server-side validation.
 function encodeCorrect(letter, key) {
   const i = "ABC".indexOf(letter);
   if (i < 0) return 0;
@@ -983,7 +1032,7 @@ function encodeCorrect(letter, key) {
 }
 function decodeCorrect(question) {
   if (!question) return "A";
-  if (typeof question.correct === "string") return question.correct; // legacy rooms
+  if (typeof question.correct === "string") return question.correct;
   const key = typeof question.k === "number" ? question.k : 0;
   const c = typeof question.c === "number" ? question.c : 0;
   return "ABC"[((c - (key % 3)) % 3 + 3) % 3];
@@ -1004,7 +1053,6 @@ async function buildQuestionTurnUpdates(category, color) {
   };
 }
 
-// Warm the browser cache for a picture we are about to show.
 function preloadImage(url) {
   if (!url) return;
   try { const i = new Image(); i.referrerPolicy = "no-referrer"; i.src = url; } catch (e) {}
@@ -1095,7 +1143,6 @@ function startLocalQuestionTimer(turn) {
     if (remainMs <= 0) {
       clearInterval(localQuestionTimerHandle);
       localQuestionTimerHandle = null;
-      // Timer expired → force timeout handling so unanswered players fall
       if (latestRoom) {
         try { checkTurnProgress(latestRoom); } catch (e) {}
       }
@@ -1188,7 +1235,6 @@ async function checkTurnProgress(room) {
     const active = Object.keys(players).filter((pid) => !players[pid].eliminated);
     const answers = turn.answers || {};
     const answered = active.filter((pid) => answers[pid]).length;
-    // Allow a short grace, but still process as soon as the local timer ends
     const timedOut = Date.now() >= (turn.deadline || 0) + 400;
     if (answered >= active.length || timedOut) {
       const updates = {};
@@ -1275,21 +1321,23 @@ async function finishGame(room, forcedWinnerId) {
 
 let confettiShownForRoom = null;
 function launchConfetti() {
-  const colors = ["#ffd54f", "#4CAF50", "#0ea5e9", "#ef4444", "#a855f7", "#f97316"];
+  const colors = ["#ffd54f", "#4CAF50", "#0ea5e9", "#ef4444", "#a855f7", "#f97316", "#22d3ee", "#f472b6"];
   const wrap = document.createElement("div");
   wrap.className = "confettiWrap";
-  for (let i = 0; i < 36; i++) {
+  for (let i = 0; i < 60; i++) {
     const piece = document.createElement("span");
     piece.className = "confettiPiece";
     piece.style.left = Math.random() * 100 + "%";
     piece.style.background = colors[i % colors.length];
-    piece.style.animationDelay = (Math.random() * 0.4) + "s";
-    piece.style.animationDuration = (2.2 + Math.random() * 1.2) + "s";
+    piece.style.animationDelay = (Math.random() * 0.6) + "s";
+    piece.style.animationDuration = (2.0 + Math.random() * 1.6) + "s";
     piece.style.setProperty("--rot", (Math.random() * 360) + "deg");
+    piece.style.width = (6 + Math.random() * 8) + "px";
+    piece.style.height = (8 + Math.random() * 14) + "px";
     wrap.appendChild(piece);
   }
   document.body.appendChild(wrap);
-  setTimeout(() => wrap.remove(), 3800);
+  setTimeout(() => wrap.remove(), 4200);
 }
 
 function renderResults(room) {
@@ -1302,14 +1350,15 @@ function renderResults(room) {
     confettiShownForRoom = currentRoomCode + (room.startedAt || "");
     launchConfetti();
   }
-  $("resultsTitle").textContent = winner ? `Νικητής: ${winner.name}! 🎉` : "Τέλος Παιχνιδιού!";
+  $("resultsTitle").textContent = winner ? `🏆 Νικητής: ${winner.name}! 🎉` : "Τέλος Παιχνιδιού!";
   if (winner) $("winnerAvatarImg").src = avatarSrc(winner.avatar, "front");
   const list = $("rankingList");
   list.innerHTML = "";
   ranked.forEach(([pid, p], i) => {
     const row = document.createElement("div");
     row.className = "rankRow" + (room.winnerId === pid ? " winner" : "");
-    row.innerHTML = `<span class="rpos">#${i + 1}</span><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3"><span class="rname">${escapeHtml(p.name)}${pid === myPlayerId ? " (Εσύ)" : ""}</span><span class="rstep">${p.step || 0}/${MAX_STEPS}</span>`;
+    const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : `#${i + 1}`;
+    row.innerHTML = `<span class="rpos">${medal}</span><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3"><span class="rname">${escapeHtml(p.name)}${pid === myPlayerId ? " (Εσύ)" : ""}</span><span class="rstep">${p.step || 0}/${MAX_STEPS}</span>`;
     list.appendChild(row);
   });
   $("playAgainBtn").classList.toggle("hidden", !isHost);
@@ -1349,7 +1398,6 @@ $("backHomeBtn").addEventListener("click", async () => {
 setInterval(() => {
   if (latestRoom && latestRoom.status === "playing") {
     renderPlayerTimers(latestRoom);
-    // Keep timeout / turn advancement alive even if no Firebase write happens
     try { checkTurnProgress(latestRoom); } catch (e) {}
   }
 }, 1000);
@@ -1374,13 +1422,7 @@ if (showInfoBtn && infoModal) {
 
 initHome();
 
-
-/* ---------------------------------------------------------------
-   Re-sync when the player comes back to the tab. Mobile browsers
-   throttle timers in the background, so the countdown bar could be
-   badly out of date on return; re-render from the authoritative
-   room snapshot instead of trusting the local interval.
-   --------------------------------------------------------------- */
+/* Re-sync when the player comes back to the tab. */
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "visible" && latestRoom) {
     try {
