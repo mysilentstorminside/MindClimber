@@ -396,15 +396,27 @@ function escapeHtml(str) {
 }
 
 let staircaseBuilt = false;
+let lastStaircasePlayerCount = 0;
 // Climb mapping: leave room at bottom so avatar at step 0 is fully visible
 // above the question panel. Compress rungs toward the upper band.
 const STEP_BASE_BOTTOM = 18;   // % — player start sits clearly above panel
 const STEP_TOP_BOTTOM = 88;    // % — step 30 near top of climbZone
 const PEAK_BOTTOM_OFFSET = 0;  // flag sits on step 30
 
-function buildStaircase() {
-  if (staircaseBuilt) return;
+function buildStaircase(playerCount) {
+  const count = Math.max(1, Math.min(5, playerCount || 1));
+  // Rebuild only when player count changes (or first time)
+  if (staircaseBuilt && lastStaircasePlayerCount === count) return;
   staircaseBuilt = true;
+  lastStaircasePlayerCount = count;
+
+  const climbZone = $("climbZone");
+  if (climbZone) {
+    // reset player-count classes then apply the current one
+    climbZone.classList.remove("players-1", "players-2", "players-3", "players-4", "players-5");
+    climbZone.classList.add("players-" + count);
+  }
+
   const peakLabel = $("peakStepLabel");
   if (peakLabel) peakLabel.textContent = MAX_STEPS;
   const wrap = $("stairLines");
@@ -412,7 +424,7 @@ function buildStaircase() {
   // Only label 10, 20, 30 (0 is the ground marker)
   const labelSteps = new Set([10, 20, 30]);
   for (let step = 1; step <= MAX_STEPS; step++) {
-    const pos = stepPosition(step, 2);
+    const pos = stepPosition(step, 0, count);
     const line = document.createElement("div");
     line.className = "stepRung" + (labelSteps.has(step) ? " major" : "");
     line.style.bottom = pos.bottom + "%";
@@ -427,13 +439,33 @@ function buildStaircase() {
   }
 }
 
-function stepPosition(step, orderIndex) {
+/**
+ * Position a player token on the mountain.
+ * @param {number} step - current step 0..MAX_STEPS
+ * @param {number} orderIndex - 0-based index among active players
+ * @param {number} playerCount - total players in the room (1-5)
+ */
+function stepPosition(step, orderIndex, playerCount) {
+  const count = Math.max(1, Math.min(5, playerCount || 1));
   const s = Math.max(0, Math.min(MAX_STEPS, step));
   const bottom = STEP_BASE_BOTTOM + (s / MAX_STEPS) * (STEP_TOP_BOTTOM - STEP_BASE_BOTTOM);
-  const jitter = (orderIndex - 2) * 12;
-  const left = Math.min(86, Math.max(14, 50 + jitter));
-  // Slightly smaller tokens so they fit better in the band
-  return { bottom, left, size: 34 };
+
+  // Horizontal lanes: evenly spaced and centered
+  const laneMap = {
+    1: [50],
+    2: [35, 65],
+    3: [28, 50, 72],
+    4: [22, 38, 62, 78],
+    5: [16, 33, 50, 67, 84],
+  };
+  const lanes = laneMap[count] || laneMap[1];
+  const left = lanes[Math.min(orderIndex, lanes.length - 1)];
+
+  // Token size shrinks slightly with more players so they fit
+  const sizeMap = { 1: 42, 2: 38, 3: 34, 4: 30, 5: 28 };
+  const size = sizeMap[count] || 34;
+
+  return { bottom, left, size };
 }
 
 function formatTimeLeft(seconds) {
@@ -472,14 +504,16 @@ function renderPlayerTimers(room) {
 
 
 function renderGame(room) {
-  buildStaircase();
   const players = room.players || {};
   const order = Object.entries(players).sort((a, b) => a[1].order - b[1].order);
+  const playerCount = order.length || 1;
+
+  buildStaircase(playerCount);
 
   const peakWrap = $("peakFlags");
   peakWrap.innerHTML = "";
   order.forEach((_, idx) => {
-    const pos = stepPosition(MAX_STEPS, idx);
+    const pos = stepPosition(MAX_STEPS, idx, playerCount);
     const flag = document.createElement("span");
     flag.className = "peakFlag";
     flag.style.left = pos.left + "%";
@@ -493,7 +527,7 @@ function renderGame(room) {
   tokenWrap.innerHTML = "";
   order.forEach(([pid, p], idx) => {
     const step = p.step || 0;
-    const pos = stepPosition(step, idx);
+    const pos = stepPosition(step, idx, playerCount);
     const tok = document.createElement("div");
     const isActive = room.turn && room.turn.colorPickerId === pid;
     tok.className = "playerToken"

@@ -259,8 +259,7 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 #gameScreen { padding: 0; display: none; background: linear-gradient(180deg, #bfe4ff 0%, #eaf6ff 55%, #f5fbff 100%); }
 #gameScreen.active { display: block; }
 
-/* Climb zone: simple, clean 27-step staircase graphic, kept compact so it
-   always stays visible above the bottom question panel. */
+/* Climb zone — Cartoon Adventure mountain stairs */
 #climbZone {
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -270,49 +269,67 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 }
 
 #stairLines { position: absolute; inset: 0; z-index: 1; }
+
+/* Base step: warm wood/stone cartoon style */
 .stepRung {
   position: absolute;
-  left: 5%;
-  width: 90%;
-  height: 7px;
-  border-radius: 2px;
-  /* Tread lit from above, riser shadowed below — gives each step real
-     carved-rock depth instead of a flat line. */
+  left: 8%;
+  width: 84%;
+  height: 8px;
+  border-radius: 6px;
   background:
     linear-gradient(180deg,
-      rgba(255,255,255,0.55) 0%,
-      rgba(210,225,235,0.42) 22%,
-      rgba(120,150,170,0.30) 55%,
-      rgba(50,75,95,0.38) 88%,
-      rgba(30,48,64,0.5) 100%);
+      #e8c48a 0%,
+      #d4a574 18%,
+      #c08a5a 45%,
+      #a06e42 78%,
+      #8b5e3c 100%);
   box-shadow:
-    0 3px 4px rgba(20,35,50,0.22),
-    0 1px 0 rgba(255,255,255,0.5) inset;
+    0 3px 0 #6d4c2f,
+    0 5px 8px rgba(40, 25, 10, 0.35),
+    0 1px 0 rgba(255, 230, 180, 0.55) inset;
+  transition: left 0.35s ease, width 0.35s ease;
 }
+
+/* Major steps (10, 20, 30) — thicker + brighter */
 .stepRung.major {
-  height: 9px;
+  height: 11px;
+  border-radius: 7px;
   background:
     linear-gradient(180deg,
-      rgba(255,255,255,0.75) 0%,
-      rgba(210,230,245,0.55) 20%,
-      rgba(110,150,175,0.4) 55%,
-      rgba(40,70,95,0.5) 88%,
-      rgba(22,42,60,0.62) 100%);
+      #f0d4a0 0%,
+      #e0b87a 20%,
+      #c99655 50%,
+      #b07a40 82%,
+      #9a6535 100%);
   box-shadow:
-    0 4px 6px rgba(20,35,50,0.3),
-    0 1px 0 rgba(255,255,255,0.65) inset;
+    0 4px 0 #5c3f22,
+    0 6px 10px rgba(40, 25, 10, 0.4),
+    0 1px 0 rgba(255, 240, 200, 0.65) inset;
 }
+
+/* Adaptive width by player count */
+#climbZone.players-1 .stepRung { left: 18%; width: 64%; }
+#climbZone.players-2 .stepRung { left: 12%; width: 76%; }
+#climbZone.players-3 .stepRung { left: 8%;  width: 84%; }
+#climbZone.players-4 .stepRung { left: 5%;  width: 90%; }
+#climbZone.players-5 .stepRung { left: 3%;  width: 94%; }
+
 .stepRungLabel {
   position: absolute;
-  left: 1%;
-  transform: translateY(-50%);
-  font-size: 0.95rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Baloo 2', 'Poppins', sans-serif;
+  font-size: 0.9rem;
   font-weight: 800;
-  color: #567;
-  background: rgba(255,255,255,0.55);
-  border-radius: 5px;
-  padding: 0 4px;
+  color: #5d4037;
+  background: linear-gradient(180deg, #fff8e7, #ffe0b2);
+  border: 1.5px solid #c9a06a;
+  border-radius: 8px;
+  padding: 1px 8px;
   z-index: 2;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  pointer-events: none;
 }
 
 #peakMarker {
@@ -328,25 +345,33 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 #peakFlags {
   position: relative;
   width: 100%;
-  height: 26px;
+  height: 28px;
   margin-top: 2px;
 }
 .peakFlag {
   position: absolute;
   top: 0;
   transform: translateX(-50%);
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   line-height: 1;
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35));
+  animation: flagWave 2.8s ease-in-out infinite;
+}
+@keyframes flagWave {
+  0%, 100% { transform: translateX(-50%) rotate(-4deg); }
+  50% { transform: translateX(-50%) rotate(5deg); }
 }
 #peakStepLabel {
   display: inline-block;
-  font-size: 0.55rem;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 0.7rem;
   font-weight: 800;
-  color: #37474f;
-  background: rgba(255,255,255,0.8);
-  border-radius: 6px;
-  padding: 0 4px;
+  color: #fff8e1;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border-radius: 8px;
+  padding: 2px 8px;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.45);
+  border: 1px solid rgba(255,255,255,0.25);
 }
 
 #groundMarker {
@@ -354,13 +379,17 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
   bottom: 3%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.7rem;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 0.72rem;
   font-weight: 800;
-  color: #fff;
-  background: rgba(0,0,0,0.55);
-  border-radius: 8px;
-  padding: 3px 12px;
+  color: #fff8e1;
+  background: linear-gradient(135deg, #5d4037, #3e2723);
+  border-radius: 10px;
+  padding: 4px 14px;
   z-index: 2;
+  border: 1.5px solid #a1887f;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  letter-spacing: 0.04em;
 }
 
 #stepInfo {
@@ -392,8 +421,11 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   background: #fff;
-  border: 1.5px solid #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  border: 2px solid #fff;
+  box-shadow:
+    0 3px 0 rgba(80, 50, 20, 0.35),
+    0 5px 10px rgba(0,0,0,0.28),
+    0 0 0 1px rgba(255,200,120,0.25);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -912,15 +944,19 @@ label { color: #94a3b8; }
   background: rgba(0,0,0,0.75);
 }
 #groundMarker {
-  background: rgba(15,23,42,0.85);
-  color: #94a3b8;
-  border: 1px solid #334155;
+  background: linear-gradient(135deg, #5d4037, #3e2723);
+  color: #fff8e1;
+  border: 1.5px solid #a1887f;
 }
 #peakStepLabel {
-  background: rgba(15,23,42,0.85);
-  color: #e2e8f0;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #fff8e1;
 }
-.stepRungLabel { color: #37474f; background: rgba(255,255,255,0.7); }
+.stepRungLabel {
+  color: #5d4037;
+  background: linear-gradient(180deg, #fff8e7, #ffe0b2);
+  border-color: #c9a06a;
+}
 
 /* ========== Leaderboard ========== */
 .lbTabs {
