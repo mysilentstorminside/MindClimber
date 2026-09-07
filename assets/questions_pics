@@ -1,0 +1,1114 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#DA291C'/><rect x='0' y='66.7' width='300' height='66.7' fill='#F9E300'/><rect x='0' y='133.3' width='300' height='66.7' fill='#007934'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#D20000'/><circle cx='150.0' cy='100.0' r='24.0' fill='#FFE600'/><polygon points='150.0,100.0 350.0,100.0 334.8,176.5' fill='#FFE600'/><polygon points='150.0,100.0 291.4,241.4 226.5,284.8' fill='#FFE600'/><polygon points='150.0,100.0 150.0,300.0 73.5,284.8' fill='#FFE600'/><polygon points='150.0,100.0 8.6,241.4 -34.8,176.5' fill='#FFE600'/><polygon points='150.0,100.0 -50.0,100.0 -34.8,23.5' fill='#FFE600'/><polygon points='150.0,100.0 8.6,-41.4 73.5,-84.8' fill='#FFE600'/><polygon points='150.0,100.0 150.0,-100.0 226.5,-84.8' fill='#FFE600'/><polygon points='150.0,100.0 291.4,-41.4 334.8,23.5' fill='#FFE600'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='66.7' width='300' height='66.7' fill='#00966E'/><rect x='0' y='133.3' width='300' height='66.7' fill='#D62612'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#009739'/><polygon points='150.0,30.0 276.0,100.0 150.0,170.0 24.0,100.0' fill='#FEDD00'/><circle cx='150.0' cy='100.0' r='44.0' fill='#012169'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#198A00'/><rect x='165.0' y='100.0' width='45.0' height='100.0' fill='#DE2010'/><rect x='210.0' y='100.0' width='45.0' height='100.0' fill='#000000'/><rect x='255.0' y='100.0' width='45.0' height='100.0' fill='#EF7D00'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='28.6' fill='#006400'/><rect x='0' y='28.6' width='300' height='28.6' fill='#FFD200'/><rect x='0' y='57.1' width='300' height='28.6' fill='#D40000'/><rect x='0' y='85.7' width='300' height='28.6' fill='#000000'/><rect x='0' y='114.3' width='300' height='28.6' fill='#D40000'/><rect x='0' y='142.9' width='300' height='28.6' fill='#FFD200'/><rect x='0' y='171.4' width='300' height='28.6' fill='#006400'/><polygon points='0,0 105.0,100.0 0,200' fill='#FFFFFF'/><polygon points='42.0,90.0 44.4,96.8 51.5,96.9 45.8,101.2 47.9,108.1 42.0,104.0 36.1,108.1 38.2,101.2 32.5,96.9 39.6,96.8' fill='#D40000'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+[
+ {
+  "file": "place_kastro_oyindsor.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Windsor_Castle_at_Sunset_-_Nov_2006.jpg?width=650",
+  "answer": "Κάστρο Ουίνδσορ",
+  "uses": 1
+ },
+ {
+  "file": "place_kolossaio_romi.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Colosseum.jpg?width=650",
+  "answer": "Κολοσσαίο, Ρώμη",
+  "uses": 1
+ },
+ {
+  "file": "place_pyrgos_tis_pizas.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Leaning_Tower_of_Pisa.jpg?width=650",
+  "answer": "Πύργος της Πίζας",
+  "uses": 1
+ },
+ {
+  "file": "place_kokkini_plateia_moscha.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Red_Square.jpg?width=650",
+  "answer": "Κόκκινη Πλατεία, Μόσχα",
+  "uses": 1
+ },
+ {
+  "file": "place_sfigga_tis_gkizas.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Sphinx_of_Giza.jpg?width=650",
+  "answer": "Σφίγγα της Γκίζας",
+  "uses": 1
+ },
+ {
+  "file": "place_loyvro_parisi.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Louvre_Museum_Wikimedia_Commons.jpg?width=650",
+  "answer": "Λούβρο, Παρίσι",
+  "uses": 1
+ },
+ {
+  "file": "place_palati_toy_mpakigcham_londino.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Buckingham_Palace.jpg?width=650",
+  "answer": "Παλάτι του Μπάκιγχαμ, Λονδίνο",
+  "uses": 1
+ },
+ {
+  "file": "flag_india.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sari_2.jpg?width=650",
+  "answer": "Ινδία",
+  "uses": 1
+ },
+ {
+  "file": "place_gefyra_toy_limanioy_toy_sidnei.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Harbour_Bridge.jpg?width=650",
+  "answer": "Γέφυρα του Λιμανιού του Σίδνεϊ",
+  "uses": 1
+ },
+ {
+  "file": "place_big_ben_londino.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Big_Ben.jpg?width=650",
+  "answer": "Big Ben, Λονδίνο",
+  "uses": 1
+ },
+ {
+  "file": "place_pyrgos_toy_aifel_parisi.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Eiffel_Tower.jpg?width=650",
+  "answer": "Πύργος του Άιφελ, Παρίσι",
+  "uses": 1
+ },
+ {
+  "file": "space_selini.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/FullMoon2010.jpg?width=650",
+  "answer": "Σελήνη",
+  "uses": 1
+ },
+ {
+  "file": "place_empire_state_building_nea_yorki.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Empire_State_Building.jpg?width=650",
+  "answer": "Empire State Building, Νέα Υόρκη",
+  "uses": 1
+ },
+ {
+  "file": "place_gefyra_karoloy_praga.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles_Bridge.jpg?width=650",
+  "answer": "Γέφυρα Καρόλου, Πράγα",
+  "uses": 1
+ },
+ {
+  "file": "place_palati_toy_potsdam.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sanssouci_Palace.jpg?width=650",
+  "answer": "Παλάτι του Πότσδαμ",
+  "uses": 1
+ },
+ {
+  "file": "place_pyrgos_toy_tokyo.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/TokyoTower.jpg?width=650",
+  "answer": "Πύργος του Τόκυο",
+  "uses": 1
+ },
+ {
+  "file": "portrait_laskarina_mpoympoylina.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bouboulina.JPG?width=650",
+  "answer": "Λασκαρίνα Μπουμπουλίνα",
+  "uses": 1
+ },
+ {
+  "file": "animal_koala.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Koala_climbing_tree.jpg?width=650",
+  "answer": "Κοάλα",
+  "uses": 1
+ },
+ {
+  "file": "place_grand_canyon_ipa.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Canyon.jpg?width=650",
+  "answer": "Grand Canyon, ΗΠΑ",
+  "uses": 1
+ },
+ {
+  "file": "place_panagia_ton_parision.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Notre-Dame_de_Paris.jpg?width=650",
+  "answer": "Παναγία των Παρισίων",
+  "uses": 1
+ },
+ {
+  "file": "place_katarraktes_angkel_venezoyela.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Angel_falls.jpg?width=650",
+  "answer": "Καταρράκτες Άνγκελ, Βενεζουέλα",
+  "uses": 1
+ },
+ {
+  "file": "place_kappadokia_toyrkia.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cappadocia_Balloon_Inflating_Wikimedia_Commons.JPG?width=650",
+  "answer": "Καππαδοκία, Τουρκία",
+  "uses": 1
+ },
+ {
+  "file": "animal_kamilopardali.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giraffa_camelopardalis_reticulata.jpg?width=650",
+  "answer": "Καμηλοπάρδαλη",
+  "uses": 1
+ },
+ {
+  "file": "place_naos_karnak.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Karnak_Temple.jpg?width=650",
+  "answer": "Ναός Καρνάκ",
+  "uses": 1
+ },
+ {
+  "file": "place_limni_vaikali.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lake_Baikal.jpg?width=650",
+  "answer": "Λίμνη Βαϊκάλη",
+  "uses": 1
+ },
+ {
+  "file": "place_oros_foytzi_iaponia.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Fuji_from_Lake_Kawaguchi.jpg?width=650",
+  "answer": "Όρος Φούτζι, Ιαπωνία",
+  "uses": 1
+ },
+ {
+  "file": "place_vasiliki_sacre_cur_parisi.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sacre_coeur_paris.jpg?width=650",
+  "answer": "Βασιλική Sacré-Cœur, Παρίσι",
+  "uses": 1
+ },
+ {
+  "file": "animal_tigris.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiger.50.jpg?width=650",
+  "answer": "Τίγρης",
+  "uses": 1
+ },
+ {
+  "file": "place_christos_lytrotis_rio.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Christ_the_Redeemer.jpg?width=650",
+  "answer": "Χριστός Λυτρωτής, Ρίο",
+  "uses": 1
+ },
+ {
+  "file": "space_aris.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/OSIRIS_Mars_true_color.jpg?width=650",
+  "answer": "Άρης",
+  "uses": 1
+ },
+ {
+  "file": "place_delta_toy_okavangko.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Okavango_Delta.jpg?width=650",
+  "answer": "Δέλτα του Οκαβάνγκο",
+  "uses": 1
+ },
+ {
+  "file": "place_tower_bridge_londino.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_Bridge.jpg?width=650",
+  "answer": "Tower Bridge, Λονδίνο",
+  "uses": 1
+ },
+ {
+  "file": "space_gi.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Earth_seen_from_Apollo_17.jpg?width=650",
+  "answer": "Γη",
+  "uses": 1
+ },
+ {
+  "file": "place_akropoli_athinon.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acropolis_of_Athens.jpg?width=650",
+  "answer": "Ακρόπολη Αθηνών",
+  "uses": 1
+ },
+ {
+  "file": "space_afroditi.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Venus-real_color.jpg?width=650",
+  "answer": "Αφροδίτη",
+  "uses": 1
+ },
+ {
+  "file": "animal_liontari.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lion_waiting_in_Namibia.jpg?width=650",
+  "answer": "Λιοντάρι",
+  "uses": 1
+ },
+ {
+  "file": "place_taipei_101.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taipei_101.JPG?width=650",
+  "answer": "Taipei 101",
+  "uses": 1
+ },
+ {
+  "file": "animal_delfini.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dolphin.jpg?width=650",
+  "answer": "Δελφίνι",
+  "uses": 1
+ },
+ {
+  "file": "place_oros_kilimantzaro.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kilimanjaro_from_Amboseli.jpg?width=650",
+  "answer": "Όρος Κιλιμάντζαρο",
+  "uses": 1
+ },
+ {
+  "file": "place_atomioym_vryxelles.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Atomium_.jpg?width=650",
+  "answer": "Άτομιουμ, Βρυξέλλες",
+  "uses": 1
+ },
+ {
+  "file": "place_opera_tis_viennis.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vienna_State_Opera.jpg?width=650",
+  "answer": "Όπερα της Βιέννης",
+  "uses": 1
+ },
+ {
+  "file": "place_sachara_erimos.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sahara_desert.jpg?width=650",
+  "answer": "Σαχάρα Έρημος",
+  "uses": 1
+ },
+ {
+  "file": "portrait_ioannis_kapodistrias.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ioannis_Kapodistrias_(1776-1831).jpg?width=650",
+  "answer": "Ιωάννης Καποδίστριας",
+  "uses": 1
+ },
+ {
+  "file": "animal_pigkoyinos.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Penguin2.jpg?width=650",
+  "answer": "Πιγκουίνος",
+  "uses": 1
+ },
+ {
+  "file": "place_sintrivani_trevi_romi.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Trevi_Fountain.jpg?width=650",
+  "answer": "Σιντριβάνι Τρέβι, Ρώμη",
+  "uses": 1
+ },
+ {
+  "file": "place_opera_toy_sidnei.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Opera_House.jpg?width=650",
+  "answer": "Όπερα του Σίδνεϊ",
+  "uses": 1
+ },
+ {
+  "file": "place_burj_khalifa_ntoympai.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Burj_Khalifa_Night_View_04.jpg?width=650",
+  "answer": "Burj Khalifa, Ντουμπάι",
+  "uses": 1
+ },
+ {
+  "file": "place_fiord_tis_norvigias.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Geirangerfjord_from_Flydalsjuvet.jpg?width=650",
+  "answer": "Φιόρδ της Νορβηγίας",
+  "uses": 1
+ },
+ {
+  "file": "place_one_world_trade_center_nea_yorki.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/One_World_Trade_Center.jpg?width=650",
+  "answer": "One World Trade Center, Νέα Υόρκη",
+  "uses": 1
+ },
+ {
+  "file": "place_siniko_teichos.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Wall_of_China.jpg?width=650",
+  "answer": "Σινικό Τείχος",
+  "uses": 1
+ },
+ {
+  "file": "space_kronos.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Saturn_during_Equinox.jpg?width=650",
+  "answer": "Κρόνος",
+  "uses": 1
+ },
+ {
+  "file": "animal_kagkoyro.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kangaroo_and_joey03.jpg?width=650",
+  "answer": "Καγκουρό",
+  "uses": 1
+ },
+ {
+  "file": "place_pyramides_tis_gkizas.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pyramids_of_Giza.jpg?width=650",
+  "answer": "Πυραμίδες της Γκίζας",
+  "uses": 1
+ },
+ {
+  "file": "portrait_theodoros_kolokotronis.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Theodoros_Kolokotronis_(1882).jpg?width=650",
+  "answer": "Θεόδωρος Κολοκοτρώνης",
+  "uses": 1
+ },
+ {
+  "file": "place_taz_machal_india.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj_Mahal.jpg?width=650",
+  "answer": "Ταζ Μαχάλ, Ινδία",
+  "uses": 1
+ },
+ {
+  "file": "place_katarraktes_niagara.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Niagara_Falls.jpg?width=650",
+  "answer": "Καταρράκτες Νιαγάρα",
+  "uses": 1
+ },
+ {
+  "file": "place_cn_tower_toronto.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/CN_Tower.jpg?width=650",
+  "answer": "CN Tower, Τορόντο",
+  "uses": 1
+ },
+ {
+  "file": "place_gefyra_mproyklin_nea_yorki.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Bridge.jpg?width=650",
+  "answer": "Γέφυρα Μπρούκλιν, Νέα Υόρκη",
+  "uses": 1
+ },
+ {
+  "file": "animal_zevra.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Zebra_Botswana_edit02.jpg?width=650",
+  "answer": "Ζέβρα",
+  "uses": 1
+ },
+ {
+  "file": "place_taims_skoyer_nea_yorki.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Times_Square.jpg?width=650",
+  "answer": "Τάιμς Σκουέρ, Νέα Υόρκη",
+  "uses": 1
+ },
+ {
+  "file": "place_plateia_agioy_markoy_venetia.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Piazza_San_Marco_Venice.jpg?width=650",
+  "answer": "Πλατεία Αγίου Μάρκου, Βενετία",
+  "uses": 1
+ },
+ {
+  "file": "space_ilios.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Sun%20by%20the%20Atmospheric%20Imaging%20Assembly%20of%20NASA%27s%20Solar%20Dynamics%20Observatory%20-%2020100819.jpg?width=650",
+  "answer": "Ήλιος",
+  "uses": 1
+ },
+ {
+  "file": "place_nekra_thalassa.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dead_Sea_by_David_Shankbone.jpg?width=650",
+  "answer": "Νεκρά Θάλασσα",
+  "uses": 1
+ },
+ {
+  "file": "space_dias.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jupiter.jpg?width=650",
+  "answer": "Δίας",
+  "uses": 1
+ },
+ {
+  "file": "place_agalma_tis_eleytherias_nea_yorki.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty.jpg?width=650",
+  "answer": "Άγαλμα της Ελευθερίας, Νέα Υόρκη",
+  "uses": 1
+ },
+ {
+  "file": "place_kathedrikos_agioy_markoy_venetia.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Mark%27s_Basilica.jpg?width=650",
+  "answer": "Καθεδρικός Αγίου Μάρκου, Βενετία",
+  "uses": 1
+ },
+ {
+  "file": "flag_ellada.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Evzone.jpg?width=650",
+  "answer": "Ελλάδα",
+  "uses": 1
+ },
+ {
+  "file": "place_sagrada_familia_varkeloni.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sagrada_Familia_.jpg?width=650",
+  "answer": "Sagrada Família, Βαρκελώνη",
+  "uses": 1
+ },
+ {
+  "file": "animal_elefantas.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Elephant.jpg?width=650",
+  "answer": "Ελέφαντας",
+  "uses": 1
+ },
+ {
+  "file": "place_matsoy_pitsoy_peroy.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Machu_Picchu.jpg?width=650",
+  "answer": "Μάτσου Πίτσου, Περού",
+  "uses": 1
+ },
+ {
+  "file": "flag_ispania.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Black_and_red_flamenco_dress_with_orange_fan.jpg?width=650",
+  "answer": "Ισπανία",
+  "uses": 1
+ },
+ {
+  "file": "animal_chimpatzis.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chimpanzees.jpg?width=650",
+  "answer": "Χιμπατζής",
+  "uses": 1
+ },
+ {
+  "file": "space_poseidonas.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Neptune_Full.jpg?width=650",
+  "answer": "Ποσειδώνας",
+  "uses": 1
+ },
+ {
+  "file": "space_ermis.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury_in_true_color.jpg?width=650",
+  "answer": "Ερμής",
+  "uses": 1
+ },
+ {
+  "file": "place_kathedrikos_tis_kolonias.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cologne_Cathedral.jpg?width=650",
+  "answer": "Καθεδρικός της Κολωνίας",
+  "uses": 1
+ },
+ {
+  "file": "animal_karcharias.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_white_shark_south_africa.jpg?width=650",
+  "answer": "Καρχαρίας",
+  "uses": 1
+ },
+ {
+  "file": "portrait_georgios_karaiskakis.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Georgios_Karaiskakis.jpg?width=650",
+  "answer": "Γεώργιος Καραϊσκάκης",
+  "uses": 1
+ },
+ {
+  "file": "place_kastro_toy_oyindsor.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Windsor_Castle_at_night.jpg?width=650",
+  "answer": "Κάστρο του Ουίνδσορ",
+  "uses": 1
+ },
+ {
+  "file": "place_stooynchentz_agglia.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stonehenge.jpg?width=650",
+  "answer": "Στόουνχεντζ, Αγγλία",
+  "uses": 1
+ },
+ {
+  "file": "place_petra_iordania.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Petra_Jordan.jpg?width=650",
+  "answer": "Πέτρα, Ιορδανία",
+  "uses": 1
+ },
+ {
+  "file": "place_odogefyra_toy_migio_gallia.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Creissels%20et%20Viaduct%20de%20Millau.jpg?width=650",
+  "answer": "Οδογέφυρα του Μιγιό, Γαλλία",
+  "uses": 1
+ },
+ {
+  "file": "place_gennisi_tis_afroditis.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli_Venus.jpg?width=650",
+  "answer": "Γέννηση της Αφροδίτης",
+  "uses": 1
+ },
+ {
+  "file": "place_westminster_abbey.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Westminster_Abbey.JPG?width=650",
+  "answer": "Westminster Abbey",
+  "uses": 1
+ },
+ {
+  "file": "place_duomo_di_milano.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Duomo_di_Milano.jpg?width=650",
+  "answer": "Duomo di Milano",
+  "uses": 1
+ },
+ {
+  "file": "animal_kamila.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Camel.jpg?width=650",
+  "answer": "Καμήλα",
+  "uses": 1
+ },
+ {
+  "file": "place_asteri_tis_nychtas.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/VanGogh-starry_night.jpg?width=650",
+  "answer": "Αστέρι της Νύχτας",
+  "uses": 1
+ },
+ {
+  "file": "place_space_needle_siatl.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Space_Needle.jpg?width=650",
+  "answer": "Space Needle, Σιάτλ",
+  "uses": 1
+ },
+ {
+  "file": "place_i_kraygi.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Scream.jpg?width=650",
+  "answer": "Η Κραυγή",
+  "uses": 1
+ },
+ {
+  "file": "place_kastro_toy_edimvoyrgoy.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edinburgh_Castle_from_the_North.JPG?width=650",
+  "answer": "Κάστρο του Εδιμβούργου",
+  "uses": 1
+ },
+ {
+  "file": "place_falaina_fysitiras.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sperm_whale.jpg?width=650",
+  "answer": "Φάλαινα Φυσητήρας",
+  "uses": 1
+ },
+ {
+  "file": "place_palati_ton_versallion.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Palace_of_Versailles.jpg?width=650",
+  "answer": "Παλάτι των Βερσαλλιών",
+  "uses": 1
+ },
+ {
+  "file": "place_o_mystikos_deipnos.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo_da_Vinci_(1452-1519)_-_The_Last_Supper_(1495-1498).jpg?width=650",
+  "answer": "Ο Μυστικός Δείπνος",
+  "uses": 1
+ },
+ {
+  "file": "place_apagoreymeni_poli_pekino.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Forbidden_City.jpg?width=650",
+  "answer": "Απαγορευμένη Πόλη, Πεκίνο",
+  "uses": 1
+ },
+ {
+  "file": "place_kastro_noisvanstain_germania.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Neuschwanstein_Castle.jpg?width=650",
+  "answer": "Κάστρο Νόισβανσταϊν, Γερμανία",
+  "uses": 1
+ },
+ {
+  "file": "place_tigris_tis_veggalis.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bengal_tiger.jpg?width=650",
+  "answer": "Τίγρης της Βεγγάλης",
+  "uses": 1
+ },
+ {
+  "file": "place_alkatraz_san_fransisko.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcatraz_Island.jpg?width=650",
+  "answer": "Άλκατραζ, Σαν Φρανσίσκο",
+  "uses": 1
+ },
+ {
+  "file": "place_i_dimioyrgia_toy_adam.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Creaci%C3%B3n_de_Ad%C3%A1n.jpg?width=650",
+  "answer": "Η Δημιουργία του Αδάμ",
+  "uses": 1
+ },
+ {
+  "file": "place_tsitsen_itsa_mexiko.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chichen_Itza_3.jpg?width=650",
+  "answer": "Τσιτσέν Ιτσά, Μεξικό",
+  "uses": 1
+ },
+ {
+  "file": "place_oros_rasmor_ipa.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Rushmore.jpg?width=650",
+  "answer": "Όρος Ράσμορ, ΗΠΑ",
+  "uses": 1
+ },
+ {
+  "file": "place_mporompoyntoyr_indonisia.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur_Temple.jpg?width=650",
+  "answer": "Μπορομπουντούρ, Ινδονησία",
+  "uses": 1
+ },
+ {
+  "file": "place_iliotropia_toy_van_gkogk.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent_van_Gogh_-_Sunflowers_(1888%2C_National_Gallery_London).jpg?width=650",
+  "answer": "Ηλιοτρόπια του Βαν Γκογκ",
+  "uses": 1
+ },
+ {
+  "file": "place_angkor_vat_kampotzi.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Angkor_Wat.jpg?width=650",
+  "answer": "Άνγκορ Βατ, Καμπότζη",
+  "uses": 1
+ },
+ {
+  "file": "animal_gorilas.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Male_silverback_Gorilla.JPG?width=650",
+  "answer": "Γορίλας",
+  "uses": 1
+ },
+ {
+  "file": "place_katarraktes_viktoria.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria_Falls.jpg?width=650",
+  "answer": "Καταρράκτες Βικτόρια",
+  "uses": 1
+ },
+ {
+  "file": "space_oyranos.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Uranus2.jpg?width=650",
+  "answer": "Ουρανός",
+  "uses": 1
+ },
+ {
+  "file": "place_naos_toy_oyranoy_pekino.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple_of_Heaven.jpg?width=650",
+  "answer": "Ναός του Ουρανού, Πεκίνο",
+  "uses": 1
+ },
+ {
+  "file": "portrait_rigas_feraios.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rigas_Feraios_by_Hess.jpg?width=650",
+  "answer": "Ρήγας Φεραίος",
+  "uses": 1
+ },
+ {
+  "file": "portrait_andreas_miaoylis.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Andreas_Miaoulis.jpg?width=650",
+  "answer": "Ανδρέας Μιαούλης",
+  "uses": 1
+ },
+ {
+  "file": "costume_skotia.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Highlander-kilt.jpg?width=650",
+  "answer": "Σκωτία",
+  "uses": 1
+ },
+ {
+  "file": "animal_poliki_arkoyda.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Polar_Bear_-_Alaska.jpg?width=650",
+  "answer": "Πολική αρκούδα",
+  "uses": 1
+ },
+ {
+  "file": "place_moyseio_gkoygkenchaim_mpilmpao.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Museo_Guggenheim_%28Bilbao%29.jpg?width=650",
+  "answer": "Μουσείο Γκούγκενχαϊμ, Μπιλμπάο",
+  "uses": 1
+ },
+ {
+  "file": "place_pantheon_romi.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pantheon%2C_Rome.jpg?width=650",
+  "answer": "Πάνθεον, Ρώμη",
+  "uses": 1
+ },
+ {
+  "file": "portrait_athanasios_diakos.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Athanasios_Diakos.JPG?width=650",
+  "answer": "Αθανάσιος Διάκος",
+  "uses": 1
+ },
+ {
+  "file": "place_gefyra_rialto_venetia.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rialto_Bridge.jpg?width=650",
+  "answer": "Γέφυρα Ριάλτο, Βενετία",
+  "uses": 1
+ },
+ {
+  "file": "place_mont_saint_michel_gallia.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint-Michel.jpg?width=650",
+  "answer": "Mont Saint-Michel, Γαλλία",
+  "uses": 1
+ },
+ {
+  "file": "portrait_markos_mpotsaris.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Markos_Botsaris.jpg?width=650",
+  "answer": "Μάρκος Μπότσαρης",
+  "uses": 1
+ },
+ {
+  "file": "place_i_mona_liza.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mona_Lisa.jpg?width=650",
+  "answer": "Η Μόνα Λίζα",
+  "uses": 1
+ },
+ {
+  "file": "place_flatiron_building_nea_yorki.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flatiron_Building.jpg?width=650",
+  "answer": "Flatiron Building, Νέα Υόρκη",
+  "uses": 1
+ },
+ {
+  "file": "place_palati_senmproyn_vienni.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sch%C3%B6nbrunn_Palace%2C_Vienna.JPG?width=650",
+  "answer": "Παλάτι Σένμπρουν, Βιέννη",
+  "uses": 1
+ },
+ {
+  "file": "place_kamilopardali.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giraffe_standing.jpg?width=650",
+  "answer": "Καμηλοπάρδαλη",
+  "uses": 1
+ },
+ {
+  "file": "place_panta.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giant_Panda_eating_Bamboo.JPG?width=650",
+  "answer": "Πάντα",
+  "uses": 1
+ },
+ {
+  "file": "place_kremlino_moscha.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kremlin.jpg?width=650",
+  "answer": "Κρεμλίνο, Μόσχα",
+  "uses": 1
+ },
+ {
+  "file": "place_ponte_vecchio_florentia.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_Vecchio_%28Firenze%29.JPG?width=650",
+  "answer": "Ponte Vecchio, Φλωρεντία",
+  "uses": 1
+ },
+ {
+  "file": "place_chrysler_building_nea_yorki.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chrysler_Building.jpg?width=650",
+  "answer": "Chrysler Building, Νέα Υόρκη",
+  "uses": 1
+ },
+ {
+  "file": "portrait_odysseas_androytsos.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Odysseas-androutsos.jpg?width=650",
+  "answer": "Οδυσσέας Ανδρούτσος",
+  "uses": 1
+ },
+ {
+  "file": "portrait_konstantinos_kanaris.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Konstantinos_Kanaris.jpg?width=650",
+  "answer": "Κωνσταντίνος Κανάρης",
+  "uses": 1
+ },
+ {
+  "file": "place_nisi_toy_pascha.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Moai_Rano_raraku.jpg?width=650",
+  "answer": "Νησί του Πάσχα",
+  "uses": 1
+ },
+ {
+  "file": "place_palati_toy_dogi_venetia.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Doge%27s_Palace.jpg?width=650",
+  "answer": "Παλάτι του Δόγη, Βενετία",
+  "uses": 1
+ },
+ {
+  "file": "animal_drakos_toy_komonto.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Komodo_dragon_(Varanus_komodoensis).jpg?width=650",
+  "answer": "Δράκος του Κομόντο",
+  "uses": 1
+ },
+ {
+  "file": "place_kastro_tis_pragas.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Prague_Castle.jpg?width=650",
+  "answer": "Κάστρο της Πράγας",
+  "uses": 1
+ },
+ {
+  "file": "space_ploytonas.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pluto-01_Stern_03_Pluto_Color_TXT.jpg?width=650",
+  "answer": "Πλούτωνας",
+  "uses": 1
+ },
+ {
+  "file": "place_parthenonas_ti_nychta.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Parthenon_at_night.jpg?width=650",
+  "answer": "Παρθενώνας τη νύχτα",
+  "uses": 1
+ },
+ {
+  "file": "place_avoy_simpel_aigyptos.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Abu_Simbel_Temple.jpg?width=650",
+  "answer": "Άβου Σιμπέλ, Αίγυπτος",
+  "uses": 1
+ },
+ {
+  "file": "place_palati_toy_alampra_ispania.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Alhambra_Granada.jpg?width=650",
+  "answer": "Παλάτι του Αλάμπρα, Ισπανία",
+  "uses": 1
+ },
+ {
+  "file": "place_moyseio_prado_madriti.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Museo_del_Prado.jpg?width=650",
+  "answer": "Μουσείο Πράδο, Μαδρίτη",
+  "uses": 1
+ },
+ {
+  "file": "animal_ornithorygchos.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Platypus.jpg?width=650",
+  "answer": "Ορνιθόρυγχος",
+  "uses": 1
+ },
+ {
+  "file": "place_willis_tower_sikago.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Willis_Tower.jpg?width=650",
+  "answer": "Willis Tower, Σικάγο",
+  "uses": 1
+ },
+ {
+  "file": "place_katarraktes_igkoyasoy.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Iguazu_Falls.jpg?width=650",
+  "answer": "Καταρράκτες Ιγκουασού",
+  "uses": 1
+ },
+ {
+  "file": "place_moyseio_vretanias.jpg",
+  "url": "https://commons.wikimedia.org/wiki/Special:FilePath/British_Museum_Exterior.jpg?width=650",
+  "answer": "Μουσείο Βρετανίας",
+  "uses": 1
+ }
+]
+#!/usr/bin/env bash
+# Κατεβάζει τις 139 εικόνες που φιλοξενούνται στη Wikimedia.
+# Τρέξε το ΜΕΣΑ στον φάκελο assets/questions_pics :
+#     bash download_images.sh
+set -u
+UA="MindClimber/1.0 (educational quiz game; contact: you@example.com)"
+ok=0; fail=0
+download() {
+  if [ -s "$1" ]; then echo "  ήδη υπάρχει: $1"; ok=$((ok+1)); return; fi
+  if curl -fsSL -A "$UA" --retry 3 --retry-delay 2 -o "$1" "$2"; then
+    echo "  ✓ $1"; ok=$((ok+1))
+  else echo "  ✗ ΑΠΕΤΥΧΕ: $1"; rm -f "$1"; fail=$((fail+1)); fi
+  sleep 0.3
+}
+
+download "place_kastro_oyindsor.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Windsor_Castle_at_Sunset_-_Nov_2006.jpg?width=650"
+download "place_kolossaio_romi.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Colosseum.jpg?width=650"
+download "place_pyrgos_tis_pizas.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Leaning_Tower_of_Pisa.jpg?width=650"
+download "place_kokkini_plateia_moscha.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Red_Square.jpg?width=650"
+download "place_sfigga_tis_gkizas.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Sphinx_of_Giza.jpg?width=650"
+download "place_loyvro_parisi.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Louvre_Museum_Wikimedia_Commons.jpg?width=650"
+download "place_palati_toy_mpakigcham_londino.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Buckingham_Palace.jpg?width=650"
+download "flag_india.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Sari_2.jpg?width=650"
+download "place_gefyra_toy_limanioy_toy_sidnei.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Harbour_Bridge.jpg?width=650"
+download "place_big_ben_londino.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Big_Ben.jpg?width=650"
+download "place_pyrgos_toy_aifel_parisi.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Eiffel_Tower.jpg?width=650"
+download "space_selini.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/FullMoon2010.jpg?width=650"
+download "place_empire_state_building_nea_yorki.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Empire_State_Building.jpg?width=650"
+download "place_gefyra_karoloy_praga.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Charles_Bridge.jpg?width=650"
+download "place_palati_toy_potsdam.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Sanssouci_Palace.jpg?width=650"
+download "place_pyrgos_toy_tokyo.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/TokyoTower.jpg?width=650"
+download "portrait_laskarina_mpoympoylina.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Bouboulina.JPG?width=650"
+download "animal_koala.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Koala_climbing_tree.jpg?width=650"
+download "place_grand_canyon_ipa.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Canyon.jpg?width=650"
+download "place_panagia_ton_parision.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Notre-Dame_de_Paris.jpg?width=650"
+download "place_katarraktes_angkel_venezoyela.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Angel_falls.jpg?width=650"
+download "place_kappadokia_toyrkia.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Cappadocia_Balloon_Inflating_Wikimedia_Commons.JPG?width=650"
+download "animal_kamilopardali.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Giraffa_camelopardalis_reticulata.jpg?width=650"
+download "place_naos_karnak.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Karnak_Temple.jpg?width=650"
+download "place_limni_vaikali.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Lake_Baikal.jpg?width=650"
+download "place_oros_foytzi_iaponia.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Fuji_from_Lake_Kawaguchi.jpg?width=650"
+download "place_vasiliki_sacre_cur_parisi.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Sacre_coeur_paris.jpg?width=650"
+download "animal_tigris.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Tiger.50.jpg?width=650"
+download "place_christos_lytrotis_rio.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Christ_the_Redeemer.jpg?width=650"
+download "space_aris.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/OSIRIS_Mars_true_color.jpg?width=650"
+download "place_delta_toy_okavangko.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Okavango_Delta.jpg?width=650"
+download "place_tower_bridge_londino.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_Bridge.jpg?width=650"
+download "space_gi.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/The_Earth_seen_from_Apollo_17.jpg?width=650"
+download "place_akropoli_athinon.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Acropolis_of_Athens.jpg?width=650"
+download "space_afroditi.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Venus-real_color.jpg?width=650"
+download "animal_liontari.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Lion_waiting_in_Namibia.jpg?width=650"
+download "place_taipei_101.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Taipei_101.JPG?width=650"
+download "animal_delfini.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Dolphin.jpg?width=650"
+download "place_oros_kilimantzaro.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Kilimanjaro_from_Amboseli.jpg?width=650"
+download "place_atomioym_vryxelles.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Atomium_.jpg?width=650"
+download "place_opera_tis_viennis.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Vienna_State_Opera.jpg?width=650"
+download "place_sachara_erimos.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Sahara_desert.jpg?width=650"
+download "portrait_ioannis_kapodistrias.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Ioannis_Kapodistrias_(1776-1831).jpg?width=650"
+download "animal_pigkoyinos.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Penguin2.jpg?width=650"
+download "place_sintrivani_trevi_romi.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Trevi_Fountain.jpg?width=650"
+download "place_opera_toy_sidnei.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Opera_House.jpg?width=650"
+download "place_burj_khalifa_ntoympai.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Burj_Khalifa_Night_View_04.jpg?width=650"
+download "place_fiord_tis_norvigias.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Geirangerfjord_from_Flydalsjuvet.jpg?width=650"
+download "place_one_world_trade_center_nea_yorki.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/One_World_Trade_Center.jpg?width=650"
+download "place_siniko_teichos.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Wall_of_China.jpg?width=650"
+download "space_kronos.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Saturn_during_Equinox.jpg?width=650"
+download "animal_kagkoyro.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Kangaroo_and_joey03.jpg?width=650"
+download "place_pyramides_tis_gkizas.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Pyramids_of_Giza.jpg?width=650"
+download "portrait_theodoros_kolokotronis.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Theodoros_Kolokotronis_(1882).jpg?width=650"
+download "place_taz_machal_india.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Taj_Mahal.jpg?width=650"
+download "place_katarraktes_niagara.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Niagara_Falls.jpg?width=650"
+download "place_cn_tower_toronto.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/CN_Tower.jpg?width=650"
+download "place_gefyra_mproyklin_nea_yorki.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Bridge.jpg?width=650"
+download "animal_zevra.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Zebra_Botswana_edit02.jpg?width=650"
+download "place_taims_skoyer_nea_yorki.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Times_Square.jpg?width=650"
+download "place_plateia_agioy_markoy_venetia.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Piazza_San_Marco_Venice.jpg?width=650"
+download "space_ilios.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Sun%20by%20the%20Atmospheric%20Imaging%20Assembly%20of%20NASA%27s%20Solar%20Dynamics%20Observatory%20-%2020100819.jpg?width=650"
+download "place_nekra_thalassa.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Dead_Sea_by_David_Shankbone.jpg?width=650"
+download "space_dias.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Jupiter.jpg?width=650"
+download "place_agalma_tis_eleytherias_nea_yorki.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty.jpg?width=650"
+download "place_kathedrikos_agioy_markoy_venetia.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/St_Mark%27s_Basilica.jpg?width=650"
+download "flag_ellada.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Evzone.jpg?width=650"
+download "place_sagrada_familia_varkeloni.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Sagrada_Familia_.jpg?width=650"
+download "animal_elefantas.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Elephant.jpg?width=650"
+download "place_matsoy_pitsoy_peroy.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Machu_Picchu.jpg?width=650"
+download "flag_ispania.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Black_and_red_flamenco_dress_with_orange_fan.jpg?width=650"
+download "animal_chimpatzis.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Chimpanzees.jpg?width=650"
+download "space_poseidonas.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Neptune_Full.jpg?width=650"
+download "space_ermis.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury_in_true_color.jpg?width=650"
+download "place_kathedrikos_tis_kolonias.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Cologne_Cathedral.jpg?width=650"
+download "animal_karcharias.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Great_white_shark_south_africa.jpg?width=650"
+download "portrait_georgios_karaiskakis.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Georgios_Karaiskakis.jpg?width=650"
+download "place_kastro_toy_oyindsor.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Windsor_Castle_at_night.jpg?width=650"
+download "place_stooynchentz_agglia.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Stonehenge.jpg?width=650"
+download "place_petra_iordania.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Petra_Jordan.jpg?width=650"
+download "place_odogefyra_toy_migio_gallia.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Creissels%20et%20Viaduct%20de%20Millau.jpg?width=650"
+download "place_gennisi_tis_afroditis.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli_Venus.jpg?width=650"
+download "place_westminster_abbey.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Westminster_Abbey.JPG?width=650"
+download "place_duomo_di_milano.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Duomo_di_Milano.jpg?width=650"
+download "animal_kamila.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Camel.jpg?width=650"
+download "place_asteri_tis_nychtas.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/VanGogh-starry_night.jpg?width=650"
+download "place_space_needle_siatl.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Space_Needle.jpg?width=650"
+download "place_i_kraygi.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/The_Scream.jpg?width=650"
+download "place_kastro_toy_edimvoyrgoy.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Edinburgh_Castle_from_the_North.JPG?width=650"
+download "place_falaina_fysitiras.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Sperm_whale.jpg?width=650"
+download "place_palati_ton_versallion.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Palace_of_Versailles.jpg?width=650"
+download "place_o_mystikos_deipnos.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo_da_Vinci_(1452-1519)_-_The_Last_Supper_(1495-1498).jpg?width=650"
+download "place_apagoreymeni_poli_pekino.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Forbidden_City.jpg?width=650"
+download "place_kastro_noisvanstain_germania.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Neuschwanstein_Castle.jpg?width=650"
+download "place_tigris_tis_veggalis.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Bengal_tiger.jpg?width=650"
+download "place_alkatraz_san_fransisko.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Alcatraz_Island.jpg?width=650"
+download "place_i_dimioyrgia_toy_adam.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Creaci%C3%B3n_de_Ad%C3%A1n.jpg?width=650"
+download "place_tsitsen_itsa_mexiko.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Chichen_Itza_3.jpg?width=650"
+download "place_oros_rasmor_ipa.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Rushmore.jpg?width=650"
+download "place_mporompoyntoyr_indonisia.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur_Temple.jpg?width=650"
+download "place_iliotropia_toy_van_gkogk.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent_van_Gogh_-_Sunflowers_(1888%2C_National_Gallery_London).jpg?width=650"
+download "place_angkor_vat_kampotzi.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Angkor_Wat.jpg?width=650"
+download "animal_gorilas.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Male_silverback_Gorilla.JPG?width=650"
+download "place_katarraktes_viktoria.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria_Falls.jpg?width=650"
+download "space_oyranos.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Uranus2.jpg?width=650"
+download "place_naos_toy_oyranoy_pekino.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Temple_of_Heaven.jpg?width=650"
+download "portrait_rigas_feraios.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Rigas_Feraios_by_Hess.jpg?width=650"
+download "portrait_andreas_miaoylis.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Andreas_Miaoulis.jpg?width=650"
+download "costume_skotia.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Highlander-kilt.jpg?width=650"
+download "animal_poliki_arkoyda.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Polar_Bear_-_Alaska.jpg?width=650"
+download "place_moyseio_gkoygkenchaim_mpilmpao.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Museo_Guggenheim_%28Bilbao%29.jpg?width=650"
+download "place_pantheon_romi.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Pantheon%2C_Rome.jpg?width=650"
+download "portrait_athanasios_diakos.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Athanasios_Diakos.JPG?width=650"
+download "place_gefyra_rialto_venetia.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Rialto_Bridge.jpg?width=650"
+download "place_mont_saint_michel_gallia.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint-Michel.jpg?width=650"
+download "portrait_markos_mpotsaris.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Markos_Botsaris.jpg?width=650"
+download "place_i_mona_liza.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Mona_Lisa.jpg?width=650"
+download "place_flatiron_building_nea_yorki.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Flatiron_Building.jpg?width=650"
+download "place_palati_senmproyn_vienni.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Sch%C3%B6nbrunn_Palace%2C_Vienna.JPG?width=650"
+download "place_kamilopardali.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Giraffe_standing.jpg?width=650"
+download "place_panta.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Giant_Panda_eating_Bamboo.JPG?width=650"
+download "place_kremlino_moscha.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Kremlin.jpg?width=650"
+download "place_ponte_vecchio_florentia.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_Vecchio_%28Firenze%29.JPG?width=650"
+download "place_chrysler_building_nea_yorki.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Chrysler_Building.jpg?width=650"
+download "portrait_odysseas_androytsos.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Odysseas-androutsos.jpg?width=650"
+download "portrait_konstantinos_kanaris.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Konstantinos_Kanaris.jpg?width=650"
+download "place_nisi_toy_pascha.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Moai_Rano_raraku.jpg?width=650"
+download "place_palati_toy_dogi_venetia.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Doge%27s_Palace.jpg?width=650"
+download "animal_drakos_toy_komonto.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Komodo_dragon_(Varanus_komodoensis).jpg?width=650"
+download "place_kastro_tis_pragas.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Prague_Castle.jpg?width=650"
+download "space_ploytonas.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Pluto-01_Stern_03_Pluto_Color_TXT.jpg?width=650"
+download "place_parthenonas_ti_nychta.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Parthenon_at_night.jpg?width=650"
+download "place_avoy_simpel_aigyptos.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Abu_Simbel_Temple.jpg?width=650"
+download "place_palati_toy_alampra_ispania.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Alhambra_Granada.jpg?width=650"
+download "place_moyseio_prado_madriti.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Museo_del_Prado.jpg?width=650"
+download "animal_ornithorygchos.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Platypus.jpg?width=650"
+download "place_willis_tower_sikago.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Willis_Tower.jpg?width=650"
+download "place_katarraktes_igkoyasoy.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/Iguazu_Falls.jpg?width=650"
+download "place_moyseio_vretanias.jpg" "https://commons.wikimedia.org/wiki/Special:FilePath/British_Museum_Exterior.jpg?width=650"
+
+echo
+echo "Ολοκληρώθηκε: $ok επιτυχίες, $fail αποτυχίες."
+if [ "$fail" -gt 0 ]; then echo "Οι ερωτήσεις με αποτυχημένη εικόνα θα πέσουν αυτόματα πίσω στο online link."; fi
+
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#000000'/><rect x='100.0' y='0' width='100.0' height='200' fill='#D32011'/><rect x='200.0' y='0' width='100.0' height='200' fill='#007A36'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='100.0' fill='#CC092F'/><rect x='0' y='100.0' width='300' height='100.0' fill='#000000'/><polygon points='150.0,86.0 153.3,95.5 163.3,95.7 155.3,101.7 158.2,111.3 150.0,105.6 141.8,111.3 144.7,101.7 136.7,95.7 146.7,95.5' fill='#FFCC00'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#CE1126'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#000000'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#078930'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FCDD09'/><rect x='0' y='133.3' width='300' height='66.7' fill='#DA121A'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='150.0' height='200' fill='#006233'/><rect x='150.0' y='0' width='150.0' height='200' fill='#FFFFFF'/><circle cx='150.0' cy='100.0' r='36.0' fill='#D21034'/><polygon points='150.0,90.0 152.4,96.8 159.5,96.9 153.8,101.2 155.9,108.1 150.0,104.0 144.1,108.1 146.2,101.2 140.5,96.9 147.6,96.8' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#E41E20'/><path d='M 135.0,90.0 l 10,-15 l 5,10 l 5,-10 l 10,15 l -8,5 l 3,10 l -10,-5 l -10,5 l 3,-10 Z' fill='#000000'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#0018A8'/><rect x='100.0' y='0' width='100.0' height='200' fill='#FEDD00'/><rect x='200.0' y='0' width='100.0' height='200' fill='#D50032'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='66.7' fill='#74ACDF'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#74ACDF'/><circle cx='150.0' cy='100.0' r='20.0' fill='#F6B40E'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#D90012'/><rect x='0' y='66.7' width='300' height='66.7' fill='#0033A0'/><rect x='0' y='133.3' width='300' height='66.7' fill='#F2A800'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#00008B'/><rect x='0' y='0' width='150.0' height='100.0' fill='#00008B'/><polygon points='30.0,16.0 30.9,18.7 33.8,18.8 31.5,20.5 32.4,23.2 30.0,21.6 27.6,23.2 28.5,20.5 26.2,18.8 29.1,18.7' fill='#FFFFFF'/><polygon points='38.0,22.0 38.9,24.7 41.8,24.8 39.5,26.5 40.4,29.2 38.0,27.6 35.6,29.2 36.5,26.5 34.2,24.8 37.1,24.7' fill='#FFFFFF'/><polygon points='46.0,28.0 46.9,30.7 49.8,30.8 47.5,32.5 48.4,35.2 46.0,33.6 43.6,35.2 44.5,32.5 42.2,30.8 45.1,30.7' fill='#FFFFFF'/><polygon points='54.0,34.0 54.9,36.7 57.8,36.8 55.5,38.5 56.4,41.2 54.0,39.6 51.6,41.2 52.5,38.5 50.2,36.8 53.1,36.7' fill='#FFFFFF'/><polygon points='105.0,60.0 107.4,66.8 114.5,66.9 108.8,71.2 110.9,78.1 105.0,74.0 99.1,78.1 101.2,71.2 95.5,66.9 102.6,66.8' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#ED2939'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#ED2939'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#00B9E4'/><rect x='0' y='66.7' width='300' height='66.7' fill='#E4312B'/><rect x='0' y='133.3' width='300' height='66.7' fill='#00AF66'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='100.0' fill='#FFFFFF'/><rect x='0' y='100.0' width='300' height='100.0' fill='#D52B1E'/><rect x='0' y='0' width='99.0' height='100.0' fill='#0039A6'/><polygon points='48.0,38.0 50.8,46.1 59.4,46.3 52.6,51.5 55.1,59.7 48.0,54.8 40.9,59.7 43.4,51.5 36.6,46.3 45.2,46.1' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#C60C30'/><rect x='0' y='80.0' width='300' height='40.0' fill='#FFFFFF'/><rect x='105.0' y='0' width='45.0' height='200' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='100.0' fill='#FFDD00'/><rect x='0' y='100.0' width='300' height='50.0' fill='#034EA2'/><rect x='0' y='150.0' width='300' height='50.0' fill='#ED1C24'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#FF0000'/><rect x='126.0' y='50.0' width='48.0' height='100.0' fill='#FFFFFF'/><rect x='105.0' y='84.0' width='90.0' height='32.0' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><polygon points='0,0 300,0 0,200' fill='#12AD2B'/><polygon points='300,0 300,200 0,200' fill='#0000FF'/><polygon points='0,0 300,100.0 0,200' fill='#EA0437'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#0072CE'/><rect x='0' y='66.7' width='300' height='66.7' fill='#000000'/><rect x='0' y='133.3' width='300' height='66.7' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='100.0' fill='#0038A8'/><rect x='0' y='100.0' width='300' height='100.0' fill='#CE1126'/><polygon points='0,0 135.0,100.0 0,200' fill='#FFFFFF'/><polygon points='45.0,90.0 47.4,96.8 54.5,96.9 48.8,101.2 50.9,108.1 45.0,104.0 39.1,108.1 41.2,101.2 35.5,96.9 42.6,96.8' fill='#FCD116'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#FFFFFF'/><rect x='0' y='80.0' width='300' height='40.0' fill='#003580'/><rect x='105.0' y='0' width='45.0' height='200' fill='#003580'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#0055A4'/><rect x='100.0' y='0' width='100.0' height='200' fill='#FFFFFF'/><rect x='200.0' y='0' width='100.0' height='200' fill='#EF4135'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#FFFFFF'/><rect x='0' y='84.0' width='300' height='32.0' fill='#FF0000'/><rect x='126.0' y='0' width='48.0' height='200' fill='#FF0000'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#000000'/><rect x='0' y='66.7' width='300' height='66.7' fill='#DD0000'/><rect x='0' y='133.3' width='300' height='66.7' fill='#FFCE00'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#CE1126'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FCD116'/><rect x='0' y='133.3' width='300' height='66.7' fill='#006B3F'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#FFFFFF'/><circle cx='150.0' cy='100.0' r='60.0' fill='#BC002D'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='100.0' fill='#FF0000'/><rect x='0' y='100.0' width='300' height='100.0' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#00247D'/><rect x='0' y='84.0' width='300' height='32.0' fill='#FFFFFF'/><rect x='126.0' y='0' width='48.0' height='200' fill='#FFFFFF'/><rect x='0' y='92.0' width='300' height='16.0' fill='#CF142B'/><rect x='138.0' y='0' width='24.0' height='200' fill='#CF142B'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#000000'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#007A3D'/><polygon points='0,0 120.0,100.0 0,200' fill='#CE1126'/><polygon points='39.0,92.0 40.9,97.4 46.6,97.5 42.0,101.0 43.7,106.5 39.0,103.2 34.3,106.5 36.0,101.0 31.4,97.5 37.1,97.4' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='15.4' fill='#B22234'/><rect x='0' y='15.4' width='300' height='15.4' fill='#FFFFFF'/><rect x='0' y='30.8' width='300' height='15.4' fill='#B22234'/><rect x='0' y='46.2' width='300' height='15.4' fill='#FFFFFF'/><rect x='0' y='61.5' width='300' height='15.4' fill='#B22234'/><rect x='0' y='76.9' width='300' height='15.4' fill='#FFFFFF'/><rect x='0' y='92.3' width='300' height='15.4' fill='#B22234'/><rect x='0' y='107.7' width='300' height='15.4' fill='#FFFFFF'/><rect x='0' y='123.1' width='300' height='15.4' fill='#B22234'/><rect x='0' y='138.5' width='300' height='15.4' fill='#FFFFFF'/><rect x='0' y='153.8' width='300' height='15.4' fill='#B22234'/><rect x='0' y='169.2' width='300' height='15.4' fill='#FFFFFF'/><rect x='0' y='184.6' width='300' height='15.4' fill='#B22234'/><rect x='0' y='0' width='120.0' height='107.7' fill='#3C3B6E'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#239F40'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#DA0000'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#169B62'/><rect x='100.0' y='0' width='100.0' height='200' fill='#FFFFFF'/><rect x='200.0' y='0' width='100.0' height='200' fill='#FF883E'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#02529C'/><rect x='0' y='80.0' width='300' height='40.0' fill='#FFFFFF'/><rect x='105.0' y='0' width='45.0' height='200' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#FFFFFF'/><rect x='0' y='30' width='300' height='24' fill='#0038B8'/><rect x='0' y='146' width='300' height='24' fill='#0038B8'/><polygon points='150,62 124.0,107.0 176.0,107.0' fill='none' stroke='#0038B8' stroke-width='4'/><polygon points='150,122 124.0,77.0 176.0,77.0' fill='none' stroke='#0038B8' stroke-width='4'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#009246'/><rect x='100.0' y='0' width='100.0' height='200' fill='#FFFFFF'/><rect x='200.0' y='0' width='100.0' height='200' fill='#CE2B37'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#007A5E'/><rect x='100.0' y='0' width='100.0' height='200' fill='#CE1126'/><rect x='200.0' y='0' width='100.0' height='200' fill='#FCD116'/><polygon points='150.0,88.0 152.8,96.1 161.4,96.3 154.6,101.5 157.1,109.7 150.0,104.8 142.9,109.7 145.4,101.5 138.6,96.3 147.2,96.1' fill='#FCD116'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#FFFFFF'/><rect x='0' y='0' width='75.0' height='200' fill='#FF0000'/><rect x='225.0' y='0' width='75.0' height='200' fill='#FF0000'/><polygon points='150.0,70.0 157.1,90.3 178.5,90.7 161.4,103.7 167.6,124.3 150.0,112.0 132.4,124.3 138.6,103.7 121.5,90.7 142.9,90.3' fill='#FF0000'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='150.0' height='200' fill='#8D1B3D'/><rect x='150.0' y='0' width='150.0' height='200' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#00AFCA'/><circle cx='150.0' cy='80.0' r='32.0' fill='#FEC50C'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='40.0' fill='#000000'/><rect x='0' y='40.0' width='300' height='40.0' fill='#FFFFFF'/><rect x='0' y='80.0' width='300' height='40.0' fill='#BB0000'/><rect x='0' y='120.0' width='300' height='40.0' fill='#FFFFFF'/><rect x='0' y='160.0' width='300' height='40.0' fill='#006600'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#DE2910'/><polygon points='45.0,28.0 50.2,42.9 65.9,43.2 53.4,52.7 57.9,67.8 45.0,58.8 32.1,67.8 36.6,52.7 24.1,43.2 39.8,42.9' fill='#FFDE00'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='100.0' fill='#CE1126'/><rect x='0' y='100.0' width='300' height='100.0' fill='#003F87'/><circle cx='150.0' cy='70.0' r='24.0' fill='#FCD116'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='100.0' fill='#FCD116'/><rect x='0' y='100.0' width='300' height='50.0' fill='#003893'/><rect x='0' y='150.0' width='300' height='50.0' fill='#CE1126'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='40.0' fill='#002B7F'/><rect x='0' y='40.0' width='300' height='40.0' fill='#FFFFFF'/><rect x='0' y='80.0' width='300' height='40.0' fill='#CE1126'/><rect x='0' y='120.0' width='300' height='40.0' fill='#FFFFFF'/><rect x='0' y='160.0' width='300' height='40.0' fill='#002B7F'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='40.0' fill='#002A8F'/><rect x='0' y='40.0' width='300' height='40.0' fill='#FFFFFF'/><rect x='0' y='80.0' width='300' height='40.0' fill='#002A8F'/><rect x='0' y='120.0' width='300' height='40.0' fill='#FFFFFF'/><rect x='0' y='160.0' width='300' height='40.0' fill='#002A8F'/><polygon points='0,0 120.0,100.0 0,200' fill='#CF142B'/><polygon points='39.0,88.0 41.8,96.1 50.4,96.3 43.6,101.5 46.1,109.7 39.0,104.8 31.9,109.7 34.4,101.5 27.6,96.3 36.2,96.1' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='66.7' fill='#007A3D'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#CE1126'/><polygon points='0,0 75.0,100.0 0,200' fill='#000000'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#FF0000'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#171796'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#FFFFFF'/><path d='M 75.0,110.00000000000001 Q 120.0,70.0 165.0,100.0 Q 195.0,80.0 225.0,90.0 L 210.0,120.0 Q 165.0,100.0 135.0,115.99999999999999 Q 105.0,130.0 75.0,110.00000000000001 Z' fill='#D57800'/><path d='M 105.0,136.0 l -10,10 M 120.0,136.0 l -8,12 M 180.0,136.0 l 10,10 M 165.0,136.0 l 8,12' stroke='#4E7A28' stroke-width='3'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#9E3039'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#9E3039'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='134.0' fill='#D22730'/><rect x='0' y='134.0' width='300' height='66.0' fill='#00AF66'/><rect x='0' y='0' width='36.0' height='200' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='100.0' fill='#002B7F'/><rect x='0' y='100.0' width='300' height='100.0' fill='#CE1126'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#FDB913'/><rect x='0' y='66.7' width='300' height='66.7' fill='#006A44'/><rect x='0' y='133.3' width='300' height='66.7' fill='#C1272D'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='50.0' fill='#EE161F'/><rect x='0' y='50.0' width='300' height='100.0' fill='#FFFFFF'/><rect x='0' y='150.0' width='300' height='50.0' fill='#EE161F'/><polygon points='150.0,70.0 132.0,110.00000000000001 168.00000000000003,110.00000000000001' fill='#00A651'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='66.7' fill='#E70013'/><rect x='0' y='66.7' width='300' height='66.7' fill='#000000'/><rect x='0' y='133.3' width='300' height='66.7' fill='#239E46'/><circle cx='150.0' cy='100.0' r='14' fill='none'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#ED2939'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#00A1DE'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='90.0' height='200' fill='#FFFFFF'/><rect x='90.0' y='0' width='210.0' height='100.0' fill='#FC3D32'/><rect x='90.0' y='100.0' width='210.0' height='100.0' fill='#007E3A'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='14.3' fill='#CC0001'/><rect x='0' y='14.3' width='300' height='14.3' fill='#FFFFFF'/><rect x='0' y='28.6' width='300' height='14.3' fill='#CC0001'/><rect x='0' y='42.9' width='300' height='14.3' fill='#FFFFFF'/><rect x='0' y='57.1' width='300' height='14.3' fill='#CC0001'/><rect x='0' y='71.4' width='300' height='14.3' fill='#FFFFFF'/><rect x='0' y='85.7' width='300' height='14.3' fill='#CC0001'/><rect x='0' y='100.0' width='300' height='14.3' fill='#FFFFFF'/><rect x='0' y='114.3' width='300' height='14.3' fill='#CC0001'/><rect x='0' y='128.6' width='300' height='14.3' fill='#FFFFFF'/><rect x='0' y='142.9' width='300' height='14.3' fill='#CC0001'/><rect x='0' y='157.1' width='300' height='14.3' fill='#FFFFFF'/><rect x='0' y='171.4' width='300' height='14.3' fill='#CC0001'/><rect x='0' y='185.7' width='300' height='14.3' fill='#FFFFFF'/><rect x='0' y='0' width='150.0' height='100.0' fill='#010066'/><circle cx='60.0' cy='50.0' r='28.000000000000004' fill='#FFCC00'/><circle cx='72.0' cy='50.0' r='24.0' fill='#010066'/><polygon points='96.0,42.0 97.9,47.4 103.6,47.5 99.0,51.0 100.7,56.5 96.0,53.2 91.3,56.5 93.0,51.0 88.4,47.5 94.1,47.4' fill='#FFCC00'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#14B53A'/><rect x='100.0' y='0' width='100.0' height='200' fill='#FCD116'/><rect x='200.0' y='0' width='100.0' height='200' fill='#CE1126'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='150.0' height='200' fill='#FFFFFF'/><rect x='150.0' y='0' width='150.0' height='200' fill='#CF142B'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#C1272D'/><polygon points='150.0,80.0 154.7,93.5 169.0,93.8 157.6,102.5 161.8,116.2 150.0,108.0 138.2,116.2 142.4,102.5 131.0,93.8 145.3,93.5' fill='#006233'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#006847'/><rect x='100.0' y='0' width='100.0' height='200' fill='#FFFFFF'/><rect x='200.0' y='0' width='100.0' height='200' fill='#CE1126'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#FECB00'/><rect x='0' y='66.7' width='300' height='66.7' fill='#34B233'/><rect x='0' y='133.3' width='300' height='66.7' fill='#EA2839'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#C4272F'/><rect x='100.0' y='0' width='100.0' height='200' fill='#0066B3'/><rect x='200.0' y='0' width='100.0' height='200' fill='#C4272F'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#003DA5'/><rect x='100.0' y='0' width='100.0' height='200' fill='#FFD200'/><rect x='200.0' y='0' width='100.0' height='200' fill='#CC092F'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#009739'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#000000'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#CE1126'/><polygon points='0,0 105.0,0 66.0,40.0 105.0,80.0 66.0,120.0 105.0,160.0 66.0,200 0,200' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#006A4E'/><circle cx='135.0' cy='100.0' r='40.0' fill='#F42A41'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#75AADB'/><rect x='0' y='80.0' width='300' height='40.0' fill='#FFFFFF'/><rect x='0' y='90.0' width='300' height='20.0' fill='#000000'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><polygon points='0,0 300,0 0,200' fill='#FFCE00'/><polygon points='300,0 300,200 0,200' fill='#FF4E12'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#003580'/><polygon points='0,200 300,0 300,200' fill='#009543'/><polygon points='0,200 150.0,60.0 300,200' fill='#D21034'/><circle cx='84.00000000000001' cy='50.0' r='18' fill='#FFCE00'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#00247D'/><rect x='0' y='0' width='150.0' height='100.0' fill='#00247D'/><polygon points='225.0,40.0 227.4,46.8 234.5,46.9 228.8,51.2 230.9,58.1 225.0,54.0 219.1,58.1 221.2,51.2 215.5,46.9 222.6,46.8' fill='#CC142B'/><polygon points='255.0,82.0 256.9,87.4 262.6,87.5 258.0,91.0 259.7,96.5 255.0,93.2 250.3,96.5 252.0,91.0 247.4,87.5 253.1,87.4' fill='#CC142B'/><polygon points='210.0,110.0 212.4,116.8 219.5,116.9 213.8,121.2 215.9,128.1 210.0,124.0 204.1,128.1 206.2,121.2 200.5,116.9 207.6,116.8' fill='#CC142B'/><polygon points='240.0,142.0 241.9,147.4 247.6,147.5 243.0,151.0 244.7,156.5 240.0,153.2 235.3,156.5 237.0,151.0 232.4,147.5 238.1,147.4' fill='#CC142B'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><polygon points='0,0 210.0,0 0,110.00000000000001' fill='#DC143C' stroke='#003893' stroke-width='4'/><polygon points='0,60.0 210.0,110.00000000000001 0,200' fill='#DC143C' stroke='#003893' stroke-width='4'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#008751'/><rect x='100.0' y='0' width='100.0' height='200' fill='#FFFFFF'/><rect x='200.0' y='0' width='100.0' height='200' fill='#008751'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#EF2B2D'/><rect x='0' y='80.0' width='300' height='40.0' fill='#FFFFFF'/><rect x='105.0' y='0' width='45.0' height='200' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#FFFFFF'/><rect x='0' y='0' width='300' height='66.0' fill='#DE3831'/><rect x='0' y='134.0' width='300' height='66.0' fill='#002395'/><polygon points='0,66.0 105.0,100.0 0,134.0' fill='#007A4D'/><polygon points='0,80.0 84.00000000000001,100.0 0,120.0' fill='#FFB612'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#FFFFFF'/><circle cx='150.0' cy='100.0' r='32.0' fill='#CD2E3A'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#AE1C28'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#21468B'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='66.7' width='300' height='66.7' fill='#DB161B'/><rect x='0' y='133.3' width='300' height='66.7' fill='#008000'/><rect x='0' y='0' width='75.0' height='200' fill='#DB161B'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#CE2939'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#477050'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='33.3' fill='#000000'/><rect x='0' y='33.3' width='300' height='33.3' fill='#FCDC04'/><rect x='0' y='66.7' width='300' height='33.3' fill='#D90000'/><rect x='0' y='100.0' width='300' height='33.3' fill='#000000'/><rect x='0' y='133.3' width='300' height='33.3' fill='#FCDC04'/><rect x='0' y='166.7' width='300' height='33.3' fill='#D90000'/><circle cx='150.0' cy='100.0' r='32.0' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='100.0' fill='#005BBB'/><rect x='0' y='100.0' width='300' height='100.0' fill='#FFD500'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='22.2' fill='#FFFFFF'/><rect x='0' y='22.2' width='300' height='22.2' fill='#0038A8'/><rect x='0' y='44.4' width='300' height='22.2' fill='#FFFFFF'/><rect x='0' y='66.7' width='300' height='22.2' fill='#0038A8'/><rect x='0' y='88.9' width='300' height='22.2' fill='#FFFFFF'/><rect x='0' y='111.1' width='300' height='22.2' fill='#0038A8'/><rect x='0' y='133.3' width='300' height='22.2' fill='#FFFFFF'/><rect x='0' y='155.6' width='300' height='22.2' fill='#0038A8'/><rect x='0' y='177.8' width='300' height='22.2' fill='#FFFFFF'/><rect x='0' y='0' width='120.0' height='111.1' fill='#FFFFFF'/><circle cx='60.0' cy='56.00000000000001' r='26.0' fill='#FCD116'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#0099B5'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#1EB53A'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='75' height='200' fill='#FFFFFF'/><rect x='75' y='0' width='225' height='200' fill='#01411C'/><circle cx='195' cy='100' r='36' fill='#FFFFFF'/><circle cx='210' cy='100' r='30' fill='#01411C'/><polygon points='238.0,85.0 241.5,95.1 252.3,95.4 243.7,101.9 246.8,112.1 238.0,106.0 229.2,112.1 232.3,101.9 223.7,95.4 234.5,95.1' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='150.0' height='100.0' fill='#FFFFFF'/><rect x='150.0' y='0' width='150.0' height='100.0' fill='#DA121A'/><rect x='0' y='100.0' width='150.0' height='100.0' fill='#005293'/><rect x='150.0' y='100.0' width='150.0' height='100.0' fill='#FFFFFF'/><polygon points='75.0,38.0 77.8,46.1 86.4,46.3 79.6,51.5 82.1,59.7 75.0,54.8 67.9,59.7 70.4,51.5 63.6,46.3 72.2,46.1' fill='#005293'/><polygon points='225.0,138.0 227.8,146.1 236.4,146.3 229.6,151.5 232.1,159.7 225.0,154.8 217.9,159.7 220.4,151.5 213.6,146.3 222.2,146.1' fill='#DA121A'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#D52B1E'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#0038A8'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#D91023'/><rect x='100.0' y='0' width='100.0' height='200' fill='#FFFFFF'/><rect x='200.0' y='0' width='100.0' height='200' fill='#D91023'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='100.0' fill='#FFFFFF'/><rect x='0' y='100.0' width='300' height='100.0' fill='#DC143C'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='150.0' height='200' fill='#046A38'/><rect x='150.0' y='0' width='150.0' height='200' fill='#DA291C'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='66.7' width='300' height='66.7' fill='#0039A6'/><rect x='0' y='133.3' width='300' height='66.7' fill='#D52B1E'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='100.0' fill='#00A1DE'/><rect x='0' y='100.0' width='300' height='50.0' fill='#FAD201'/><rect x='0' y='150.0' width='300' height='50.0' fill='#20603D'/><circle cx='225.0' cy='50.0' r='18' fill='#FAD201'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#002B7F'/><rect x='100.0' y='0' width='100.0' height='200' fill='#FCD116'/><rect x='200.0' y='0' width='100.0' height='200' fill='#CE1126'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='100.0' fill='#FFFFFF'/><rect x='0' y='100.0' width='300' height='100.0' fill='#5EB6E4'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#006C35'/><text x='150.0' y='90.0' font-size='20' fill='white' text-anchor='middle'>الله</text><rect x='75.0' y='130.0' width='150.0' height='12.0' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#00853F'/><rect x='100.0' y='0' width='100.0' height='200' fill='#FDEF42'/><rect x='200.0' y='0' width='100.0' height='200' fill='#E31B23'/><polygon points='150.0,86.0 153.3,95.5 163.3,95.7 155.3,101.7 158.2,111.3 150.0,105.6 141.8,111.3 144.7,101.7 136.7,95.7 146.7,95.5' fill='#00853F'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#C6363C'/><rect x='0' y='66.7' width='300' height='66.7' fill='#0C4076'/><rect x='0' y='133.3' width='300' height='66.7' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='100.0' fill='#ED2939'/><rect x='0' y='100.0' width='300' height='100.0' fill='#FFFFFF'/><circle cx='60.0' cy='50.0' r='32.0' fill='#FFFFFF'/><circle cx='75.0' cy='50.0' r='28.000000000000004' fill='#ED2939'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='66.7' width='300' height='66.7' fill='#0B4EA2'/><rect x='0' y='133.3' width='300' height='66.7' fill='#EE1C25'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='66.7' width='300' height='66.7' fill='#005CE6'/><rect x='0' y='133.3' width='300' height='66.7' fill='#ED1C24'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#4189DD'/><polygon points='150.0,74.0 156.1,91.6 174.7,92.0 159.9,103.2 165.3,121.0 150.0,110.4 134.7,121.0 140.1,103.2 125.3,92.0 143.9,91.6' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='66.7' fill='#D21034'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#000000'/><polygon points='0,0 90.0,100.0 0,200' fill='#007229'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#006AA7'/><rect x='0' y='80.0' width='300' height='40.0' fill='#FECC00'/><rect x='105.0' y='0' width='45.0' height='200' fill='#FECC00'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='40.0' fill='#377E3F'/><rect x='0' y='40.0' width='300' height='40.0' fill='#FFFFFF'/><rect x='0' y='80.0' width='300' height='40.0' fill='#B40A2D'/><rect x='0' y='120.0' width='300' height='40.0' fill='#FFFFFF'/><rect x='0' y='160.0' width='300' height='40.0' fill='#377E3F'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='60.0' height='200' fill='#FFB700'/><rect x='60.0' y='0' width='45.0' height='200' fill='#00534E'/><rect x='105.0' y='0' width='45.0' height='200' fill='#EB7400'/><rect x='150.0' y='0' width='150.0' height='200' fill='#8D153A'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='40.0' fill='#A51931'/><rect x='0' y='40.0' width='300' height='40.0' fill='#F4F5F8'/><rect x='0' y='80.0' width='300' height='40.0' fill='#2D2A4A'/><rect x='0' y='120.0' width='300' height='40.0' fill='#F4F5F8'/><rect x='0' y='160.0' width='300' height='40.0' fill='#A51931'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#1EB53A'/><polygon points='0,200 300,0 300,30.0 45.0,200' fill='#000000'/><rect x='0' y='0' width='300' height='200' fill='#00A3DD' opacity='0' /><polygon points='0,170.0 255.0,0 300,0 300,30.0 0,200' fill='#00A3DD'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0.0' width='300' height='66.7' fill='#CC0000'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#006600'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#E30A17'/><circle cx='105.0' cy='100.0' r='44.0' fill='#FFFFFF'/><circle cx='120.0' cy='100.0' r='36.0' fill='#E30A17'/><polygon points='165.0,88.0 167.8,96.1 176.4,96.3 169.6,101.5 172.1,109.7 165.0,104.8 157.9,109.7 160.4,101.5 153.6,96.3 162.2,96.1' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='100.0' fill='#FFFFFF'/><rect x='0' y='100.0' width='300' height='100.0' fill='#D7141A'/><polygon points='0,0 135.0,100.0 0,200' fill='#11457E'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#E70013'/><circle cx='150.0' cy='100.0' r='44.0' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#009B3A'/><polygon points='0,0 300,200 0,200 0,0' fill='#000000'/><polygon points='300,0 300,200 0,0' fill='#000000'/><polygon points='150.0,0 300,100.0 150.0,200 0,100.0' fill='#FED100'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0.0' y='0' width='100.0' height='200' fill='#000000'/><rect x='100.0' y='0' width='100.0' height='200' fill='#FAE042'/><rect x='200.0' y='0' width='100.0' height='200' fill='#ED2939'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect x='0' y='0' width='300' height='66.7' fill='#FFCC00'/><rect x='0' y='66.7' width='300' height='66.7' fill='#00247D'/><rect x='0' y='133.3' width='300' height='66.7' fill='#CF142B'/><polygon points='105.0,92.0 106.9,97.4 112.6,97.5 108.0,101.0 109.7,106.5 105.0,103.2 100.3,106.5 102.0,101.0 97.4,97.5 103.1,97.4' fill='#FFFFFF'/><polygon points='125.0,92.0 126.9,97.4 132.6,97.5 128.0,101.0 129.7,106.5 125.0,103.2 120.3,106.5 122.0,101.0 117.4,97.5 123.1,97.4' fill='#FFFFFF'/><polygon points='145.0,92.0 146.9,97.4 152.6,97.5 148.0,101.0 149.7,106.5 145.0,103.2 140.3,106.5 142.0,101.0 137.4,97.5 143.1,97.4' fill='#FFFFFF'/><polygon points='165.0,92.0 166.9,97.4 172.6,97.5 168.0,101.0 169.7,106.5 165.0,103.2 160.3,106.5 162.0,101.0 157.4,97.5 163.1,97.4' fill='#FFFFFF'/><polygon points='185.0,92.0 186.9,97.4 192.6,97.5 188.0,101.0 189.7,106.5 185.0,103.2 180.3,106.5 182.0,101.0 177.4,97.5 183.1,97.4' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='#DA251D'/><polygon points='150.0,78.0 155.2,92.9 170.9,93.2 158.4,102.7 162.9,117.8 150.0,108.8 137.1,117.8 141.6,102.7 129.1,93.2 144.8,92.9' fill='#FFFF00'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
