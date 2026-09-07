@@ -282,17 +282,20 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 
 #stairLines { position: absolute; inset: 0; z-index: 2; }
 
-/* Mountain relief is drawn as SVG (see buildMountainSvg in game.js) so it can
-   carry ridgelines, lit/shaded faces and snow gullies — a CSS gradient
-   triangle reads flat no matter how many colour stops you give it. */
-.mountainSvg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  display: block;
+/* Το βουνό είναι πλέον ζωγραφισμένη εικόνα (assets/mountains/mountain-N.jpg),
+   μία ανά αριθμό παικτών: όσο περισσότεροι, τόσο πλατύτερη η βάση. */
+#climbZone.players-1 { background-image: url("assets/mountains/mountain-1.jpg"); }
+#climbZone.players-2 { background-image: url("assets/mountains/mountain-2.jpg"); }
+#climbZone.players-3 { background-image: url("assets/mountains/mountain-3.jpg"); }
+#climbZone.players-4 { background-image: url("assets/mountains/mountain-4.jpg"); }
+#climbZone.players-5 { background-image: url("assets/mountains/mountain-5.jpg"); }
+#climbZone[class*="players-"] {
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
 }
+.mountainSvg { display: none; }
+.stepRung { display: none; }   /* τα σκαλιά έρχονται από την εικόνα */
 
 /* Stair treads: a lit top surface plus a shadowed riser underneath, so each
    step reads as cut into the rock rather than painted on it. */
