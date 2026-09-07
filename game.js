@@ -741,7 +741,7 @@ function pickFromShuffledQueue(category, color, queueState) {
   const order = seededOrder(pool.length, seed);
   const item = pool[order[pos]];
   return {
-    item: { text: item.q, options: item.o, correct: item.a, img: item.img || null },
+    item: { text: item.q, options: item.o, correct: item.a, img: item.img || null, imgFallback: item.imgFallback || null },
     newQueueState: { seed, pos: pos + 1, len: pool.length },
   };
 }
@@ -779,7 +779,7 @@ async function buildQuestionTurnUpdates(category, color) {
     "turn/phase": "question",
     "turn/color": color,
     "turn/category": category,
-    "turn/question": { text: q.text, options: q.options, c: encodeCorrect(q.correct, qKey), k: qKey, img: q.img || null },
+    "turn/question": { text: q.text, options: q.options, c: encodeCorrect(q.correct, qKey), k: qKey, img: q.img || null, imgFallback: q.imgFallback || null },
     "turn/deadline": Date.now() + questionSecondsFor(category) * 1000,
     "turn/answers": {},
   };
