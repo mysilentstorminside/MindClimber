@@ -2,17 +2,22 @@
 <html lang="el">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>MindClimber Online</title>
+<meta name="theme-color" content="#000000">
+<meta name="description" content="MindClimber — το ελληνικό παιχνίδι γνώσεων. Ανέβα 30 σκαλιά με φίλους ή μόνος.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://commons.wikimedia.org" crossorigin>
+<link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
+<link rel="preconnect" href="https://mindclimber-b9c69-default-rtdb.firebaseio.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
 <script>
   window.__mcv = Date.now();
   document.write('<link rel="stylesheet" href="game.css?v=' + window.__mcv + '">');
 </script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 </head>
 <body>
 
@@ -156,8 +161,10 @@
 </div>
 
 <script>
-  document.write('<script src="questions_data.js?v=' + window.__mcv + '"><\/script>');
-  document.write('<script src="game.js?v=' + window.__mcv + '"><\/script>');
+  // defer keeps these off the parser's critical path while preserving order,
+  // so the 1.4 MB question bank no longer blocks first paint.
+  document.write('<script defer src="questions_data.js?v=' + window.__mcv + '"><\/script>');
+  document.write('<script defer src="game.js?v=' + window.__mcv + '"><\/script>');
 </script>
 </body>
 </html>

@@ -548,6 +548,7 @@ function renderGame(room) {
     }
   } else if (turn.phase === "question" || turn.phase === "result") {
     $("qTimerWrap").classList.remove("hidden");
+    if (turn.question && turn.question.img) preloadImage(turn.question.img);
     $("selectedCategoryLabel").textContent = (turn.category || "") + (turn.color ? " · " + ({green:"Εύκολο",blue:"Μέτριο",orange:"Δύσκολο"}[turn.color]||"") : "");
     $("selectedCategoryLabel").classList.remove("hidden");
     renderQuestion(turn, turn.phase === "result");
@@ -578,43 +579,100 @@ function renderCategoryButtons() {
   });
 }
 
+let lastRenderedImgSrc = null;
+let lastRenderedQText = null;
+
 function renderQuestion(turn, showResult) {
   const q = turn.question || {};
   const img = $("questionImage");
   const rect = $("questionRectangle");
+
+  // The question text is now ALWAYS shown, even for image questions. Before,
+  // an image question hid the prompt entirely, so "Ποιον ήρωα του 1821
+  // απεικονίζει αυτή η προσωπογραφία;" arrived as a bare picture — and if the
+  // image failed to load the player got a blank box with three options.
+  const text = q.text || "";
+  if (lastRenderedQText !== text) {
+    rect.textContent = text;
+    lastRenderedQText = text;
+  }
+  rect.classList.toggle("hidden", !text);
+  rect.classList.toggle("withImage", !!q.img);
+
   if (q.img) {
-    img.src = q.img;
-    img.classList.remove("hidden");
-    rect.classList.add("hidden");
+    // Only touch .src when it actually changes, otherwise every Firebase
+    // update re-decodes (and sometimes re-downloads) the same picture.
+    if (lastRenderedImgSrc !== q.img) {
+      lastRenderedImgSrc = q.img;
+      img.classList.remove("imgFailed");
+      img.removeAttribute("src");
+      img.alt = text;
+      img.decoding = "async";
+      img.referrerPolicy = "no-referrer";
+      img.onerror = () => {
+        // Never leave the player stuck on a picture that will not arrive.
+        img.classList.add("hidden");
+        img.classList.add("imgFailed");
+        rect.classList.remove("hidden");
+        rect.textContent = text || "Η εικόνα δεν φορτώθηκε.";
+      };
+      img.onload = () => { img.classList.remove("hidden"); };
+      img.src = q.img;
+    }
+    if (!img.classList.contains("imgFailed")) img.classList.remove("hidden");
   } else {
     img.classList.add("hidden");
-    rect.textContent = q.text || "";
-    rect.classList.remove("hidden");
+    img.removeAttribute("src");
+    lastRenderedImgSrc = null;
   }
+
+  const correctLetter = decodeCorrect(q);
   const opts = q.options || ["", "", ""];
+  const myAns = turn.answers && turn.answers[myPlayerId];
+  const locked = showResult || !!myAns;
   document.querySelectorAll(".answerOption").forEach((el) => {
     const letter = el.dataset.option;
     const i = letter.charCodeAt(0) - 65;
-    el.textContent = (letter + ". " + (opts[i] || "")).trim();
+    const label = (letter + ". " + (opts[i] || "")).trim();
+    if (el.textContent !== label) el.textContent = label;
     el.classList.remove("picked", "correct", "wrong", "disabled");
-    if (showResult || (turn.answers && turn.answers[myPlayerId])) {
+    el.setAttribute("role", "button");
+    el.setAttribute("tabindex", locked ? "-1" : "0");
+    if (locked) {
       el.classList.add("disabled");
-      if (letter === q.correct) el.classList.add("correct");
-      const myAns = turn.answers && turn.answers[myPlayerId];
+      if (myAns && myAns.option === letter) el.classList.add("picked");
+      if (letter === correctLetter) el.classList.add("correct");
       if (myAns && myAns.option === letter && !myAns.correct) el.classList.add("wrong");
     }
   });
 }
 
+// Reconcile in place. The old version wiped innerHTML on every single room
+// update, which rebuilt each <img> from scratch — causing avatar flicker and
+// repeated image work several times per second during a question.
 function renderAnswerStatuses(room) {
   const wrap = $("allAnswersStatus");
-  wrap.innerHTML = "";
   const turn = room.turn || {};
   const answers = turn.answers || {};
   const inAnswerPhase = turn.phase === "question" || turn.phase === "result";
   const activeId = turn.colorPickerId;
+  const seen = new Set();
+
   Object.entries(room.players || {}).forEach(([pid, p]) => {
-    const chip = document.createElement("div");
+    seen.add(pid);
+    let chip = wrap.querySelector(`.answerStatusChip[data-pid="${pid}"]`);
+    if (!chip) {
+      chip = document.createElement("div");
+      chip.dataset.pid = pid;
+      const im = document.createElement("img");
+      im.alt = "";
+      im.onerror = function () { this.style.display = "none"; };
+      im.src = avatarSrc(p.avatar, "front");
+      const sp = document.createElement("span");
+      chip.appendChild(im);
+      chip.appendChild(sp);
+      wrap.appendChild(chip);
+    }
     let cls = "answerStatusChip", mark = "";
     if (p.eliminated) {
       cls += " eliminated-chip"; mark = "—";
@@ -623,17 +681,36 @@ function renderAnswerStatuses(room) {
       else { cls += " waiting"; mark = "…"; }
     }
     if (pid === activeId) cls += " chipActive";
-    chip.className = cls;
-    chip.innerHTML = `<img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.display='none'"><span>${escapeHtml(p.name)}${mark ? " " + mark : ""}</span>`;
-    wrap.appendChild(chip);
+    if (chip.className !== cls) chip.className = cls;
+    const label = p.name + (mark ? " " + mark : "");
+    const sp = chip.querySelector("span");
+    if (sp.textContent !== label) sp.textContent = label;
+  });
+
+  wrap.querySelectorAll(".answerStatusChip").forEach((el) => {
+    if (!seen.has(el.dataset.pid)) el.remove();
   });
 }
 
-function fisherYatesShuffle(arr) {
-  const a = arr.slice();
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
+// Deterministic PRNG so a whole question order can be rebuilt from one integer.
+// Previously the full index array (up to ~300 numbers) was written to Firebase
+// on EVERY question and re-downloaded by every client. Now we store {seed,pos}.
+function mulberry32(seed) {
+  let t = seed >>> 0;
+  return function () {
+    t = (t + 0x6D2B79F5) >>> 0;
+    let r = Math.imul(t ^ (t >>> 15), 1 | t);
+    r = (r + Math.imul(r ^ (r >>> 7), 61 | r)) ^ r;
+    return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function seededOrder(len, seed) {
+  const rand = mulberry32(seed);
+  const a = new Array(len);
+  for (let i = 0; i < len; i++) a[i] = i;
+  for (let i = len - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    const t = a[i]; a[i] = a[j]; a[j] = t;
   }
   return a;
 }
@@ -644,16 +721,20 @@ function pickFromShuffledQueue(category, color, queueState) {
   if (!pool.length) {
     return { item: { text: "Δεν βρέθηκαν ερωτήσεις.", options: ["-", "-", "-"], correct: "A", img: null }, newQueueState: queueState || null };
   }
-  let order = queueState && queueState.order;
+  let seed = queueState && queueState.seed;
   let pos = queueState && queueState.pos;
-  if (!Array.isArray(order) || order.length !== pool.length || typeof pos !== "number" || pos >= order.length) {
-    order = fisherYatesShuffle(pool.map((_, i) => i));
+  const len = queueState && queueState.len;
+  // Reshuffle when the queue is new, exhausted, or the pool size changed
+  // (i.e. the question bank was updated since the room was created).
+  if (typeof seed !== "number" || typeof pos !== "number" || len !== pool.length || pos >= pool.length) {
+    seed = (Math.random() * 4294967295) >>> 0;
     pos = 0;
   }
+  const order = seededOrder(pool.length, seed);
   const item = pool[order[pos]];
   return {
     item: { text: item.q, options: item.o, correct: item.a, img: item.img || null },
-    newQueueState: { order, pos: pos + 1 },
+    newQueueState: { seed, pos: pos + 1, len: pool.length },
   };
 }
 
@@ -664,18 +745,42 @@ function applyTimeDeduction(updates, pid, currentTimeLeft, alreadyEliminated, el
   return newTimeLeft;
 }
 
+// The answer used to be sent to every client as a plain "A"/"B"/"C", visible to
+// anyone who opened the network tab. It is now offset by a per-question key.
+// This is obfuscation, not security — a determined player can still decode it —
+// but it stops trivial cheating. Real protection needs server-side validation.
+function encodeCorrect(letter, key) {
+  const i = "ABC".indexOf(letter);
+  if (i < 0) return 0;
+  return (i + (key % 3) + 3) % 3;
+}
+function decodeCorrect(question) {
+  if (!question) return "A";
+  if (typeof question.correct === "string") return question.correct; // legacy rooms
+  const key = typeof question.k === "number" ? question.k : 0;
+  const c = typeof question.c === "number" ? question.c : 0;
+  return "ABC"[((c - (key % 3)) % 3 + 3) % 3];
+}
+
 async function buildQuestionTurnUpdates(category, color) {
   const qSnap = await db.ref(`rooms/${currentRoomCode}/shuffledQueues/${category}/${color}`).once("value");
   const { item: q, newQueueState } = pickFromShuffledQueue(category, color, qSnap.val());
+  const qKey = (Math.random() * 100000) | 0;
   return {
     [`shuffledQueues/${category}/${color}`]: newQueueState,
     "turn/phase": "question",
     "turn/color": color,
     "turn/category": category,
-    "turn/question": { text: q.text, options: q.options, correct: q.correct, img: q.img || null },
+    "turn/question": { text: q.text, options: q.options, c: encodeCorrect(q.correct, qKey), k: qKey, img: q.img || null },
     "turn/deadline": Date.now() + questionSecondsFor(category) * 1000,
     "turn/answers": {},
   };
+}
+
+// Warm the browser cache for a picture we are about to show.
+function preloadImage(url) {
+  if (!url) return;
+  try { const i = new Image(); i.referrerPolicy = "no-referrer"; i.src = url; } catch (e) {}
 }
 
 async function buildSoloTurn(pid, step, catIdx) {
@@ -793,6 +898,13 @@ async function forceRandomPickForStalledPicker(turn) {
   }
 }
 
+$("answerRectangle").addEventListener("keydown", (e) => {
+  if (e.key !== "Enter" && e.key !== " ") return;
+  const opt = e.target.closest(".answerOption");
+  if (!opt || opt.classList.contains("disabled")) return;
+  e.preventDefault();
+  opt.click();
+});
 $("answerRectangle").addEventListener("click", (e) => {
   const opt = e.target.closest(".answerOption");
   if (!opt || opt.classList.contains("disabled")) return;
@@ -806,7 +918,7 @@ async function submitAnswer(pickedOption) {
   if (latestRoom.turn.answers && latestRoom.turn.answers[myPlayerId]) return;
   stopLocalQuestionTimer();
   const turn = latestRoom.turn;
-  const correct = pickedOption === turn.question.correct;
+  const correct = pickedOption === decodeCorrect(turn.question);
   if (correct) { playSuccessSound(); vibrate(30); } else { playFailureSound(); vibrate([40, 60, 40]); }
   const delta = COLOR_DELTA[turn.color] * (correct ? 1 : -1);
   const me = (latestRoom.players || {})[myPlayerId] || { step: 0 };
@@ -1020,3 +1132,16 @@ if (showInfoBtn && infoModal) {
 }
 
 initHome();
+
+
+/* ---------------------------------------------------------------
+   Re-sync when the player comes back to the tab. Mobile browsers
+   throttle timers in the background, so the countdown bar could be
+   badly out of date on return; re-render from the authoritative
+   room snapshot instead of trusting the local interval.
+   --------------------------------------------------------------- */
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && latestRoom) {
+    try { renderRoom(latestRoom); } catch (e) {}
+  }
+});

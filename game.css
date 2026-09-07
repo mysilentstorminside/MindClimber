@@ -648,6 +648,58 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 /* ========== MindClimber IQ polish ========== */
 /* Knowledge theme keeps light cards; optional dark only if data-theme=iq */
 body { background: #000; color: #1b2b3a; }
+
+/* ===================== FIXES / POLISH ===================== */
+
+/* Question text now sits above the picture on image questions. */
+#questionRectangle.withImage {
+  font-size: 0.92rem;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+#questionImage.imgFailed { display: none !important; }
+
+/* Give maps and photos more room; flags stay small anyway. */
+#questionImage {
+  height: 30vh;
+  max-height: 280px;
+  background: #f4f7f9;
+}
+@media (max-height: 700px) {
+  #questionImage { height: 24vh; max-height: 200px; }
+}
+
+/* Comfortable, thumb-sized answer targets (was 11px padding). */
+.answerOption {
+  padding: 13px 14px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  line-height: 1.3;
+}
+.answerOption:focus-visible {
+  outline: 3px solid #1E88E5;
+  outline-offset: 2px;
+}
+.answerOption.picked { border-color: #1E88E5; background: #e3f2fd; }
+/* A wrong pick should still read as wrong even though the correct row is green. */
+.answerOption.wrong { background: #ffcdd2; border-color: #e53935; }
+
+/* Respect the OS "reduce motion" setting. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .playerToken { transition: none !important; }
+}
+
+/* Timer bars animate width on the main thread every 200ms; hint the
+   compositor so the bar does not cause layout on each tick. */
+#qTimerFill, #choiceTimerFill { will-change: width; }
+
 .screen { background: transparent; }
 #homeScreen, #desktopBlock {
   background: radial-gradient(ellipse at 50% 20%, #1a2332 0%, #000 70%);
