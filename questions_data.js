@@ -30933,7 +30933,8 @@ window.QUESTION_BANK = {
           "Edinburgh Castle"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Windsor_Castle_at_Sunset_-_Nov_2006.jpg?width=650"
+        "img": "assets/questions_pics/place_kastro_oyindsor.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Windsor_Castle_at_Sunset_-_Nov_2006.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -30943,7 +30944,7 @@ window.QUESTION_BANK = {
           "Φινλανδία"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23006AA7%27/%3E%3Crect%20x%3D%270%27%20y%3D%2780.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23FECC00%27/%3E%3Crect%20x%3D%27105.0%27%20y%3D%270%27%20width%3D%2745.0%27%20height%3D%27200%27%20fill%3D%27%23FECC00%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_soyidia.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -30953,7 +30954,8 @@ window.QUESTION_BANK = {
           "Κολοσσαίο, Ρώμη"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Colosseum.jpg?width=650"
+        "img": "assets/questions_pics/place_kolossaio_romi.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Colosseum.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -30963,7 +30965,8 @@ window.QUESTION_BANK = {
           "Καθεδρικός Σιένας"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Leaning_Tower_of_Pisa.jpg?width=650"
+        "img": "assets/questions_pics/place_pyrgos_tis_pizas.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Leaning_Tower_of_Pisa.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -30973,7 +30976,8 @@ window.QUESTION_BANK = {
           "Κόκκινη Πλατεία, Μόσχα"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Red_Square.jpg?width=650"
+        "img": "assets/questions_pics/place_kokkini_plateia_moscha.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Red_Square.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -30983,7 +30987,7 @@ window.QUESTION_BANK = {
           "Ιρλανδία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23009246%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23CE2B37%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_italia.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -30993,7 +30997,8 @@ window.QUESTION_BANK = {
           "Σφίγγα της Γκίζας"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Sphinx_of_Giza.jpg?width=650"
+        "img": "assets/questions_pics/place_sfigga_tis_gkizas.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Sphinx_of_Giza.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31003,7 +31008,8 @@ window.QUESTION_BANK = {
           "Λούβρο, Παρίσι"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Louvre_Museum_Wikimedia_Commons.jpg?width=650"
+        "img": "assets/questions_pics/place_loyvro_parisi.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Louvre_Museum_Wikimedia_Commons.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31013,7 +31019,8 @@ window.QUESTION_BANK = {
           "Παλάτι του Μπάκιγχαμ, Λονδίνο"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Buckingham_Palace.jpg?width=650"
+        "img": "assets/questions_pics/place_palati_toy_mpakigcham_londino.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Buckingham_Palace.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31023,7 +31030,8 @@ window.QUESTION_BANK = {
           "Νίγηρας"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Sari_2.jpg?width=650"
+        "img": "assets/questions_pics/flag_india.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Sari_2.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31033,7 +31041,8 @@ window.QUESTION_BANK = {
           "Golden Gate Bridge"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Harbour_Bridge.jpg?width=650"
+        "img": "assets/questions_pics/place_gefyra_toy_limanioy_toy_sidnei.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Harbour_Bridge.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31043,7 +31052,8 @@ window.QUESTION_BANK = {
           "London Eye"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Big_Ben.jpg?width=650"
+        "img": "assets/questions_pics/place_big_ben_londino.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Big_Ben.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31053,7 +31063,8 @@ window.QUESTION_BANK = {
           "Πύργος του Τόκυο"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Eiffel_Tower.jpg?width=650"
+        "img": "assets/questions_pics/place_pyrgos_toy_aifel_parisi.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Eiffel_Tower.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31063,7 +31074,7 @@ window.QUESTION_BANK = {
           "Σερβία"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%230039A6%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23D52B1E%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_rosia.svg"
       },
       {
         "q": "Ποιο ουράνιο σώμα απεικονίζει αυτή η εικόνα;",
@@ -31073,7 +31084,8 @@ window.QUESTION_BANK = {
           "Δίας"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/FullMoon2010.jpg?width=650"
+        "img": "assets/questions_pics/space_selini.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/FullMoon2010.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31083,7 +31095,8 @@ window.QUESTION_BANK = {
           "Chrysler Building"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Empire_State_Building.jpg?width=650"
+        "img": "assets/questions_pics/place_empire_state_building_nea_yorki.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Empire_State_Building.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31093,7 +31106,8 @@ window.QUESTION_BANK = {
           "Γέφυρα Μπρούκλιν"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles_Bridge.jpg?width=650"
+        "img": "assets/questions_pics/place_gefyra_karoloy_praga.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles_Bridge.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31103,7 +31117,8 @@ window.QUESTION_BANK = {
           "Παλάτι Σένμπρουν"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Sanssouci_Palace.jpg?width=650"
+        "img": "assets/questions_pics/place_palati_toy_potsdam.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Sanssouci_Palace.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31113,7 +31128,8 @@ window.QUESTION_BANK = {
           "Πύργος του Τόκυο"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/TokyoTower.jpg?width=650"
+        "img": "assets/questions_pics/place_pyrgos_toy_tokyo.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/TokyoTower.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31123,7 +31139,7 @@ window.QUESTION_BANK = {
           "Φινλανδία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2780.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23003580%27/%3E%3Crect%20x%3D%27105.0%27%20y%3D%270%27%20width%3D%2745.0%27%20height%3D%27200%27%20fill%3D%27%23003580%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_finlandia.svg"
       },
       {
         "q": "Ποιον ήρωα του 1821 απεικονίζει αυτή η προσωπογραφία;",
@@ -31133,7 +31149,8 @@ window.QUESTION_BANK = {
           "Ελένη Μπότσαρη"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Bouboulina.JPG?width=650"
+        "img": "assets/questions_pics/portrait_laskarina_mpoympoylina.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Bouboulina.JPG?width=650"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -31143,7 +31160,8 @@ window.QUESTION_BANK = {
           "Κοάλα"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Koala_climbing_tree.jpg?width=650"
+        "img": "assets/questions_pics/animal_koala.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Koala_climbing_tree.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31153,7 +31171,8 @@ window.QUESTION_BANK = {
           "Monument Valley"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Canyon.jpg?width=650"
+        "img": "assets/questions_pics/place_grand_canyon_ipa.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Canyon.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31163,7 +31182,8 @@ window.QUESTION_BANK = {
           "Sainte-Chapelle"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Notre-Dame_de_Paris.jpg?width=650"
+        "img": "assets/questions_pics/place_panagia_ton_parision.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Notre-Dame_de_Paris.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31173,7 +31193,7 @@ window.QUESTION_BANK = {
           "Ινδονησία"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23DC143C%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_polonia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31183,7 +31203,7 @@ window.QUESTION_BANK = {
           "Γαλλία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23AE1C28%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%2321468B%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_ollandia.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31193,7 +31213,8 @@ window.QUESTION_BANK = {
           "Καταρράκτες Άνγκελ, Βενεζουέλα"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Angel_falls.jpg?width=650"
+        "img": "assets/questions_pics/place_katarraktes_angkel_venezoyela.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Angel_falls.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31203,7 +31224,8 @@ window.QUESTION_BANK = {
           "Καππαδοκία, Τουρκία"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Cappadocia_Balloon_Inflating_Wikimedia_Commons.JPG?width=650"
+        "img": "assets/questions_pics/place_kappadokia_toyrkia.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Cappadocia_Balloon_Inflating_Wikimedia_Commons.JPG?width=650"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -31213,7 +31235,8 @@ window.QUESTION_BANK = {
           "Ελάφι"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Giraffa_camelopardalis_reticulata.jpg?width=650"
+        "img": "assets/questions_pics/animal_kamilopardali.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Giraffa_camelopardalis_reticulata.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31223,7 +31246,7 @@ window.QUESTION_BANK = {
           "Αυστραλία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%2300247D%27/%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27100.0%27%20fill%3D%27%2300247D%27/%3E%3Cpolygon%20points%3D%27225.0%2C40.0%20227.4%2C46.8%20234.5%2C46.9%20228.8%2C51.2%20230.9%2C58.1%20225.0%2C54.0%20219.1%2C58.1%20221.2%2C51.2%20215.5%2C46.9%20222.6%2C46.8%27%20fill%3D%27%23CC142B%27/%3E%3Cpolygon%20points%3D%27255.0%2C82.0%20256.9%2C87.4%20262.6%2C87.5%20258.0%2C91.0%20259.7%2C96.5%20255.0%2C93.2%20250.3%2C96.5%20252.0%2C91.0%20247.4%2C87.5%20253.1%2C87.4%27%20fill%3D%27%23CC142B%27/%3E%3Cpolygon%20points%3D%27210.0%2C110.0%20212.4%2C116.8%20219.5%2C116.9%20213.8%2C121.2%20215.9%2C128.1%20210.0%2C124.0%20204.1%2C128.1%20206.2%2C121.2%20200.5%2C116.9%20207.6%2C116.8%27%20fill%3D%27%23CC142B%27/%3E%3Cpolygon%20points%3D%27240.0%2C142.0%20241.9%2C147.4%20247.6%2C147.5%20243.0%2C151.0%20244.7%2C156.5%20240.0%2C153.2%20235.3%2C156.5%20237.0%2C151.0%20232.4%2C147.5%20238.1%2C147.4%27%20fill%3D%27%23CC142B%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_nea_zilandia.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31233,7 +31256,8 @@ window.QUESTION_BANK = {
           "Λούξορ"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Karnak_Temple.jpg?width=650"
+        "img": "assets/questions_pics/place_naos_karnak.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Karnak_Temple.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31243,7 +31267,7 @@ window.QUESTION_BANK = {
           "Γκάνα"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23008751%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23008751%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_nigiria.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31253,7 +31277,8 @@ window.QUESTION_BANK = {
           "Λίμνη Τανγκανίκα"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Lake_Baikal.jpg?width=650"
+        "img": "assets/questions_pics/place_limni_vaikali.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Lake_Baikal.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31263,7 +31288,7 @@ window.QUESTION_BANK = {
           "Ισπανία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27200%27%20fill%3D%27%23046A38%27/%3E%3Crect%20x%3D%27150.0%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27200%27%20fill%3D%27%23DA291C%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_portogalia.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31273,7 +31298,8 @@ window.QUESTION_BANK = {
           "Όρος Κιλιμάντζαρο"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Fuji_from_Lake_Kawaguchi.jpg?width=650"
+        "img": "assets/questions_pics/place_oros_foytzi_iaponia.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Fuji_from_Lake_Kawaguchi.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31283,7 +31309,7 @@ window.QUESTION_BANK = {
           "Ταϊλάνδη"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23DE2910%27/%3E%3Cpolygon%20points%3D%2745.0%2C28.0%2050.2%2C42.9%2065.9%2C43.2%2053.4%2C52.7%2057.9%2C67.8%2045.0%2C58.8%2032.1%2C67.8%2036.6%2C52.7%2024.1%2C43.2%2039.8%2C42.9%27%20fill%3D%27%23FFDE00%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_kina.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31293,7 +31319,8 @@ window.QUESTION_BANK = {
           "Καθεδρικός Notre-Dame"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Sacre_coeur_paris.jpg?width=650"
+        "img": "assets/questions_pics/place_vasiliki_sacre_cur_parisi.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Sacre_coeur_paris.jpg?width=650"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -31303,7 +31330,8 @@ window.QUESTION_BANK = {
           "Λιοντάρι"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiger.50.jpg?width=650"
+        "img": "assets/questions_pics/animal_tigris.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiger.50.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31313,7 +31341,8 @@ window.QUESTION_BANK = {
           "Άγαλμα της Ελευθερίας"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Christ_the_Redeemer.jpg?width=650"
+        "img": "assets/questions_pics/place_christos_lytrotis_rio.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Christ_the_Redeemer.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31323,7 +31352,7 @@ window.QUESTION_BANK = {
           "Λιβερία"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2715.4%27%20fill%3D%27%23B22234%27/%3E%3Crect%20x%3D%270%27%20y%3D%2715.4%27%20width%3D%27300%27%20height%3D%2715.4%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2730.8%27%20width%3D%27300%27%20height%3D%2715.4%27%20fill%3D%27%23B22234%27/%3E%3Crect%20x%3D%270%27%20y%3D%2746.2%27%20width%3D%27300%27%20height%3D%2715.4%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2761.5%27%20width%3D%27300%27%20height%3D%2715.4%27%20fill%3D%27%23B22234%27/%3E%3Crect%20x%3D%270%27%20y%3D%2776.9%27%20width%3D%27300%27%20height%3D%2715.4%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2792.3%27%20width%3D%27300%27%20height%3D%2715.4%27%20fill%3D%27%23B22234%27/%3E%3Crect%20x%3D%270%27%20y%3D%27107.7%27%20width%3D%27300%27%20height%3D%2715.4%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27123.1%27%20width%3D%27300%27%20height%3D%2715.4%27%20fill%3D%27%23B22234%27/%3E%3Crect%20x%3D%270%27%20y%3D%27138.5%27%20width%3D%27300%27%20height%3D%2715.4%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27153.8%27%20width%3D%27300%27%20height%3D%2715.4%27%20fill%3D%27%23B22234%27/%3E%3Crect%20x%3D%270%27%20y%3D%27169.2%27%20width%3D%27300%27%20height%3D%2715.4%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27184.6%27%20width%3D%27300%27%20height%3D%2715.4%27%20fill%3D%27%23B22234%27/%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27120.0%27%20height%3D%27107.7%27%20fill%3D%27%233C3B6E%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_ipa.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31333,7 +31362,7 @@ window.QUESTION_BANK = {
           "Αυστρία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23ED2939%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23ED2939%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_aystria.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31343,7 +31372,7 @@ window.QUESTION_BANK = {
           "Μαλαισία"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23ED2939%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Ccircle%20cx%3D%2760.0%27%20cy%3D%2750.0%27%20r%3D%2732.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Ccircle%20cx%3D%2775.0%27%20cy%3D%2750.0%27%20r%3D%2728.000000000000004%27%20fill%3D%27%23ED2939%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_sigkapoyri.svg"
       },
       {
         "q": "Ποιο ουράνιο σώμα απεικονίζει αυτή η εικόνα;",
@@ -31353,7 +31382,8 @@ window.QUESTION_BANK = {
           "Άρης"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/OSIRIS_Mars_true_color.jpg?width=650"
+        "img": "assets/questions_pics/space_aris.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/OSIRIS_Mars_true_color.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31363,7 +31393,8 @@ window.QUESTION_BANK = {
           "Δέλτα του Οκαβάνγκο"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Okavango_Delta.jpg?width=650"
+        "img": "assets/questions_pics/place_delta_toy_okavangko.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Okavango_Delta.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31373,7 +31404,7 @@ window.QUESTION_BANK = {
           "Ολλανδία"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%230055A4%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23EF4135%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_gallia.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31383,7 +31414,8 @@ window.QUESTION_BANK = {
           "London Bridge"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_Bridge.jpg?width=650"
+        "img": "assets/questions_pics/place_tower_bridge_londino.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_Bridge.jpg?width=650"
       },
       {
         "q": "Ποιο ουράνιο σώμα απεικονίζει αυτή η εικόνα;",
@@ -31393,7 +31425,8 @@ window.QUESTION_BANK = {
           "Αφροδίτη"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Earth_seen_from_Apollo_17.jpg?width=650"
+        "img": "assets/questions_pics/space_gi.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Earth_seen_from_Apollo_17.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31403,7 +31436,7 @@ window.QUESTION_BANK = {
           "Σουηδία"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23EF2B2D%27/%3E%3Crect%20x%3D%270%27%20y%3D%2780.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%27105.0%27%20y%3D%270%27%20width%3D%2745.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_norvigia.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31413,7 +31446,8 @@ window.QUESTION_BANK = {
           "Ολυμπία"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Acropolis_of_Athens.jpg?width=650"
+        "img": "assets/questions_pics/place_akropoli_athinon.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Acropolis_of_Athens.jpg?width=650"
       },
       {
         "q": "Ποιο ουράνιο σώμα απεικονίζει αυτή η εικόνα;",
@@ -31423,7 +31457,8 @@ window.QUESTION_BANK = {
           "Αφροδίτη"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Venus-real_color.jpg?width=650"
+        "img": "assets/questions_pics/space_afroditi.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Venus-real_color.jpg?width=650"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -31433,7 +31468,8 @@ window.QUESTION_BANK = {
           "Λεοπάρδαλη"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Lion_waiting_in_Namibia.jpg?width=650"
+        "img": "assets/questions_pics/animal_liontari.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Lion_waiting_in_Namibia.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31443,7 +31479,8 @@ window.QUESTION_BANK = {
           "Taipei 101"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Taipei_101.JPG?width=650"
+        "img": "assets/questions_pics/place_taipei_101.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Taipei_101.JPG?width=650"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -31453,7 +31490,8 @@ window.QUESTION_BANK = {
           "Φάλαινα"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Dolphin.jpg?width=650"
+        "img": "assets/questions_pics/animal_delfini.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Dolphin.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31463,7 +31501,7 @@ window.QUESTION_BANK = {
           "Βέλγιο"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23DD0000%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFCE00%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_germania.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31473,7 +31511,8 @@ window.QUESTION_BANK = {
           "Όρος Φούτζι"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Kilimanjaro_from_Amboseli.jpg?width=650"
+        "img": "assets/questions_pics/place_oros_kilimantzaro.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Kilimanjaro_from_Amboseli.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31483,7 +31522,7 @@ window.QUESTION_BANK = {
           "Καναδάς"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%2775.0%27%20height%3D%27200%27%20fill%3D%27%23FF0000%27/%3E%3Crect%20x%3D%27225.0%27%20y%3D%270%27%20width%3D%2775.0%27%20height%3D%27200%27%20fill%3D%27%23FF0000%27/%3E%3Cpolygon%20points%3D%27150.0%2C70.0%20157.1%2C90.3%20178.5%2C90.7%20161.4%2C103.7%20167.6%2C124.3%20150.0%2C112.0%20132.4%2C124.3%20138.6%2C103.7%20121.5%2C90.7%20142.9%2C90.3%27%20fill%3D%27%23FF0000%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_kanadas.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31493,7 +31532,8 @@ window.QUESTION_BANK = {
           "Άτομιουμ, Βρυξέλλες"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Atomium_.jpg?width=650"
+        "img": "assets/questions_pics/place_atomioym_vryxelles.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Atomium_.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31503,7 +31543,7 @@ window.QUESTION_BANK = {
           "Κύπρος"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Cpath%20d%3D%27M%2075.0%2C110.00000000000001%20Q%20120.0%2C70.0%20165.0%2C100.0%20Q%20195.0%2C80.0%20225.0%2C90.0%20L%20210.0%2C120.0%20Q%20165.0%2C100.0%20135.0%2C115.99999999999999%20Q%20105.0%2C130.0%2075.0%2C110.00000000000001%20Z%27%20fill%3D%27%23D57800%27/%3E%3Cpath%20d%3D%27M%20105.0%2C136.0%20l%20-10%2C10%20M%20120.0%2C136.0%20l%20-8%2C12%20M%20180.0%2C136.0%20l%2010%2C10%20M%20165.0%2C136.0%20l%208%2C12%27%20stroke%3D%27%234E7A28%27%20stroke-width%3D%273%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_kypros.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31513,7 +31553,7 @@ window.QUESTION_BANK = {
           "Μάλτα"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%27150.0%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27200%27%20fill%3D%27%23CF142B%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_malta.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31523,7 +31563,8 @@ window.QUESTION_BANK = {
           "Όπερα του Σίδνεϊ"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Vienna_State_Opera.jpg?width=650"
+        "img": "assets/questions_pics/place_opera_tis_viennis.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Vienna_State_Opera.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31533,7 +31574,7 @@ window.QUESTION_BANK = {
           "Βραζιλία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23009739%27/%3E%3Cpolygon%20points%3D%27150.0%2C30.0%20276.0%2C100.0%20150.0%2C170.0%2024.0%2C100.0%27%20fill%3D%27%23FEDD00%27/%3E%3Ccircle%20cx%3D%27150.0%27%20cy%3D%27100.0%27%20r%3D%2744.0%27%20fill%3D%27%23012169%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_vrazilia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31543,7 +31584,7 @@ window.QUESTION_BANK = {
           "Υεμένη"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23CE1126%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_aigyptos.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31553,7 +31594,8 @@ window.QUESTION_BANK = {
           "Γκόμπι"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Sahara_desert.jpg?width=650"
+        "img": "assets/questions_pics/place_sachara_erimos.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Sahara_desert.jpg?width=650"
       },
       {
         "q": "Ποιον ήρωα του 1821 απεικονίζει αυτή η προσωπογραφία;",
@@ -31563,7 +31605,8 @@ window.QUESTION_BANK = {
           "Αδαμάντιος Κοραής"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Ioannis_Kapodistrias_(1776-1831).jpg?width=650"
+        "img": "assets/questions_pics/portrait_ioannis_kapodistrias.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Ioannis_Kapodistrias_(1776-1831).jpg?width=650"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -31573,7 +31616,8 @@ window.QUESTION_BANK = {
           "Χήνα"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Penguin2.jpg?width=650"
+        "img": "assets/questions_pics/animal_pigkoyinos.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Penguin2.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31583,7 +31627,8 @@ window.QUESTION_BANK = {
           "Σκάλες της Ισπανίας"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Trevi_Fountain.jpg?width=650"
+        "img": "assets/questions_pics/place_sintrivani_trevi_romi.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Trevi_Fountain.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31593,7 +31638,8 @@ window.QUESTION_BANK = {
           "Sydney Harbour Bridge"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Opera_House.jpg?width=650"
+        "img": "assets/questions_pics/place_opera_toy_sidnei.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney_Opera_House.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31603,7 +31649,8 @@ window.QUESTION_BANK = {
           "Burj Khalifa, Ντουμπάι"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Burj_Khalifa_Night_View_04.jpg?width=650"
+        "img": "assets/questions_pics/place_burj_khalifa_ntoympai.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Burj_Khalifa_Night_View_04.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31613,7 +31660,8 @@ window.QUESTION_BANK = {
           "Φιόρδ της Νορβηγίας"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Geirangerfjord_from_Flydalsjuvet.jpg?width=650"
+        "img": "assets/questions_pics/place_fiord_tis_norvigias.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Geirangerfjord_from_Flydalsjuvet.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31623,7 +31671,8 @@ window.QUESTION_BANK = {
           "Chrysler Building"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/One_World_Trade_Center.jpg?width=650"
+        "img": "assets/questions_pics/place_one_world_trade_center_nea_yorki.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/One_World_Trade_Center.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31633,7 +31682,8 @@ window.QUESTION_BANK = {
           "Απαγορευμένη Πόλη"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Wall_of_China.jpg?width=650"
+        "img": "assets/questions_pics/place_siniko_teichos.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Wall_of_China.jpg?width=650"
       },
       {
         "q": "Ποιο ουράνιο σώμα απεικονίζει αυτή η εικόνα;",
@@ -31643,7 +31693,8 @@ window.QUESTION_BANK = {
           "Ποσειδώνας"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Saturn_during_Equinox.jpg?width=650"
+        "img": "assets/questions_pics/space_kronos.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Saturn_during_Equinox.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31653,7 +31704,7 @@ window.QUESTION_BANK = {
           "Περού"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23D91023%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23D91023%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_peroy.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31663,7 +31714,7 @@ window.QUESTION_BANK = {
           "Ελβετία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23FF0000%27/%3E%3Crect%20x%3D%27126.0%27%20y%3D%2750.0%27%20width%3D%2748.0%27%20height%3D%27100.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%27105.0%27%20y%3D%2784.0%27%20width%3D%2790.0%27%20height%3D%2732.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_elvetia.svg"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -31673,7 +31724,8 @@ window.QUESTION_BANK = {
           "Wombat"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Kangaroo_and_joey03.jpg?width=650"
+        "img": "assets/questions_pics/animal_kagkoyro.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Kangaroo_and_joey03.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31683,7 +31735,8 @@ window.QUESTION_BANK = {
           "Ζιγκουράτ της Ουρ"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Pyramids_of_Giza.jpg?width=650"
+        "img": "assets/questions_pics/place_pyramides_tis_gkizas.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Pyramids_of_Giza.jpg?width=650"
       },
       {
         "q": "Ποιον ήρωα του 1821 απεικονίζει αυτή η προσωπογραφία;",
@@ -31693,7 +31746,8 @@ window.QUESTION_BANK = {
           "Θεόδωρος Κολοκοτρώνης"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Theodoros_Kolokotronis_(1882).jpg?width=650"
+        "img": "assets/questions_pics/portrait_theodoros_kolokotronis.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Theodoros_Kolokotronis_(1882).jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31703,7 +31757,7 @@ window.QUESTION_BANK = {
           "Ακτή Ελεφαντοστού"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23169B62%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FF883E%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_irlandia.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31713,7 +31767,8 @@ window.QUESTION_BANK = {
           "Κόκκινο Οχυρό"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj_Mahal.jpg?width=650"
+        "img": "assets/questions_pics/place_taz_machal_india.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Taj_Mahal.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31723,7 +31778,7 @@ window.QUESTION_BANK = {
           "Τουρκία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23E30A17%27/%3E%3Ccircle%20cx%3D%27105.0%27%20cy%3D%27100.0%27%20r%3D%2744.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Ccircle%20cx%3D%27120.0%27%20cy%3D%27100.0%27%20r%3D%2736.0%27%20fill%3D%27%23E30A17%27/%3E%3Cpolygon%20points%3D%27165.0%2C88.0%20167.8%2C96.1%20176.4%2C96.3%20169.6%2C101.5%20172.1%2C109.7%20165.0%2C104.8%20157.9%2C109.7%20160.4%2C101.5%20153.6%2C96.3%20162.2%2C96.1%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_toyrkia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31733,7 +31788,7 @@ window.QUESTION_BANK = {
           "Ιταλία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23006847%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23CE1126%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_mexiko.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31743,7 +31798,8 @@ window.QUESTION_BANK = {
           "Καταρράκτες Νιαγάρα"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Niagara_Falls.jpg?width=650"
+        "img": "assets/questions_pics/place_katarraktes_niagara.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Niagara_Falls.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31753,7 +31809,7 @@ window.QUESTION_BANK = {
           "Παναμάς"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23002A8F%27/%3E%3Crect%20x%3D%270%27%20y%3D%2740.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2780.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23002A8F%27/%3E%3Crect%20x%3D%270%27%20y%3D%27120.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27160.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23002A8F%27/%3E%3Cpolygon%20points%3D%270%2C0%20120.0%2C100.0%200%2C200%27%20fill%3D%27%23CF142B%27/%3E%3Cpolygon%20points%3D%2739.0%2C88.0%2041.8%2C96.1%2050.4%2C96.3%2043.6%2C101.5%2046.1%2C109.7%2039.0%2C104.8%2031.9%2C109.7%2034.4%2C101.5%2027.6%2C96.3%2036.2%2C96.1%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_koyva.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31763,7 +31819,8 @@ window.QUESTION_BANK = {
           "Space Needle"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/CN_Tower.jpg?width=650"
+        "img": "assets/questions_pics/place_cn_tower_toronto.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/CN_Tower.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31773,7 +31830,8 @@ window.QUESTION_BANK = {
           "Γέφυρα Golden Gate"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Bridge.jpg?width=650"
+        "img": "assets/questions_pics/place_gefyra_mproyklin_nea_yorki.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Bridge.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31783,7 +31841,7 @@ window.QUESTION_BANK = {
           "Νέα Ζηλανδία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%2300247D%27/%3E%3Crect%20x%3D%270%27%20y%3D%2784.0%27%20width%3D%27300%27%20height%3D%2732.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%27126.0%27%20y%3D%270%27%20width%3D%2748.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2792.0%27%20width%3D%27300%27%20height%3D%2716.0%27%20fill%3D%27%23CF142B%27/%3E%3Crect%20x%3D%27138.0%27%20y%3D%270%27%20width%3D%2724.0%27%20height%3D%27200%27%20fill%3D%27%23CF142B%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_inomeno_vasileio.svg"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -31793,7 +31851,8 @@ window.QUESTION_BANK = {
           "Ζέβρα"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Zebra_Botswana_edit02.jpg?width=650"
+        "img": "assets/questions_pics/animal_zevra.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Zebra_Botswana_edit02.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31803,7 +31862,8 @@ window.QUESTION_BANK = {
           "Πλατεία Πικαντίλι"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Times_Square.jpg?width=650"
+        "img": "assets/questions_pics/place_taims_skoyer_nea_yorki.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Times_Square.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31813,7 +31873,8 @@ window.QUESTION_BANK = {
           "Πλατεία Αγίου Μάρκου, Βενετία"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Piazza_San_Marco_Venice.jpg?width=650"
+        "img": "assets/questions_pics/place_plateia_agioy_markoy_venetia.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Piazza_San_Marco_Venice.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31823,7 +31884,7 @@ window.QUESTION_BANK = {
           "Κόστα Ρίκα"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23D52B1E%27/%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%2799.0%27%20height%3D%27100.0%27%20fill%3D%27%230039A6%27/%3E%3Cpolygon%20points%3D%2748.0%2C38.0%2050.8%2C46.1%2059.4%2C46.3%2052.6%2C51.5%2055.1%2C59.7%2048.0%2C54.8%2040.9%2C59.7%2043.4%2C51.5%2036.6%2C46.3%2045.2%2C46.1%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_chili.svg"
       },
       {
         "q": "Ποιο ουράνιο σώμα απεικονίζει αυτή η εικόνα;",
@@ -31833,7 +31894,8 @@ window.QUESTION_BANK = {
           "Δίας"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Sun%20by%20the%20Atmospheric%20Imaging%20Assembly%20of%20NASA%27s%20Solar%20Dynamics%20Observatory%20-%2020100819.jpg?width=650"
+        "img": "assets/questions_pics/space_ilios.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Sun%20by%20the%20Atmospheric%20Imaging%20Assembly%20of%20NASA%27s%20Solar%20Dynamics%20Observatory%20-%2020100819.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31843,7 +31905,8 @@ window.QUESTION_BANK = {
           "Νεκρά Θάλασσα"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Dead_Sea_by_David_Shankbone.jpg?width=650"
+        "img": "assets/questions_pics/place_nekra_thalassa.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Dead_Sea_by_David_Shankbone.jpg?width=650"
       },
       {
         "q": "Ποιο ουράνιο σώμα απεικονίζει αυτή η εικόνα;",
@@ -31853,7 +31916,8 @@ window.QUESTION_BANK = {
           "Κρόνος"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jupiter.jpg?width=650"
+        "img": "assets/questions_pics/space_dias.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Jupiter.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31863,7 +31927,7 @@ window.QUESTION_BANK = {
           "Ρουμανία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FAE042%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23ED2939%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_velgio.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31873,7 +31937,7 @@ window.QUESTION_BANK = {
           "Δανία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23C60C30%27/%3E%3Crect%20x%3D%270%27%20y%3D%2780.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%27105.0%27%20y%3D%270%27%20width%3D%2745.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_dania.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31883,7 +31947,8 @@ window.QUESTION_BANK = {
           "Χριστός Λυτρωτής"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty.jpg?width=650"
+        "img": "assets/questions_pics/place_agalma_tis_eleytherias_nea_yorki.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue_of_Liberty.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31893,7 +31958,8 @@ window.QUESTION_BANK = {
           "Καθεδρικός Αγίου Μάρκου, Βενετία"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Mark%27s_Basilica.jpg?width=650"
+        "img": "assets/questions_pics/place_kathedrikos_agioy_markoy_venetia.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Mark%27s_Basilica.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31903,7 +31969,8 @@ window.QUESTION_BANK = {
           "Ισπανία"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Evzone.jpg?width=650"
+        "img": "assets/questions_pics/flag_ellada.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Evzone.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31913,7 +31980,8 @@ window.QUESTION_BANK = {
           "Notre-Dame"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Sagrada_Familia_.jpg?width=650"
+        "img": "assets/questions_pics/place_sagrada_familia_varkeloni.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Sagrada_Familia_.jpg?width=650"
       },
       {
         "q": "Ποιο μνημείο βρίσκεται στο Παρίσι;",
@@ -31932,7 +32000,7 @@ window.QUESTION_BANK = {
           "Εκουαδόρ"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23FCD116%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%2750.0%27%20fill%3D%27%23003893%27/%3E%3Crect%20x%3D%270%27%20y%3D%27150.0%27%20width%3D%27300%27%20height%3D%2750.0%27%20fill%3D%27%23CE1126%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_kolomvia.svg"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -31942,7 +32010,8 @@ window.QUESTION_BANK = {
           "Ιπποπόταμος"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Elephant.jpg?width=650"
+        "img": "assets/questions_pics/animal_elefantas.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Elephant.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -31952,7 +32021,8 @@ window.QUESTION_BANK = {
           "Μάτσου Πίτσου, Περού"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Machu_Picchu.jpg?width=650"
+        "img": "assets/questions_pics/place_matsoy_pitsoy_peroy.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Machu_Picchu.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31962,7 +32032,8 @@ window.QUESTION_BANK = {
           "Πορτογαλία"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Black_and_red_flamenco_dress_with_orange_fan.jpg?width=650"
+        "img": "assets/questions_pics/flag_ispania.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Black_and_red_flamenco_dress_with_orange_fan.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31972,7 +32043,7 @@ window.QUESTION_BANK = {
           "Αυστραλία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%2300008B%27/%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27100.0%27%20fill%3D%27%2300008B%27/%3E%3Cpolygon%20points%3D%2730.0%2C16.0%2030.9%2C18.7%2033.8%2C18.8%2031.5%2C20.5%2032.4%2C23.2%2030.0%2C21.6%2027.6%2C23.2%2028.5%2C20.5%2026.2%2C18.8%2029.1%2C18.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Cpolygon%20points%3D%2738.0%2C22.0%2038.9%2C24.7%2041.8%2C24.8%2039.5%2C26.5%2040.4%2C29.2%2038.0%2C27.6%2035.6%2C29.2%2036.5%2C26.5%2034.2%2C24.8%2037.1%2C24.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Cpolygon%20points%3D%2746.0%2C28.0%2046.9%2C30.7%2049.8%2C30.8%2047.5%2C32.5%2048.4%2C35.2%2046.0%2C33.6%2043.6%2C35.2%2044.5%2C32.5%2042.2%2C30.8%2045.1%2C30.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Cpolygon%20points%3D%2754.0%2C34.0%2054.9%2C36.7%2057.8%2C36.8%2055.5%2C38.5%2056.4%2C41.2%2054.0%2C39.6%2051.6%2C41.2%2052.5%2C38.5%2050.2%2C36.8%2053.1%2C36.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Cpolygon%20points%3D%27105.0%2C60.0%20107.4%2C66.8%20114.5%2C66.9%20108.8%2C71.2%20110.9%2C78.1%20105.0%2C74.0%2099.1%2C78.1%20101.2%2C71.2%2095.5%2C66.9%20102.6%2C66.8%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_aystralia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -31982,7 +32053,7 @@ window.QUESTION_BANK = {
           "Μπανγκλαντές"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Ccircle%20cx%3D%27150.0%27%20cy%3D%27100.0%27%20r%3D%2760.0%27%20fill%3D%27%23BC002D%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_iaponia.svg"
       }
     ],
     "medium": [
@@ -31994,7 +32065,7 @@ window.QUESTION_BANK = {
           "Λουξεμβούργο"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23ED2939%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%2300A1DE%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_loyxemvoyrgo.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32004,7 +32075,7 @@ window.QUESTION_BANK = {
           "Νιγηρία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23CE1126%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FCD116%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23006B3F%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_gkana.svg"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -32014,7 +32085,8 @@ window.QUESTION_BANK = {
           "Χιμπατζής"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Chimpanzees.jpg?width=650"
+        "img": "assets/questions_pics/animal_chimpatzis.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Chimpanzees.jpg?width=650"
       },
       {
         "q": "Ποιο ουράνιο σώμα απεικονίζει αυτή η εικόνα;",
@@ -32024,7 +32096,8 @@ window.QUESTION_BANK = {
           "Ουρανός"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Neptune_Full.jpg?width=650"
+        "img": "assets/questions_pics/space_poseidonas.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Neptune_Full.jpg?width=650"
       },
       {
         "q": "Ποιο ουράνιο σώμα απεικονίζει αυτή η εικόνα;",
@@ -32034,7 +32107,8 @@ window.QUESTION_BANK = {
           "Σελήνη"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury_in_true_color.jpg?width=650"
+        "img": "assets/questions_pics/space_ermis.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercury_in_true_color.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32044,7 +32118,7 @@ window.QUESTION_BANK = {
           "Κούβα"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27100.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%27150.0%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27100.0%27%20fill%3D%27%23DA121A%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27150.0%27%20height%3D%27100.0%27%20fill%3D%27%23005293%27/%3E%3Crect%20x%3D%27150.0%27%20y%3D%27100.0%27%20width%3D%27150.0%27%20height%3D%27100.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Cpolygon%20points%3D%2775.0%2C38.0%2077.8%2C46.1%2086.4%2C46.3%2079.6%2C51.5%2082.1%2C59.7%2075.0%2C54.8%2067.9%2C59.7%2070.4%2C51.5%2063.6%2C46.3%2072.2%2C46.1%27%20fill%3D%27%23005293%27/%3E%3Cpolygon%20points%3D%27225.0%2C138.0%20227.8%2C146.1%20236.4%2C146.3%20229.6%2C151.5%20232.1%2C159.7%20225.0%2C154.8%20217.9%2C159.7%20220.4%2C151.5%20213.6%2C146.3%20222.2%2C146.1%27%20fill%3D%27%23DA121A%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_panamas.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32054,7 +32128,7 @@ window.QUESTION_BANK = {
           "Ισραήλ"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2730%27%20width%3D%27300%27%20height%3D%2724%27%20fill%3D%27%230038B8%27/%3E%3Crect%20x%3D%270%27%20y%3D%27146%27%20width%3D%27300%27%20height%3D%2724%27%20fill%3D%27%230038B8%27/%3E%3Cpolygon%20points%3D%27150%2C62%20124.0%2C107.0%20176.0%2C107.0%27%20fill%3D%27none%27%20stroke%3D%27%230038B8%27%20stroke-width%3D%274%27/%3E%3Cpolygon%20points%3D%27150%2C122%20124.0%2C77.0%20176.0%2C77.0%27%20fill%3D%27none%27%20stroke%3D%27%230038B8%27%20stroke-width%3D%274%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_israil.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32064,7 +32138,7 @@ window.QUESTION_BANK = {
           "Λετονία"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%230072CE%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_esthonia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32074,7 +32148,7 @@ window.QUESTION_BANK = {
           "Σουδάν"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23E70013%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23239E46%27/%3E%3Ccircle%20cx%3D%27150.0%27%20cy%3D%27100.0%27%20r%3D%2714%27%20fill%3D%27none%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_livyi.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32084,7 +32158,7 @@ window.QUESTION_BANK = {
           "Κουβέιτ"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23007A3D%27/%3E%3Cpolygon%20points%3D%270%2C0%20120.0%2C100.0%200%2C200%27%20fill%3D%27%23CE1126%27/%3E%3Cpolygon%20points%3D%2739.0%2C92.0%2040.9%2C97.4%2046.6%2C97.5%2042.0%2C101.0%2043.7%2C106.5%2039.0%2C103.2%2034.3%2C106.5%2036.0%2C101.0%2031.4%2C97.5%2037.1%2C97.4%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_iordania.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32094,7 +32168,8 @@ window.QUESTION_BANK = {
           "Ulm Minster"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Cologne_Cathedral.jpg?width=650"
+        "img": "assets/questions_pics/place_kathedrikos_tis_kolonias.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Cologne_Cathedral.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32104,7 +32179,7 @@ window.QUESTION_BANK = {
           "Αίγυπτος"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23D21034%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23000000%27/%3E%3Cpolygon%20points%3D%270%2C0%2090.0%2C100.0%200%2C200%27%20fill%3D%27%23007229%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_soydan.svg"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -32114,7 +32189,8 @@ window.QUESTION_BANK = {
           "Καρχαρίας"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_white_shark_south_africa.jpg?width=650"
+        "img": "assets/questions_pics/animal_karcharias.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Great_white_shark_south_africa.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32124,7 +32200,7 @@ window.QUESTION_BANK = {
           "Εκουαδόρ"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23FFDD00%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%2750.0%27%20fill%3D%27%23034EA2%27/%3E%3Crect%20x%3D%270%27%20y%3D%27150.0%27%20width%3D%27300%27%20height%3D%2750.0%27%20fill%3D%27%23ED1C24%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_ekoyador.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32134,7 +32210,7 @@ window.QUESTION_BANK = {
           "Ρουμανία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23002B7F%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FCD116%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23CE1126%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_roymania.svg"
       },
       {
         "q": "Ποιο μνημείο βρίσκεται στην Κίνα;",
@@ -32153,7 +32229,8 @@ window.QUESTION_BANK = {
           "Θεόδωρος Κολοκοτρώνης"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Georgios_Karaiskakis.jpg?width=650"
+        "img": "assets/questions_pics/portrait_georgios_karaiskakis.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Georgios_Karaiskakis.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32163,7 +32240,8 @@ window.QUESTION_BANK = {
           "Buckingham Palace"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Windsor_Castle_at_night.jpg?width=650"
+        "img": "assets/questions_pics/place_kastro_toy_oyindsor.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Windsor_Castle_at_night.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32173,7 +32251,8 @@ window.QUESTION_BANK = {
           "Καρνάκ"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Stonehenge.jpg?width=650"
+        "img": "assets/questions_pics/place_stooynchentz_agglia.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Stonehenge.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32183,7 +32262,7 @@ window.QUESTION_BANK = {
           "Μοζαμβίκη"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23CC092F%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23000000%27/%3E%3Cpolygon%20points%3D%27150.0%2C86.0%20153.3%2C95.5%20163.3%2C95.7%20155.3%2C101.7%20158.2%2C111.3%20150.0%2C105.6%20141.8%2C111.3%20144.7%2C101.7%20136.7%2C95.7%20146.7%2C95.5%27%20fill%3D%27%23FFCC00%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_agkola.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32193,7 +32272,7 @@ window.QUESTION_BANK = {
           "Παναμάς"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23002B7F%27/%3E%3Crect%20x%3D%270%27%20y%3D%2740.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2780.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23CE1126%27/%3E%3Crect%20x%3D%270%27%20y%3D%27120.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27160.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23002B7F%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_kosta_rika.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32203,7 +32282,8 @@ window.QUESTION_BANK = {
           "Βαβυλώνα"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Petra_Jordan.jpg?width=650"
+        "img": "assets/questions_pics/place_petra_iordania.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Petra_Jordan.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32213,7 +32293,7 @@ window.QUESTION_BANK = {
           "Λιβύη"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23E70013%27/%3E%3Ccircle%20cx%3D%27150.0%27%20cy%3D%27100.0%27%20r%3D%2744.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_tynisia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32223,7 +32303,7 @@ window.QUESTION_BANK = {
           "Καζακστάν"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23005BBB%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23FFD500%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_oykrania.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32233,7 +32313,7 @@ window.QUESTION_BANK = {
           "Μάλι"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%2314B53A%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FCD116%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23CE1126%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_mali.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32243,7 +32323,8 @@ window.QUESTION_BANK = {
           "Οδογέφυρα του Μιγιό, Γαλλία"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Creissels%20et%20Viaduct%20de%20Millau.jpg?width=650"
+        "img": "assets/questions_pics/place_odogefyra_toy_migio_gallia.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Creissels%20et%20Viaduct%20de%20Millau.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32253,7 +32334,8 @@ window.QUESTION_BANK = {
           "Μόνα Λίζα"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli_Venus.jpg?width=650"
+        "img": "assets/questions_pics/place_gennisi_tis_afroditis.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli_Venus.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32263,7 +32345,7 @@ window.QUESTION_BANK = {
           "Τυνησία"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27200%27%20fill%3D%27%23006233%27/%3E%3Crect%20x%3D%27150.0%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Ccircle%20cx%3D%27150.0%27%20cy%3D%27100.0%27%20r%3D%2736.0%27%20fill%3D%27%23D21034%27/%3E%3Cpolygon%20points%3D%27150.0%2C90.0%20152.4%2C96.8%20159.5%2C96.9%20153.8%2C101.2%20155.9%2C108.1%20150.0%2C104.0%20144.1%2C108.1%20146.2%2C101.2%20140.5%2C96.9%20147.6%2C96.8%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_algeria.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32273,7 +32355,7 @@ window.QUESTION_BANK = {
           "Νότια Κορέα"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Ccircle%20cx%3D%27150.0%27%20cy%3D%27100.0%27%20r%3D%2732.0%27%20fill%3D%27%23CD2E3A%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_notia_korea.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32283,7 +32365,8 @@ window.QUESTION_BANK = {
           "Notre-Dame"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Westminster_Abbey.JPG?width=650"
+        "img": "assets/questions_pics/place_westminster_abbey.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Westminster_Abbey.JPG?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32293,7 +32376,8 @@ window.QUESTION_BANK = {
           "Duomo di Milano"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Duomo_di_Milano.jpg?width=650"
+        "img": "assets/questions_pics/place_duomo_di_milano.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Duomo_di_Milano.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32303,7 +32387,7 @@ window.QUESTION_BANK = {
           "Πουέρτο Ρίκο"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%230038A8%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23CE1126%27/%3E%3Cpolygon%20points%3D%270%2C0%20135.0%2C100.0%200%2C200%27%20fill%3D%27%23FFFFFF%27/%3E%3Cpolygon%20points%3D%2745.0%2C90.0%2047.4%2C96.8%2054.5%2C96.9%2048.8%2C101.2%2050.9%2C108.1%2045.0%2C104.0%2039.1%2C108.1%2041.2%2C101.2%2035.5%2C96.9%2042.6%2C96.8%27%20fill%3D%27%23FCD116%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_filippines.svg"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -32313,7 +32397,8 @@ window.QUESTION_BANK = {
           "Λάμα"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Camel.jpg?width=650"
+        "img": "assets/questions_pics/animal_kamila.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Camel.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32323,7 +32408,8 @@ window.QUESTION_BANK = {
           "Αστέρι της Νύχτας"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/VanGogh-starry_night.jpg?width=650"
+        "img": "assets/questions_pics/place_asteri_tis_nychtas.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/VanGogh-starry_night.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32333,7 +32419,8 @@ window.QUESTION_BANK = {
           "Πύργος του Τόκυο"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Space_Needle.jpg?width=650"
+        "img": "assets/questions_pics/place_space_needle_siatl.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Space_Needle.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32343,7 +32430,7 @@ window.QUESTION_BANK = {
           "Ουγγαρία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23CE2939%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23477050%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_oyggaria.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32353,7 +32440,7 @@ window.QUESTION_BANK = {
           "Μάλι"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%2300853F%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FDEF42%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23E31B23%27/%3E%3Cpolygon%20points%3D%27150.0%2C86.0%20153.3%2C95.5%20163.3%2C95.7%20155.3%2C101.7%20158.2%2C111.3%20150.0%2C105.6%20141.8%2C111.3%20144.7%2C101.7%20136.7%2C95.7%20146.7%2C95.5%27%20fill%3D%27%2300853F%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_senegali.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32363,7 +32450,8 @@ window.QUESTION_BANK = {
           "Η Μόνα Λίζα"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Scream.jpg?width=650"
+        "img": "assets/questions_pics/place_i_kraygi.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Scream.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32373,7 +32461,8 @@ window.QUESTION_BANK = {
           "Κάστρο Ουίνδσορ"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Edinburgh_Castle_from_the_North.JPG?width=650"
+        "img": "assets/questions_pics/place_kastro_toy_edimvoyrgoy.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Edinburgh_Castle_from_the_North.JPG?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32383,7 +32472,7 @@ window.QUESTION_BANK = {
           "Αγκόλα"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23009739%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_mozamviki.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32393,7 +32482,8 @@ window.QUESTION_BANK = {
           "Δελφίνι"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Sperm_whale.jpg?width=650"
+        "img": "assets/questions_pics/place_falaina_fysitiras.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Sperm_whale.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32403,7 +32493,8 @@ window.QUESTION_BANK = {
           "Λούβρο"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Palace_of_Versailles.jpg?width=650"
+        "img": "assets/questions_pics/place_palati_ton_versallion.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Palace_of_Versailles.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32413,7 +32504,8 @@ window.QUESTION_BANK = {
           "Ο Μυστικός Δείπνος"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo_da_Vinci_(1452-1519)_-_The_Last_Supper_(1495-1498).jpg?width=650"
+        "img": "assets/questions_pics/place_o_mystikos_deipnos.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo_da_Vinci_(1452-1519)_-_The_Last_Supper_(1495-1498).jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32423,7 +32515,7 @@ window.QUESTION_BANK = {
           "Μαυροβούνιο"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23E41E20%27/%3E%3Cpath%20d%3D%27M%20135.0%2C90.0%20l%2010%2C-15%20l%205%2C10%20l%205%2C-10%20l%2010%2C15%20l%20-8%2C5%20l%203%2C10%20l%20-10%2C-5%20l%20-10%2C5%20l%203%2C-10%20Z%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_alvania.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32433,7 +32525,7 @@ window.QUESTION_BANK = {
           "Ηνωμένα Αραβικά Εμιράτα"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23DB161B%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23008000%27/%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%2775.0%27%20height%3D%27200%27%20fill%3D%27%23DB161B%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_oman.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32443,7 +32535,8 @@ window.QUESTION_BANK = {
           "Σινικό Τείχος"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Forbidden_City.jpg?width=650"
+        "img": "assets/questions_pics/place_apagoreymeni_poli_pekino.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Forbidden_City.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32453,7 +32546,8 @@ window.QUESTION_BANK = {
           "Κάστρο Ελσινόρε"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Neuschwanstein_Castle.jpg?width=650"
+        "img": "assets/questions_pics/place_kastro_noisvanstain_germania.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Neuschwanstein_Castle.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32463,7 +32557,7 @@ window.QUESTION_BANK = {
           "Σερβία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23C6363C%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%230C4076%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_servia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32473,7 +32567,7 @@ window.QUESTION_BANK = {
           "Ινδονησία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23FF0000%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_indonisia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32483,7 +32577,7 @@ window.QUESTION_BANK = {
           "Ελ Σαλβαδόρ"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%234189DD%27/%3E%3Cpolygon%20points%3D%27150.0%2C74.0%20156.1%2C91.6%20174.7%2C92.0%20159.9%2C103.2%20165.3%2C121.0%20150.0%2C110.4%20134.7%2C121.0%20140.1%2C103.2%20125.3%2C92.0%20143.9%2C91.6%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_somalia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32493,7 +32587,7 @@ window.QUESTION_BANK = {
           "Καμερούν"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23007A5E%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23CE1126%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FCD116%27/%3E%3Cpolygon%20points%3D%27150.0%2C88.0%20152.8%2C96.1%20161.4%2C96.3%20154.6%2C101.5%20157.1%2C109.7%20150.0%2C104.8%20142.9%2C109.7%20145.4%2C101.5%20138.6%2C96.3%20147.2%2C96.1%27%20fill%3D%27%23FCD116%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_kameroyn.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32503,7 +32597,8 @@ window.QUESTION_BANK = {
           "Τίγρης της Βεγγάλης"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Bengal_tiger.jpg?width=650"
+        "img": "assets/questions_pics/place_tigris_tis_veggalis.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Bengal_tiger.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32513,7 +32608,8 @@ window.QUESTION_BANK = {
           "Bastille"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcatraz_Island.jpg?width=650"
+        "img": "assets/questions_pics/place_alkatraz_san_fransisko.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcatraz_Island.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32523,7 +32619,7 @@ window.QUESTION_BANK = {
           "Βουλγαρία"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23D20000%27/%3E%3Ccircle%20cx%3D%27150.0%27%20cy%3D%27100.0%27%20r%3D%2724.0%27%20fill%3D%27%23FFE600%27/%3E%3Cpolygon%20points%3D%27150.0%2C100.0%20350.0%2C100.0%20334.8%2C176.5%27%20fill%3D%27%23FFE600%27/%3E%3Cpolygon%20points%3D%27150.0%2C100.0%20291.4%2C241.4%20226.5%2C284.8%27%20fill%3D%27%23FFE600%27/%3E%3Cpolygon%20points%3D%27150.0%2C100.0%20150.0%2C300.0%2073.5%2C284.8%27%20fill%3D%27%23FFE600%27/%3E%3Cpolygon%20points%3D%27150.0%2C100.0%208.6%2C241.4%20-34.8%2C176.5%27%20fill%3D%27%23FFE600%27/%3E%3Cpolygon%20points%3D%27150.0%2C100.0%20-50.0%2C100.0%20-34.8%2C23.5%27%20fill%3D%27%23FFE600%27/%3E%3Cpolygon%20points%3D%27150.0%2C100.0%208.6%2C-41.4%2073.5%2C-84.8%27%20fill%3D%27%23FFE600%27/%3E%3Cpolygon%20points%3D%27150.0%2C100.0%20150.0%2C-100.0%20226.5%2C-84.8%27%20fill%3D%27%23FFE600%27/%3E%3Cpolygon%20points%3D%27150.0%2C100.0%20291.4%2C-41.4%20334.8%2C23.5%27%20fill%3D%27%23FFE600%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_voreia_makedonia.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32533,7 +32629,8 @@ window.QUESTION_BANK = {
           "Μόνα Λίζα"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Creaci%C3%B3n_de_Ad%C3%A1n.jpg?width=650"
+        "img": "assets/questions_pics/place_i_dimioyrgia_toy_adam.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Creaci%C3%B3n_de_Ad%C3%A1n.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32543,7 +32640,7 @@ window.QUESTION_BANK = {
           "Σλοβακία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23005CE6%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23ED1C24%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_slovenia.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32553,7 +32650,8 @@ window.QUESTION_BANK = {
           "Τσιτσέν Ιτσά, Μεξικό"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Chichen_Itza_3.jpg?width=650"
+        "img": "assets/questions_pics/place_tsitsen_itsa_mexiko.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Chichen_Itza_3.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32563,7 +32661,8 @@ window.QUESTION_BANK = {
           "Grand Canyon"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Rushmore.jpg?width=650"
+        "img": "assets/questions_pics/place_oros_rasmor_ipa.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Rushmore.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32573,7 +32672,8 @@ window.QUESTION_BANK = {
           "Ταζ Μαχάλ"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur_Temple.jpg?width=650"
+        "img": "assets/questions_pics/place_mporompoyntoyr_indonisia.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur_Temple.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32583,7 +32683,8 @@ window.QUESTION_BANK = {
           "Ηλιοτρόπια του Βαν Γκογκ"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent_van_Gogh_-_Sunflowers_(1888%2C_National_Gallery_London).jpg?width=650"
+        "img": "assets/questions_pics/place_iliotropia_toy_van_gkogk.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent_van_Gogh_-_Sunflowers_(1888%2C_National_Gallery_London).jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32593,7 +32694,7 @@ window.QUESTION_BANK = {
           "Αργεντινή"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%2374ACDF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%2374ACDF%27/%3E%3Ccircle%20cx%3D%27150.0%27%20cy%3D%27100.0%27%20r%3D%2720.0%27%20fill%3D%27%23F6B40E%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_argentini.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32603,7 +32704,8 @@ window.QUESTION_BANK = {
           "Άνγκορ Βατ, Καμπότζη"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Angkor_Wat.jpg?width=650"
+        "img": "assets/questions_pics/place_angkor_vat_kampotzi.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Angkor_Wat.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32613,7 +32715,7 @@ window.QUESTION_BANK = {
           "Καμπότζη"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23A51931%27/%3E%3Crect%20x%3D%270%27%20y%3D%2740.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23F4F5F8%27/%3E%3Crect%20x%3D%270%27%20y%3D%2780.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%232D2A4A%27/%3E%3Crect%20x%3D%270%27%20y%3D%27120.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23F4F5F8%27/%3E%3Crect%20x%3D%270%27%20y%3D%27160.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23A51931%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_tailandi.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32623,7 +32725,7 @@ window.QUESTION_BANK = {
           "Αφγανιστάν"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23239F40%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23DA0000%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_iran.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32633,7 +32735,7 @@ window.QUESTION_BANK = {
           "Νότια Αφρική"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%270%27%20y%3D%2740.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2780.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23BB0000%27/%3E%3Crect%20x%3D%270%27%20y%3D%27120.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27160.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23006600%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_kenya.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32643,7 +32745,7 @@ window.QUESTION_BANK = {
           "Αλγερία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23C1272D%27/%3E%3Cpolygon%20points%3D%27150.0%2C80.0%20154.7%2C93.5%20169.0%2C93.8%20157.6%2C102.5%20161.8%2C116.2%20150.0%2C108.0%20138.2%2C116.2%20142.4%2C102.5%20131.0%2C93.8%20145.3%2C93.5%27%20fill%3D%27%23006233%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_maroko.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32653,7 +32755,7 @@ window.QUESTION_BANK = {
           "Μπανγκλαντές"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23006A4E%27/%3E%3Ccircle%20cx%3D%27135.0%27%20cy%3D%27100.0%27%20r%3D%2740.0%27%20fill%3D%27%23F42A41%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_mpangklantes.svg"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -32663,7 +32765,8 @@ window.QUESTION_BANK = {
           "Χιμπατζής"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Male_silverback_Gorilla.JPG?width=650"
+        "img": "assets/questions_pics/animal_gorilas.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Male_silverback_Gorilla.JPG?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32673,7 +32776,8 @@ window.QUESTION_BANK = {
           "Καταρράκτες Ιγκουασού"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria_Falls.jpg?width=650"
+        "img": "assets/questions_pics/place_katarraktes_viktoria.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria_Falls.jpg?width=650"
       },
       {
         "q": "Ποιο ουράνιο σώμα απεικονίζει αυτή η εικόνα;",
@@ -32683,7 +32787,8 @@ window.QUESTION_BANK = {
           "Ποσειδώνας"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Uranus2.jpg?width=650"
+        "img": "assets/questions_pics/space_oyranos.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Uranus2.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32693,7 +32798,7 @@ window.QUESTION_BANK = {
           "Δανία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%2302529C%27/%3E%3Crect%20x%3D%270%27%20y%3D%2780.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%27105.0%27%20y%3D%270%27%20width%3D%2745.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_islandia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32703,7 +32808,7 @@ window.QUESTION_BANK = {
           "Αιθιοπία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FDB913%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23006A44%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23C1272D%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_lithoyania.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32713,7 +32818,8 @@ window.QUESTION_BANK = {
           "Ναός του Ουρανού, Πεκίνο"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple_of_Heaven.jpg?width=650"
+        "img": "assets/questions_pics/place_naos_toy_oyranoy_pekino.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Temple_of_Heaven.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32723,7 +32829,7 @@ window.QUESTION_BANK = {
           "Βιετνάμ"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23DA251D%27/%3E%3Cpolygon%20points%3D%27150.0%2C78.0%20155.2%2C92.9%20170.9%2C93.2%20158.4%2C102.7%20162.9%2C117.8%20150.0%2C108.8%20137.1%2C117.8%20141.6%2C102.7%20129.1%2C93.2%20144.8%2C92.9%27%20fill%3D%27%23FFFF00%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_vietnam.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32733,7 +32839,7 @@ window.QUESTION_BANK = {
           "Φιλιππίνες"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23D7141A%27/%3E%3Cpolygon%20points%3D%270%2C0%20135.0%2C100.0%200%2C200%27%20fill%3D%27%2311457E%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_tsechia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32743,7 +32849,7 @@ window.QUESTION_BANK = {
           "Πακιστάν"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%2775%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%2775%27%20y%3D%270%27%20width%3D%27225%27%20height%3D%27200%27%20fill%3D%27%2301411C%27/%3E%3Ccircle%20cx%3D%27195%27%20cy%3D%27100%27%20r%3D%2736%27%20fill%3D%27%23FFFFFF%27/%3E%3Ccircle%20cx%3D%27210%27%20cy%3D%27100%27%20r%3D%2730%27%20fill%3D%27%2301411C%27/%3E%3Cpolygon%20points%3D%27238.0%2C85.0%20241.5%2C95.1%20252.3%2C95.4%20243.7%2C101.9%20246.8%2C112.1%20238.0%2C106.0%20229.2%2C112.1%20232.3%2C101.9%20223.7%2C95.4%20234.5%2C95.1%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_pakistan.svg"
       },
       {
         "q": "Ποιον ήρωα του 1821 απεικονίζει αυτή η προσωπογραφία;",
@@ -32753,7 +32859,8 @@ window.QUESTION_BANK = {
           "Αδαμάντιος Κοραής"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Rigas_Feraios_by_Hess.jpg?width=650"
+        "img": "assets/questions_pics/portrait_rigas_feraios.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Rigas_Feraios_by_Hess.jpg?width=650"
       },
       {
         "q": "Ποιον ήρωα του 1821 απεικονίζει αυτή η προσωπογραφία;",
@@ -32763,7 +32870,8 @@ window.QUESTION_BANK = {
           "Λασκαρίνα Μπουμπουλίνα"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Andreas_Miaoulis.jpg?width=650"
+        "img": "assets/questions_pics/portrait_andreas_miaoylis.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Andreas_Miaoulis.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η παραδοσιακή ενδυμασία;",
@@ -32773,7 +32881,8 @@ window.QUESTION_BANK = {
           "Ουαλία"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Highlander-kilt.jpg?width=650"
+        "img": "assets/questions_pics/costume_skotia.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Highlander-kilt.jpg?width=650"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -32783,7 +32892,8 @@ window.QUESTION_BANK = {
           "Παντα"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Polar_Bear_-_Alaska.jpg?width=650"
+        "img": "assets/questions_pics/animal_poliki_arkoyda.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Polar_Bear_-_Alaska.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32793,7 +32903,8 @@ window.QUESTION_BANK = {
           "Μουσείο Λούβρου"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Museo_Guggenheim_%28Bilbao%29.jpg?width=650"
+        "img": "assets/questions_pics/place_moyseio_gkoygkenchaim_mpilmpao.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Museo_Guggenheim_%28Bilbao%29.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32803,7 +32914,8 @@ window.QUESTION_BANK = {
           "Κολοσσαίο"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Pantheon%2C_Rome.jpg?width=650"
+        "img": "assets/questions_pics/place_pantheon_romi.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Pantheon%2C_Rome.jpg?width=650"
       },
       {
         "q": "Ποιον ήρωα του 1821 απεικονίζει αυτή η προσωπογραφία;",
@@ -32813,7 +32925,8 @@ window.QUESTION_BANK = {
           "Αθανάσιος Διάκος"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Athanasios_Diakos.JPG?width=650"
+        "img": "assets/questions_pics/portrait_athanasios_diakos.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Athanasios_Diakos.JPG?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32823,7 +32936,8 @@ window.QUESTION_BANK = {
           "Γέφυρα Ριάλτο, Βενετία"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Rialto_Bridge.jpg?width=650"
+        "img": "assets/questions_pics/place_gefyra_rialto_venetia.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Rialto_Bridge.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32833,7 +32947,8 @@ window.QUESTION_BANK = {
           "Carcassonne"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint-Michel.jpg?width=650"
+        "img": "assets/questions_pics/place_mont_saint_michel_gallia.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint-Michel.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32843,7 +32958,7 @@ window.QUESTION_BANK = {
           "Σιγκαπούρη"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23CC0001%27/%3E%3Crect%20x%3D%270%27%20y%3D%2714.3%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2728.6%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23CC0001%27/%3E%3Crect%20x%3D%270%27%20y%3D%2742.9%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2757.1%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23CC0001%27/%3E%3Crect%20x%3D%270%27%20y%3D%2771.4%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2785.7%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23CC0001%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27114.3%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23CC0001%27/%3E%3Crect%20x%3D%270%27%20y%3D%27128.6%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27142.9%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23CC0001%27/%3E%3Crect%20x%3D%270%27%20y%3D%27157.1%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27171.4%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23CC0001%27/%3E%3Crect%20x%3D%270%27%20y%3D%27185.7%27%20width%3D%27300%27%20height%3D%2714.3%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27100.0%27%20fill%3D%27%23010066%27/%3E%3Ccircle%20cx%3D%2760.0%27%20cy%3D%2750.0%27%20r%3D%2728.000000000000004%27%20fill%3D%27%23FFCC00%27/%3E%3Ccircle%20cx%3D%2772.0%27%20cy%3D%2750.0%27%20r%3D%2724.0%27%20fill%3D%27%23010066%27/%3E%3Cpolygon%20points%3D%2796.0%2C42.0%2097.9%2C47.4%20103.6%2C47.5%2099.0%2C51.0%20100.7%2C56.5%2096.0%2C53.2%2091.3%2C56.5%2093.0%2C51.0%2088.4%2C47.5%2094.1%2C47.4%27%20fill%3D%27%23FFCC00%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_malaisia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32853,7 +32968,7 @@ window.QUESTION_BANK = {
           "Σλοβακία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%230B4EA2%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23EE1C25%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_slovakia.svg"
       },
       {
         "q": "Ποιον ήρωα του 1821 απεικονίζει αυτή η προσωπογραφία;",
@@ -32863,7 +32978,8 @@ window.QUESTION_BANK = {
           "Μάρκος Μπότσαρης"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Markos_Botsaris.jpg?width=650"
+        "img": "assets/questions_pics/portrait_markos_mpotsaris.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Markos_Botsaris.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32873,7 +32989,8 @@ window.QUESTION_BANK = {
           "Η Κραυγή"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mona_Lisa.jpg?width=650"
+        "img": "assets/questions_pics/place_i_mona_liza.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Mona_Lisa.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32883,7 +33000,8 @@ window.QUESTION_BANK = {
           "Empire State Building"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Flatiron_Building.jpg?width=650"
+        "img": "assets/questions_pics/place_flatiron_building_nea_yorki.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Flatiron_Building.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32893,7 +33011,7 @@ window.QUESTION_BANK = {
           "Αιθιοπία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23078930%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FCDD09%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23DA121A%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_aithiopia.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32903,7 +33021,8 @@ window.QUESTION_BANK = {
           "Παλάτι Πότσδαμ"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Sch%C3%B6nbrunn_Palace%2C_Vienna.JPG?width=650"
+        "img": "assets/questions_pics/place_palati_senmproyn_vienni.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Sch%C3%B6nbrunn_Palace%2C_Vienna.JPG?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32913,7 +33032,7 @@ window.QUESTION_BANK = {
           "Νιγηρία"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%2766.0%27%20fill%3D%27%23DE3831%27/%3E%3Crect%20x%3D%270%27%20y%3D%27134.0%27%20width%3D%27300%27%20height%3D%2766.0%27%20fill%3D%27%23002395%27/%3E%3Cpolygon%20points%3D%270%2C66.0%20105.0%2C100.0%200%2C134.0%27%20fill%3D%27%23007A4D%27/%3E%3Cpolygon%20points%3D%270%2C80.0%2084.00000000000001%2C100.0%200%2C120.0%27%20fill%3D%27%23FFB612%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_notia_afriki.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32923,7 +33042,7 @@ window.QUESTION_BANK = {
           "Ιράκ"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23006C35%27/%3E%3Ctext%20x%3D%27150.0%27%20y%3D%2790.0%27%20font-size%3D%2720%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3E%D8%A7%D9%84%D9%84%D9%87%3C/text%3E%3Crect%20x%3D%2775.0%27%20y%3D%27130.0%27%20width%3D%27150.0%27%20height%3D%2712.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_saoydiki_aravia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32933,7 +33052,7 @@ window.QUESTION_BANK = {
           "Λίβανος"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%2750.0%27%20fill%3D%27%23EE161F%27/%3E%3Crect%20x%3D%270%27%20y%3D%2750.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27150.0%27%20width%3D%27300%27%20height%3D%2750.0%27%20fill%3D%27%23EE161F%27/%3E%3Cpolygon%20points%3D%27150.0%2C70.0%20132.0%2C110.00000000000001%20168.00000000000003%2C110.00000000000001%27%20fill%3D%27%2300A651%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_livanos.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32943,7 +33062,8 @@ window.QUESTION_BANK = {
           "Καμηλοπάρδαλη"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Giraffe_standing.jpg?width=650"
+        "img": "assets/questions_pics/place_kamilopardali.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Giraffe_standing.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32953,7 +33073,7 @@ window.QUESTION_BANK = {
           "Πολωνία"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FF0000%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23171796%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_kroatia.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32963,7 +33083,8 @@ window.QUESTION_BANK = {
           "Αρκούδα"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Giant_Panda_eating_Bamboo.JPG?width=650"
+        "img": "assets/questions_pics/place_panta.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Giant_Panda_eating_Bamboo.JPG?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -32973,7 +33094,7 @@ window.QUESTION_BANK = {
           "Βουλγαρία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%2300966E%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23D62612%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_voylgaria.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32983,7 +33104,8 @@ window.QUESTION_BANK = {
           "Κρεμλίνο, Μόσχα"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Kremlin.jpg?width=650"
+        "img": "assets/questions_pics/place_kremlino_moscha.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Kremlin.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -32993,7 +33115,8 @@ window.QUESTION_BANK = {
           "Γέφυρα Ριάλτο"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_Vecchio_%28Firenze%29.JPG?width=650"
+        "img": "assets/questions_pics/place_ponte_vecchio_florentia.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Ponte_Vecchio_%28Firenze%29.JPG?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33003,7 +33126,7 @@ window.QUESTION_BANK = {
           "Αυστρία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%239E3039%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%239E3039%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_letonia.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -33013,7 +33136,8 @@ window.QUESTION_BANK = {
           "Flatiron Building"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Chrysler_Building.jpg?width=650"
+        "img": "assets/questions_pics/place_chrysler_building_nea_yorki.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Chrysler_Building.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33023,7 +33147,7 @@ window.QUESTION_BANK = {
           "Κολομβία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFCC00%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%2300247D%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23CF142B%27/%3E%3Cpolygon%20points%3D%27105.0%2C92.0%20106.9%2C97.4%20112.6%2C97.5%20108.0%2C101.0%20109.7%2C106.5%20105.0%2C103.2%20100.3%2C106.5%20102.0%2C101.0%2097.4%2C97.5%20103.1%2C97.4%27%20fill%3D%27%23FFFFFF%27/%3E%3Cpolygon%20points%3D%27125.0%2C92.0%20126.9%2C97.4%20132.6%2C97.5%20128.0%2C101.0%20129.7%2C106.5%20125.0%2C103.2%20120.3%2C106.5%20122.0%2C101.0%20117.4%2C97.5%20123.1%2C97.4%27%20fill%3D%27%23FFFFFF%27/%3E%3Cpolygon%20points%3D%27145.0%2C92.0%20146.9%2C97.4%20152.6%2C97.5%20148.0%2C101.0%20149.7%2C106.5%20145.0%2C103.2%20140.3%2C106.5%20142.0%2C101.0%20137.4%2C97.5%20143.1%2C97.4%27%20fill%3D%27%23FFFFFF%27/%3E%3Cpolygon%20points%3D%27165.0%2C92.0%20166.9%2C97.4%20172.6%2C97.5%20168.0%2C101.0%20169.7%2C106.5%20165.0%2C103.2%20160.3%2C106.5%20162.0%2C101.0%20157.4%2C97.5%20163.1%2C97.4%27%20fill%3D%27%23FFFFFF%27/%3E%3Cpolygon%20points%3D%27185.0%2C92.0%20186.9%2C97.4%20192.6%2C97.5%20188.0%2C101.0%20189.7%2C106.5%20185.0%2C103.2%20180.3%2C106.5%20182.0%2C101.0%20177.4%2C97.5%20183.1%2C97.4%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_venezoyela.svg"
       }
     ],
     "hard": [
@@ -33035,7 +33159,8 @@ window.QUESTION_BANK = {
           "Γεώργιος Καραϊσκάκης"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Odysseas-androutsos.jpg?width=650"
+        "img": "assets/questions_pics/portrait_odysseas_androytsos.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Odysseas-androutsos.jpg?width=650"
       },
       {
         "q": "Ποιον ήρωα του 1821 απεικονίζει αυτή η προσωπογραφία;",
@@ -33045,7 +33170,8 @@ window.QUESTION_BANK = {
           "Γεώργιος Καραϊσκάκης"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Konstantinos_Kanaris.jpg?width=650"
+        "img": "assets/questions_pics/portrait_konstantinos_kanaris.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Konstantinos_Kanaris.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33055,7 +33181,7 @@ window.QUESTION_BANK = {
           "Ουζμπεκιστάν"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%2300AFCA%27/%3E%3Ccircle%20cx%3D%27150.0%27%20cy%3D%2780.0%27%20r%3D%2732.0%27%20fill%3D%27%23FEC50C%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_kazakstan.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -33065,7 +33191,8 @@ window.QUESTION_BANK = {
           "Stonehenge"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Moai_Rano_raraku.jpg?width=650"
+        "img": "assets/questions_pics/place_nisi_toy_pascha.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Moai_Rano_raraku.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33075,7 +33202,7 @@ window.QUESTION_BANK = {
           "Μολδαβία"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%230018A8%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FEDD00%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23D50032%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_andora.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -33085,7 +33212,8 @@ window.QUESTION_BANK = {
           "Παλάτι του Δόγη, Βενετία"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Doge%27s_Palace.jpg?width=650"
+        "img": "assets/questions_pics/place_palati_toy_dogi_venetia.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Doge%27s_Palace.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33095,7 +33223,7 @@ window.QUESTION_BANK = {
           "Μπαχρέιν"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27200%27%20fill%3D%27%238D1B3D%27/%3E%3Crect%20x%3D%27150.0%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_katar.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33105,7 +33233,7 @@ window.QUESTION_BANK = {
           "Ζάμπια"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2728.6%27%20fill%3D%27%23006400%27/%3E%3Crect%20x%3D%270%27%20y%3D%2728.6%27%20width%3D%27300%27%20height%3D%2728.6%27%20fill%3D%27%23FFD200%27/%3E%3Crect%20x%3D%270%27%20y%3D%2757.1%27%20width%3D%27300%27%20height%3D%2728.6%27%20fill%3D%27%23D40000%27/%3E%3Crect%20x%3D%270%27%20y%3D%2785.7%27%20width%3D%27300%27%20height%3D%2728.6%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%270%27%20y%3D%27114.3%27%20width%3D%27300%27%20height%3D%2728.6%27%20fill%3D%27%23D40000%27/%3E%3Crect%20x%3D%270%27%20y%3D%27142.9%27%20width%3D%27300%27%20height%3D%2728.6%27%20fill%3D%27%23FFD200%27/%3E%3Crect%20x%3D%270%27%20y%3D%27171.4%27%20width%3D%27300%27%20height%3D%2728.6%27%20fill%3D%27%23006400%27/%3E%3Cpolygon%20points%3D%270%2C0%20105.0%2C100.0%200%2C200%27%20fill%3D%27%23FFFFFF%27/%3E%3Cpolygon%20points%3D%2742.0%2C90.0%2044.4%2C96.8%2051.5%2C96.9%2045.8%2C101.2%2047.9%2C108.1%2042.0%2C104.0%2036.1%2C108.1%2038.2%2C101.2%2032.5%2C96.9%2039.6%2C96.8%27%20fill%3D%27%23D40000%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_zimpampoye.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33115,7 +33243,7 @@ window.QUESTION_BANK = {
           "Ρωσία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%27134.0%27%20fill%3D%27%23D22730%27/%3E%3Crect%20x%3D%270%27%20y%3D%27134.0%27%20width%3D%27300%27%20height%3D%2766.0%27%20fill%3D%27%2300AF66%27/%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%2736.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_leykorosia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33125,7 +33253,7 @@ window.QUESTION_BANK = {
           "Ουρουγουάη"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23D52B1E%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%230038A8%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_paragoyai.svg"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -33135,7 +33263,8 @@ window.QUESTION_BANK = {
           "Δράκος του Κομόντο"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Komodo_dragon_(Varanus_komodoensis).jpg?width=650"
+        "img": "assets/questions_pics/animal_drakos_toy_komonto.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Komodo_dragon_(Varanus_komodoensis).jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33145,7 +33274,7 @@ window.QUESTION_BANK = {
           "Βατικανό"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%235EB6E4%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_san_marino.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -33155,7 +33284,8 @@ window.QUESTION_BANK = {
           "Neuschwanstein"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Prague_Castle.jpg?width=650"
+        "img": "assets/questions_pics/place_kastro_tis_pragas.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Prague_Castle.jpg?width=650"
       },
       {
         "q": "Ποιο μνημείο βρίσκεται στο Σαν Φρανσίσκο;",
@@ -33174,7 +33304,8 @@ window.QUESTION_BANK = {
           "Ερμής"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Pluto-01_Stern_03_Pluto_Color_TXT.jpg?width=650"
+        "img": "assets/questions_pics/space_ploytonas.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Pluto-01_Stern_03_Pluto_Color_TXT.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33184,7 +33315,7 @@ window.QUESTION_BANK = {
           "Ζιμπάμπουε"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%2375AADB%27/%3E%3Crect%20x%3D%270%27%20y%3D%2780.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2790.0%27%20width%3D%27300%27%20height%3D%2720.0%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_mpotsoyana.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33194,7 +33325,7 @@ window.QUESTION_BANK = {
           "Βολιβία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23DA291C%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23F9E300%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23007934%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_volivia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33204,7 +33335,7 @@ window.QUESTION_BANK = {
           "Ουγκάντα"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2733.3%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%270%27%20y%3D%2733.3%27%20width%3D%27300%27%20height%3D%2733.3%27%20fill%3D%27%23FCDC04%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2733.3%27%20fill%3D%27%23D90000%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%2733.3%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2733.3%27%20fill%3D%27%23FCDC04%27/%3E%3Crect%20x%3D%270%27%20y%3D%27166.7%27%20width%3D%27300%27%20height%3D%2733.3%27%20fill%3D%27%23D90000%27/%3E%3Ccircle%20cx%3D%27150.0%27%20cy%3D%27100.0%27%20r%3D%2732.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_oygkanta.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -33214,7 +33345,8 @@ window.QUESTION_BANK = {
           "Ναός Ολυμπίου Διός"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Parthenon_at_night.jpg?width=650"
+        "img": "assets/questions_pics/place_parthenonas_ti_nychta.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Parthenon_at_night.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33224,7 +33356,7 @@ window.QUESTION_BANK = {
           "Μπουρούντι"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%2300A1DE%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%2750.0%27%20fill%3D%27%23FAD201%27/%3E%3Crect%20x%3D%270%27%20y%3D%27150.0%27%20width%3D%27300%27%20height%3D%2750.0%27%20fill%3D%27%2320603D%27/%3E%3Ccircle%20cx%3D%27225.0%27%20cy%3D%2750.0%27%20r%3D%2718%27%20fill%3D%27%23FAD201%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_royanta.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -33234,7 +33366,8 @@ window.QUESTION_BANK = {
           "Σφίγγα"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Abu_Simbel_Temple.jpg?width=650"
+        "img": "assets/questions_pics/place_avoy_simpel_aigyptos.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Abu_Simbel_Temple.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33244,7 +33377,7 @@ window.QUESTION_BANK = {
           "Μοζαμβίκη"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23198A00%27/%3E%3Crect%20x%3D%27165.0%27%20y%3D%27100.0%27%20width%3D%2745.0%27%20height%3D%27100.0%27%20fill%3D%27%23DE2010%27/%3E%3Crect%20x%3D%27210.0%27%20y%3D%27100.0%27%20width%3D%2745.0%27%20height%3D%27100.0%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%27255.0%27%20y%3D%27100.0%27%20width%3D%2745.0%27%20height%3D%27100.0%27%20fill%3D%27%23EF7D00%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_zampia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33254,7 +33387,7 @@ window.QUESTION_BANK = {
           "Κουβέιτ"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23007A3D%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23CE1126%27/%3E%3Cpolygon%20points%3D%270%2C0%2075.0%2C100.0%200%2C200%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_koyveit.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33264,7 +33397,7 @@ window.QUESTION_BANK = {
           "Βενεζουέλα"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23377E3F%27/%3E%3Crect%20x%3D%270%27%20y%3D%2740.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2780.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23B40A2D%27/%3E%3Crect%20x%3D%270%27%20y%3D%27120.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27160.0%27%20width%3D%27300%27%20height%3D%2740.0%27%20fill%3D%27%23377E3F%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_soyrinam.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33274,7 +33407,7 @@ window.QUESTION_BANK = {
           "Λάος"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FECB00%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%2334B233%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23EA2839%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_mianmar.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33284,7 +33417,7 @@ window.QUESTION_BANK = {
           "Κιργιστάν"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23C4272F%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%230066B3%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23C4272F%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_moggolia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33294,7 +33427,7 @@ window.QUESTION_BANK = {
           "Γεωργία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%2300B9E4%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23E4312B%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%2300AF66%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_azermpaitzan.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33304,7 +33437,7 @@ window.QUESTION_BANK = {
           "Μπαρμπάντος"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23009B3A%27/%3E%3Cpolygon%20points%3D%270%2C0%20300%2C200%200%2C200%200%2C0%27%20fill%3D%27%23000000%27/%3E%3Cpolygon%20points%3D%27300%2C0%20300%2C200%200%2C0%27%20fill%3D%27%23000000%27/%3E%3Cpolygon%20points%3D%27150.0%2C0%20300%2C100.0%20150.0%2C200%200%2C100.0%27%20fill%3D%27%23FED100%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_tzamaika.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33314,7 +33447,7 @@ window.QUESTION_BANK = {
           "Αγκόλα"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23003580%27/%3E%3Cpolygon%20points%3D%270%2C200%20300%2C0%20300%2C200%27%20fill%3D%27%23009543%27/%3E%3Cpolygon%20points%3D%270%2C200%20150.0%2C60.0%20300%2C200%27%20fill%3D%27%23D21034%27/%3E%3Ccircle%20cx%3D%2784.00000000000001%27%20cy%3D%2750.0%27%20r%3D%2718%27%20fill%3D%27%23FFCE00%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_namimpia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33324,7 +33457,7 @@ window.QUESTION_BANK = {
           "Αρμενία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23D90012%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%230033A0%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23F2A800%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_armenia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33334,7 +33467,7 @@ window.QUESTION_BANK = {
           "Ζιμπάμπουε"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%2790.0%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%2790.0%27%20y%3D%270%27%20width%3D%27210.0%27%20height%3D%27100.0%27%20fill%3D%27%23FC3D32%27/%3E%3Crect%20x%3D%2790.0%27%20y%3D%27100.0%27%20width%3D%27210.0%27%20height%3D%27100.0%27%20fill%3D%27%23007E3A%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_madagaskari.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33344,7 +33477,7 @@ window.QUESTION_BANK = {
           "Αρμενία"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2784.0%27%20width%3D%27300%27%20height%3D%2732.0%27%20fill%3D%27%23FF0000%27/%3E%3Crect%20x%3D%27126.0%27%20y%3D%270%27%20width%3D%2748.0%27%20height%3D%27200%27%20fill%3D%27%23FF0000%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_georgia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33354,7 +33487,7 @@ window.QUESTION_BANK = {
           "Λιχτενστάιν"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23002B7F%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23CE1126%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_lichtenstain.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33364,7 +33497,7 @@ window.QUESTION_BANK = {
           "Κατάρ"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%23CE1126%27/%3E%3Cpolygon%20points%3D%270%2C0%20105.0%2C0%2066.0%2C40.0%20105.0%2C80.0%2066.0%2C120.0%20105.0%2C160.0%2066.0%2C200%200%2C200%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_mpachrein.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33374,7 +33507,7 @@ window.QUESTION_BANK = {
           "Τανζανία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%231EB53A%27/%3E%3Cpolygon%20points%3D%270%2C200%20300%2C0%20300%2C30.0%2045.0%2C200%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%27200%27%20fill%3D%27%2300A3DD%27%20opacity%3D%270%27%20/%3E%3Cpolygon%20points%3D%270%2C170.0%20255.0%2C0%20300%2C0%20300%2C30.0%200%2C200%27%20fill%3D%27%2300A3DD%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_tanzania.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33384,7 +33517,7 @@ window.QUESTION_BANK = {
           "Ουρουγουάη"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2722.2%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2722.2%27%20width%3D%27300%27%20height%3D%2722.2%27%20fill%3D%27%230038A8%27/%3E%3Crect%20x%3D%270%27%20y%3D%2744.4%27%20width%3D%27300%27%20height%3D%2722.2%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2722.2%27%20fill%3D%27%230038A8%27/%3E%3Crect%20x%3D%270%27%20y%3D%2788.9%27%20width%3D%27300%27%20height%3D%2722.2%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27111.1%27%20width%3D%27300%27%20height%3D%2722.2%27%20fill%3D%27%230038A8%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2722.2%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27155.6%27%20width%3D%27300%27%20height%3D%2722.2%27%20fill%3D%27%230038A8%27/%3E%3Crect%20x%3D%270%27%20y%3D%27177.8%27%20width%3D%27300%27%20height%3D%2722.2%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27120.0%27%20height%3D%27111.1%27%20fill%3D%27%23FFFFFF%27/%3E%3Ccircle%20cx%3D%2760.0%27%20cy%3D%2756.00000000000001%27%20r%3D%2726.0%27%20fill%3D%27%23FCD116%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_oyroygoyai.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33394,7 +33527,7 @@ window.QUESTION_BANK = {
           "Μπουτάν"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Cpolygon%20points%3D%270%2C0%20300%2C0%200%2C200%27%20fill%3D%27%23FFCE00%27/%3E%3Cpolygon%20points%3D%27300%2C0%20300%2C200%200%2C200%27%20fill%3D%27%23FF4E12%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_mpoytan.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33404,7 +33537,7 @@ window.QUESTION_BANK = {
           "Σρι Λάνκα"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%2760.0%27%20height%3D%27200%27%20fill%3D%27%23FFB700%27/%3E%3Crect%20x%3D%2760.0%27%20y%3D%270%27%20width%3D%2745.0%27%20height%3D%27200%27%20fill%3D%27%2300534E%27/%3E%3Crect%20x%3D%27105.0%27%20y%3D%270%27%20width%3D%2745.0%27%20height%3D%27200%27%20fill%3D%27%23EB7400%27/%3E%3Crect%20x%3D%27150.0%27%20y%3D%270%27%20width%3D%27150.0%27%20height%3D%27200%27%20fill%3D%27%238D153A%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_sri_lanka.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33414,7 +33547,7 @@ window.QUESTION_BANK = {
           "Νεπάλ"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Cpolygon%20points%3D%270%2C0%20210.0%2C0%200%2C110.00000000000001%27%20fill%3D%27%23DC143C%27%20stroke%3D%27%23003893%27%20stroke-width%3D%274%27/%3E%3Cpolygon%20points%3D%270%2C60.0%20210.0%2C110.00000000000001%200%2C200%27%20fill%3D%27%23DC143C%27%20stroke%3D%27%23003893%27%20stroke-width%3D%274%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_nepal.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -33424,7 +33557,8 @@ window.QUESTION_BANK = {
           "Παλάτι Βερσαλλιών"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Alhambra_Granada.jpg?width=650"
+        "img": "assets/questions_pics/place_palati_toy_alampra_ispania.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Alhambra_Granada.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33434,7 +33568,7 @@ window.QUESTION_BANK = {
           "Μολδαβία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23003DA5%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23FFD200%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23CC092F%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_moldavia.svg"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33444,7 +33578,7 @@ window.QUESTION_BANK = {
           "Ουζμπεκιστάν"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23CC0000%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23006600%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_tatzikistan.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -33454,7 +33588,8 @@ window.QUESTION_BANK = {
           "Λούβρο"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Museo_del_Prado.jpg?width=650"
+        "img": "assets/questions_pics/place_moyseio_prado_madriti.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Museo_del_Prado.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33464,7 +33599,7 @@ window.QUESTION_BANK = {
           "Πακιστάν"
         ],
         "a": "A",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23000000%27/%3E%3Crect%20x%3D%27100.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23D32011%27/%3E%3Crect%20x%3D%27200.0%27%20y%3D%270%27%20width%3D%27100.0%27%20height%3D%27200%27%20fill%3D%27%23007A36%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_afganistan.svg"
       },
       {
         "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
@@ -33474,7 +33609,8 @@ window.QUESTION_BANK = {
           "Ενυδρίδα"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Platypus.jpg?width=650"
+        "img": "assets/questions_pics/animal_ornithorygchos.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Platypus.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33484,7 +33620,7 @@ window.QUESTION_BANK = {
           "Κιριμπάτι"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23CE1126%27/%3E%3Crect%20x%3D%270%27%20y%3D%27100.0%27%20width%3D%27300%27%20height%3D%27100.0%27%20fill%3D%27%23003F87%27/%3E%3Ccircle%20cx%3D%27150.0%27%20cy%3D%2770.0%27%20r%3D%2724.0%27%20fill%3D%27%23FCD116%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_kirimpati.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -33494,7 +33630,8 @@ window.QUESTION_BANK = {
           "Empire State Building"
         ],
         "a": "B",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Willis_Tower.jpg?width=650"
+        "img": "assets/questions_pics/place_willis_tower_sikago.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Willis_Tower.jpg?width=650"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -33504,7 +33641,8 @@ window.QUESTION_BANK = {
           "Βικτόρια"
         ],
         "a": "A",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Iguazu_Falls.jpg?width=650"
+        "img": "assets/questions_pics/place_katarraktes_igkoyasoy.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Iguazu_Falls.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33514,7 +33652,7 @@ window.QUESTION_BANK = {
           "Τουρκμενιστάν"
         ],
         "a": "B",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Crect%20x%3D%270%27%20y%3D%270.0%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%230099B5%27/%3E%3Crect%20x%3D%270%27%20y%3D%2766.7%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%23FFFFFF%27/%3E%3Crect%20x%3D%270%27%20y%3D%27133.3%27%20width%3D%27300%27%20height%3D%2766.7%27%20fill%3D%27%231EB53A%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_oyzmpekistan.svg"
       },
       {
         "q": "Τι απεικονίζει αυτή η εικόνα;",
@@ -33524,7 +33662,8 @@ window.QUESTION_BANK = {
           "Μουσείο Βρετανίας"
         ],
         "a": "C",
-        "img": "https://commons.wikimedia.org/wiki/Special:FilePath/British_Museum_Exterior.jpg?width=650"
+        "img": "assets/questions_pics/place_moyseio_vretanias.jpg",
+        "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/British_Museum_Exterior.jpg?width=650"
       },
       {
         "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
@@ -33534,7 +33673,7 @@ window.QUESTION_BANK = {
           "Ερυθραία"
         ],
         "a": "C",
-        "img": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%20200%27%3E%3Cpolygon%20points%3D%270%2C0%20300%2C0%200%2C200%27%20fill%3D%27%2312AD2B%27/%3E%3Cpolygon%20points%3D%27300%2C0%20300%2C200%200%2C200%27%20fill%3D%27%230000FF%27/%3E%3Cpolygon%20points%3D%270%2C0%20300%2C100.0%200%2C200%27%20fill%3D%27%23EA0437%27/%3E%3Crect%20x%3D%271%27%20y%3D%271%27%20width%3D%27298%27%20height%3D%27198%27%20fill%3D%27none%27%20stroke%3D%27rgba%2830%2C45%2C60%2C0.35%29%27%20stroke-width%3D%272%27/%3E%3C/svg%3E"
+        "img": "assets/questions_pics/flag_erythraia.svg"
       }
     ]
   },

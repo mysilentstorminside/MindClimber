@@ -609,8 +609,16 @@ function renderQuestion(turn, showResult) {
       img.alt = text;
       img.decoding = "async";
       img.referrerPolicy = "no-referrer";
+      // Try the local copy in assets/questions_pics first. If it is missing
+      // (e.g. download_images.sh has not been run yet) fall back once to the
+      // original online address, and only then give up and show text alone.
+      let triedFallback = false;
       img.onerror = () => {
-        // Never leave the player stuck on a picture that will not arrive.
+        if (!triedFallback && q.imgFallback) {
+          triedFallback = true;
+          img.src = q.imgFallback;
+          return;
+        }
         img.classList.add("hidden");
         img.classList.add("imgFailed");
         rect.classList.remove("hidden");
