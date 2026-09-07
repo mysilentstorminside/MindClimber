@@ -441,6 +441,127 @@ function laneCenters(step, playerCount) {
   return centers;
 }
 
+
+/* ── Mountain relief ────────────────────────────────────────────────────────
+   Drawn in the same 0-100 percentage space the treads use, so the rock always
+   lines up with the lanes no matter how many players there are. A seeded
+   pseudo-random generator keeps the ridgeline jagged but identical on every
+   render — a re-render must not make the mountain twitch.                    */
+function buildMountainSvg(count) {
+  const shape = MOUNTAIN_SHAPE[count] || MOUNTAIN_SHAPE[1];
+  const baseHalf = shape.base / 2;
+  const topHalf  = Math.max(4, shape.top / 2);
+  const peakY = 100 - (STEP_TOP_BOTTOM + 9);   // a little headroom for the flag
+  const baseY = 100 - 4;
+
+  let seed = 1337 + count * 97;
+  const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+
+  /* The rock must always be wider than the staircase carved into it, otherwise
+     treads hang off the slope in mid-air. So at every height we take whichever
+     is wider: the silhouette, or what the lanes + tread actually need. */
+  const treadW = TREAD_WIDTH[count] || 12;
+  const neededHalf = (step) => {
+    let m = 0;
+    laneCenters(step, count).forEach(cx => { m = Math.max(m, Math.abs(cx - 50)); });
+    return m + treadW / 2 + 2.5;
+  };
+  const edge = (sign, jag) => {
+    const pts = [];
+    const N = 14;
+    for (let i = 0; i <= N; i++) {
+      const t = i / N;
+      const y = lerp(peakY, baseY, t);
+      // t = 0 is the summit, so the matching step counts down from MAX_STEPS
+      const step = Math.round((1 - t) * MAX_STEPS);
+      const half = Math.max(lerp(topHalf, baseHalf, Math.pow(t, 0.86)), neededHalf(step));
+      const wobble = (rnd() - 0.5) * jag * (0.35 + t);
+      pts.push([50 + sign * (half + Math.abs(wobble)), y]);
+    }
+    return pts;
+  };
+  const P = (pts) => pts.map(p => p[0].toFixed(2) + "," + p[1].toFixed(2)).join(" ");
+
+  const left = edge(-1, 3.2);
+  const right = edge(1, 3.2).reverse();
+  const massif = `50,${peakY} ${P(left)} ${P(right)}`;
+
+  // shaded half: peak → straight down the spine → back up the right edge
+  const spine = [];
+  for (let i = 0; i <= 8; i++) {
+    const t = i / 8;
+    spine.push([50 + (rnd() - 0.5) * 1.6, lerp(peakY, baseY, t)]);
+  }
+  const shaded = `50,${peakY} ${P(spine)} ${P(right)}`;
+
+  // snow: the cap plus tongues that run further down the gullies
+  const snowBottom = lerp(peakY, baseY, 0.30);
+  const sl = [], sr = [];
+  for (let i = 0; i <= 5; i++) {
+    const t = i / 5;
+    const y = lerp(peakY, snowBottom, t);
+    const step = Math.round((1 - t * 0.30) * MAX_STEPS);
+    const half = Math.max(lerp(topHalf, lerp(topHalf, baseHalf, 0.30), t), neededHalf(step) * 0.94);
+    sl.push([50 - (half + (rnd() - 0.5) * 1.5), y]);
+    sr.push([50 + (half + (rnd() - 0.5) * 1.5), y]);
+  }
+  const tongue = [
+    [50 - topHalf * 0.55, snowBottom],
+    [50 - topHalf * 0.30, snowBottom + 5.5],
+    [50 - topHalf * 0.05, snowBottom + 1.2],
+    [50 + topHalf * 0.28, snowBottom + 7.0],
+    [50 + topHalf * 0.52, snowBottom + 1.8],
+  ];
+  const snow = `50,${peakY} ${P(sr)} ${P(tongue.slice().reverse())} ${P(sl.slice().reverse())}`;
+
+  // far ranges — hazy and desaturated so they sit behind
+  const range = (yTop, amp, n) => {
+    let d = `0,100 0,${yTop + amp}`;
+    for (let i = 0; i <= n; i++) {
+      const x = (i / n) * 100;
+      const y = yTop + Math.abs(Math.sin(i * 1.9 + count)) * amp;
+      d += ` ${x.toFixed(1)},${y.toFixed(1)}`;
+    }
+    return d + ` 100,${yTop + amp} 100,100`;
+  };
+
+  return `<svg class="mountainSvg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="mcLit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#9fb6a4"/>
+      <stop offset="22%" stop-color="#87a189"/>
+      <stop offset="48%" stop-color="#9d8a6b"/>
+      <stop offset="76%" stop-color="#8a7454"/>
+      <stop offset="100%" stop-color="#6b5940"/>
+    </linearGradient>
+    <linearGradient id="mcShade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#2f3b39" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#222c2b" stop-opacity="0.52"/>
+    </linearGradient>
+    <linearGradient id="mcSnow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="70%"  stop-color="#e6eff6"/>
+      <stop offset="100%" stop-color="#cfe0ec"/>
+    </linearGradient>
+  </defs>
+  <polygon points="${range(46, 9, 9)}"  fill="#a9c8dc" opacity="0.55"/>
+  <polygon points="${range(56, 7, 7)}"  fill="#8fb3cb" opacity="0.6"/>
+  <polygon points="${massif}" fill="url(#mcLit)"/>
+  <polygon points="${shaded}" fill="url(#mcShade)"/>
+  <polygon points="${snow}"   fill="url(#mcSnow)"/>
+  <g stroke="#4a4133" stroke-opacity="0.28" fill="none" stroke-linecap="round">
+    <path d="M${(50 - topHalf * 0.7).toFixed(1)},${(peakY + 6).toFixed(1)}
+             L${(50 - baseHalf * 0.42).toFixed(1)},${lerp(peakY, baseY, 0.55).toFixed(1)}
+             L${(50 - baseHalf * 0.58).toFixed(1)},${(baseY - 4).toFixed(1)}" stroke-width="0.7"/>
+    <path d="M${(50 + topHalf * 0.6).toFixed(1)},${(peakY + 8).toFixed(1)}
+             L${(50 + baseHalf * 0.40).toFixed(1)},${lerp(peakY, baseY, 0.6).toFixed(1)}
+             L${(50 + baseHalf * 0.55).toFixed(1)},${(baseY - 3).toFixed(1)}" stroke-width="0.55"/>
+  </g>
+</svg>`;
+}
+
 function buildStaircase(playerCount) {
   const count = Math.max(1, Math.min(5, playerCount || 1));
   if (staircaseBuilt && lastStaircasePlayerCount === count) return;
@@ -466,10 +587,8 @@ function buildStaircase(playerCount) {
   const wrap = $("stairLines");
   wrap.innerHTML = "";
 
-  // Mountain body
-  const body = document.createElement("div");
-  body.className = "mountainBody";
-  wrap.appendChild(body);
+  // Mountain relief (SVG — see buildMountainSvg)
+  wrap.insertAdjacentHTML("beforeend", buildMountainSvg(count));
 
   // Grass + flowers (no bird)
   const grass = document.createElement("div");

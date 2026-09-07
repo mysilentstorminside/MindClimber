@@ -267,92 +267,87 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
   overflow: hidden;
   z-index: 1;
   /* Sky → distant hills → grass */
+  /* Deeper blue overhead fading to a pale, hazy horizon — distance reads as
+     washed-out, which is what makes the far ranges sit behind the massif. */
   background:
     linear-gradient(180deg,
-      #7dd3fc 0%,
-      #bae6fd 28%,
-      #e0f2fe 52%,
-      #bbf7d0 78%,
-      #86efac 92%,
-      #4ade80 100%);
+      #4facdf 0%,
+      #7cc6ec 20%,
+      #aadcf4 40%,
+      #d8eef8 58%,
+      #cfe8c4 74%,
+      #8fce85 90%,
+      #57b45f 100%);
 }
 
 #stairLines { position: absolute; inset: 0; z-index: 2; }
 
-/* Soft mountain body behind the rungs (triangle/trapezoid silhouette) */
-.mountainBody {
+/* Mountain relief is drawn as SVG (see buildMountainSvg in game.js) so it can
+   carry ridgelines, lit/shaded faces and snow gullies — a CSS gradient
+   triangle reads flat no matter how many colour stops you give it. */
+.mountainSvg {
   position: absolute;
-  left: 50%;
-  bottom: 6%;
-  transform: translateX(-50%);
-  width: var(--mtn-base, 70%);
-  height: 86%;
-  background:
-    linear-gradient(180deg,
-      #a8d5a2 0%,
-      #7cb87a 18%,
-      #6b9b6e 40%,
-      #8b7355 62%,
-      #a08060 82%,
-      #6d5538 100%);
-  clip-path: polygon(
-    calc(50% - var(--mtn-top, 12%)) 0%,
-    calc(50% + var(--mtn-top, 12%)) 0%,
-    100% 100%,
-    0% 100%
-  );
+  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
-  box-shadow: 0 0 40px rgba(0,0,0,0.12);
-  opacity: 0.92;
+  display: block;
 }
 
-/* Snow cap near the peak */
-.mountainBody::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 55%;
-  height: 14%;
-  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 70%, transparent 100%);
-  clip-path: polygon(20% 100%, 50% 0%, 80% 100%);
-  opacity: 0.9;
-}
-
-/* Individual stair treads — stone, only under player lanes */
+/* Stair treads: a lit top surface plus a shadowed riser underneath, so each
+   step reads as cut into the rock rather than painted on it. */
 .stepRung {
   position: absolute;
-  height: 9px;
-  border-radius: 3px 3px 2px 2px;
+  height: 7px;
+  border-radius: 2px 2px 1px 1px;
   background:
     linear-gradient(180deg,
-      #d7ccc8 0%,
-      #bcaaa4 18%,
-      #8d6e63 55%,
-      #6d4c41 100%);
+      #fdfaf6 0%,
+      #ded2c6 26%,
+      #b9a493 58%,
+      #8d7461 84%,
+      #6d5747 100%);
   box-shadow:
-    0 3px 0 #4e342e,
-    0 5px 7px rgba(30, 15, 8, 0.35),
-    inset 0 1px 0 rgba(255,255,255,0.35),
-    inset 0 -2px 0 rgba(0,0,0,0.15);
-  z-index: 2;
+    0 1px 0 rgba(255,255,255,0.55) inset,
+    0 -1px 0 rgba(0,0,0,0.18) inset,
+    0 2px 3px rgba(38,22,12,0.35);
+  z-index: 3;
 }
-
+/* the riser — the vertical face below the tread */
+.stepRung::after {
+  content: "";
+  position: absolute;
+  left: 1px; right: 1px; top: 100%;
+  height: 4px;
+  border-radius: 0 0 2px 2px;
+  background: linear-gradient(180deg, #5c4838 0%, #47372b 60%, rgba(50,38,30,0) 100%);
+}
+/* a sliver of shadow the tread casts on the rock to its right */
+.stepRung::before {
+  content: "";
+  position: absolute;
+  left: 2px; right: -3px; top: 2px;
+  height: 6px;
+  background: rgba(30,18,10,0.16);
+  filter: blur(2px);
+  border-radius: 3px;
+  z-index: -1;
+}
 .stepRung.major {
-  height: 11px;
+  height: 9px;
   background:
     linear-gradient(180deg,
-      #efebe9 0%,
-      #d7ccc8 20%,
-      #a1887f 55%,
-      #6d4c41 100%);
+      #fffdf7 0%,
+      #f0e3cd 24%,
+      #d3b98d 56%,
+      #a98a5c 84%,
+      #7d6440 100%);
   box-shadow:
-    0 4px 0 #3e2723,
-    0 6px 9px rgba(30, 15, 8, 0.4),
-    inset 0 1px 0 rgba(255,255,255,0.45),
-    inset 0 -2px 0 rgba(0,0,0,0.18);
+    0 1px 0 rgba(255,255,255,0.7) inset,
+    0 -1px 0 rgba(0,0,0,0.2) inset,
+    0 3px 5px rgba(38,22,12,0.42);
 }
+.stepRung.major::after { height: 5px; background: linear-gradient(180deg,#6d5535 0%,#51402a 60%,rgba(60,46,30,0) 100%); }
 
 /* Side labels — glued to the left edge of the mountain / leftmost path */
 .stepRungLabel {
