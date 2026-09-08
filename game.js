@@ -651,7 +651,7 @@ function stepPosition(step, orderIndex, playerCount) {
   const centers = laneCenters(s, count);
   const left = centers[Math.min(orderIndex, centers.length - 1)];
 
-  const sizeMap = { 1: 44, 2: 38, 3: 34, 4: 30, 5: 27 };
+  const sizeMap = { 1: 44, 2: 38, 3: 34, 4: 26, 5: 25 };
   const size = sizeMap[count] || 34;
 
   return { bottom, left, size };
@@ -725,11 +725,14 @@ function renderGame(room) {
     tok.style.bottom = pos.bottom + "%";
     tok.style.width = pos.size + "px";
     tok.style.height = pos.size + "px";
+    // Με 4-5 παίκτες οι λωρίδες πλησιάζουν, οπότε το βέλος μικραίνει
+    // ώστε να μη μπαίνει στον χώρο του διπλανού παίκτη.
+    tok.style.setProperty("--markw", (playerCount >= 4 ? 10 : 16) + "px");
     // Compact token: no turn text (turn is shown in the answer-status row)
     tok.innerHTML = `
       <div class="tokenTimer">${formatTimeLeft(computeLiveTimeLeft(pid, p, room))}</div>
       <div class="tokenAvatarWrap"><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3">${
-        ans ? `<span class="answerMark">${ans.correct ? "✓" : "✗"}</span>` : ""
+        ans ? `<span class="answerMark">${ans.correct ? "▲" : "▼"}</span>` : ""
       }</div>
       <div class="tokenName">${escapeHtml(p.name)}</div>
       <div class="tokenStep">${step}</div>`;

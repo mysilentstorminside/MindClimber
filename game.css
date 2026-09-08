@@ -500,31 +500,40 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 }
 
 #playerTokens { position: absolute; inset: 0; z-index: 3; }
-/* Ένδειξη σωστής/λάθος απάντησης πάνω στο avatar του βουνού */
+/* Ένδειξη απάντησης: πράσινο βέλος πάνω = σωστά, κόκκινο κάτω = λάθος.
+   Μπαίνει ΕΞΩ από το οβάλ του avatar ώστε να μην το καλύπτει. */
 .tokenAvatarWrap { position: relative; }
 .playerToken .answerMark {
   position: absolute;
-  top: -6px; right: -8px;
-  width: 20px; height: 20px;
-  border-radius: 50%;
-  display: grid; place-items: center;
-  font-size: 12px; font-weight: 800; color: #fff;
-  border: 2px solid #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.35);
-  z-index: 3;
-  animation: markPop 0.35s cubic-bezier(0.34,1.6,0.5,1);
+  top: 50%;
+  left: calc(100% + 3px);
+  transform: translateY(-50%);
+  width: var(--markw, 16px);
+  height: var(--markw, 16px);
+  display: grid;
+  place-items: center;
+  font-size: calc(var(--markw, 16px) * 0.92);
+  line-height: 1;
+  font-weight: 900;
+  z-index: 4;
+  pointer-events: none;
+  animation: markPop 0.32s cubic-bezier(0.34,1.6,0.5,1);
+  text-shadow:
+     0 0 2px #fff,  0 1px 0 #fff,  0 -1px 0 #fff,
+     1px 0 0 #fff, -1px 0 0 #fff,
+     0 2px 4px rgba(0,0,0,0.4);
 }
-.playerToken.answered-correct .answerMark { background: #23a55a; }
-.playerToken.answered-wrong   .answerMark { background: #e0453c; }
+.playerToken.answered-correct .answerMark { color: #16a34a; }
+.playerToken.answered-wrong   .answerMark { color: #dc2626; }
 .playerToken.answered-correct .tokenAvatarWrap img {
-  box-shadow: 0 0 0 3px #23a55a, 0 3px 8px rgba(0,0,0,0.35);
+  box-shadow: 0 0 0 3px #16a34a, 0 3px 8px rgba(0,0,0,0.35);
 }
 .playerToken.answered-wrong .tokenAvatarWrap img {
-  box-shadow: 0 0 0 3px #e0453c, 0 3px 8px rgba(0,0,0,0.35);
+  box-shadow: 0 0 0 3px #dc2626, 0 3px 8px rgba(0,0,0,0.35);
 }
 .playerToken.answered-correct { animation: tokenCheer 0.6s ease; }
 .playerToken.answered-wrong   { animation: tokenShake 0.45s ease; }
-@keyframes markPop { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes markPop { from { transform: translateY(-50%) scale(0); } to { transform: translateY(-50%) scale(1); } }
 @keyframes tokenCheer {
   0%,100% { transform: translateX(-50%) translateY(0); }
   35%     { transform: translateX(-50%) translateY(-9px); }
@@ -536,7 +545,8 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
   75%     { transform: translateX(-50%) rotate(7deg); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .playerToken.answered-correct, .playerToken.answered-wrong { animation: none; }
+  .playerToken.answered-correct, .playerToken.answered-wrong,
+  .playerToken .answerMark { animation: none; }
 }
 
 .playerToken {
@@ -623,6 +633,10 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 #gamePanel {
   position: absolute;
   left: 0; right: 0; bottom: 0;
+  /* Ξεκινά ΑΚΡΙΒΩΣ εκεί που τελειώνει το βουνό. Πριν ήταν μόνο bottom:0,
+     οπότε όταν η ερώτηση ήταν κοντή έμενε μαύρο κενό από πάνω, και όταν
+     ήταν ψηλή (εικόνες) το πάνελ σκέπαζε τον παίκτη στα σκαλιά 0-1. */
+  top: min(calc(100vw / 1.15), 52vh);
   z-index: 6;
   background: rgba(255,255,255,0.96);
   border-radius: 20px 20px 0 0;
