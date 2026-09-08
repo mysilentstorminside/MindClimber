@@ -19,7 +19,8 @@ const QUESTION_SECONDS = 15;
 const QUESTION_SECONDS_EXTRA_DEFAULT = 3;
 const QUESTION_SECONDS_EXTRA_PUZZLES = 6;
 function questionSecondsFor(category) {
-  return QUESTION_SECONDS + (category === "Σπαζοκεφαλιές" ? QUESTION_SECONDS_EXTRA_PUZZLES : QUESTION_SECONDS_EXTRA_DEFAULT);
+  // Η κατηγορία «Σπαζοκεφαλιές» καταργήθηκε, οπότε ο επιπλέον χρόνος δεν ισχύει πια.
+  return QUESTION_SECONDS + QUESTION_SECONDS_EXTRA_DEFAULT;
 }
 const PLAYER_SECONDS = 260;
 const CATEGORY_CHOICE_SECONDS = 8;
