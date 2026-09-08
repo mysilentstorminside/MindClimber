@@ -712,7 +712,10 @@ function renderGame(room) {
     const pos = stepPosition(step, idx, playerCount);
     const tok = document.createElement("div");
     const isActive = room.turn && room.turn.colorPickerId === pid;
-    tok.className = "playerToken"
+    // Σωστό/λάθος πάνω στο avatar: φαίνεται μόλις απαντήσει ο παίκτης
+    const ans = room.turn && room.turn.answers && room.turn.answers[pid];
+    const answeredCls = ans ? (ans.correct ? " answered-correct" : " answered-wrong") : "";
+    tok.className = "playerToken" + answeredCls
       + (p.eliminated ? " eliminated" : "")
       + (step < 3 ? " lowStep" : "")
       + (pid === myPlayerId ? " is-me" : "")
@@ -725,7 +728,9 @@ function renderGame(room) {
     // Compact token: no turn text (turn is shown in the answer-status row)
     tok.innerHTML = `
       <div class="tokenTimer">${formatTimeLeft(computeLiveTimeLeft(pid, p, room))}</div>
-      <div class="tokenAvatarWrap"><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3"></div>
+      <div class="tokenAvatarWrap"><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3">${
+        ans ? `<span class="answerMark">${ans.correct ? "✓" : "✗"}</span>` : ""
+      }</div>
       <div class="tokenName">${escapeHtml(p.name)}</div>
       <div class="tokenStep">${step}</div>`;
     tokenWrap.appendChild(tok);

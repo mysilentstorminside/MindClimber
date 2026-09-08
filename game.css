@@ -263,7 +263,10 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 #climbZone {
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 40vh;
+  /* Το ύψος ακολουθεί το πλάτος στην αναλογία της εικόνας (1.15).
+     Με σταθερό 40vh, σε κοντές οθόνες το cover έκοβε ~59px από πάνω και
+     τα σκαλιά μετατοπίζονταν — οι παίκτες έπεφταν χαμηλότερα από τη σκάλα. */
+  height: min(calc(100vw / 1.15), 52vh);
   overflow: hidden;
   z-index: 1;
   /* Sky → distant hills → grass */
@@ -497,6 +500,45 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 }
 
 #playerTokens { position: absolute; inset: 0; z-index: 3; }
+/* Ένδειξη σωστής/λάθος απάντησης πάνω στο avatar του βουνού */
+.tokenAvatarWrap { position: relative; }
+.playerToken .answerMark {
+  position: absolute;
+  top: -6px; right: -8px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 12px; font-weight: 800; color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.35);
+  z-index: 3;
+  animation: markPop 0.35s cubic-bezier(0.34,1.6,0.5,1);
+}
+.playerToken.answered-correct .answerMark { background: #23a55a; }
+.playerToken.answered-wrong   .answerMark { background: #e0453c; }
+.playerToken.answered-correct .tokenAvatarWrap img {
+  box-shadow: 0 0 0 3px #23a55a, 0 3px 8px rgba(0,0,0,0.35);
+}
+.playerToken.answered-wrong .tokenAvatarWrap img {
+  box-shadow: 0 0 0 3px #e0453c, 0 3px 8px rgba(0,0,0,0.35);
+}
+.playerToken.answered-correct { animation: tokenCheer 0.6s ease; }
+.playerToken.answered-wrong   { animation: tokenShake 0.45s ease; }
+@keyframes markPop { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes tokenCheer {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  35%     { transform: translateX(-50%) translateY(-9px); }
+  70%     { transform: translateX(-50%) translateY(-3px); }
+}
+@keyframes tokenShake {
+  0%,100% { transform: translateX(-50%) rotate(0); }
+  25%     { transform: translateX(-50%) rotate(-7deg); }
+  75%     { transform: translateX(-50%) rotate(7deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .playerToken.answered-correct, .playerToken.answered-wrong { animation: none; }
+}
+
 .playerToken {
   position: absolute;
   transition: bottom 0.9s cubic-bezier(0.68,-0.3,0.27,1.4), left 0.9s cubic-bezier(0.68,-0.3,0.27,1.4), width 0.9s ease, height 0.9s ease;
@@ -586,7 +628,7 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
   border-radius: 20px 20px 0 0;
   padding: 10px 14px calc(12px + env(safe-area-inset-bottom, 0px));
   box-shadow: 0 -4px 16px rgba(0,0,0,0.2);
-  max-height: calc(100vh - 40vh - 8px);
+  max-height: calc(100vh - min(100vw / 1.15, 52vh) - 8px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -785,9 +827,12 @@ body { background: #000; color: #1b2b3a; }
 
 /* Give maps and photos more room; flags stay small anyway. */
 #questionImage {
-  height: 30vh;
-  max-height: 280px;
+  height: 26vh;
+  max-height: 260px;
   background: #f4f7f9;
+  object-fit: contain;
+  object-position: center center;
+  border: 1px solid rgba(0,0,0,0.06);
 }
 @media (max-height: 700px) {
   #questionImage { height: 24vh; max-height: 200px; }
@@ -1366,7 +1411,7 @@ label { color: #94a3b8; }
 
 /* Keep game panel fully on-screen */
 #gamePanel {
-  max-height: calc(100vh - 40vh - 4px) !important;
+  max-height: calc(100vh - min(100vw / 1.15, 52vh) - 4px) !important;
 }
 #gameScreen.active {
   overflow: hidden;
