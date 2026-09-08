@@ -400,13 +400,13 @@ let staircaseBuilt = false;
 let lastStaircasePlayerCount = 0;
 // Climb mapping: leave room at bottom so avatar at step 0 is fully visible
 // above the question panel. Compress rungs toward the upper band.
-const STEP_BASE_BOTTOM = 12;   // % — above grass
-const STEP_TOP_BOTTOM = 78;    // % — leaves room for flag above step 30
+const STEP_BASE_BOTTOM = 10.7;   // % — above grass
+const STEP_TOP_BOTTOM = 64.4;    // % — leaves room for flag above step 30
 const PEAK_BOTTOM_OFFSET = 0;
 
 /** Mountain silhouette widths (% of climb zone) by player count. */
-const LANE_SPREAD_TOP = 21;    // % — μετρημένο από το artwork στην κορυφή
-const LANE_SPREAD_BASE = 36;   // % — και στη βάση
+const LANE_SPREAD_TOP = 23.2;    // % — μετρημένο από το artwork στην κορυφή
+const LANE_SPREAD_BASE = 36.6;   // % — και στη βάση
 
 const MOUNTAIN_SHAPE = {
   1: { base: 52, top: 12 },
@@ -699,17 +699,10 @@ function renderGame(room) {
 
   buildStaircase(playerCount);
 
+  // Η κορυφή δείχνει πλέον το χρυσό αγαλματίδιο, που είναι ζωγραφισμένο
+  // μέσα στην εικόνα φόντου — δεν χρειάζονται σημαίες.
   const peakWrap = $("peakFlags");
-  peakWrap.innerHTML = "";
-  order.forEach((_, idx) => {
-    const pos = stepPosition(MAX_STEPS, idx, playerCount);
-    const flag = document.createElement("span");
-    flag.className = "peakFlag";
-    flag.style.left = pos.left + "%";
-    flag.textContent = "🚩";
-    peakWrap.appendChild(flag);
-  });
-  // Flags sit just above step 30 so they stay visible
+  if (peakWrap.childNodes.length) peakWrap.innerHTML = "";
   $("peakMarker").style.bottom = (STEP_TOP_BOTTOM + 6) + "%";
 
   const tokenWrap = $("playerTokens");
