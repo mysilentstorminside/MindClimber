@@ -1430,3 +1430,29 @@ label { color: #94a3b8; }
 #gameScreen.active {
   overflow: hidden;
 }
+
+
+/* ===== Αξιοποίηση του κενού χώρου στο κάτω μέρος =====
+   Το πάνελ γίνεται στήλη flex και οι απαντήσεις απλώνονται ώστε να
+   γεμίζουν ό,τι περισσεύει, αντί να αφήνουν λευκό κενό από κάτω. */
+#gamePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#answerRectangle {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 8px;
+  min-height: 0;
+}
+#answerRectangle .answerOption {
+  flex: 1 1 0;
+  min-height: 52px;
+  font-size: 1.02rem;
+}
+#questionRectangle { flex: 0 0 auto; }
+#categoryChoiceRow, #colorChoiceRow { flex: 0 0 auto; }
+#allAnswersStatus { flex: 0 0 auto; margin-top: auto; }

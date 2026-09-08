@@ -400,13 +400,17 @@ let staircaseBuilt = false;
 let lastStaircasePlayerCount = 0;
 // Climb mapping: leave room at bottom so avatar at step 0 is fully visible
 // above the question panel. Compress rungs toward the upper band.
-const STEP_BASE_BOTTOM = 10.7;   // % — above grass
-const STEP_TOP_BOTTOM = 64.4;    // % — leaves room for flag above step 30
-const PEAK_BOTTOM_OFFSET = 0;
-
-/** Mountain silhouette widths (% of climb zone) by player count. */
-const LANE_SPREAD_TOP = 23.2;    // % — μετρημένο από το artwork στην κορυφή
-const LANE_SPREAD_BASE = 36.6;   // % — και στη βάση
+/* Τα μονοπάτια ζωγραφίστηκαν από εμάς πάνω στις εικόνες, στις ΙΔΙΕΣ
+   συντεταγμένες που χρησιμοποιεί ο κώδικας. Άρα η ευθυγράμμιση είναι
+   εξασφαλισμένη εξ ορισμού και χρειάζεται μία μόνο ρύθμιση. */
+const STEP_BASE_BOTTOM = 11.5;
+const STEP_TOP_BOTTOM = 60.5;
+const LANE_SPREAD_BASE = 35.0;
+const LANE_SPREAD_TOP = 23.0;
+function geoFor() {
+  return { base: STEP_BASE_BOTTOM, top: STEP_TOP_BOTTOM,
+           spreadBase: LANE_SPREAD_BASE, spreadTop: LANE_SPREAD_TOP };
+}
 
 const MOUNTAIN_SHAPE = {
   1: { base: 52, top: 12 },
@@ -433,12 +437,10 @@ function mountainWidthAt(step, playerCount) {
 
 /** Horizontal center of each player lane at a given step */
 function laneCenters(step, playerCount) {
-  /* Οι σκάλες είναι ζωγραφισμένες στην εικόνα και ανοίγουν σαν βεντάλια όσο
-     κατεβαίνουν. Μετρημένο από το artwork: ±21% στην κορυφή, ±36% στη βάση.
-     Οι παίκτες πατούν πάντα πάνω σε μία από τις 5 ζωγραφισμένες σκάλες. */
   const count = Math.max(1, Math.min(5, playerCount || 1));
+  const g = geoFor(count);
   const t = Math.max(0, Math.min(MAX_STEPS, step)) / MAX_STEPS;   // 0 βάση, 1 κορυφή
-  const halfSpread = LANE_SPREAD_BASE + (LANE_SPREAD_TOP - LANE_SPREAD_BASE) * t;
+  const halfSpread = g.spreadBase + (g.spreadTop - g.spreadBase) * t;
   const grid = [-1, -0.5, 0, 0.5, 1].map(k => 50 + k * halfSpread);
   const PICK = { 1: [2], 2: [1, 3], 3: [0, 2, 4], 4: [0, 1, 3, 4], 5: [0, 1, 2, 3, 4] };
   return PICK[count].map(k => grid[k]);
@@ -647,7 +649,8 @@ function buildStaircase(playerCount) {
 function stepPosition(step, orderIndex, playerCount) {
   const count = Math.max(1, Math.min(5, playerCount || 1));
   const s = Math.max(0, Math.min(MAX_STEPS, step));
-  const bottom = STEP_BASE_BOTTOM + (s / MAX_STEPS) * (STEP_TOP_BOTTOM - STEP_BASE_BOTTOM);
+  const g = geoFor(count);
+  const bottom = g.base + (s / MAX_STEPS) * (g.top - g.base);
   const centers = laneCenters(s, count);
   const left = centers[Math.min(orderIndex, centers.length - 1)];
 
@@ -703,7 +706,7 @@ function renderGame(room) {
   // μέσα στην εικόνα φόντου — δεν χρειάζονται σημαίες.
   const peakWrap = $("peakFlags");
   if (peakWrap.childNodes.length) peakWrap.innerHTML = "";
-  $("peakMarker").style.bottom = (STEP_TOP_BOTTOM + 6) + "%";
+  $("peakMarker").style.bottom = (geoFor(playerCount).top + 6) + "%";
 
   const tokenWrap = $("playerTokens");
   tokenWrap.innerHTML = "";
