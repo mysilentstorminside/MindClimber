@@ -32120,7 +32120,7 @@ window.QUESTION_BANK = {
         "img": "assets/questions_pics/flag_aigyptos.svg"
       },
       {
-        "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
+        "q": "Ποια χώρα αντιπροσωπεύει αυτή η παραδοσιακή ενδυμασία;",
         "o": [
           "Ακτή Ελεφαντοστού",
           "Ινδία",
@@ -32251,7 +32251,7 @@ window.QUESTION_BANK = {
         "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Notre-Dame_de_Paris.jpg?width=650"
       },
       {
-        "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
+        "q": "Ποια χώρα αντιπροσωπεύει αυτή η παραδοσιακή ενδυμασία;",
         "o": [
           "Ισπανία",
           "Ελλάδα",
@@ -32740,7 +32740,7 @@ window.QUESTION_BANK = {
         "img": "assets/questions_pics/flag_italia.svg"
       },
       {
-        "q": "Ποια χώρα αντιπροσωπεύει αυτή η σημαία;",
+        "q": "Ποια χώρα αντιπροσωπεύει αυτή η παραδοσιακή ενδυμασία;",
         "o": [
           "Πορτογαλία",
           "Ισπανία",
@@ -33197,7 +33197,7 @@ window.QUESTION_BANK = {
         "img": "assets/questions_pics/flag_letonia.svg"
       },
       {
-        "q": "Τι απεικονίζει αυτή η εικόνα;",
+        "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
         "o": [
           "Τίγρης της Βεγγάλης",
           "Λεοπάρδαλη",
@@ -33251,7 +33251,7 @@ window.QUESTION_BANK = {
         "imgFallback": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcatraz_Island.jpg?width=650"
       },
       {
-        "q": "Τι απεικονίζει αυτή η εικόνα;",
+        "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
         "o": [
           "Κοάλα",
           "Πάντα",
@@ -34028,7 +34028,7 @@ window.QUESTION_BANK = {
         "a": "B"
       },
       {
-        "q": "Τι απεικονίζει αυτή η εικόνα;",
+        "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
         "o": [
           "Ζέβρα",
           "Καμηλοπάρδαλη",
@@ -34070,7 +34070,7 @@ window.QUESTION_BANK = {
         "img": "assets/questions_pics/flag_venezoyela.svg"
       },
       {
-        "q": "Τι απεικονίζει αυτή η εικόνα;",
+        "q": "Ποιο ζώο απεικονίζει αυτή η εικόνα;",
         "o": [
           "Φάλαινα Φυσητήρας",
           "Δελφίνι",
