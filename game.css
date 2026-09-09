@@ -1455,4 +1455,49 @@ label { color: #94a3b8; }
 }
 #questionRectangle { flex: 0 0 auto; }
 #categoryChoiceRow, #colorChoiceRow { flex: 0 0 auto; }
-#allAnswersStatus { flex: 0 0 auto; margin-top: auto; }
+
+
+
+/* ===== ΔΙΟΡΘΩΣΕΙΣ ΔΙΑΤΑΞΗΣ =====
+   Σε στήλη flex τα παιδιά συρρικνώνονται από προεπιλογή. Γι' αυτό η
+   φωτογραφία της ερώτησης έβγαινε μικροσκοπική και τα σήματα των
+   παικτών ανέβαιναν πάνω στην ερώτηση. */
+#gamePanel { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+#questionImage {
+  flex: 0 0 auto;
+  height: 34vh;
+  max-height: 340px;
+  min-height: 180px;
+  width: 100%;
+  object-fit: contain;
+}
+#questionImage[src*=".svg"] { height: 24vh; max-height: 240px; min-height: 130px; }
+#questionRectangle, #categoryChoiceRow, #colorChoiceRow,
+#qTimerWrap, #choiceTimerWrap, #selectedCategoryLabel { flex: 0 0 auto; }
+#allAnswersStatus { flex: 0 0 auto; margin-top: 8px; }
+#answerRectangle { flex: 0 1 auto; }
+#answerRectangle .answerOption { flex: 0 0 auto; min-height: 50px; }
+
+/* ===== ΒΕΛΗ ΣΩΣΤΟΥ / ΛΑΘΟΥΣ, ΕΞΩ ΑΠΟ ΤΟ ΟΒΑΛ ===== */
+.playerToken, .tokenAvatarWrap { overflow: visible; }
+.playerToken .answerMark {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 6px);
+  transform: translateY(-50%);
+  width: var(--markw, 18px);
+  height: var(--markw, 18px);
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.45);
+  display: grid;
+  place-items: center;
+  font-size: calc(var(--markw, 18px) * 0.62);
+  line-height: 1;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: none;
+  z-index: 6;
+}
+.playerToken.answered-correct .answerMark { background: #16a34a; }
+.playerToken.answered-wrong   .answerMark { background: #dc2626; }

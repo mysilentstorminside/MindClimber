@@ -400,17 +400,22 @@ let staircaseBuilt = false;
 let lastStaircasePlayerCount = 0;
 // Climb mapping: leave room at bottom so avatar at step 0 is fully visible
 // above the question panel. Compress rungs toward the upper band.
-/* Τα μονοπάτια ζωγραφίστηκαν από εμάς πάνω στις εικόνες, στις ΙΔΙΕΣ
-   συντεταγμένες που χρησιμοποιεί ο κώδικας. Άρα η ευθυγράμμιση είναι
-   εξασφαλισμένη εξ ορισμού και χρειάζεται μία μόνο ρύθμιση. */
-const STEP_BASE_BOTTOM = 11.5;
-const STEP_TOP_BOTTOM = 60.5;
-const LANE_SPREAD_BASE = 35.0;
-const LANE_SPREAD_TOP = 23.0;
-function geoFor() {
-  return { base: STEP_BASE_BOTTOM, top: STEP_TOP_BOTTOM,
-           spreadBase: LANE_SPREAD_BASE, spreadTop: LANE_SPREAD_TOP };
+/* Μετρήθηκαν τα μονοπάτια σε κάθε εικόνα ξεχωριστά. Οι εικόνες
+   δημιουργήθηκαν χωριστά, οπότε δεν έχουν ακριβώς την ίδια γεωμετρία. */
+const MOUNTAIN_GEO = {
+  1: { base: 14.2, top: 59.6, spreadBase: 37.0, spreadTop: 26.0 },
+  2: { base: 9.2, top: 54.4, spreadBase: 36.7, spreadTop: 23.0 },
+  3: { base: 10.5, top: 52.0, spreadBase: 33.0, spreadTop: 19.0 },
+  4: { base: 8.1, top: 59.7, spreadBase: 35.3, spreadTop: 21.6 },
+  5: { base: 10.3, top: 59.7, spreadBase: 37.4, spreadTop: 23.0 },
+};
+function geoFor(count) {
+  return MOUNTAIN_GEO[Math.max(1, Math.min(5, count || 1))] || MOUNTAIN_GEO[1];
 }
+const STEP_BASE_BOTTOM = MOUNTAIN_GEO[1].base;
+const STEP_TOP_BOTTOM = MOUNTAIN_GEO[1].top;
+const LANE_SPREAD_BASE = MOUNTAIN_GEO[1].spreadBase;
+const LANE_SPREAD_TOP = MOUNTAIN_GEO[1].spreadTop;
 
 const MOUNTAIN_SHAPE = {
   1: { base: 52, top: 12 },
