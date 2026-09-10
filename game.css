@@ -812,9 +812,10 @@ label { display: block; font-size: 0.85rem; color: #55697a; font-weight: 600; ma
 #questionImage {
   display: block;
   width: 100%;
-  height: 27vh;
-  max-height: 230px;
-  padding: 6px;
+  height: 48vh;
+  max-height: 560px;
+  min-height: 280px;
+  padding: 8px;
   box-sizing: border-box;
   object-fit: contain;
   overflow: hidden;
@@ -839,17 +840,27 @@ body { background: #000; color: #1b2b3a; }
 }
 #questionImage.imgFailed { display: none !important; }
 
-/* Give maps and photos more room; flags stay small anyway. */
+/* Give maps and photos more room. Flags still look sharp; photos become readable. */
 #questionImage {
-  height: 26vh;
-  max-height: 260px;
+  height: 48vh;
+  max-height: 560px;
+  min-height: 280px;
   background: #f4f7f9;
   object-fit: contain;
   object-position: center center;
   border: 1px solid rgba(0,0,0,0.06);
 }
 @media (max-height: 700px) {
-  #questionImage { height: 24vh; max-height: 200px; }
+  #questionImage { height: 40vh; max-height: 440px; min-height: 220px; }
+}
+@media (max-height: 560px) {
+  #questionImage { height: 34vh; max-height: 340px; min-height: 180px; }
+}
+/* Flags stay smaller and sharp */
+#questionImage.isFlag {
+  height: 22vh;
+  max-height: 200px;
+  min-height: 120px;
 }
 
 /* Comfortable, thumb-sized answer targets (was 11px padding). */
@@ -1468,8 +1479,8 @@ label { color: #94a3b8; }
 #questionImage {
   flex: 1 1 auto;
   height: auto;
-  min-height: 96px;
-  max-height: 30vh;
+  min-height: 220px;
+  max-height: 52vh;
   width: 100%;
   object-fit: contain;
   object-position: center;
@@ -1485,7 +1496,7 @@ label { color: #94a3b8; }
 @media (max-height: 720px) {
   #answerRectangle .answerOption { min-height: 44px; font-size: 0.95rem; padding: 9px 12px; }
   #answerRectangle { gap: 6px; }
-  #questionImage { min-height: 84px; max-height: 26vh; }
+  #questionImage { min-height: 180px; max-height: 44vh; }
   #allAnswersStatus { gap: 5px; margin-top: 4px; }
   #allAnswersStatus .answerStatusChip { transform: scale(0.86); transform-origin: center; }
 }
@@ -1527,7 +1538,7 @@ label { color: #94a3b8; }
 @media (max-height: 700px) {
   #answerRectangle .answerOption { min-height: 40px; font-size: 0.9rem; padding: 7px 11px; }
   #answerRectangle { gap: 5px; }
-  #questionImage { min-height: 62px; max-height: 21vh; }
+  #questionImage { min-height: 150px; max-height: 38vh; }
   #questionRectangle { font-size: 0.86rem; padding: 6px 9px; margin-bottom: 4px; }
   #allAnswersStatus { gap: 4px; margin-top: 3px; }
   #allAnswersStatus .answerStatusChip { transform: scale(0.68); transform-origin: center; }

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MindClimber Online — Παιχνίδι Γνώσεων (multiplayer)
+   MindClimber Online — Trivia Game (multiplayer)
    Uses window.QUESTION_BANK + window.QUESTION_CATEGORIES
    ========================================================================== */
 
@@ -19,7 +19,7 @@ const QUESTION_SECONDS = 15;
 const QUESTION_SECONDS_EXTRA_DEFAULT = 3;
 const QUESTION_SECONDS_EXTRA_PUZZLES = 6;
 function questionSecondsFor(category) {
-  // Η κατηγορία «Σπαζοκεφαλιές» καταργήθηκε, οπότε ο επιπλέον χρόνος δεν ισχύει πια.
+  // The Puzzles category has been removed.
   return QUESTION_SECONDS + QUESTION_SECONDS_EXTRA_DEFAULT;
 }
 const PLAYER_SECONDS = 260;
@@ -140,9 +140,9 @@ function initHome() {
   if (!checkMobile()) return;
   setMuted(isMuted);
   if (!firebaseReady) {
-    $("homeError").textContent = "Το online multiplayer χρειάζεται σύνδεση Firebase.";
+    $("homeError").textContent = "Online multiplayer requires a Firebase connection.";
   } else if (!window.QUESTION_BANK) {
-    $("homeError").textContent = "Δεν φορτώθηκε το questions_data.js.";
+    $("homeError").textContent = "questions_data.js failed to load.";
   } else {
     $("homeError").textContent = "";
   }
@@ -162,13 +162,13 @@ $("joinRoomBtn").addEventListener("click", async () => {
   if (!firebaseReady) return;
   const code = $("joinCodeInput").value.trim().toUpperCase();
   $("homeError").textContent = "";
-  if (code.length < 4) { $("homeError").textContent = "Δώσε έγκυρο κωδικό."; return; }
+  if (code.length < 4) { $("homeError").textContent = "Please enter a valid code."; return; }
   const snap = await db.ref(`rooms/${code}`).once("value");
-  if (!snap.exists()) { $("homeError").textContent = "Δεν βρέθηκε δωμάτιο."; return; }
+  if (!snap.exists()) { $("homeError").textContent = "Room not found."; return; }
   const room = snap.val();
-  if (room.status !== "lobby") { $("homeError").textContent = "Το παιχνίδι έχει ήδη ξεκινήσει."; return; }
+  if (room.status !== "lobby") { $("homeError").textContent = "The game has already started."; return; }
   if (room.players && Object.keys(room.players).length >= MAX_PLAYERS) {
-    $("homeError").textContent = "Το δωμάτιο είναι γεμάτο."; return;
+    $("homeError").textContent = "The room is full."; return;
   }
   isHost = false; isSolo = false; beginSetup(code);
 });
@@ -236,8 +236,8 @@ function watchTakenAvatars() {
 }
 
 $("confirmSetupBtn").addEventListener("click", async () => {
-  const name = $("playerNameInput").value.trim() || "Παίκτης";
-  if (!selectedAvatar) { $("setupError").textContent = "Επίλεξε avatar."; return; }
+  const name = $("playerNameInput").value.trim() || "Player";
+  if (!selectedAvatar) { $("setupError").textContent = "Please select an avatar."; return; }
   $("setupError").textContent = "";
   const roomBase = `rooms/${currentRoomCode}`;
   if (isHost) {
@@ -255,7 +255,7 @@ $("confirmSetupBtn").addEventListener("click", async () => {
     const snap = await db.ref(`${roomBase}/players`).once("value");
     const players = snap.val() || {};
     const order = Object.keys(players).length;
-    if (order >= MAX_PLAYERS) { $("setupError").textContent = "Γεμάτο."; return; }
+    if (order >= MAX_PLAYERS) { $("setupError").textContent = "Room is full."; return; }
     await db.ref(`${roomBase}/players/${myPlayerId}`).set({
       name, avatar: selectedAvatar, step: 0, order, timeLeft: PLAYER_SECONDS, eliminated: false, joinedAt: firebase.database.ServerValue.TIMESTAMP,
     });
@@ -342,7 +342,7 @@ function renderLobby(room) {
     container.appendChild(row);
   });
   const count = list.length;
-  $("lobbyHint").textContent = count < 2 ? "Χρειάζονται τουλάχιστον 2 παίκτες." : `${count}/${MAX_PLAYERS} παίκτες.`;
+  $("lobbyHint").textContent = count < 2 ? "At least 2 players are required." : `${count}/${MAX_PLAYERS} players.`;
   $("startGameBtn").classList.toggle("hidden", !(isHost && count >= 2));
 }
 
@@ -607,7 +607,7 @@ function buildStaircase(playerCount) {
   const wrap = $("stairLines");
   wrap.innerHTML = "";
 
-  // Το βουνό έρχεται ως background-image από το CSS (κλάση players-N).
+  // The mountain comes as a CSS background-image (players-N class).
 
   // Grass + flowers (no bird)
   const grass = document.createElement("div");
@@ -633,7 +633,7 @@ function buildStaircase(playerCount) {
     const centers = laneCenters(step, count);
     const isMajor = labelSteps.has(step) || step === MAX_STEPS;
 
-    // Τα πατήματα είναι ήδη ζωγραφισμένα στην εικόνα φόντου, οπότε δεν
+    // Τα steps είναι ήδη ζωγραφισμένα στην εικόνα φόντου, οπότε δεν
     // σχεδιάζουμε δικά μας — μόνο τους δείκτες 10/20 στο πλάι.
     // Labels 10 & 20 glued to the left of the leftmost tread
     if (labelSteps.has(step)) {
@@ -720,7 +720,7 @@ function renderGame(room) {
     const pos = stepPosition(step, idx, playerCount);
     const tok = document.createElement("div");
     const isActive = room.turn && room.turn.colorPickerId === pid;
-    // Σωστό/λάθος πάνω στο avatar: φαίνεται μόλις απαντήσει ο παίκτης
+    // Correct/wrong indicator on avatar: shown as soon as the player answers
     const ans = room.turn && room.turn.answers && room.turn.answers[pid];
     const answeredCls = ans ? (ans.correct ? " answered-correct" : " answered-wrong") : "";
     tok.className = "playerToken" + answeredCls
@@ -733,7 +733,7 @@ function renderGame(room) {
     tok.style.bottom = pos.bottom + "%";
     tok.style.width = pos.size + "px";
     tok.style.height = pos.size + "px";
-    // Με 4-5 παίκτες οι λωρίδες πλησιάζουν, οπότε το βέλος μικραίνει
+    // Με 4-5 players οι λωρίδες πλησιάζουν, οπότε το βέλος μικραίνει
     // ώστε να μη μπαίνει στον χώρο του διπλανού παίκτη.
     const aw = playerCount >= 4 ? 8 : 11;
     tok.style.setProperty("--arrowW", aw + "px");
@@ -768,7 +768,7 @@ function renderGame(room) {
       startLocalChoiceTimer(turn, "category");
     } else {
       $("waitingNote").classList.remove("hidden");
-      $("waitingNote").textContent = "Περιμένεις επιλογή κατηγορίας…";
+      $("waitingNote").textContent = "Waiting for category selection…";
     }
   } else if (turn.phase === "difficulty") {
     $("selectedCategoryLabel").textContent = turn.category || "";
@@ -778,12 +778,12 @@ function renderGame(room) {
       startLocalChoiceTimer(turn, "difficulty");
     } else {
       $("waitingNote").classList.remove("hidden");
-      $("waitingNote").textContent = "Περιμένεις επιλογή δυσκολίας…";
+      $("waitingNote").textContent = "Waiting for difficulty selection…";
     }
   } else if (turn.phase === "question" || turn.phase === "result") {
     $("qTimerWrap").classList.remove("hidden");
     if (turn.question && turn.question.img) preloadImage(turn.question.img);
-    $("selectedCategoryLabel").textContent = (turn.category || "") + (turn.color ? " · " + ({green:"Εύκολο",blue:"Μέτριο",orange:"Δύσκολο"}[turn.color]||"") : "");
+    $("selectedCategoryLabel").textContent = (turn.category || "") + (turn.color ? " · " + ({green:"Easy",blue:"Medium",orange:"Hard"}[turn.color]||"") : "");
     $("selectedCategoryLabel").classList.remove("hidden");
     renderQuestion(turn, turn.phase === "result");
     $("answerRectangle").classList.remove("hidden");
@@ -859,12 +859,17 @@ function renderQuestion(turn, showResult) {
         rect.textContent = text || "Η εικόνα δεν φορτώθηκε.";
       };
       img.onload = () => { img.classList.remove("hidden"); };
+      // Flags stay compact; photos/landmarks get the large display size
+      const srcLower = String(q.img || "").toLowerCase();
+      const isFlag = srcLower.includes("flag_") || srcLower.includes("/flag") || srcLower.endsWith(".svg");
+      img.classList.toggle("isFlag", isFlag);
       img.src = q.img;
     }
     if (!img.classList.contains("imgFailed")) img.classList.remove("hidden");
   } else {
     img.classList.add("hidden");
     img.removeAttribute("src");
+    img.classList.remove("isFlag");
     lastRenderedImgSrc = null;
   }
 
