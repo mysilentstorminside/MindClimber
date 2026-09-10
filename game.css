@@ -1458,46 +1458,78 @@ label { color: #94a3b8; }
 
 
 
-/* ===== ΔΙΟΡΘΩΣΕΙΣ ΔΙΑΤΑΞΗΣ =====
-   Σε στήλη flex τα παιδιά συρρικνώνονται από προεπιλογή. Γι' αυτό η
-   φωτογραφία της ερώτησης έβγαινε μικροσκοπική και τα σήματα των
-   παικτών ανέβαιναν πάνω στην ερώτηση. */
-#gamePanel { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+
+
+/* ===== ΔΙΑΤΑΞΗ ΠΑΝΕΛ =====
+   Η εικόνα είχε ΣΤΑΘΕΡΟ ύψος, οπότε το άθροισμα ξεπερνούσε το πάνελ κατά
+   86-218px και η σειρά των παικτών έπεφτε πάνω στις απαντήσεις. Τώρα η
+   εικόνα είναι το μόνο ελαστικό στοιχείο: παίρνει ό,τι περισσεύει. */
+#gamePanel { overflow: hidden; }
 #questionImage {
-  flex: 0 0 auto;
-  height: 34vh;
-  max-height: 340px;
-  min-height: 180px;
+  flex: 1 1 auto;
+  height: auto;
+  min-height: 96px;
+  max-height: 30vh;
   width: 100%;
   object-fit: contain;
+  object-position: center;
 }
-#questionImage[src*=".svg"] { height: 24vh; max-height: 240px; min-height: 130px; }
-#questionRectangle, #categoryChoiceRow, #colorChoiceRow,
-#qTimerWrap, #choiceTimerWrap, #selectedCategoryLabel { flex: 0 0 auto; }
-#allAnswersStatus { flex: 0 0 auto; margin-top: 8px; }
-#answerRectangle { flex: 0 1 auto; }
+#questionRectangle, #categoryChoiceRow, #colorChoiceRow, #qTimerWrap,
+#choiceTimerWrap, #selectedCategoryLabel, #answerRectangle,
+#allAnswersStatus, #waitingNote { flex: 0 0 auto; }
+#answerRectangle { display: flex; flex-direction: column; gap: 8px; }
 #answerRectangle .answerOption { flex: 0 0 auto; min-height: 50px; }
+#allAnswersStatus { margin-top: 6px; }
 
-/* ===== ΒΕΛΗ ΣΩΣΤΟΥ / ΛΑΘΟΥΣ, ΕΞΩ ΑΠΟ ΤΟ ΟΒΑΛ ===== */
+/* κοντές οθόνες: λίγο πιο συμπαγή ώστε να χωράει η εικόνα */
+@media (max-height: 720px) {
+  #answerRectangle .answerOption { min-height: 44px; font-size: 0.95rem; padding: 9px 12px; }
+  #answerRectangle { gap: 6px; }
+  #questionImage { min-height: 84px; max-height: 26vh; }
+  #allAnswersStatus { gap: 5px; margin-top: 4px; }
+  #allAnswersStatus .answerStatusChip { transform: scale(0.86); transform-origin: center; }
+}
+
+/* ===== ΒΕΛΗ: ΜΕΓΑΛΑ, ΣΤΟ ΠΛΑΙ, ΕΞΩ ΑΠΟ ΤΟ ΟΒΑΛ =====
+   Σχεδιασμένα με CSS borders (πραγματικό τρίγωνο), όχι γραμματοσειρά,
+   ώστε να είναι ευκρινή σε κάθε μέγεθος. */
 .playerToken, .tokenAvatarWrap { overflow: visible; }
 .playerToken .answerMark {
   position: absolute;
   top: 50%;
-  left: calc(100% + 6px);
+  left: calc(100% + 7px);
   transform: translateY(-50%);
-  width: var(--markw, 18px);
-  height: var(--markw, 18px);
-  border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.45);
-  display: grid;
-  place-items: center;
-  font-size: calc(var(--markw, 18px) * 0.62);
-  line-height: 1;
-  font-weight: 900;
-  color: #fff;
-  text-shadow: none;
-  z-index: 6;
+  width: 0; height: 0;
+  background: none !important;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0;
+  z-index: 8;
+  pointer-events: none;
+  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff)
+          drop-shadow(0 2px 3px rgba(0,0,0,0.5));
 }
-.playerToken.answered-correct .answerMark { background: #16a34a; }
-.playerToken.answered-wrong   .answerMark { background: #dc2626; }
+.playerToken.answered-correct .answerMark {
+  border-left: var(--arrowW, 11px) solid transparent;
+  border-right: var(--arrowW, 11px) solid transparent;
+  border-bottom: var(--arrowH, 17px) solid #16a34a;   /* βέλος ΠΑΝΩ */
+}
+.playerToken.answered-wrong .answerMark {
+  border-left: var(--arrowW, 11px) solid transparent;
+  border-right: var(--arrowW, 11px) solid transparent;
+  border-top: var(--arrowH, 17px) solid #dc2626;      /* βέλος ΚΑΤΩ */
+}
+
+
+/* Πολύ κοντές οθόνες (iPhone SE και παρόμοιες): κάθε pixel μετράει,
+   ώστε να μη σκεπάζονται οι απαντήσεις σε ερωτήσεις εικόνας. */
+@media (max-height: 700px) {
+  #answerRectangle .answerOption { min-height: 40px; font-size: 0.9rem; padding: 7px 11px; }
+  #answerRectangle { gap: 5px; }
+  #questionImage { min-height: 62px; max-height: 21vh; }
+  #questionRectangle { font-size: 0.86rem; padding: 6px 9px; margin-bottom: 4px; }
+  #allAnswersStatus { gap: 4px; margin-top: 3px; }
+  #allAnswersStatus .answerStatusChip { transform: scale(0.68); transform-origin: center; }
+  #qTimerWrap { margin-bottom: 4px; }
+}

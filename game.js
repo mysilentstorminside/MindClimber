@@ -735,7 +735,9 @@ function renderGame(room) {
     tok.style.height = pos.size + "px";
     // Με 4-5 παίκτες οι λωρίδες πλησιάζουν, οπότε το βέλος μικραίνει
     // ώστε να μη μπαίνει στον χώρο του διπλανού παίκτη.
-    tok.style.setProperty("--markw", (playerCount >= 4 ? 10 : 16) + "px");
+    const aw = playerCount >= 4 ? 8 : 11;
+    tok.style.setProperty("--arrowW", aw + "px");
+    tok.style.setProperty("--arrowH", Math.round(aw * 1.55) + "px");
     // Compact token: no turn text (turn is shown in the answer-status row)
     tok.innerHTML = `
       <div class="tokenTimer">${formatTimeLeft(computeLiveTimeLeft(pid, p, room))}</div>
