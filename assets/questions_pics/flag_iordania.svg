@@ -1,1 +1,7 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200' width='300' height='200' preserveAspectRatio='xMidYMid meet'><rect x='0' y='0.0' width='300' height='66.7' fill='#000000'/><rect x='0' y='66.7' width='300' height='66.7' fill='#FFFFFF'/><rect x='0' y='133.3' width='300' height='66.7' fill='#007A3D'/><polygon points='0,0 120.0,100.0 0,200' fill='#CE1126'/><polygon points='39.0,92.0 40.9,97.4 46.6,97.5 42.0,101.0 43.7,106.5 39.0,103.2 34.3,106.5 36.0,101.0 31.4,97.5 37.1,97.4' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 420">
+<rect width="840" height="420" fill="#007a3d"/>
+<rect width="840" height="280" fill="#fff"/>
+<rect width="840" height="140" fill="#000"/>
+<path d="M0,0V420L420,210z" fill="#ce1126"/>
+<path d="M129.787138,180 136.295394,196.485467 153.242082,191.295306 144.411056,206.662186 159.034975,216.675628 141.51461,219.352347 142.80365,237.029066 129.787138,225 116.770625,237.029066 118.059665,219.352347 100.5393,216.675628 115.163219,206.662186 106.332193,191.295306 123.278882,196.485467 129.787138,180z" fill="#fff"/>
+</svg>
