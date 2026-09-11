@@ -1,1 +1,9 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200' width='300' height='200' preserveAspectRatio='xMidYMid meet'><rect width='300' height='200' fill='#E70013'/><circle cx='150.0' cy='100.0' r='44.0' fill='#FFFFFF'/><rect x='1' y='1' width='298' height='198' fill='none' stroke='rgba(30,45,60,0.35)' stroke-width='2'/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-60 -40 120 80">
+<g fill="#E70013">
+<rect x="-60" y="-40" width="120" height="80"/>
+<circle fill="#FFF" r="20"/>
+<circle r="15"/>
+<circle fill="#FFF" cx="4" r="12"/>
+<path transform="translate(4)scale(9)rotate(-90)" d="M0,-1 L0.58779,0.80902 L-0.95106,-0.30902 L0.95106,-0.30902 L-0.58779,0.80902z"/>
+</g>
+</svg>
