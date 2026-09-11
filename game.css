@@ -1561,3 +1561,94 @@ label { color: #94a3b8; }
   #allAnswersStatus .answerStatusChip { transform: scale(0.68); transform-origin: center; }
   #qTimerWrap { margin-bottom: 4px; }
 }
+
+/* ===== FIX: answer arrows (▲ correct / ▼ wrong) were clipped =====
+   The avatar circle used overflow:hidden to keep the picture round, which also
+   cut off the arrow drawn beside it. The picture itself is now made round,
+   so the circle no longer needs to clip its surroundings. */
+.playerToken .tokenAvatarWrap { overflow: visible; }
+.playerToken .tokenAvatarWrap img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+}
+.playerToken .answerMark.noPop { animation: none; }
+
+/* ===== FIX: picture questions — all answers must be reachable =====
+   Safety net: the panel can always scroll if a very small screen still overflows. */
+#gameScreen #gamePanel {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+/* The picture sits beside the answers instead of above them, so the question,
+   the picture and all three answers fit on screen together. */
+#gamePanel.hasImage {
+  display: grid;
+  grid-template-columns: minmax(0, 44%) minmax(0, 1fr);
+  grid-template-areas:
+    "timer    timer"
+    "label    label"
+    "question question"
+    "image    answers"
+    "status   status";
+  column-gap: 10px;
+  row-gap: 6px;
+  align-content: start;
+}
+#gamePanel.hasImage #qTimerWrap { grid-area: timer; margin-bottom: 0; }
+#gamePanel.hasImage #selectedCategoryLabel { grid-area: label; margin: 0; }
+#gamePanel.hasImage #questionRectangle { grid-area: question; margin: 0; }
+#gamePanel.hasImage #questionImage {
+  grid-area: image;
+  align-self: stretch;
+  width: 100%;
+  height: 100%;
+  min-height: 110px;
+  max-height: 34vh;
+  margin: 0;
+  padding: 6px;
+  object-fit: contain;
+}
+#gamePanel.hasImage #answerRectangle { grid-area: answers; gap: 6px; justify-content: flex-start; }
+#gamePanel.hasImage #answerRectangle .answerOption {
+  min-height: 42px;
+  font-size: 0.92rem;
+  padding: 8px 10px;
+  line-height: 1.2;
+}
+#gamePanel.hasImage #allAnswersStatus { grid-area: status; margin-top: 2px; }
+
+
+/* Long questions (some additional questions run up to ~150 characters):
+   slightly smaller text so all three answers stay on screen. */
+#questionRectangle.longQ { font-size: 0.9rem; line-height: 1.3; }
+@media (max-height: 620px) {
+  #questionRectangle.longQ { font-size: 0.8rem; padding: 5px 8px; }
+  #answerRectangle .answerOption { min-height: 38px; padding: 6px 10px; font-size: 0.88rem; }
+  #answerRectangle { gap: 4px; }
+}
+
+/* ===== Map questions (real country outlines, 400x280) =====
+   Maps need more width than flags so the highlighted country is easy to see. */
+#gamePanel.hasImage.mapQ { grid-template-columns: minmax(0, 54%) minmax(0, 1fr); }
+#gamePanel.hasImage.mapQ #questionImage {
+  padding: 0;
+  border-radius: 10px;
+  background: #cfe6f5;
+  object-fit: contain;
+}
+
+/* ===== FIX: readable titles and buttons on the white cards =====
+   A dark-theme rule made h2 titles and ghost buttons light grey, which was
+   almost invisible on the white "Your Player" and "Room" cards. */
+#setupScreen h2, #lobbyScreen h2, #resultsScreen h2 { color: #21414f; }
+#lobbyScreen .ghostBtn, #setupScreen .ghostBtn, #resultsScreen .ghostBtn {
+  color: #475569;
+  background: #eef2f5;
+  border: 1px solid #d5dde5;
+}
