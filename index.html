@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>MindClimber Online</title>
 <meta name="theme-color" content="#000000">
-<meta name="description" content="MindClimber — το ελληνικό παιχνίδι γνώσεων. Ανέβα 30 σκαλιά με φίλους ή μόνος.">
+<meta name="description" content="MindClimber — the trivia climbing game. Climb 30 steps with friends or on your own.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://commons.wikimedia.org" crossorigin>
 <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
@@ -23,82 +23,90 @@
 
 <div id="desktopBlock" class="screen">
   <div class="card">
-    <img class="logoSmall" src="assets/Pics/mindclimber_logo.png" alt="MindClimber" onerror="this.style.display='none'">
-    <h2>Μόνο για κινητά 📱</h2>
-    <p>Το MindClimber Online παίζεται αποκλειστικά σε κινητό τηλέφωνο.</p>
+    <img class="logoSmall" src="Assets/Pics/mindclimber_logo.png" alt="MindClimber" onerror="this.style.display='none'">
+    <h2>Mobile only 📱</h2>
+    <p>MindClimber Online is played on a phone. Open this page on your mobile device to start.</p>
   </div>
 </div>
 
 <div id="homeScreen" class="screen">
   <div class="card homeCard">
-    <button id="showInfoBtn" class="infoBtn" type="button" aria-label="Πληροφορίες">i</button>
-    <button id="muteToggleBtn" class="muteBtn" type="button" aria-label="Ήχος">🔊</button>
+    <button id="showInfoBtn" class="infoBtn" type="button" aria-label="How to play">i</button>
+    <button id="muteToggleBtn" class="muteBtn" type="button" aria-label="Sound">🔊</button>
     <div class="homeHero">
-      <img class="logoBig" src="assets/Pics/mindclimber_logo.png" alt="MindClimber" onerror="this.style.display='none'">
+      <img class="logoBig" src="Assets/Pics/mindclimber_logo.png" alt="MindClimber" onerror="this.style.display='none'">
       <h1 class="homeTitle">MindClimber</h1>
-      <p class="tagline">Το Παιχνίδι Γνώσεων</p>
-      <p class="subtitle">Ανέβα τα 30 σκαλιά απαντώντας σωστά — online με φίλους ή μόνος/η.</p>
+      <p class="tagline">The Trivia Climbing Game</p>
+      <p class="subtitle">Answer correctly to climb all 30 steps — online with friends or solo.</p>
       <div class="homeFeatures">
-        <span>🏔️ 30 σκαλιά</span>
-        <span>👥 έως 5 παίκτες</span>
-        <span>⚡ 9 κατηγορίες</span>
+        <span>🏔️ 30 steps</span>
+        <span>👥 up to 5 players</span>
+        <span>⚡ 9 categories</span>
       </div>
     </div>
-    <button id="createRoomBtn" class="bigBtn primaryBtn">✨ Δημιουργία Δωματίου</button>
-    <button id="showJoinBtn" class="bigBtn secondaryBtn">🔑 Είσοδος με Κωδικό</button>
+    <button id="createRoomBtn" class="bigBtn primaryBtn">✨ Create Room</button>
+    <button id="showJoinBtn" class="bigBtn secondaryBtn">🔑 Join with Code</button>
     <div id="joinRow" class="hidden">
-      <input id="joinCodeInput" maxlength="5" placeholder="π.χ. A7K2Q" autocapitalize="characters">
-      <button id="joinRoomBtn" class="bigBtn primaryBtn">Είσοδος</button>
+      <label class="fieldLabel" for="joinCodeInput">Room code</label>
+      <div class="codeField">
+        <span class="codeFieldIcon" aria-hidden="true">🔑</span>
+        <input id="joinCodeInput" maxlength="5" placeholder="A7K2Q" autocapitalize="characters"
+               autocomplete="off" autocorrect="off" spellcheck="false"
+               inputmode="text" enterkeyhint="go" aria-describedby="joinCodeHint">
+      </div>
+      <p id="joinCodeHint" class="fieldHint">5 characters — ask the host for the code</p>
+      <button id="joinRoomBtn" class="bigBtn primaryBtn">Join</button>
     </div>
-    <button id="soloPlayBtn" class="bigBtn ghostBtn homeSolo">🎮 Παίξε Μόνος/η</button>
+    <button id="soloPlayBtn" class="bigBtn ghostBtn homeSolo">🎮 Play Solo</button>
     <p id="homeError" class="errorText"></p>
   </div>
 </div>
 
 <div id="infoModal" class="infoModal hidden">
   <div class="infoModalCard">
-    <h2>Πώς παίζεται</h2>
-    <p>Στόχος είναι να φτάσεις στην <strong>κορυφή (σκαλί 30)</strong> πριν από τους άλλους.</p>
+    <h2>How to play</h2>
+    <p>Your goal is to reach the <strong>summit (step 30)</strong> before everyone else.</p>
     <ul>
-      <li>Στη σειρά σου διάλεξε <strong>κατηγορία</strong> και μετά δυσκολία:
-        <br>🟢 Εύκολο (+1/−1) · 🔵 Μέτριο (+2/−2) · 🟠 Δύσκολο (+3/−3)</li>
-      <li>Σωστή απάντηση → ανεβαίνεις. Λάθος → κατεβαίνεις.</li>
-      <li>Όλοι απαντούν στην ίδια ερώτηση. Έχεις και <strong>χρόνο παίκτη</strong> — αν τελειώσει, βγαίνεις.</li>
-      <li>Μέχρι <strong>5 παίκτες</strong> online, ή παίξε μόνος/η.</li>
+      <li>On your turn, pick a <strong>category</strong>, then a difficulty:
+        <br>🟢 Easy (+1/−1) · 🔵 Medium (+2/−2) · 🟠 Hard (+3/−3)</li>
+      <li>Right answer → you climb up. Wrong answer → you slide down.</li>
+      <li>Everyone answers the same question. You also have a <strong>player clock</strong> — if it runs out, you're out.</li>
+      <li>Up to <strong>5 players</strong> online, or play solo.</li>
     </ul>
-    <p>Το χρυσό αγαλματίδιο 🏆 βρίσκεται στην κορυφή. Όποιος φτάσει πρώτος στο 30 κερδίζει.</p>
-    <button id="closeInfoBtn" class="bigBtn primaryBtn infoClose">Κατάλαβα</button>
+    <p>The golden trophy 🏆 waits at the summit. The first player to reach step 30 wins.</p>
+      <p class="creditNote">Extra questions adapted from <a href="https://github.com/uberspot/OpenTriviaQA" target="_blank" rel="noopener">OpenTriviaQA</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>).</p>
+    <button id="closeInfoBtn" class="bigBtn primaryBtn infoClose">Got it</button>
   </div>
 </div>
 
 <div id="setupScreen" class="screen">
   <div class="card">
-    <h2>Ο Παίκτης σου</h2>
+    <h2>Your Player</h2>
     <div id="roomCodeBadge" class="codeBadge"></div>
-    <label for="playerNameInput">Όνομα</label>
+    <label for="playerNameInput">Name</label>
     <div class="nameInputWrap">
       <span class="nameInputIcon">🙂</span>
-      <input id="playerNameInput" maxlength="14" placeholder="Το όνομά σου">
+      <input id="playerNameInput" maxlength="14" placeholder="Your name">
     </div>
-    <label class="avatarLabel">Επίλεξε Avatar <span id="avatarPickedTag" class="avatarPickedTag hidden">επιλέχθηκε</span></label>
+    <label class="avatarLabel">Choose an avatar <span id="avatarPickedTag" class="avatarPickedTag hidden">selected</span></label>
     <div id="avatarGrid" class="avatarGrid"></div>
-    <button id="confirmSetupBtn" class="bigBtn primaryBtn">Συνέχεια</button>
+    <button id="confirmSetupBtn" class="bigBtn primaryBtn">Continue</button>
     <p id="setupError" class="errorText"></p>
   </div>
 </div>
 
 <div id="lobbyScreen" class="screen">
   <div class="card">
-    <h2>Δωμάτιο</h2>
+    <h2>Room</h2>
     <div class="codeBadgeRow">
       <div id="lobbyCodeBadge" class="codeBadge big"></div>
-      <button id="copyCodeBtn" class="copyCodeBtn" type="button" aria-label="Αντιγραφή κωδικού">📋</button>
+      <button id="copyCodeBtn" class="copyCodeBtn" type="button" aria-label="Copy code">📋</button>
     </div>
-    <p class="subtitle">Στείλε αυτόν τον κωδικό στους φίλους σου για να μπουν στο ίδιο παιχνίδι.</p>
+    <p class="subtitle">Send this code to your friends so they can join your game.</p>
     <div id="lobbyPlayerList" class="lobbyPlayerList"></div>
     <p id="lobbyHint" class="hintText"></p>
-    <button id="startGameBtn" class="bigBtn primaryBtn hidden">Έναρξη Παιχνιδιού</button>
-    <button id="leaveLobbyBtn" class="bigBtn ghostBtn">Έξοδος</button>
+    <button id="startGameBtn" class="bigBtn primaryBtn hidden">Start Game</button>
+    <button id="leaveLobbyBtn" class="bigBtn ghostBtn">Leave</button>
   </div>
 </div>
 
@@ -111,7 +119,7 @@
     </div>
     <div id="stairLines"></div>
     <div id="playerTokens"></div>
-    <div id="groundMarker">ΕΚΚΙΝΗΣΗ</div>
+    <div id="groundMarker">START</div>
   </div>
   <div id="gamePanel">
     <div id="qTimerWrap">
@@ -122,23 +130,24 @@
       <div id="choiceTimerBar"><div id="choiceTimerFill"></div></div>
       <div id="choiceTimerNum">5</div>
     </div>
+    <div id="eliminatedNote" class="hidden">⏳ Your time has run out — you are out of this game.</div>
     <div id="categoryChoiceRow" class="hidden"></div>
     <div id="selectedCategoryLabel" class="hidden"></div>
     <div id="colorChoiceRow" class="hidden">
       <button id="greenButton" class="colorBtn">
         <span class="colorTitle">+1 / -1</span>
-        <span class="colorSub">Εύκολο</span>
+        <span class="colorSub">Easy</span>
       </button>
       <button id="blueButton" class="colorBtn">
         <span class="colorTitle">+2 / -2</span>
-        <span class="colorSub">Μέτριο</span>
+        <span class="colorSub">Medium</span>
       </button>
       <button id="orangeButton" class="colorBtn">
         <span class="colorTitle">+3 / -3</span>
-        <span class="colorSub">Δύσκολο</span>
+        <span class="colorSub">Hard</span>
       </button>
     </div>
-    <div id="waitingNote" class="hidden">Περιμένεις τη σειρά σου…</div>
+    <div id="waitingNote" class="hidden">Waiting for your turn…</div>
     <img id="questionImage" class="hidden" alt="">
     <div id="questionRectangle" class="hidden"></div>
     <div id="answerRectangle" class="hidden">
@@ -152,11 +161,11 @@
 
 <div id="resultsScreen" class="screen">
   <div class="card">
-    <h2 id="resultsTitle">Τέλος Παιχνιδιού!</h2>
+    <h2 id="resultsTitle">Game Over!</h2>
     <img id="winnerAvatarImg" class="winnerAvatar" src="" alt="" onerror="this.style.display='none'">
     <div id="rankingList" class="rankingList"></div>
-    <button id="playAgainBtn" class="bigBtn primaryBtn hidden">Παίξτε ξανά</button>
-    <button id="backHomeBtn" class="bigBtn ghostBtn">Αρχική</button>
+    <button id="playAgainBtn" class="bigBtn primaryBtn hidden">Play Again</button>
+    <button id="backHomeBtn" class="bigBtn ghostBtn">Home</button>
   </div>
 </div>
 
@@ -164,6 +173,7 @@
   // defer keeps these off the parser's critical path while preserving order,
   // so the 1.4 MB question bank no longer blocks first paint.
   document.write('<script defer src="questions_data.js?v=' + window.__mcv + '"><\/script>');
+  document.write('<script defer src="additional_questions.js?v=' + window.__mcv + '"><\/script>');
   document.write('<script defer src="game.js?v=' + window.__mcv + '"><\/script>');
 </script>
 </body>

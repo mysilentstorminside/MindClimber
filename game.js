@@ -107,7 +107,7 @@ function showScreen(id) {
 }
 
 function avatarSrc(n, pose) {
-  return `assets/Avatars/avatar${n}_${pose}.png`;
+  return `Assets/Avatars/avatar${n}_${pose}.png`;
 }
 
 let currentRoomCode = null;
@@ -140,9 +140,9 @@ function initHome() {
   if (!checkMobile()) return;
   setMuted(isMuted);
   if (!firebaseReady) {
-    $("homeError").textContent = "Το online παιχνίδι χρειάζεται σύνδεση με το Firebase.";
+    $("homeError").textContent = "Online multiplayer requires a Firebase connection.";
   } else if (!window.QUESTION_BANK) {
-    $("homeError").textContent = "Δεν φορτώθηκαν οι ερωτήσεις (questions_data.js).";
+    $("homeError").textContent = "questions_data.js failed to load.";
   } else {
     $("homeError").textContent = "";
   }
@@ -162,13 +162,13 @@ $("joinRoomBtn").addEventListener("click", async () => {
   if (!firebaseReady) return;
   const code = $("joinCodeInput").value.trim().toUpperCase();
   $("homeError").textContent = "";
-  if (code.length < 4) { $("homeError").textContent = "Γράψε έναν έγκυρο κωδικό."; return; }
+  if (code.length < 4) { $("homeError").textContent = "Please enter a valid code."; return; }
   const snap = await db.ref(`rooms/${code}`).once("value");
-  if (!snap.exists()) { $("homeError").textContent = "Το δωμάτιο δεν βρέθηκε."; return; }
+  if (!snap.exists()) { $("homeError").textContent = "Room not found."; return; }
   const room = snap.val();
-  if (room.status !== "lobby") { $("homeError").textContent = "Το παιχνίδι έχει ήδη ξεκινήσει."; return; }
+  if (room.status !== "lobby") { $("homeError").textContent = "The game has already started."; return; }
   if (room.players && Object.keys(room.players).length >= MAX_PLAYERS) {
-    $("homeError").textContent = "Το δωμάτιο είναι γεμάτο."; return;
+    $("homeError").textContent = "The room is full."; return;
   }
   isHost = false; isSolo = false; beginSetup(code);
 });
@@ -237,7 +237,7 @@ function watchTakenAvatars() {
 
 $("confirmSetupBtn").addEventListener("click", async () => {
   const name = $("playerNameInput").value.trim() || "Player";
-  if (!selectedAvatar) { $("setupError").textContent = "Διάλεξε ένα avatar."; return; }
+  if (!selectedAvatar) { $("setupError").textContent = "Please select an avatar."; return; }
   $("setupError").textContent = "";
   const roomBase = `rooms/${currentRoomCode}`;
   if (isHost) {
@@ -255,7 +255,7 @@ $("confirmSetupBtn").addEventListener("click", async () => {
     const snap = await db.ref(`${roomBase}/players`).once("value");
     const players = snap.val() || {};
     const order = Object.keys(players).length;
-    if (order >= MAX_PLAYERS) { $("setupError").textContent = "Το δωμάτιο είναι γεμάτο."; return; }
+    if (order >= MAX_PLAYERS) { $("setupError").textContent = "Room is full."; return; }
     await db.ref(`${roomBase}/players/${myPlayerId}`).set({
       name, avatar: selectedAvatar, step: 0, order, timeLeft: PLAYER_SECONDS, eliminated: false, joinedAt: firebase.database.ServerValue.TIMESTAMP,
     });
@@ -338,11 +338,11 @@ function renderLobby(room) {
   list.forEach(([pid, p]) => {
     const row = document.createElement("div");
     row.className = "lobbyPlayerRow";
-    row.innerHTML = `<img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3"><span class="pname">${escapeHtml(p.name)}</span>${pid === room.hostId ? '<span class="hostTag">Διοργανωτής</span>' : ""}${pid === myPlayerId ? '<span class="youTag">Εσύ</span>' : ""}`;
+    row.innerHTML = `<img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3"><span class="pname">${escapeHtml(p.name)}</span>${pid === room.hostId ? '<span class="hostTag">HOST</span>' : ""}${pid === myPlayerId ? '<span class="youTag">You</span>' : ""}`;
     container.appendChild(row);
   });
   const count = list.length;
-  $("lobbyHint").textContent = count < 2 ? "Χρειάζονται τουλάχιστον 2 παίκτες." : `${count}/${MAX_PLAYERS} παίκτες.`;
+  $("lobbyHint").textContent = count < 2 ? "At least 2 players are required." : `${count}/${MAX_PLAYERS} players.`;
   $("startGameBtn").classList.toggle("hidden", !(isHost && count >= 2));
 }
 
@@ -400,8 +400,8 @@ let staircaseBuilt = false;
 let lastStaircasePlayerCount = 0;
 // Climb mapping: leave room at bottom so avatar at step 0 is fully visible
 // above the question panel. Compress rungs toward the upper band.
-/* Μετρήθηκαν τα μονοπάτια σε κάθε εικόνα ξεχωριστά. Οι εικόνες
-   δημιουργήθηκαν χωριστά, οπότε δεν έχουν ακριβώς την ίδια γεωμετρία. */
+/* The paths were measured on each image separately. The images
+     were created separately, so their geometry is not exactly the same. */
 const MOUNTAIN_GEO = {
   1: { base: 14.2, top: 59.6, spreadBase: 37.0, spreadTop: 26.0 },
   2: { base: 9.2, top: 54.4, spreadBase: 36.7, spreadTop: 23.0 },
@@ -444,7 +444,7 @@ function mountainWidthAt(step, playerCount) {
 function laneCenters(step, playerCount) {
   const count = Math.max(1, Math.min(5, playerCount || 1));
   const g = geoFor(count);
-  const t = Math.max(0, Math.min(MAX_STEPS, step)) / MAX_STEPS;   // 0 βάση, 1 κορυφή
+  const t = Math.max(0, Math.min(MAX_STEPS, step)) / MAX_STEPS;   // 0 = base, 1 = summit
   const halfSpread = g.spreadBase + (g.spreadTop - g.spreadBase) * t;
   const grid = [-1, -0.5, 0, 0.5, 1].map(k => 50 + k * halfSpread);
   const PICK = { 1: [2], 2: [1, 3], 3: [0, 2, 4], 4: [0, 1, 3, 4], 5: [0, 1, 2, 3, 4] };
@@ -578,7 +578,7 @@ let mountainsPreloaded = false;
 function preloadMountains() {
   if (mountainsPreloaded) return;
   mountainsPreloaded = true;
-  for (let i = 1; i <= 5; i++) { const im = new Image(); im.src = `assets/mountains/mountain-${i}.jpg`; }
+  for (let i = 1; i <= 5; i++) { const im = new Image(); im.src = `Assets/mountains/mountain-${i}.jpg`; }
 }
 
 function buildStaircase(playerCount) {
@@ -633,8 +633,8 @@ function buildStaircase(playerCount) {
     const centers = laneCenters(step, count);
     const isMajor = labelSteps.has(step) || step === MAX_STEPS;
 
-    // Τα steps είναι ήδη ζωγραφισμένα στην εικόνα φόντου, οπότε δεν
-    // σχεδιάζουμε δικά μας — μόνο τους δείκτες 10/20 στο πλάι.
+    // The steps are already painted into the background image, so we don't
+    // draw our own — only the 10/20 markers on the side.
     // Labels 10 & 20 glued to the left of the leftmost tread
     if (labelSteps.has(step)) {
       const leftmost = centers[0] - treadW / 2;
@@ -702,13 +702,16 @@ function renderPlayerTimers(room) {
 
 function renderGame(room) {
   const players = room.players || {};
+  amEliminated = !!(players[myPlayerId] || {}).eliminated;
+  const outNote = $("eliminatedNote");
+  if (outNote) outNote.classList.toggle("hidden", !amEliminated);
   const order = Object.entries(players).sort((a, b) => a[1].order - b[1].order);
   const playerCount = order.length || 1;
 
   buildStaircase(playerCount);
 
-  // Η κορυφή δείχνει πλέον το χρυσό αγαλματίδιο, που είναι ζωγραφισμένο
-  // μέσα στην εικόνα φόντου — δεν χρειάζονται σημαίες.
+  // The summit now shows the golden trophy, which is painted
+  // into the background image — no flags needed.
   const peakWrap = $("peakFlags");
   if (peakWrap.childNodes.length) peakWrap.innerHTML = "";
   $("peakMarker").style.bottom = (geoFor(playerCount).top + 6) + "%";
@@ -724,7 +727,7 @@ function renderGame(room) {
     // Correct/wrong indicator on avatar: shown as soon as the player answers
     const ans = room.turn && room.turn.answers && room.turn.answers[pid];
     const answeredCls = ans ? (ans.correct ? " answered-correct" : " answered-wrong") : "";
-    // Τα πιόνια ξαναχτίζονται σε κάθε ενημέρωση· το βελάκι κάνει animation μόνο την πρώτη φορά.
+    // The tokens are rebuilt on every room update; only animate the arrow the first time.
     const markKey = turnKey + ":" + pid;
     const markSeen = shownAnswerMarks.has(markKey);
     if (ans) shownAnswerMarks.add(markKey);
@@ -736,21 +739,22 @@ function renderGame(room) {
     tok.dataset.pid = pid;
     tok.style.left = pos.left + "%";
     tok.style.bottom = pos.bottom + "%";
-    tok.style.width = pos.size + "px";
-    tok.style.height = pos.size + "px";
-    // Με 4-5 players οι λωρίδες πλησιάζουν, οπότε το βέλος μικραίνει
-    // ώστε να μη μπαίνει στον χώρο του διπλανού παίκτη.
+    // The avatar keeps the lane size; the token box itself grows to fit the
+    // timer, the step badge and the name, so nothing spills outside the mountain.
+    tok.style.setProperty("--tokSize", pos.size + "px");
+    // With 4-5 players the lanes get closer, so the arrow shrinks
+    // so it doesn't overlap the neighboring player's lane.
     const aw = playerCount >= 4 ? 8 : 11;
     tok.style.setProperty("--arrowW", aw + "px");
     tok.style.setProperty("--arrowH", Math.round(aw * 1.55) + "px");
     // Compact token: no turn text (turn is shown in the answer-status row)
     tok.innerHTML = `
       <div class="tokenTimer">${formatTimeLeft(computeLiveTimeLeft(pid, p, room))}</div>
+      <div class="tokenStep">${step}</div>
       <div class="tokenAvatarWrap"><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3">${
-        ans ? `<span class="answerMark${markSeen ? " noPop" : ""}" aria-label="${ans.correct ? "Σωστό" : "Λάθος"}">${ans.correct ? "▲" : "▼"}</span>` : ""
+        ans ? `<span class="answerMark${markSeen ? " noPop" : ""}" aria-label="${ans.correct ? "Correct" : "Wrong"}">${ans.correct ? "▲" : "▼"}</span>` : ""
       }</div>
-      <div class="tokenName">${escapeHtml(p.name)}</div>
-      <div class="tokenStep">${step}</div>`;
+      <div class="tokenName">${escapeHtml(p.name)}</div>`;
     tokenWrap.appendChild(tok);
   });
 
@@ -768,28 +772,28 @@ function renderGame(room) {
   stopLocalQuestionTimer();
 
   if (turn.phase === "category") {
-    if (turn.colorPickerId === myPlayerId) {
+    if (turn.colorPickerId === myPlayerId && !amEliminated) {
       renderCategoryButtons();
       $("categoryChoiceRow").classList.remove("hidden");
       startLocalChoiceTimer(turn, "category");
     } else {
       $("waitingNote").classList.remove("hidden");
-      $("waitingNote").textContent = "Αναμονή για επιλογή κατηγορίας…";
+      $("waitingNote").textContent = amEliminated ? "Your time has run out — you are out of the game." : "Waiting for category selection…";
     }
   } else if (turn.phase === "difficulty") {
     $("selectedCategoryLabel").textContent = turn.category || "";
     $("selectedCategoryLabel").classList.remove("hidden");
-    if (turn.colorPickerId === myPlayerId) {
+    if (turn.colorPickerId === myPlayerId && !amEliminated) {
       $("colorChoiceRow").classList.remove("hidden");
       startLocalChoiceTimer(turn, "difficulty");
     } else {
       $("waitingNote").classList.remove("hidden");
-      $("waitingNote").textContent = "Αναμονή για επιλογή δυσκολίας…";
+      $("waitingNote").textContent = amEliminated ? "Your time has run out — you are out of the game." : "Waiting for difficulty selection…";
     }
   } else if (turn.phase === "question" || turn.phase === "result") {
     $("qTimerWrap").classList.remove("hidden");
     if (turn.question && turn.question.img) preloadImage(turn.question.img);
-    $("selectedCategoryLabel").textContent = (turn.category || "") + (turn.color ? " · " + ({green:"Εύκολο",blue:"Μέτριο",orange:"Δύσκολο"}[turn.color]||"") : "");
+    $("selectedCategoryLabel").textContent = (turn.category || "") + (turn.color ? " · " + ({green:"Easy",blue:"Medium",orange:"Hard"}[turn.color]||"") : "");
     $("selectedCategoryLabel").classList.remove("hidden");
     renderQuestion(turn, turn.phase === "result");
     $("answerRectangle").classList.remove("hidden");
@@ -820,6 +824,7 @@ function renderCategoryButtons() {
 }
 
 let lastRenderedImgSrc = null;
+let amEliminated = false;
 const shownAnswerMarks = new Set();
 let lastRenderedQText = null;
 
@@ -829,8 +834,8 @@ function renderQuestion(turn, showResult) {
   const rect = $("questionRectangle");
 
   // The question text is now ALWAYS shown, even for image questions. Before,
-  // an image question hid the prompt entirely, so "Ποιον ήρωα του 1821
-  // απεικονίζει αυτή η προσωπογραφία;" arrived as a bare picture — and if the
+  // an image question hid the prompt entirely, so "Which famous person is
+  // shown in this portrait?" arrived as a bare picture — and if the
   // image failed to load the player got a blank box with three options.
   const text = q.text || "";
   if (lastRenderedQText !== text) {
@@ -853,9 +858,8 @@ function renderQuestion(turn, showResult) {
       img.alt = text;
       img.decoding = "async";
       img.referrerPolicy = "no-referrer";
-      // Try the local copy in assets/questions_pics first. If it is missing
-      // (e.g. download_images.sh has not been run yet) fall back once to the
-      // original online address, and only then give up and show text alone.
+      // Load the picture (flags live in Assets/questions_pics). If it fails,
+      // try the optional online fallback once, then show the text alone.
       let triedFallback = false;
       img.onerror = () => {
         if (!triedFallback && q.imgFallback) {
@@ -867,7 +871,7 @@ function renderQuestion(turn, showResult) {
         img.classList.add("imgFailed");
         panel.classList.remove("hasImage");
         rect.classList.remove("hidden");
-        rect.textContent = text || "Η εικόνα δεν φορτώθηκε.";
+        rect.textContent = text || "The image could not be loaded.";
       };
       img.onload = () => { img.classList.remove("hidden"); };
       // Flags stay compact; photos/landmarks get the large display size
@@ -892,7 +896,7 @@ function renderQuestion(turn, showResult) {
   const correctLetter = decodeCorrect(q);
   const opts = q.options || ["", "", ""];
   const myAns = turn.answers && turn.answers[myPlayerId];
-  const locked = showResult || !!myAns;
+  const locked = showResult || !!myAns || amEliminated;
   document.querySelectorAll(".answerOption").forEach((el) => {
     const letter = el.dataset.option;
     const i = letter.charCodeAt(0) - 65;
@@ -914,7 +918,12 @@ function renderQuestion(turn, showResult) {
 // update, which rebuilt each <img> from scratch — causing avatar flicker and
 // repeated image work several times per second during a question.
 function renderAnswerStatuses(room) {
+  // The chips under the question are gone: whose turn it is and who went up or
+  // down is already shown on the mountain itself.
   const wrap = $("allAnswersStatus");
+  if (!wrap) return;
+  if (wrap.childNodes.length) wrap.innerHTML = "";
+  return;
   const turn = room.turn || {};
   const answers = turn.answers || {};
   const inAnswerPhase = turn.phase === "question" || turn.phase === "result";
@@ -982,7 +991,7 @@ function pickFromShuffledQueue(category, color, queueState) {
   const diffKey = COLOR_TO_DIFF[color] || "easy";
   const pool = (window.QUESTION_BANK && window.QUESTION_BANK[category] && window.QUESTION_BANK[category][diffKey]) || [];
   if (!pool.length) {
-    return { item: { text: "Δεν βρέθηκαν ερωτήσεις.", options: ["-", "-", "-"], correct: "A", img: null }, newQueueState: queueState || null };
+    return { item: { text: "No questions found.", options: ["-", "-", "-"], correct: "A", img: null }, newQueueState: queueState || null };
   }
   let seed = queueState && queueState.seed;
   let pos = queueState && queueState.pos;
@@ -1002,6 +1011,7 @@ function pickFromShuffledQueue(category, color, queueState) {
 }
 
 function applyTimeDeduction(updates, pid, currentTimeLeft, alreadyEliminated, elapsedSeconds) {
+  if (alreadyEliminated) { updates[`players/${pid}/timeLeft`] = 0; return 0; }
   const newTimeLeft = Math.max(0, (currentTimeLeft ?? PLAYER_SECONDS) - elapsedSeconds);
   updates[`players/${pid}/timeLeft`] = newTimeLeft;
   if (newTimeLeft <= 0 && !alreadyEliminated) updates[`players/${pid}/eliminated`] = true;
@@ -1061,6 +1071,7 @@ async function buildSoloTurn(pid, step, catIdx) {
 
 async function chooseCategory(category, isTimeout) {
   if (!latestRoom || !latestRoom.turn || latestRoom.turn.colorPickerId !== myPlayerId) return;
+  if (((latestRoom.players || {})[myPlayerId] || {}).eliminated) return;
   if (latestRoom.turn.phase !== "category") return;
   stopLocalChoiceTimer();
   const turn = latestRoom.turn;
@@ -1077,6 +1088,7 @@ async function chooseCategory(category, isTimeout) {
 
 async function chooseColor(color, isTimeout) {
   if (!latestRoom || !latestRoom.turn || latestRoom.turn.colorPickerId !== myPlayerId) return;
+  if (((latestRoom.players || {})[myPlayerId] || {}).eliminated) return;
   if (latestRoom.turn.phase !== "difficulty") return;
   stopLocalChoiceTimer();
   const turn = latestRoom.turn;
@@ -1107,7 +1119,7 @@ function startLocalChoiceTimer(turn, kind) {
       clearInterval(localChoiceTimerHandle); localChoiceTimerHandle = null;
       if (kind === "category") {
         const cats = window.QUESTION_CATEGORIES || [];
-        chooseCategory(cats[Math.floor(Math.random() * cats.length)] || "Ιστορία και Μυθολογία", true);
+        chooseCategory(cats[Math.floor(Math.random() * cats.length)] || "History & Mythology", true);
       } else {
         chooseColor(["green","blue","orange"][Math.floor(Math.random()*3)], true);
       }
@@ -1157,7 +1169,7 @@ async function forceRandomPickForStalledPicker(turn) {
   if (turn.phase === "category") {
     const cats = window.QUESTION_CATEGORIES || [];
     updates["turn/phase"] = "difficulty";
-    updates["turn/category"] = cats[Math.floor(Math.random() * cats.length)] || "Ιστορία και Μυθολογία";
+    updates["turn/category"] = cats[Math.floor(Math.random() * cats.length)] || "History & Mythology";
     updates["turn/phaseDeadline"] = Date.now() + DIFFICULTY_CHOICE_SECONDS * 1000;
     await db.ref(`rooms/${currentRoomCode}`).update(updates);
   } else {
@@ -1178,6 +1190,7 @@ $("answerRectangle").addEventListener("keydown", (e) => {
 $("answerRectangle").addEventListener("click", (e) => {
   const opt = e.target.closest(".answerOption");
   if (!opt || opt.classList.contains("disabled")) return;
+  if (amEliminated) return;
   if (!latestRoom || !latestRoom.turn || latestRoom.turn.phase !== "question") return;
   if (latestRoom.turn.answers && latestRoom.turn.answers[myPlayerId]) return;
   submitAnswer(opt.dataset.option);
@@ -1185,6 +1198,7 @@ $("answerRectangle").addEventListener("click", (e) => {
 
 async function submitAnswer(pickedOption) {
   if (!latestRoom || !latestRoom.turn || latestRoom.turn.phase !== "question") return;
+  if (((latestRoom.players || {})[myPlayerId] || {}).eliminated) return;   // out of time = out of the game
   if (latestRoom.turn.answers && latestRoom.turn.answers[myPlayerId]) return;
   stopLocalQuestionTimer();
   const turn = latestRoom.turn;
@@ -1231,7 +1245,7 @@ async function checkTurnProgress(room) {
       const totalSeconds = questionSecondsFor(turn.category);
       const colorDelta = COLOR_DELTA[turn.color] || 1;
       active.forEach((pid) => {
-        if (!answers[pid]) {
+        if (!answers[pid] && !players[pid].eliminated) {
           const delta = -colorDelta;
           const cur = players[pid].step || 0;
           updates[`players/${pid}/step`] = Math.max(0, Math.min(MAX_STEPS, cur + delta));
@@ -1246,6 +1260,11 @@ async function checkTurnProgress(room) {
   } else if (turn.phase === "result" && resultScheduledForKey !== turn.key) {
     resultScheduledForKey = turn.key;
     setTimeout(() => advanceTurnIfNeeded(turn.key), RESULT_PAUSE_MS);
+  }
+  if ((turn.phase === "category" || turn.phase === "difficulty")
+      && ((room.players || {})[turn.colorPickerId] || {}).eliminated) {
+    advanceTurnIfNeeded(turn.key);   // the picker is out of time: move on to the next player
+    return;
   }
   if ((turn.phase === "category" || turn.phase === "difficulty") && turn.phaseDeadline && Date.now() >= turn.phaseDeadline + 2000) {
     forceRandomPickForStalledPicker(turn);
@@ -1338,14 +1357,14 @@ function renderResults(room) {
     confettiShownForRoom = currentRoomCode + (room.startedAt || "");
     launchConfetti();
   }
-  $("resultsTitle").textContent = winner ? `Νικητής: ${winner.name}! 🎉` : "Τέλος Παιχνιδιού!";
+  $("resultsTitle").textContent = winner ? `Winner: ${winner.name}! 🎉` : "Game Over!";
   if (winner) $("winnerAvatarImg").src = avatarSrc(winner.avatar, "front");
   const list = $("rankingList");
   list.innerHTML = "";
   ranked.forEach(([pid, p], i) => {
     const row = document.createElement("div");
     row.className = "rankRow" + (room.winnerId === pid ? " winner" : "");
-    row.innerHTML = `<span class="rpos">#${i + 1}</span><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3"><span class="rname">${escapeHtml(p.name)}${pid === myPlayerId ? " (Εσύ)" : ""}</span><span class="rstep">${p.step || 0}/${MAX_STEPS}</span>`;
+    row.innerHTML = `<span class="rpos">#${i + 1}</span><img src="${avatarSrc(p.avatar, "front")}" alt="" onerror="this.style.opacity=0.3"><span class="rname">${escapeHtml(p.name)}${pid === myPlayerId ? " (You)" : ""}</span><span class="rstep">${p.step || 0}/${MAX_STEPS}</span>`;
     list.appendChild(row);
   });
   $("playAgainBtn").classList.toggle("hidden", !isHost);
